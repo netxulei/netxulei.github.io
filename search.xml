@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>typora+quicker 写博客</title>
+    <url>/2021/02/20/typora-quicker%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p><strong>写博客两种方式：</strong></p>
+<ol>
+<li>Git bash here<ol>
+<li> 博客根目录下 ：hexo new 新的博客</li>
+<li>在_post 目录自动生成新的博客.md，同时增加了 hexo 博客的开头</li>
+<li>再 typora 编辑即可</li>
+<li>博客头可修改 \scaffolds\post.md</li>
+</ol>
+</li>
+<li>typora+quicker<ol>
+<li> 直接打开 typora 新建文件</li>
+<li> quicker 插入博客头</li>
+<li>编辑</li>
+<li>存于_post 目录</li>
+<li>修改博客头动作内容即可插入不同的博客头</li>
+</ol>
+</li>
+</ol>
+<h1 id="quicker是个好东西"><a href="#quicker是个好东西" class="headerlink" title="quicker是个好东西"></a>quicker 是个好东西</h1><p><strong>Quicker</strong> 是一个让 <strong>Windows 用户</strong>可以用<strong>最合适的方式</strong>、<strong>最快地</strong>触发想要的<strong>操作</strong>的软件工具，是一个<strong>场景化</strong>的工具箱，也是一个可以<strong>创造和分享新工具</strong>的平台。</p>
+<ul>
+<li>暂时利用写博客头功能，省去 hexo new blog 命令</li>
+<li>安装→注册→运行→鼠标中间或 ctrl+q 激活面板→工具箱→相应动作拖到面板→应用时激活执行</li>
+</ul>
+<img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210222112957.png" alt="image-20210220122832855" style="zoom:25%;">
+
+
+
+<ul>
+<li>有免费版和专业版（按年收费）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>书写博客</category>
+      </categories>
+      <tags>
+        <tag>quicker</tag>
+        <tag>typora</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>typora 自动上传图片</title>
+    <url>/2021/02/20/typora%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>typora 书写 markdown 自动上传图片（两种方式）</p>
+<h2 id="一、插件方式-github为例"><a href="#一、插件方式-github为例" class="headerlink" title="一、插件方式(github为例)"></a>一、插件方式 (github 为例)</h2><h3 id="（一）github申请Token"><a href="#（一）github申请Token" class="headerlink" title="（一）github申请Token"></a>（一）github 申请 Token</h3><p>登录 github→Developer settings→Personal access tokens→New personal access token（链接）→Note（typoraimg）→Select scopes（public_repo）最小权限→生成 token：71ba89824e9d8ce5a5a8a06e173465be810b1e91</p>
+<h3 id="（二）建立github公共仓库typora-img"><a href="#（二）建立github公共仓库typora-img" class="headerlink" title="（二）建立github公共仓库typora_img"></a>（二）建立 github 公共仓库 typora_img</h3><p>之前需准备 github 用户</p>
+<h3 id="（三）下载插件"><a href="#（三）下载插件" class="headerlink" title="（三）下载插件"></a>（三）下载插件</h3><p>该插件是 Thobian 同学开源的插件，仅支持 Windows 系统。该同学的知乎主页 <a href="https://www.zhihu.com/people/thobian%EF%BC%8CGithub">https://www.zhihu.com/people/thobian，Github</a> 主页 <a href="https://github.com/Thobian/typora-plugins-win-img">https://github.com/Thobian/typora-plugins-win-img</a></p>
+<h3 id="（四）插件安装"><a href="#（四）插件安装" class="headerlink" title="（四）插件安装"></a>（四）插件安装</h3><p>下载插件 plugins/image 目录拷贝至 typora 安装目录下的 app 中（C:\Program Files\Typora\resources\app）</p>
+<h3 id="（五）插件配置"><a href="#（五）插件配置" class="headerlink" title="（五）插件配置"></a>（五）插件配置</h3><h4 id="1-修改app目录下的window-html文件"><a href="#1-修改app目录下的window-html文件" class="headerlink" title="1.修改app目录下的window.html文件"></a>1. 修改 app 目录下的 <code>window.html</code> 文件</h4><p>搜索 <code>&lt;script src="./app/window/frame.js" defer="defer"&gt;&lt;/script&gt;</code> 在其后面加上一行：<code>&lt;script src="./plugins/image/upload.js" defer="defer"&gt;&lt;/script&gt;</code></p>
+<p>注：readme 中覆盖 <code>window.html</code> 只是为了引入 <code>./plugins/image/upload.js</code> 文件，但不同版本 window.html 文件可能存在一些差异，不用把下载的 windows.html 覆盖</p>
+<h4 id="2-更换图片上传接口地址"><a href="#2-更换图片上传接口地址" class="headerlink" title="2.更换图片上传接口地址"></a>2. 更换图片上传接口地址</h4><p>插件默认会将图片上传到个人站点上（<a href="https://jiebianjia.com/?ref=github">街边价</a>），不能保证一直给大家提供服务，所以按照好插件后，强烈建议你换成自己的图片上传服务器。方法：打开 <code>plugins/image/upload.js</code> 文件，拉到最下面 将最后一行的 <code>$.image.init();</code> 按照下面的说明进行配置（下面代码替换掉）<code>$.image.init();</code> ：</p>
+<h5 id="上传到Github——推荐"><a href="#上传到Github——推荐" class="headerlink" title="上传到Github——推荐"></a><strong>上传到 Github—— 推荐</strong></h5><p>还可上传到自建服务器、上传到腾讯云 COS、阿里云 OSS、七牛云、码云等，详见下载的 readme.md</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//注册token的尽量不要跟其他应用共用，同时授予最小权限</span></span><br><span class="line"><span class="comment">//免费+无需自己搭建服务器，是一种不错的方式</span></span><br><span class="line">$.image.init({</span><br><span class="line">    target:<span class="string">'github'</span>,</span><br><span class="line">    quality:<span class="number">1</span>, <span class="comment">//图片压缩开关，1表示原图上传 取值为：0&lt;quality&lt;=1，如果要压缩推荐 0.7</span></span><br><span class="line">    github:{</span><br><span class="line">        Token : <span class="string">'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span>, <span class="comment">// 添加一个仅给typora使用的token 授予最小的权限（repo.public_repo） ，添加token：https://github.com/settings/tokens</span></span><br><span class="line">        CommitterName : <span class="string">'nickname'</span>,                         <span class="comment">// 提交人昵称，写你github的昵称</span></span><br><span class="line">        CommitterEmail : <span class="string">'email@mail.com'</span>,                  <span class="comment">// 提交人邮箱，写你github的邮箱</span></span><br><span class="line">        Repository : <span class="string">'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span>,      <span class="comment">// github项目名，比如你的项目地址是：https://github.com/Thobian/typora-plugins-win-img  那就是后面的“Thobian/typora-plugins-win-img”</span></span><br><span class="line">        Filepath : <span class="string">'typora'</span>,                                <span class="comment">// 图片在项目中的保存目录，可以不用提前创建目录，github提交时发现没有会自动创建</span></span><br><span class="line">        <span class="comment">// 【注意：开启CDN后会将原github的文件地址换成 jsDelivr 的地址，如出现镜像出现国内无法访问，或者不再继续运营你的图片也将不能访问到，请谨慎开启该功能】</span></span><br><span class="line">        jsDelivrCND : <span class="literal">false</span>,                                <span class="comment">// 是否开启GitHub图片走镜像，国内有时候访问不太方便,如要打开设置为：true</span></span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="3-图片本地压缩后再上传"><a href="#3-图片本地压缩后再上传" class="headerlink" title="3.图片本地压缩后再上传"></a>3. <strong>图片本地压缩后再上传</strong></h4><figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 图片太大可以在本地进行压缩后再上传到服务器</span></span><br><span class="line"><span class="comment">// 感谢 @mgsod 开源的前端压缩代码，仓库地址：https://github.com/mgsod/imgZip</span></span><br><span class="line">$.image.init({</span><br><span class="line">    <span class="comment">//在原配置基础上增加下面配置开关。完整配置示例参考“上传到Github”</span></span><br><span class="line">    <span class="comment">//打开图片压缩开关，1表示原图上传（默认）， 取值为：0&lt;quality&lt;=1，如果要压缩推荐 0.7</span></span><br><span class="line">    quality:<span class="number">0.7</span></span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="4-配置的关键："><a href="#4-配置的关键：" class="headerlink" title="4.配置的关键："></a>4. 配置的关键：</h4><ol>
+<li>Repository：项目名不能带有 https 等，仅仅是后面的 “Thobian/typora-plugins-win-img”</li>
+<li> 仓库必须是 public 公共库</li>
+<li> typora 偏好设置中，图像选项不勾选第二项 “对网络位置的图片应用上述规则”，否则会重复上传图片</li>
+<li>可同时设置内置的图传上传</li>
+</ol>
+<h3 id="（六）重启typora"><a href="#（六）重启typora" class="headerlink" title="（六）重启typora"></a>（六）重启 typora</h3><h3 id="（七）特点"><a href="#（七）特点" class="headerlink" title="（七）特点"></a>（七）特点</h3><ul>
+<li>插入图片、拉入图片、粘贴图片都能自动上传</li>
+<li>插件上传的图片自动重新命名，存放在 Filepath + 日期目录中，文件名应该是时间</li>
+</ul>
+<h2 id="二、typora内置支持图床上传（typora-PicGo-jsdelivr-github）"><a href="#二、typora内置支持图床上传（typora-PicGo-jsdelivr-github）" class="headerlink" title="二、typora内置支持图床上传（typora+PicGo+jsdelivr+github）"></a>二、typora 内置支持图床上传（typora+PicGo+jsdelivr+github）</h2><ul>
+<li><p>内置支持 PicGo 上传图片，图床类似插件模式，暂时配置 github</p>
+</li>
+<li><p>下载 picGo，在 app 里配置，支持 github 等。</p>
+</li>
+<li><p>Github 图床配合 jsdelivr 的 CDN，才能回显。</p>
+</li>
+</ul>
+<h4 id="（一）PicGo-App的Github图床配置"><a href="#（一）PicGo-App的Github图床配置" class="headerlink" title="（一）PicGo App的Github图床配置"></a>（一）PicGo App 的 Github 图床配置</h4><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210222103824.png" alt="image-20210222103824108" style="zoom: 80%;">
+
+<p>jsDelivr 引用时一般有个版本号，不用版本号默认使用最新版本的仓库。</p>
+<p>github 仓库可以点击 Release，新建一个版本，在上面的小方框里面填写你的版本号，尽量填写数字，例如 <code>1.0</code> 之类的，不要用中文！！！也可以不用建立 release</p>
+<h3 id="（二）typora的使用PicGo的偏好配置"><a href="#（二）typora的使用PicGo的偏好配置" class="headerlink" title="（二）typora的使用PicGo的偏好配置"></a>（二）typora 的使用 PicGo 的偏好配置</h3><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210222104001.png" alt="image-20210222104001681" style="zoom:50%;">
+
+<p>1.typora 偏好设置中，图像选项插入图片时选择 “上传图片”</p>
+<p>2. 上传服务设定不要忘了 PicGo 的路径</p>
+<h3 id="（三）特点："><a href="#（三）特点：" class="headerlink" title="（三）特点："></a>（三）特点：</h3><ul>
+<li><p>插入图片、拉入图片、粘贴图片都能自动上传</p>
+</li>
+<li><p>上传成功后文章和相册都不显示（github 图床），可能需要梯子，jsDelivr 可以解决。</p>
+</li>
+<li><p>filepath 设置后应加 /，否则上传的图片不保存该在目录下，而是根目录下，文件名为 Filepath + 原文件名</p>
+</li>
+<li><p>同名的图片上传会失败，可在 PicGo 设置中打开上传前重命名开关，但是手动命名，较麻烦。可以关闭重命名开关，打开时间戳重命名开关</p>
+</li>
+</ul>
+<h3 id="（四）与插件的冲突或协作"><a href="#（四）与插件的冲突或协作" class="headerlink" title="（四）与插件的冲突或协作"></a>（四）与插件的冲突或协作</h3><ul>
+<li>PicGo 先上传成功后，插件就不上传了，因为地址已不是本地地址</li>
+<li>只有 PicGo 上传还未成功时，如正在命名过程中，插件再上传。或 Pic 上传不成功时，插件继续上传成功。基本上 PicGo 关闭重命名开关，打开时间戳命名开关，即基本能上传成功时，就没有插件的事了。</li>
+<li>PicGo 配合 jsDelivr 速度还可以，暂时不用插件方式（仅仅恢复 app 目录下的 window.html 即可）。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>typora图片</category>
+      </categories>
+      <tags>
+        <tag>typora</tag>
+        <tag>PicGo</tag>
+        <tag>jsdelivr</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>本博创建记录（Github+Node.js+Hexo+nexT）</title>
+    <url>/2021/02/20/%E6%9C%AC%E5%8D%9A%E5%88%9B%E5%BB%BA%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>（Git+Github+node.js+hexo 创建博客整理）</p>
+<h2 id="一、Github-Pages"><a href="#一、Github-Pages" class="headerlink" title="一、Github Pages"></a>一、Github Pages</h2><p> Github Pages 其实本身就是 Github 提供的博客服务。 我们在 Github 中创建一个特定格式的 Repository，Github Pages 就会将里面的信息生成一个网页，展示出来。</p>
+<p><strong>操作如下：</strong></p>
+<ol>
+<li>注册 Github 账号，然后在 Github 中创建一个以 .github.io 结尾的 Repository（注：可以创建多个 Repositry，但作为博客 name 的前缀必须与账号相同，如 netxulei.github.io ，即只能用这种命名方式创建 GitHub Pages 网站）。<ol>
+<li>Repository name: netxulei.github.io</li>
+<li> 勾选 Initialize this repository with a README</li>
+<li>Create repository</li>
+</ol>
+</li>
+<li> 简单地编辑一下 README.md 这个文档。 比如添加：I am trying to create my own blog.. 保存 (Commit changes)。</li>
+<li>打开网页：netxulei.github.io 这里就可以看到 README.md 里的内容了。</li>
+</ol>
+<p>如果没有太多的要求，其实直接用 README.md 来写博客也是不错的。</p>
+<p>这个生成好的 Repository 就是用来存放博客内容的地方，也只有这个仓库里的内容，才会被 netxulei.github.io 这个网页显示出来。</p>
+<h2 id="二、安装Git"><a href="#二、安装Git" class="headerlink" title="二、安装Git"></a>二、安装 Git</h2><ul>
+<li><p>前往 <a href="https://git-scm.com/">https://git-scm.com/</a></p>
+</li>
+<li><p> 点击 Downloads</p>
+</li>
+<li><p>点击 Windows</p>
+</li>
+<li><p>一般情况，下载会自动开始。如果没有，就点击 click here to download manually</p>
+</li>
+<li><p>安装</p>
+</li>
+<li><p>打开 Command Prompt， 输入 <code>git --version</code></p>
+</li>
+<li><p>得到：git version 2.15.0.windows.1</p>
+<p>安装成功</p>
+<p>额外说明：如果 Git –version 指令不管用，可能需要到 Environment Variable 那里添加 Path。</p>
+</li>
+</ul>
+<h2 id="三、安装node-js"><a href="#三、安装node-js" class="headerlink" title="三、安装node.js"></a>三、安装 node.js</h2><p>Node.js 就是运行在服务端的 JavaScript。Node.js 是一个基于 Chrome JavaScript 运行时建立的一个平台。Node.js 是一个事件驱动 I/O 服务端 JavaScript 环境，基于 Google 的 V8 引擎，V8 引擎执行 Javascript 的速度非常快，性能非常好。</p>
+<h3 id="（一）Nodejs历史版本下载地址"><a href="#（一）Nodejs历史版本下载地址" class="headerlink" title="（一）Nodejs历史版本下载地址"></a>（一）Nodejs 历史版本下载地址</h3><p>官网:<a href="https://nodejs.org/en/download/releases/">https://nodejs.org/en/download/releases/</a></p>
+<p>阿里镜像:<a href="https://npm.taobao.org/mirrors/nodenvm/">https://npm.taobao.org/mirrors/nodenvm/</a></p>
+<h3 id="（二）下直接安装（windwos或Linux）"><a href="#（二）下直接安装（windwos或Linux）" class="headerlink" title="（二）下直接安装（windwos或Linux）"></a>（二）下直接安装（windwos 或 Linux）</h3><ul>
+<li><p>官网下载后执行 exe 文件安装，但有个缺陷，不同版本的 nodejs 无法顺利的切换。</p>
+</li>
+<li><p>？linux 开发环境时再查询学习</p>
+</li>
+</ul>
+<h3 id="（三）NVM安装nodejs的方法"><a href="#（三）NVM安装nodejs的方法" class="headerlink" title="（三）NVM安装nodejs的方法"></a>（三）NVM 安装 nodejs 的方法</h3><ul>
+<li><p><strong>选择</strong>不直接安装 Node.js，而是通过 NVM。windows 和 linux 都支持？</p>
+</li>
+<li><p>nvm 全名 node.js version management，是一个 windows 下 node 的版本管理工具。<strong>主要用途是安装和切换 nodejs 版本</strong>。如果想使用最新的流行版本测试您正在开发的模块，而不用卸载稳定版本的 node，则可以使用 nvm 来切换 nodejs 版本。</p>
+</li>
+<li><p>NVM 可以帮助我们快速切换 node 版本。</p>
+</li>
+<li><p><strong>linux 下 n 模块可管理 node 版本，但不支持 windows，linux 开发环境下需要时再另外查询</strong>。</p>
+</li>
+</ul>
+<h4 id="使用命令时注意"><a href="#使用命令时注意" class="headerlink" title="使用命令时注意"></a>使用命令时注意</h4><ul>
+<li><p><strong>请用管理员身份运行命令管理器</strong>，否则可能出错。</p>
+</li>
+<li><p>先设置 <a href="https://npm.taobao.org/mirrors/node/">node</a> 和 <a href="https://npm.taobao.org/mirrors/npm/">npm</a> 的淘宝镜像，这样成功率和下载速度会更高点。</p>
+</li>
+<li><p>nvm 安装目录，最好不要存在空格。否则，nvm 可以安装成功，但使用 nvm use x.y.z（nodejs 的切换）会有问题。</p>
+</li>
+<li><p>有些全局的 npm 模块，可能在各版本的 node.js 之间不共享。</p>
+</li>
+<li><p>正在使用的 node.js 版本中可能不支持某些 npm 模块。因此在工作的时候请注意工作环境。</p>
+</li>
+</ul>
+<h4 id="1-下载NVM"><a href="#1-下载NVM" class="headerlink" title="1.下载NVM"></a>1. 下载 NVM</h4><p> github 上下载最新版本:<a href="https://github.com/coreybutler/nvm-windows/releases%EF%BC%9B%E6%8E%A8%E8%8D%90%E4%B8%8B%E8%BD%BD%E7%AC%AC%E4%B8%89%E4%B8%AA%E5%8C%85%EF%BC%9Anvm-setup.zip">https://github.com/coreybutler/nvm-windows/releases；推荐下载第三个包：nvm-setup.zip</a></p>
+<h4 id="2-安装之前的操作"><a href="#2-安装之前的操作" class="headerlink" title="2.安装之前的操作"></a>2. 安装之前的操作</h4><p><strong>注意</strong>： </p>
+<ul>
+<li>在安装 nvm for windows 之前，你需要卸载任何现有版本的 node.js。并且需要删除现有的 nodejs 安装目录（例如：”C:\Program Files\nodejs’）。因为，nvm 生成的 symlink（符号链接 / 超链接) 不会覆盖现有的（甚至是空的）安装目录。</li>
+<li>你还需要删除现有的 npm 安装位置（例如 “C:\Users\weiqinl\AppData\Roaming\npm”  “C:\Users\weiqinl\AppData\Roaming\npm-cache”  ），以便正确使用 nvm 安装位置。</li>
+</ul>
+<h4 id="3-安装"><a href="#3-安装" class="headerlink" title="3.安装"></a>3. 安装</h4><p>双击执行下载的 setup 文件。注意 nodejs 目录的准确。</p>
+<p>安装后会根据安装过程录入的安装目录 d:\xlnvm 和 d;D:\xlnodejs 自动如下生成坏境变量？</p>
+<ul>
+<li><p>NVM_HOME = d:\xlnvm</p>
+</li>
+<li><p>NVM_SYMLINK =D:\xlnodejs</p>
+</li>
+<li><p>Path 增加 % NVM_HOME%;% NVM_SYMLINK%</p>
+</li>
+</ul>
+<h4 id="4-检测"><a href="#4-检测" class="headerlink" title="4.检测"></a>4. 检测</h4><p>检查是否安装成功，我们可以在新的命令窗口中输入</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">nvm</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>如果出现 nvm 版本号和一系列帮助指令，则说明 nvm 安装成功。</li>
+<li>否则，可能会提示 <code>nvm: command not found</code></li>
+</ul>
+<h4 id="5-升级"><a href="#5-升级" class="headerlink" title="5.升级"></a>5. 升级</h4><p>如果要升级的话，请重新<a href="https://github.com/coreybutler/nvm-windows/releases">下载最新的安装程序</a>。并直接运行安装程序。它将安全的覆盖需要更新的文件，而无需关心 nodejs 的安装。<br>此次安装需要确保和上次使用相同的安装目录。<br>如果你最初安装到默认位置，则只需一直点击” 下一步”，直到完成。</p>
+<h4 id="6-配置淘宝镜像"><a href="#6-配置淘宝镜像" class="headerlink" title="6.配置淘宝镜像"></a>6. 配置淘宝镜像</h4><p>由于 nvm 默认的下载地址 <a href="http://nodejs.org/dist/%E6%98%AF%E5%A4%96%E5%9B%BD%E5%A4%96%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E9%80%9F%E5%BA%A6%E9%9D%9E%E5%B8%B8%E6%85%A2%EF%BC%8C%E5%9B%A0%E8%80%8C%E5%8F%AF%E4%BB%A5%E5%88%87%E6%8D%A2%E5%88%B0%E6%B7%98%E5%AE%9D%E7%9A%84%E9%95%9C%E5%83%8F%EF%BC%8C%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E4%BC%9A%E5%BF%AB%E5%BE%88%E5%A4%9A%E3%80%82">http://nodejs.org/dist/ 是外国外服务器，速度非常慢，因而可以切换到淘宝的镜像，下载速度会快很多。</a></p>
+<p><strong>配置方法：</strong></p>
+<p>打开 nvm 的安装路径，默认安装路径是：C:\Users\ 用户名 \AppData\Roaming\nvm。</p>
+<p>我安装在 <strong>D:\xlnvm，</strong>？C 盘可能权限会存在问题？</p>
+<p><strong>打开 settings.txt，加入下面文件</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">root: D:\xlnvm</span><br><span class="line">path: D:\xlnodejs</span><br><span class="line">arch: 64 </span><br><span class="line">proxy: none</span><br><span class="line">//前面可能已经生成，后面为为国内镜像，方便后续安装。国内镜像有时会落后一个版本</span><br><span class="line">node_mirror: http://npm.taobao.org/mirrors/node/</span><br><span class="line">npm_mirror: https://npm.taobao.org/mirrors/npm/</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="6-nvm安装node"><a href="#6-nvm安装node" class="headerlink" title="6.nvm安装node"></a>6.nvm 安装 node</h4><p>（1）<strong>nvm 安装命令：</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">nvm list available //current当前发布版15.8.0、LTS长期支持版14.15.5（2021.2.10）</span><br><span class="line">nvm install 15.4.0 //本地安装，一般这么安装即可。npm尽可能全局安装</span><br><span class="line">nvm install 15.4.0 -g //全局安装，nvm目录生成15.4.0目录。？？不知</span><br><span class="line">nvm use 15.4.0</span><br><span class="line">//本地安装时,会生成D:\xlnvm\15.4.0目录,并生成d:\xlnodejs的快捷方式（应该根据setting.txt设置），指向安装目录；</span><br><span class="line">//全局安装时,好像没区别</span><br><span class="line">//version就是要安装的nodejs版本，官网可以查询到。比如：</span><br><span class="line">    nvm install v11.6.0</span><br><span class="line">    nvm install 11.6.0</span><br></pre></td></tr></tbody></table></figure>
+<p>（2）<strong>安装过程中关键点：</strong></p>
+<p>   Downloading 代表正在下载 npm，一定要等下载完，不然会发现 npm 将无法使用。<br><img data-src="https://img-blog.csdnimg.cn/20190116130110558.png" alt="在这里插入图片描述"></p>
+<p>   Installation complete 代表 nodejs 安装完成<br><img data-src="https://img-blog.csdnimg.cn/20190116130201729.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzIzOTU4NjI1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>ps：</strong><br> 如果第二步没有设置淘宝镜像，下载速度会很慢。就会像我之前一样，以为安装好了 nodejs，就着急的关闭了命令行。最后发现 npm 却无法适应，找了很久才发现是 npm 没下完。</p>
+<h4 id="7-切换nodejs版本"><a href="#7-切换nodejs版本" class="headerlink" title="7.切换nodejs版本"></a>7. 切换 nodejs 版本</h4><p>（1）<strong>查询所有的 nodejs 版本</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">nvm list </span><br></pre></td></tr></tbody></table></figure>
+<p>nvm list 查看当前安装的所有 nodejs 版本<br><img data-src="https://img-blog.csdnimg.cn/20190115133437761.png" alt="在这里插入图片描述"></p>
+<p>（2）<strong>切换 nodojs 命令</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">nvm  use  version  </span><br></pre></td></tr></tbody></table></figure>
+<p>比如：<br>nvm use 11.6.0 注意。安装后 use 之后才能正常。</p>
+<p>这样就切换到了 11.6.0 版本的 nodejs 了</p>
+<p>版本号前出现 * 代表为当前使用的 nodejs 版本</p>
+<h4 id="8-配置环境变量（可能安装nvm时已自动配置好）"><a href="#8-配置环境变量（可能安装nvm时已自动配置好）" class="headerlink" title="8.配置环境变量（可能安装nvm时已自动配置好）"></a>8. 配置环境变量（可能安装 nvm 时已自动配置好）</h4><p>为了全局使用 nvm 命令，就需要配置下环境变量。这里以 win10 为例，win7 大同小异</p>
+<p><strong>（1）环境变量地址：</strong><br>点击我的电脑》属性》高级设置》环境变量》环境变量</p>
+<p><strong>（2）删除系统变量</strong><br>a. 找到系统变量<br>  删除系统自带的 nvm 变量：NVM_HOME 和 NVM_SYMLINK</p>
+<p>b. 打开 path：删除 nvm 自动添加的变量 C:\nvm;C:\Program Files\nodejs</p>
+<p><strong>（3） 配置用户变量</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">NVM_HOME = C:\Users\zhong\AppData\Roaming\nvm          </span><br><span class="line">NVM_SYMLINK = C:\Program Files\nodejs </span><br><span class="line">Path = %NVM_HOME%;%NVM_SYMLINK%</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="9-测试node，npm是否安装成功"><a href="#9-测试node，npm是否安装成功" class="headerlink" title="9.测试node，npm是否安装成功"></a>9. 测试 node，npm 是否安装成功</h4><p>依次执行 node，npm 命令</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ where node</span><br><span class="line">$ npm -v</span><br></pre></td></tr></tbody></table></figure>
+<p>到这里，nvm，node，npm 就都安装成功了。安装失败往往是 npm 没有下载成功，或者环境变量没有设置成功，多尝试几次就好。</p>
+<h4 id="10-linux下node版本管理-不适用windows，需另外安装nvm，但要在node之前安装"><a href="#10-linux下node版本管理-不适用windows，需另外安装nvm，但要在node之前安装" class="headerlink" title="10.linux下node版本管理(不适用windows，需另外安装nvm，但要在node之前安装)"></a>10.linux 下 node 版本管理 (不适用 windows，需另外安装 nvm，但要在 node 之前安装)</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm install n -g</span><br><span class="line"></span><br><span class="line">n 12.24</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="（四）npm的全局安装？？？？（暂时没有）"><a href="#（四）npm的全局安装？？？？（暂时没有）" class="headerlink" title="（四）npm的全局安装？？？？（暂时没有）"></a>（四）npm 的全局安装？？？？（暂时没有）</h3><p>npm 即 nodejs package manager ，也就是 nodejs 的包管理工具。由于使用 nvm 管理 node，而每个 nodejs 的版本都自带 npm，所以在每次切换 node 版本的时候，npm 版本也会切换，这就可能导致一些已经安装的全局的其他包，因此造成原来下载过的包不可用</p>
+<p>因此最好是单独安装一个全局的 npm 工具？，这个操作很有必要！</p>
+<p><strong>全局模块存放路径为 d:\xlnvm\ 版本号中，及 D:\xlnodejs 快捷方式指向的目录。更换 node 版本号时，目录指向也改变</strong></p>
+<h2 id="四、指定npm远程仓库镜像"><a href="#四、指定npm远程仓库镜像" class="headerlink" title="四、指定npm远程仓库镜像"></a>四、指定 npm 远程仓库镜像</h2><p>镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</p>
+<h5 id="1-通过config命令"><a href="#1-通过config命令" class="headerlink" title="1.通过config命令"></a>1. 通过 config 命令</h5><p>npm config set registry <a href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a><br>npm info underscore （如果上面配置正确这个命令会有字符串 response）</p>
+<h5 id="2-命令行指定"><a href="#2-命令行指定" class="headerlink" title="2.命令行指定"></a>2. 命令行指定</h5><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm --registry https://registry.npm.taobao.org info underscore </span><br></pre></td></tr></tbody></table></figure>
+<h5 id="3-编辑-npmrc-加入下面内容"><a href="#3-编辑-npmrc-加入下面内容" class="headerlink" title="3.编辑  ~/.npmrc 加入下面内容"></a>3. 编辑～/.npmrc 加入下面内容</h5><p>registry = <a href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></p>
+<ul>
+<li>windows 下当前用户目录下 C:\Users\netxu 使用 npm config 生成.npmrc</li>
+</ul>
+<h5 id="4-查看镜像"><a href="#4-查看镜像" class="headerlink" title="4.查看镜像"></a>4. 查看镜像</h5><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm config get registry </span><br></pre></td></tr></tbody></table></figure>
+<h5 id="npm-i-和-npm-install-的区别"><a href="#npm-i-和-npm-install-的区别" class="headerlink" title="npm i 和 npm install 的区别"></a>npm i 和 npm install 的区别</h5><ol>
+<li>用 npm i 安装的模块无法用 npm uninstall 删除，用 npm uninstall i 才卸载掉 </li>
+<li>npm i 会帮助检测与当前 node 版本最匹配的 npm 包版本号，并匹配出来相互依赖的 npm 包应该提升的版本号 </li>
+<li>部分 npm 包在当前 node 版本下无法使用，必须使用建议版本 </li>
+<li>安装报错时 intall 肯定会出现 npm-debug.log 文件，npm i 不一定</li>
+</ol>
+<h2 id="五、NPM删除卸载-npm-包"><a href="#五、NPM删除卸载-npm-包" class="headerlink" title="五、NPM删除卸载 npm 包"></a>五、NPM 删除卸载 npm 包</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>我们现在假设要卸载一个 npm 包：<code>xx-abc</code>。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm uninstall xx-abc</span><br></pre></td></tr></tbody></table></figure>
+<p>这会在 <code>node_modules</code> 中删除 xx-abc 的文件夹。</p>
+<p>【】删除本地模块时是否将在 <code>package.json</code> 上的相应依赖信息也删除？</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm uninstall xx-abc：删除模块，但不删除模块留在package.json中的对应信息</span><br><span class="line">// 如果是安装在 dependencies</span><br><span class="line">npm uninstall xx-abc --save 删除模块，同时删除模块留在package.json中dependencies下的对应信息</span><br><span class="line">// 如果是安装在 devDependencies</span><br><span class="line">npm uninstall xx-abc --save-dev 删除模块，同时删除模块留在package.json中devDependencies下的对应信息</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>有时候 <code>npm uninstall xx-abc</code> 会出现错误；原因比较多，无法删除的原因有可能是这个模块又依赖了别的 <code>xxxxx</code>，所以卸载不了；那就把 <code>node_modules</code> 文件夹删除了重新安装。</p>
+<p>删除 <code>node_modules</code> 优雅的方式是：</p>
+<p>1、命令行中使用 <code>rm</code> 命令是一个不错的选择</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">rm -rf node_modules</span><br></pre></td></tr></tbody></table></figure>
+<p>2、或者使用 <code>rimraf</code> 来删除目录</p>
+<p>rimraf 封装了删除文件或文件夹命令的 npm 包</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm install rimraf -g</span><br><span class="line">rimraf node_modules</span><br></pre></td></tr></tbody></table></figure>
+<p>然后再进行 <code>npm uninstall</code> 卸载操作，确保【npm 删除卸载一个模块】</p>
+<p>全局安装 rimraf 包时，会在 d:\xlnvm\ 当前 node 版本目录中生成相关文件。</p>
+<h2 id="npm-清理缓存"><a href="#npm-清理缓存" class="headerlink" title="npm 清理缓存"></a>npm 清理缓存</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm cache clean -f</span><br></pre></td></tr></tbody></table></figure>
+
+
+<h2 id="六、安装hexo："><a href="#六、安装hexo：" class="headerlink" title="六、安装hexo："></a>六、安装 hexo：</h2><p> Hexo 是一个静态博客框架，基于 Node.js，将 Markdown 文章通过渲染引擎，生成一个静态网页，再结合 Git 命令（ssh），Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p>Hexo 是一个博客框架。它把本地文件里的信息生成一个网页。如果不需要放在网上给别人看，就没 Github Pages 什么事了。</p>
+<ul>
+<li>更换 node 版本时，对应版本下 npm 安装的内容都要重新安装，因为 npm 安装的包都在 node 版本目录下。</li>
+</ul>
+<h3 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo 安装</h3><p>gitBush 或 cmd 都可以运行如下安装命令：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></tbody></table></figure>
+<p>windwos 下安装出现错误正常：出错的文件是 mac 需要的，windwos 下不需要</p>
+<p>C:\Users\netxu\AppData\Roaming\npm\hexo -&gt; C:\Users\netxu\AppData\Roaming\npm\node_modules\hexo-cli\bin\hexo<br>npm WARN optional SKIPPING OPTIONAL DEPENDENCY: <a href="mailto:fsevents@2.1.3">fsevents@2.1.3</a> (node_modules\hexo-cli\node_modules\fsevents):<br>npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for <a href="mailto:fsevents@2.1.3">fsevents@2.1.3</a>: wanted {“os”:”darwin”,”arch”:”any”} (current: {“os”:”win32”,”arch”:”x64”})</p>
+<h3 id="hexo卸载（同时删除当前目录下生成的文件）"><a href="#hexo卸载（同时删除当前目录下生成的文件）" class="headerlink" title="hexo卸载（同时删除当前目录下生成的文件）"></a>hexo 卸载（同时删除当前目录下生成的文件）</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm uninstall hexo-cli -g</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="hexo升级-此时若不成功，可在初始化后升级或换主题时升级"><a href="#hexo升级-此时若不成功，可在初始化后升级或换主题时升级" class="headerlink" title="hexo升级:此时若不成功，可在初始化后升级或换主题时升级"></a>hexo 升级：此时若不成功，可在初始化后升级或换主题时升级</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm update -g #目前有错？？？？？？？？？？暂不使用</span><br></pre></td></tr></tbody></table></figure>
+
+
+<h3 id="Hexo和Node-js版本对应"><a href="#Hexo和Node-js版本对应" class="headerlink" title="Hexo和Node.js版本对应"></a>Hexo 和 Node.js 版本对应</h3><table>
+<thead>
+<tr>
+<th align="left">Hexo version</th>
+<th align="left">Minimum Node.js version</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">5.0+</td>
+<td align="left">10.13.0</td>
+</tr>
+<tr>
+<td align="left">4.1 - 4.2</td>
+<td align="left">8.10</td>
+</tr>
+<tr>
+<td align="left">4.0</td>
+<td align="left">8.6</td>
+</tr>
+<tr>
+<td align="left">3.3 - 3.9</td>
+<td align="left">6.9</td>
+</tr>
+<tr>
+<td align="left">3.2 - 3.3</td>
+<td align="left">0.12</td>
+</tr>
+<tr>
+<td align="left">3.0 - 3.1</td>
+<td align="left">0.10 or iojs</td>
+</tr>
+<tr>
+<td align="left">0.0.1 - 2.8</td>
+<td align="left">0.10</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>nvm list availabel 结果中 LTS 栏下的版本可用的为 12 版本的，之上版本在初始化、生成和服务时都可能出现 warning 之类的错误信息。</p>
+</li>
+<li><p>实践中 node version 15.8.0 15.4.0 配置 Hexo 5.3，hexo cli 4.2 在生成或作为服务时，出现 warning 一类的信息，如下配置后，可以正常运行：<br>NexT version 8.2.1<br>hexo: 5.3.0<br>hexo-cli: 4.2.0<br>node: 12.14.0 （12 版本的都没问题，最后用的 12.20.1）</p>
+</li>
+</ul>
+<h2 id="七、创建本地博客"><a href="#七、创建本地博客" class="headerlink" title="七、创建本地博客"></a>七、创建本地博客</h2><ul>
+<li><p>在 D 盘下创建文件夹 /d/MyGitHub/hexo-test/</p>
+</li>
+<li><p>进入该文件夹，鼠标右键 ，选择 Git Bash Here。 如果没有安装 Git，就不会有这个选项。</p>
+</li>
+<li><p>Git Bash 打开之后，所在的位置就是该文件夹位置</p>
+</li>
+<li><p>输入 hexo init 将文件夹初始化成一个博客文件夹。</p>
+</li>
+<li><p>有时需要输入 npm install 安装依赖包。</p>
+</li>
+<li><p>有时需要输入 npm install stylus #执行后续 hexo g 时需要的包，否则会出现’Accessing non-existent property’ errors </p>
+</li>
+<li><p>输入 hexo g 生成（generate）网页。 由于我们还没创建任何博客，生成的网页会展示 Hexo 里面自带了一个 Hello World 的博客。</p>
+</li>
+<li><p>输入 hexo s 将生成的网页放在了本地服务器（server）。</p>
+</li>
+<li><p>浏览器里输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 。 就可以看到刚才的成果了。</p>
+</li>
+<li><p>回到 Git Bash，按 Ctrl+C 结束。</p>
+</li>
+<li><p>此时再看 <a href="http://localhost:4000/">http://localhost:4000/</a> 就是无法访问了。</p>
+</li>
+</ul>
+<h2 id="八、发布一篇博客"><a href="#八、发布一篇博客" class="headerlink" title="八、发布一篇博客"></a>八、发布一篇博客</h2><ul>
+<li>继续在 Git Bash 里，所在路径还是 /d/MyGitHub/hexo-test/。输入 `hexo new “My First Post”</li>
+<li> 博客头可修改 \scaffolds\post.md</li>
+<li> 在 D:\MyGitHub\hexo-test\source_posts 路径下，会有一个 My-First-Post.md 的文件。 编辑这个文件，然后保存。</li>
+<li>回到 Git Bash，输入 <code>hexo g</code></li>
+<li>输入 <code>hexo s</code></li>
+<li>前往 <a href="https://link.zhihu.com/?target=http://localhost:4000/">http://localhost:4000/</a> 查看成果。</li>
+<li>回到 Git Bash，按 Ctrl+C 结束。</li>
+</ul>
+<h2 id="九、将本地-Hexo-博客部署在-Github-上"><a href="#九、将本地-Hexo-博客部署在-Github-上" class="headerlink" title="九、将本地 Hexo 博客部署在 Github 上"></a><strong>九、将本地 Hexo 博客部署在 Github 上</strong></h2><p>前述已经有了本地博客，和一个能托管这些资料的线上仓库。只要把本地博客部署（deploy）在我们的 Github 对应的 Repository 就可以了。</p>
+<h3 id="1-获取-Github-对应的-Repository-的链接。"><a href="#1-获取-Github-对应的-Repository-的链接。" class="headerlink" title="1. 获取 Github 对应的 Repository 的链接。"></a><strong>1. 获取 Github 对应的 Repository 的链接。</strong></h3><ul>
+<li>登陆 Github，进入到 <a href="https://github.com/netxulei/netxulei.github.io">https://github.com/netxulei/netxulei.github.io</a></li>
+<li> 点击 Clone or download</li>
+<li><img data-src="D:\MygitHub\LearnDoc\Snipaste_2021-02-04_16-38-48.jpg" alt="Snipaste_2021-02-04_16-38-48" style="zoom:50%;"></li>
+<li> 复制 URL 待用</li>
+</ul>
+<p>我的是</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">https://github.com/netxulei/netxulei.github.io.git</span><br></pre></td></tr></tbody></table></figure>
+
+
+<h3 id="2-修改博客配置文件"><a href="#2-修改博客配置文件" class="headerlink" title="2. 修改博客配置文件"></a><strong>2. 修改博客配置文件</strong></h3><ul>
+<li><p>打开配置文件 D:\MygitHub\hexo-test\_config.yml （使用 bash 里的 vi 或者 notepad++）</p>
+</li>
+<li><p>找到 <code>#Deployment</code>，填入以下内容：<strong>注意关键字冒号后要有空格；branch 值应为 main，不是 master</strong></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/netxulei/netxulei.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></tbody></table></figure>
+<p>保存退出</p>
+<h3 id="3-部署"><a href="#3-部署" class="headerlink" title="3. 部署"></a><strong>3. 部署</strong></h3><ul>
+<li><ul>
+<li><p>回到 Git Bash</p>
+</li>
+<li><p>输入 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></tbody></table></figure>
+<p>应全局安装？（I do，全局安装，hexo d 后，出现 ERROR Deployer not found: git。看来应该本地安装）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save -g</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>输入 <code>hexo d</code>, 注意 deploy 时可能要你输入 username 和 password。</p>
+</li>
+<li><p>得到 <code>INFO Deploy done: git</code> 即为部署成功</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>之前我们创建的 ReadMe.md 会被自动覆盖掉。</p>
+<h3 id="4-查看成果"><a href="#4-查看成果" class="headerlink" title="4. 查看成果"></a><strong>4. 查看成果</strong></h3><p>前往 <a href="https://netxulei.github.io/">https://netxulei.github.io</a> 即可。</p>
+<h3 id="5-更新博客"><a href="#5-更新博客" class="headerlink" title="5. 更新博客"></a><strong>5. 更新博客</strong></h3><ul>
+<li><p>继续在 Git Bash 里，所在路径还是 /d/MyGitHub/hexo-test/。输入</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">hexo new My-Second-Post</span><br></pre></td></tr></tbody></table></figure>
+<p>在 D:\MyGitHub\hexo-test\source_posts 路径下，会有一个 My-Second-Post.md 的文件。 编辑这个文件，然后保存。</p>
+</li>
+<li><p>回到 Git Bash，输入（修改完应该先生成，再发布）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">hexo clean  //清除了你之前生成的东西，也可以不加。</span><br><span class="line">hexo g  //生成</span><br><span class="line">hexo s  //本地测试，localhost:4000</span><br><span class="line">hexo d  //发布</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="十、修改主题官方主题NexT为例"><a href="#十、修改主题官方主题NexT为例" class="headerlink" title="十、修改主题官方主题NexT为例"></a>十、修改主题<a href="https://hexo.io/themes/">官方主题 NexT 为例</a></h2></li>
+</ul>
+<h3 id="（一）NexT主题基本使用"><a href="#（一）NexT主题基本使用" class="headerlink" title="（一）NexT主题基本使用"></a>（一）NexT 主题基本使用</h3><h4 id="1-NexT仓库"><a href="#1-NexT仓库" class="headerlink" title="1.NexT仓库"></a>1.NexT 仓库</h4><p> 一共有三个不同的仓库：</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>年份</th>
+<th>仓库</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> v5.1.4 或更低</td>
+<td> 2014 ~ 2017</td>
+<td><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></td>
+</tr>
+<tr>
+<td>v6.0.0 ~ v7.8.0</td>
+<td>2018 ~ 2019</td>
+<td><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></td>
+</tr>
+<tr>
+<td>v8.0.0 或更高</td>
+<td> 2020</td>
+<td><a href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a></td>
+</tr>
+</tbody></table>
+<p>遗憾的是，每个新仓库的创建者都没有 Archive 旧仓库的权限。因此许多网络上的教程并不能区分这三个仓库的区别，特别是后两个名称相近的。为了避免安装错误的 NexT，请务必严格按照本仓库 README 中提供的安装方式进行操作。<br>跨版本的升级可能并不顺滑（例如由 v5.1.4 或 v7.8.0 升级至 v8.0.0），请备份配置文件及修改过的文件（例如自定义模板文件）后，重新安装新的主题。具体操作请阅读文档： <a href="https://theme-next.js.org/docs/getting-started/upgrade.html">https://theme-next.js.org/docs/getting-started/upgrade.html</a><br><strong>NexT 团队将拒绝解答使用旧版本 NexT 出现的问题。</strong></p>
+<h4 id="2-克隆NexT"><a href="#2-克隆NexT" class="headerlink" title="2.克隆NexT"></a>2. 克隆 NexT</h4><p>回到 Git Bash，输入如下命令，该主题的文件就全部克隆到  D:\MyGitHub\hexo-test\themes\next 下面。</p>
+<p>可在官方主题找到每个主题的克隆地址。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ cd /d/MyGitHub/hexo-test/</span><br><span class="line">$ git clone https://github.com/next-theme/hexo-theme-next.git themes/next</span><br><span class="line">$ git clone https://github.com/next-theme/hexo-theme-next themes/next(上条命令带有.git和本条有什么不同？)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>目前已知 Github 国内镜像网站有 <a href="https://github.com.cnpmjs.org/">github.com.cnpmjs.org</a>（亲测这个访问速度较快）和 <a href="https://git.sdut.me/">git.sdut.me/</a>。你可以根据你对这两个网站访问速度快慢，选择其中一个即可。接下来只需要在 clone 某个项目的时候将 github.com 替换为 github.com.cnpmjs.org 即可。（目前不知镜像是否齐全）</li>
+</ul>
+<h4 id="3-修改博客配置文件"><a href="#3-修改博客配置文件" class="headerlink" title="3.修改博客配置文件"></a>3. 修改博客配置文件</h4><p>打开 D:\MyGitHub\hexo-test\_config.yml</p>
+<p> <code>theme:</code></p>
+<ul>
+<li><p>把 Hexo 默认的 lanscape 修改成 next。 即 `theme: next</p>
+</li>
+<li><p>找到 <code># Site</code>，添加博客名称，作者名字等。</p>
+<ul>
+<li><p><code>language</code> 后面填入 en 或者 zh-CN，选择英文或者中文。<strong>注意如果修改后不起作用，请来到 theme/next/languages/ 目录下查看是否有 zh-CN.yml（zh-EN.yml) 的文件，如果没有，请直接到 next 的 Github 下载相应文件添加即可。</strong></p>
+</li>
+<li><p>找到 <code># URL</code>, 填入 url。比如 <code>url: https://netxulei.github.io</code></p>
+</li>
+<li><p>填入名字后会有很风骚的 © 2017 Ryan Luo Xu 的字样出现在博客底部。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-重新生成部署"><a href="#4-重新生成部署" class="headerlink" title="4.重新生成部署"></a>4. 重新生成部署</h4><ul>
+<li>回到 Git Bash。输入 </li>
+<li><code>hexo clean</code></li>
+<li>hexo g -d 先把修改的内容生成网页，再部署。</li>
+</ul>
+<h4 id="5-查看成果"><a href="#5-查看成果" class="headerlink" title="5.查看成果"></a>5. 查看成果</h4><p>前往 netxulei.github.io 即可。</p>
+<h3 id="（二）【必读】NexT更新说明及常见问题（官网）"><a href="#（二）【必读】NexT更新说明及常见问题（官网）" class="headerlink" title="（二）【必读】NexT更新说明及常见问题（官网）"></a>（二）【必读】<a href="https://github.com/next-theme/hexo-theme-next/issues/4">NexT 更新说明及常见问题</a>（官网）</h3><h4 id="常见问题说明"><a href="#常见问题说明" class="headerlink" title="常见问题说明"></a>常见问题说明</h4><ul>
+<li><p>NexT 配置升级后，网上很多内容已过时，根据官网内容即可。</p>
+</li>
+<li><p><code>_config.yml</code> 篇幅有限，一些配置选项的细节并没有展现。为了避免出现问题，请在进行配置和使用前阅读网站 <a href="https://theme-next.js.org/">https://theme-next.js.org</a> 上对应的文档。</p>
+</li>
+</ul>
+<h4 id="问题反馈方式"><a href="#问题反馈方式" class="headerlink" title="问题反馈方式"></a>问题反馈方式</h4><p>多种方法可以与 NexT 主题开发 / 维护者团队（下称「NexT 团队」）或其他用户取得联系，共同解决问题：</p>
+<ol>
+<li>加入 Telegram 群，讨论问题更方便<ul>
+<li>中文群：<a href="https://t.me/theme_next_cn">https://t.me/theme_next_cn</a></li>
+</ul>
+</li>
+<li> 使用 GitHub Discussions 功能发帖：<a href="https://github.com/next-theme/hexo-theme-next/discussions">https://github.com/next-theme/hexo-theme-next/discussions</a></li>
+<li> 提交 Issue。我们建议将 Issue 主要用于 Bug Report 和 Feature Request，以明确阶段性的开发目标；如果只是单纯的遇到使用上的问题，可以使用上述两种反馈方式。具体见后文的「Issue 和 Pull Request 规范」部分。</li>
+</ol>
+<h4 id="NexT-自定义"><a href="#NexT-自定义" class="headerlink" title="NexT 自定义"></a>NexT 自定义</h4><p>NexT 支持在不修改主题仓库内文件的情况下进行配置和自定义，因此无论是使用 Git 还是 npm 都能顺利更新。如果你见到要求直接修改主题文件的「教程」文章，请谨慎甄别，因为其内容可能过时。</p>
+<p><strong><code>_config.next.yml</code> 配置文件</strong></p>
+<p>为了避免更新出现冲突，推荐使用 Alternate Theme Config 存储配置：<a href="https://theme-next.js.org/docs/getting-started/configuration.html">https://theme-next.js.org/docs/getting-started/configuration.html</a><br>注：Hexo 官方已实现此功能，在升级到 Hexo 5.0 版本后，请留意配置方式上的改变，使用 <code>_config.next.yml</code> 代替 <code>source/_data/next.yml</code>。<strong>旧的 <code>next.yml</code> 配置方式诞生于 2015 年（<a href="https://github.com/iissnan/hexo-theme-next/issues/328">iissnan/hexo-theme-next#328</a>），已经完成其历史使命，将在 NexT v8.1.0 版本后停止支持。</strong></p>
+<h3 id="（三）next主题配置"><a href="#（三）next主题配置" class="headerlink" title="（三）next主题配置"></a>（三）next 主题配置</h3><p>使用 NexT 版本支持的 Alternate Theme Config 替代的主题配置文件 /__config.[name].yml。将 [name] 替换为网站配置文件 /_config.yml 中的 <strong>theme</strong> 选项的值，例如:next。</p>
+<p>复制需要的 NexT 主题选项 /next/<em>config.yml 到这个主题配置文件</em> /_config.next.yml，若是第一次安装，复制整个文件。并在最前加入 theme_config 选项，next 的选项都保持缩进。</p>
+<p>1. 请确认 /source/_data/next.yml 文件不存在 (如果存在请备份并删除)。</p>
+<p>2. 复制整个配置文件或将需要的 NexT 主题选项从主题配置文件复制到站点配置文件</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">cp themes/next/_config.yml _config.next.yml</span><br></pre></td></tr></tbody></table></figure>
+<p><del>3. 添加 theme_config 参数</del></p>
+<p><del>3.1 将所有这些设置向右移动两个空格 (在 Visual Studio Code 中：选择所有字符串，CTRL +])。</del></p>
+<p><del>3.2 在所有这些设置之上添加 <code>theme_config:</code> 参数。</del></p>
+<ul>
+<li><del>通过这种方式，您的所有配置都位于主站点配置文件_config.next.yml 中。您不需要编辑主题配置文件或创建任何新文件。但是您需要在 <strong>theme_config</strong> 选项内保持缩进。</del></li>
+<li><del>过去 /source/_data/next.yml 的配置方式已经弃用（Deprecated）</del></li>
+</ul>
+<p><strong>注意：经过试验，直接在__config.next.yml 中添加需要改变的主题参数即可，无需添加 <code>theme_config:</code> 参数，也无需缩进。_</strong></p>
+<p><strong>__config.next.yml 中参数的优先级高于 themes/next/_config.yml 中参数的优先级</strong></p>
+<h3 id="（四）next主题优化"><a href="#（四）next主题优化" class="headerlink" title="（四）next主题优化"></a>（四）next 主题优化</h3><ul>
+<li><strong>修改 /_config.yml</strong></li>
+<li><strong> 修改 themes\next\_config.yml 或__config.next.yml（优先级更高)</strong></li>
+</ul>
+<h4 id="中文设置"><a href="#中文设置" class="headerlink" title="中文设置"></a>中文设置</h4><p>check hexo 根目录下的_config.yml 文件。</p>
+<p>language 行设置为 zh-CN（中文）zh-EN (英文 注意 冒号后面要多一个空格</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># Sit</span><br><span class="line">language: zh-CN</span><br></pre></td></tr></tbody></table></figure>
+<p>若修改后不起作用，请来到 <strong>theme/next/languages/ 目录下查看是否有 zh-CN.yml</strong>（zh-EN.yml) 的文件，如果没有，请直接到 next 的 Github 下载相应文件添加即可。</p>
+<h4 id="next风格选择"><a href="#next风格选择" class="headerlink" title="next风格选择"></a>next 风格选择</h4><p>next 有四种风格，在站点配置文件搜索字段 Scheme Settings 可以看到，<br>根目录 themes\next themes\next</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># Scheme Settings</span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></tbody></table></figure>
+<p>我这里用的是四种：Gemini</p>
+<h4 id="Menu-Settings菜单设置"><a href="#Menu-Settings菜单设置" class="headerlink" title="# Menu Settings菜单设置"></a># Menu Settings 菜单设置</h4><p>比如可以看到我的主页有首页、留言、分类、归档、标签等菜单，<br>在站点配置文件下搜索 menu:, 可以看到</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  about: /about/ || user</span><br><span class="line">  message: /message/ || comment</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  #schedule: /schedule/ || calendar</span><br><span class="line">  #sitemap: /sitemap.xml || sitemap</span><br><span class="line">  #commonweal: /404/ || heartbeat</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>home 就是首页；message 就是留言… <strong>一开始只有首页和归档，其余的需要手动创建</strong></li>
+<li>在站点根目录下打开命令行，输入 hexo new page about，会生成 D:\MygitHub\hexo-test\source\about\index.md,<br>并在主题配置文件 menu: 字段处取消对 about 的注释，重新部署我们就可以看到主页有关于这个菜单了，其他的类似</li>
+<li>修改 D:\MygitHub\hexo-test\source\about\<a href="http://index.md/">index.md</a>, 就可以修改关于界面了</li>
+<li> about: /about/ || user 中的 user 是指关于菜单附件的图标用的是图标库里面名为 user 的图标</li>
+</ul>
+<h4 id="Local-Search-本地搜索"><a href="#Local-Search-本地搜索" class="headerlink" title="# Local Search 本地搜索"></a># Local Search 本地搜索</h4><p>Local search does not require any external 3rd-party services and can be extra indexed by search engines. This search method is recommended for most users.（依赖于 <a href="https://github.com/next-theme/hexo-generator-searchdb%EF%BC%89">https://github.com/next-theme/hexo-generator-searchdb）</a></p>
+<p>发布到 github 应带有–save 参数，否则 github 博客会不正常，搜索界面不停跑</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></tbody></table></figure>
+<p>_config.yml（点击搜索菜单才能反映，如下配置也可以放置在_config.next.yml. <strong>经测试，此处不配置也可以</strong>）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: true</span><br><span class="line">  format: html</span><br></pre></td></tr></tbody></table></figure>
+<p>__config.next.yml（显示搜索菜单，放大镜图标）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">local_search:</span><br><span class="line">   enable: true</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="back2top-回到顶部按钮"><a href="#back2top-回到顶部按钮" class="headerlink" title="# back2top:回到顶部按钮"></a># back2top: 回到顶部按钮</h4><p> 一个主参数 enable，两个子参数 sidebar 和 scrollpercent</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">back2top:</span><br><span class="line">  enable: true</span><br><span class="line">  # Back to top in sidebar.</span><br><span class="line">  sidebar: true</span><br><span class="line"> # Scroll percent label in b2t button.</span><br><span class="line">  scrollpercent: true</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Reading-progress-bar-：网页阅读进度"><a href="#Reading-progress-bar-：网页阅读进度" class="headerlink" title="# Reading progress bar  ：网页阅读进度"></a># Reading progress bar  ：网页阅读进度</h4><h4 id="Bookmark-Support-：书签支持，回到原来阅读的位置"><a href="#Bookmark-Support-：书签支持，回到原来阅读的位置" class="headerlink" title="# Bookmark Support  ：书签支持，回到原来阅读的位置"></a># Bookmark Support  ：书签支持，回到原来阅读的位置</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">bookmark:</span><br><span class="line">  enable: true</span><br><span class="line">  # Customize the color of the bookmark.</span><br><span class="line">  color: "#222"</span><br><span class="line">  # If auto, save the reading progress when closing the page or clicking the bookmark-icon.</span><br><span class="line">  # If manual, only save it by clicking the bookmark-icon.</span><br><span class="line">  save: auto</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Follow-me-on-GitHub-banner-in-the-top-right-corner-右上角显示广告条（猫）"><a href="#Follow-me-on-GitHub-banner-in-the-top-right-corner-右上角显示广告条（猫）" class="headerlink" title="# Follow me on GitHub banner in the top-right corner.右上角显示广告条（猫）"></a># <code>Follow me on GitHub</code> banner in the top-right corner. 右上角显示广告条（猫）</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">github_banner:</span><br><span class="line">  enable: true</span><br><span class="line">  permalink: https://github.com/netxulei</span><br><span class="line">  title: 转到我的GitHub</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Post-wordcount-display-settings字数统计设置"><a href="#Post-wordcount-display-settings字数统计设置" class="headerlink" title="# Post wordcount display settings字数统计设置"></a># Post wordcount display settings 字数统计设置</h4><p>每个博文标题下面显示本文字数和阅读时长</p>
+<p>Symbols count and time to read for articles in Hexo blog.</p>
+<p>Better than <a href="https://github.com/ierhyna/hexo-reading-time"><code>hexo-reading-time</code></a> and faster than <a href="https://github.com/willin/hexo-wordcount"><code>hexo-wordcount</code></a>. No external dependencies.</p>
+<p># Dependencies: <a href="https://github.com/next-theme/hexo-word-counter">https://github.com/next-theme/hexo-word-counter</a> </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ npm install hexo-word-counter --save</span><br><span class="line">$ hexo clean</span><br></pre></td></tr></tbody></table></figure>
+<p> <strong>Hexo’s <code>_config.yml</code></strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br><span class="line">  exclude_codeblock: false</span><br><span class="line">  awl: 4</span><br><span class="line">  wpm: 275</span><br><span class="line">  suffix: "mins."</span><br></pre></td></tr></tbody></table></figure>
+<p>If <code>symbols_count_time</code> option is not specified, the default parameters will be used.</p>
+<p>上述参数可不指定，但最后三个参数为默认值。</p>
+<p>Parameters<br>awl – Average Word Length (chars count in word). Default: 4. You can check this here.<br>CN ≈ 2<br>EN ≈ 5<br>RU ≈ 6<br>wpm – Words Per Minute. Default: 275. You can check this here.<br>Slow ≈ 200<br>Normal ≈ 275<br>Fast ≈ 350<br>suffix – If time to read less then 60 minutes, added suffix as string parameter.<br>If not defined, mins. will be used as default.<br>exclude_codeblock – Allow to exclude all content inside code blocks for more accurate words counting.<br>If not defined, false will be used as default.</p>
+<p><strong>Note for Chinese users:</strong> because in Chinese language average word length about <code>~1.5</code> and if you at most cases write posts in Chinese (without mixed English), recommended to set <code>awl</code> to <code>2</code> and <code>wpm</code> to <code>300</code>.<br>But if you usualy mix your posts with English, <code>awl</code> to <code>4</code> and <code>wpm</code> to <code>275</code> will be nice.</p>
+<p><strong>NexT theme</strong></p>
+<p>This plugin integrated in «NexT» and after plugin enabled in main Hexo config, you may adjust options in NexT config:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true</span><br><span class="line">  item_text_post: true</span><br><span class="line">  item_text_total: false</span><br></pre></td></tr></tbody></table></figure>
+
+
+<h4 id="Custom-Logo-Support-自定义logo"><a href="#Custom-Logo-Support-自定义logo" class="headerlink" title="# Custom Logo Support 自定义logo"></a># Custom Logo Support 自定义 logo</h4><p>NexT supports the site logo personalization.</p>
+<p>You can enable it by adding images’s url to <code>custom_logo</code> in theme config file.</p>
+<p>next/_config.yml：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">custom_logo: /uploads/custom-logo.jpg</span><br></pre></td></tr></tbody></table></figure>
+<p>Scheme Mist does not support custom logo setting.</p>
+<h4 id="Hexo-NexT-Three"><a href="#Hexo-NexT-Three" class="headerlink" title="# Hexo NexT Three"></a># Hexo NexT Three</h4><p><a href="https://camo.githubusercontent.com/00827ef9023c879f67e199cdd41c85980d7aea235fab5056b5bff81079164ed6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6578542d76372e332e302b2d626c75653f7374796c653d666c61742d737175617265"><img data-src="https://camo.githubusercontent.com/00827ef9023c879f67e199cdd41c85980d7aea235fab5056b5bff81079164ed6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6578542d76372e332e302b2d626c75653f7374796c653d666c61742d737175617265" alt="Theme Version"></a> <a href="https://camo.githubusercontent.com/08235c69dd14945b92d6a4eb20e3673a50f7619ac2ce43a7569a7cbfb052df1d/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7061636b6167652d6a736f6e2f762f6e6578742d7468656d652f6865786f2d6e6578742d74687265653f7374796c653d666c61742d737175617265"><img data-src="https://camo.githubusercontent.com/08235c69dd14945b92d6a4eb20e3673a50f7619ac2ce43a7569a7cbfb052df1d/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7061636b6167652d6a736f6e2f762f6e6578742d7468656d652f6865786f2d6e6578742d74687265653f7374796c653d666c61742d737175617265" alt="Package Version"></a></p>
+<p><a href="https://github.com/mrdoob/three.js">JavaScript 3D library</a> for NexT.</p>
+<h5 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h5><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm install next-theme/hexo-next-three</span><br></pre></td></tr></tbody></table></figure>
+<h5 id="Configure"><a href="#Configure" class="headerlink" title="Configure"></a>Configure</h5><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># JavaScript 3D library.</span><br><span class="line"># Dependencies: https://github.com/next-theme/hexo-next-three</span><br><span class="line">three:</span><br><span class="line">  enable: true</span><br><span class="line">  defer: true</span><br><span class="line">  cdn:</span><br><span class="line">  waves:</span><br><span class="line">    enable: false</span><br><span class="line">    cdn:</span><br><span class="line">  lines:</span><br><span class="line">    enable: false</span><br><span class="line">    cdn:</span><br><span class="line">  sphere:</span><br><span class="line">    enable: false</span><br><span class="line">    cdn:</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="阅读全文设置"><a href="#阅读全文设置" class="headerlink" title="阅读全文设置"></a>阅读全文设置</h4><p># Automatic excerpt generator for Hexo!. 阅读全文设置</p>
+<p># Hexo-excerpt: <a href="https://chekun.me/post/hexo-excerpt">https://chekun.me/post/hexo-excerpt</a></p>
+<p># npm install hexo-excerpt –save</p>
+<p># You can specify the size of the excerpt by setting depth in your config, which defaults to 10.</p>
+<p># You can also exclude certain tags from the generated excerpt using css selectors. Tags matching any of the selectors will be excluded.</p>
+<p># The default behaviour is to only show an excerpt if it would not be the whole post. Set hideWholePostExcerpts to false to override that and show whole post excerpts.</p>
+<p>excerpt:</p>
+<p> depth: 10</p>
+<p> excerpt_excludes: []</p>
+<p> more_excludes: []</p>
+<p> hideWholePostExcerpts: true</p>
+<h2 id="（三）Hexo-添加分类及标签"><a href="#（三）Hexo-添加分类及标签" class="headerlink" title="（三）Hexo 添加分类及标签"></a>（三）Hexo 添加分类及标签</h2><h4 id="1-创建“分类”选项"><a href="#1-创建“分类”选项" class="headerlink" title="1. 创建“分类”选项"></a>1. 创建 “分类” 选项</h4><p>生成 “分类” 页并添加 tpye 属性，进入博客目录。执行命令下方命令</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></tbody></table></figure>
+<p>categories 文件夹下会有 index.md 这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+<p>添加 type: “categories” 到内容中，添加后是这样的：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2019-04-24 15:30:30</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加 “categories” 属性</p>
+<p>打开需要添加分类的文章，为其添加 categories 属性。下方的 categories:Hexo 表示这篇文章添加到到 “Hexo” 这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+<p>至此，成功给文章添加分类，点击首页的 “分类” 可以看到该分类下的所有文章。当然，只有添加了 categories: xxx 的文章才会被收录到首页的 “分类” 中。</p>
+<h4 id="2-创建“标签”选项"><a href="#2-创建“标签”选项" class="headerlink" title="2. 创建“标签”选项"></a>2. 创建 “标签” 选项</h4><p>生成 “标签” 页并添加 tpye 属性</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></tbody></table></figure>
+<p>在 tags 文件夹下，找到 index.md 这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-22 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+<p>添加 type: “tags” 到内容中，添加后是这样的：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加 “tags” 属性，打开需要添加标签的文章，为其添加 tags 属性。</p>
+<p>给文章添加 “tags” 属性，打开需要添加标签的文章，为其添加 tags 属性。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">categories: 计算机</span><br><span class="line">tags:博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>Github</tag>
+        <tag>Hexo</tag>
+        <tag>nexT</tag>
+      </tags>
+  </entry>
+</search>
