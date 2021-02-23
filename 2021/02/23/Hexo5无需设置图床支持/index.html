@@ -23,18 +23,23 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="学广学浅，可以帮你吹牛逼；学专学深，可以帮你干专业。学习可以是很有意思的事……">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Layne的温暖世界">
-<meta property="og:url" content="http://example.com/archives/2021/02/index.html">
+<meta name="description" content="根目录下_config.yml 设置 typora 设置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo5 无需设置图床支持">
+<meta property="og:url" content="http://example.com/2021/02/23/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81/index.html">
 <meta property="og:site_name" content="Layne的温暖世界">
-<meta property="og:description" content="学广学浅，可以帮你吹牛逼；学专学深，可以帮你干专业。学习可以是很有意思的事……">
+<meta property="og:description" content="根目录下_config.yml 设置 typora 设置">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/02/23/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81.assets/image-20210223194815442.png">
+<meta property="og:image" content="http://example.com/2021/02/23/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81.assets/image-20210223194702971.png">
+<meta property="article:published_time" content="2021-02-23T11:46:32.000Z">
+<meta property="article:modified_time" content="2021-02-23T11:49:19.636Z">
 <meta property="article:author" content="Layne">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/02/23/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81.assets/image-20210223194815442.png">
 
 
-<link rel="canonical" href="http://example.com/archives/2021/02/">
+<link rel="canonical" href="http://example.com/2021/02/23/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81/">
 
 
 <script class="page-configurations">
@@ -42,11 +47,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
-<title>归档 | Layne的温暖世界</title>
+<title>Hexo5 无需设置图床支持 | Layne的温暖世界</title>
   
 
 
@@ -173,7 +178,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -186,6 +191,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B-config-yml%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">根目录下_config.yml 设置</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#typora%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">typora 设置</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -272,109 +278,131 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 4 篇日志。 继续努力。</span>
-      </div>
 
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/23/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Layne">
+      <meta itemprop="description" content="学广学浅，可以帮你吹牛逼；学专学深，可以帮你干专业。学习可以是很有意思的事……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Layne的温暖世界">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo5 无需设置图床支持<a href="https://github.com/netxulei/tree/master/source/_posts/_posts/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-23T19:46:32+08:00"
-              content="2021-02-23">
-          02-23
-        </time>
+      <time title="创建时间：2021-02-23 19:46:32 / 修改时间：19:49:19" itemprop="dateCreated datePublished" datetime="2021-02-23T19:46:32+08:00">2021-02-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/typora/" itemprop="url" rel="index"><span itemprop="name">typora</span></a>
+        </span>
+    </span>
+
+  
       </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>25</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/23/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81/" itemprop="url">
-            <span itemprop="name">Hexo5 无需设置图床支持</span>
-          </a>
-      </div>
+        </div>
+      </header>
 
-      
-    </header>
-  </article>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h6 id="根目录下-config-yml设置"><a href="#根目录下-config-yml设置" class="headerlink" title="根目录下_config.yml设置"></a>根目录下_config.yml 设置</h6><p><img data-src="Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81.assets/image-20210223194815442.png" alt="image-20210223194815442"></p>
+<h6 id="typora设置"><a href="#typora设置" class="headerlink" title="typora设置"></a>typora 设置</h6><img data-src="Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81.assets/image-20210223194702971.png" alt="image-20210223194702971" style="zoom: 50%;">
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-20T17:00:19+08:00"
-              content="2021-02-20">
-          02-20
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/20/typora%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/" itemprop="url">
-            <span itemprop="name">typora 自动上传图片</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-20T12:07:52+08:00"
-              content="2021-02-20">
-          02-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/20/typora-quicker%E5%86%99%E5%8D%9A%E5%AE%A2/" itemprop="url">
-            <span itemprop="name">typora+quicker 写博客</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-20T09:16:19+08:00"
-              content="2021-02-20">
-          02-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/20/%E6%9C%AC%E5%8D%9A%E5%88%9B%E5%BB%BA%E8%AE%B0%E5%BD%95/" itemprop="url">
-            <span itemprop="name">本博创建记录（Github+Node.js+Hexo+nexT）</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
 
 
     </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Layne 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="Layne 支付宝">
+        <span>支付宝</span>
+      </div>
+
   </div>
-  
-  
-  
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/02/20/typora%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/" rel="prev" title="typora 自动上传图片">
+                  <i class="fa fa-chevron-left"></i> typora 自动上传图片
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
 
 
 <script>
