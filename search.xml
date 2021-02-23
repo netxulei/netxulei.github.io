@@ -1,61 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo5 无需设置图床支持</title>
-    <url>/2021/02/23/Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81/</url>
-    <content><![CDATA[<h6 id="根目录下-config-yml设置"><a href="#根目录下-config-yml设置" class="headerlink" title="根目录下_config.yml设置"></a>根目录下_config.yml 设置</h6><p><img data-src="Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81.assets/image-20210223194815442.png" alt="image-20210223194815442"></p>
-<h6 id="typora设置"><a href="#typora设置" class="headerlink" title="typora设置"></a>typora 设置</h6><img data-src="Hexo5%E6%97%A0%E9%9C%80%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%94%AF%E6%8C%81.assets/image-20210223194702971.png" alt="image-20210223194702971" style="zoom: 50%;">
-
-
-
-]]></content>
-      <categories>
-        <category>typora</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>typora+quicker 写博客</title>
-    <url>/2021/02/20/typora-quicker%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p><strong>写博客两种方式：</strong></p>
-<ol>
-<li>Git bash here<ol>
-<li> 博客根目录下 ：hexo new 新的博客</li>
-<li>在_post 目录自动生成新的博客.md，同时增加了 hexo 博客的开头</li>
-<li>再 typora 编辑即可</li>
-<li>博客头可修改 \scaffolds\post.md</li>
-</ol>
-</li>
-<li>typora+quicker<ol>
-<li> 直接打开 typora 新建文件</li>
-<li> quicker 插入博客头</li>
-<li>编辑</li>
-<li>存于_post 目录</li>
-<li>修改博客头动作内容即可插入不同的博客头</li>
-</ol>
-</li>
-</ol>
-<h1 id="quicker是个好东西"><a href="#quicker是个好东西" class="headerlink" title="quicker是个好东西"></a>quicker 是个好东西</h1><p><strong>Quicker</strong> 是一个让 <strong>Windows 用户</strong>可以用<strong>最合适的方式</strong>、<strong>最快地</strong>触发想要的<strong>操作</strong>的软件工具，是一个<strong>场景化</strong>的工具箱，也是一个可以<strong>创造和分享新工具</strong>的平台。</p>
-<ul>
-<li>暂时利用写博客头功能，省去 hexo new blog 命令</li>
-<li>安装→注册→运行→鼠标中间或 ctrl+q 激活面板→工具箱→相应动作拖到面板→应用时激活执行</li>
-</ul>
-<img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210222112957.png" alt="image-20210220122832855" style="zoom:25%;">
-
-
-
-<ul>
-<li>有免费版和专业版（按年收费）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>书写博客</category>
-      </categories>
-      <tags>
-        <tag>quicker</tag>
-        <tag>typora</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>typora 自动上传图片</title>
     <url>/2021/02/20/typora%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>typora 书写 markdown 自动上传图片（两种方式）</p>
@@ -118,6 +63,48 @@
         <tag>typora</tag>
         <tag>PicGo</tag>
         <tag>jsdelivr</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>typora+quicker 写博客</title>
+    <url>/2021/02/20/typora-quicker%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p><strong>写博客两种方式：</strong></p>
+<ol>
+<li>Git bash here<ol>
+<li> 博客根目录下 ：hexo new 新的博客</li>
+<li>在_post 目录自动生成新的博客.md，同时增加了 hexo 博客的开头</li>
+<li>再 typora 编辑即可</li>
+<li>博客头可修改 \scaffolds\post.md</li>
+</ol>
+</li>
+<li>typora+quicker<ol>
+<li> 直接打开 typora 新建文件</li>
+<li> quicker 插入博客头</li>
+<li>编辑</li>
+<li>存于_post 目录</li>
+<li>修改博客头动作内容即可插入不同的博客头</li>
+</ol>
+</li>
+</ol>
+<h1 id="quicker是个好东西"><a href="#quicker是个好东西" class="headerlink" title="quicker是个好东西"></a>quicker 是个好东西</h1><p><strong>Quicker</strong> 是一个让 <strong>Windows 用户</strong>可以用<strong>最合适的方式</strong>、<strong>最快地</strong>触发想要的<strong>操作</strong>的软件工具，是一个<strong>场景化</strong>的工具箱，也是一个可以<strong>创造和分享新工具</strong>的平台。</p>
+<ul>
+<li>暂时利用写博客头功能，省去 hexo new blog 命令</li>
+<li>安装→注册→运行→鼠标中间或 ctrl+q 激活面板→工具箱→相应动作拖到面板→应用时激活执行</li>
+</ul>
+<img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210222112957.png" alt="image-20210220122832855" style="zoom:25%;">
+
+
+
+<ul>
+<li>有免费版和专业版（按年收费）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>书写博客</category>
+      </categories>
+      <tags>
+        <tag>typora</tag>
+        <tag>quicker</tag>
       </tags>
   </entry>
   <entry>
