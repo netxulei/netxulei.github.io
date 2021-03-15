@@ -68,8 +68,7 @@
   <entry>
     <title>typora+quicker 写博客</title>
     <url>/2021/02/20/typora-quicker%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p><strong>写博客两种方式：</strong></p>
-<ol>
+    <content><![CDATA[<h3 id="写博客两种方式："><a href="#写博客两种方式：" class="headerlink" title="写博客两种方式："></a><strong>写博客两种方式：</strong></h3><ol>
 <li>Git bash here<ol>
 <li> 博客根目录下 ：hexo new 新的博客</li>
 <li>在_post 目录自动生成新的博客.md，同时增加了 hexo 博客的开头</li>
@@ -86,7 +85,7 @@
 </ol>
 </li>
 </ol>
-<h1 id="quicker是个好东西"><a href="#quicker是个好东西" class="headerlink" title="quicker是个好东西"></a>quicker 是个好东西</h1><p><strong>Quicker</strong> 是一个让 <strong>Windows 用户</strong>可以用<strong>最合适的方式</strong>、<strong>最快地</strong>触发想要的<strong>操作</strong>的软件工具，是一个<strong>场景化</strong>的工具箱，也是一个可以<strong>创造和分享新工具</strong>的平台。</p>
+<h3 id="quicker是个好东西"><a href="#quicker是个好东西" class="headerlink" title="quicker是个好东西"></a>quicker 是个好东西</h3><p><strong>Quicker</strong> 是一个让 <strong>Windows 用户</strong>可以用<strong>最合适的方式</strong>、<strong>最快地</strong>触发想要的<strong>操作</strong>的软件工具，是一个<strong>场景化</strong>的工具箱，也是一个可以<strong>创造和分享新工具</strong>的平台。</p>
 <ul>
 <li>暂时利用写博客头功能，省去 hexo new blog 命令</li>
 <li>安装→注册→运行→鼠标中间或 ctrl+q 激活面板→工具箱→相应动作拖到面板→应用时激活执行</li>
@@ -575,6 +574,125 @@
         <tag>Github</tag>
         <tag>Hexo</tag>
         <tag>nexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sqlserver 语句记录</title>
+    <url>/2021/03/03/sqlserver%E8%AF%AD%E5%8F%A5%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="SQLServer显示从第-bgn行的数据共-num行"><a href="#SQLServer显示从第-bgn行的数据共-num行" class="headerlink" title="SQLServer显示从第@bgn行的数据共@num行"></a>SQLServer 显示从第 @bgn 行的数据共 @num 行</h2><p>根据某字段排序，形成 row 列，以 row 列为为条件任意显示所需行数的记录</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> TOP (<span class="variable">@num</span>) <span class="operator">*</span></span><br><span class="line">    <span class="keyword">FROM</span>   (<span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line">                   <span class="built_in">Row_number</span>()</span><br><span class="line">                     <span class="keyword">OVER</span> (</span><br><span class="line">                       <span class="keyword">ORDER</span> <span class="keyword">BY</span> 户名) <span class="keyword">AS</span> <span class="type">row</span></span><br><span class="line">            <span class="keyword">FROM</span>   tb_red_dw) a</span><br><span class="line">    <span class="keyword">WHERE</span>  <span class="type">row</span> <span class="operator">&gt;=</span> <span class="variable">@bgn</span></span><br><span class="line">           <span class="keyword">AND</span> ( [证件号码] <span class="keyword">LIKE</span> <span class="string">'%'</span> <span class="operator">+</span> <span class="variable">@id</span>_no <span class="operator">+</span> <span class="string">'%'</span></span><br><span class="line">                  <span class="keyword">AND</span> [户名] <span class="keyword">LIKE</span> <span class="string">'%'</span> <span class="operator">+</span> <span class="variable">@acc</span>_name <span class="operator">+</span> <span class="string">'%'</span></span><br><span class="line">                  <span class="keyword">AND</span> [法人代表] <span class="keyword">LIKE</span> <span class="string">'%'</span> <span class="operator">+</span> <span class="variable">@fr</span>_name <span class="operator">+</span> <span class="string">'%'</span></span><br><span class="line">                  <span class="keyword">AND</span> [法人代表证件号] <span class="keyword">LIKE</span> <span class="string">'%'</span> <span class="operator">+</span> <span class="variable">@fr</span>_id <span class="operator">+</span> <span class="string">'%'</span></span><br><span class="line">                  <span class="keyword">AND</span> [涉案批次] <span class="keyword">LIKE</span> <span class="string">'%'</span> <span class="operator">+</span> <span class="variable">@sapc</span> <span class="operator">+</span> <span class="string">'%'</span> )</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="参数参与条件的写法"><a href="#参数参与条件的写法" class="headerlink" title="参数参与条件的写法"></a>参数参与条件的写法</h2><p>方法一、一般可用 case 条件语句，但因 case 后的 then 只能为常量，不能是表达式，有时无法写出</p>
+<p>方法二、将参数条件与符合参数条件描述的其他条件写在一起，更通用些</p>
+<p>如参数 @state，1 正常状态（撤销日期字段为空），9 全部（撤销日期字段可为空也可不为空）</p>
+<p>select * from tb_rhzh_gr where (@state=’1’ and 撤销日期 is null or @state=’9’)</p>
+<h2 id="短期内拥有账户的个数（outer-apply）"><a href="#短期内拥有账户的个数（outer-apply）" class="headerlink" title="短期内拥有账户的个数（outer apply）"></a>短期内拥有账户的个数（outer apply）</h2><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.<span class="operator">*</span>,</span><br><span class="line">       <span class="comment">--a.身份序号,</span></span><br><span class="line">       <span class="comment">--法定代表人或负责人身份证件编号,</span></span><br><span class="line">       <span class="comment">--a.账号,</span></span><br><span class="line">       <span class="comment">--a.开户日期,</span></span><br><span class="line">       ff.短期账户数量</span><br><span class="line"><span class="comment">--INTO   #tmp_all</span></span><br><span class="line"><span class="keyword">FROM</span>   #tmp A</span><br><span class="line">       <span class="keyword">OUTER</span> APPLY (<span class="keyword">SELECT</span> <span class="built_in">Count</span>(<span class="operator">*</span>) 短期账户数量,<span class="built_in">count</span>(<span class="keyword">distinct</span> 电话) 电话数量</span><br><span class="line">                    <span class="keyword">FROM</span>   #tmp B</span><br><span class="line">                    <span class="keyword">WHERE</span>  a.身份序号 <span class="operator">=</span> b.身份序号</span><br><span class="line">                           <span class="keyword">AND</span> <span class="built_in">Abs</span>(Datediff(<span class="keyword">day</span>, <span class="keyword">CONVERT</span>(<span class="type">DATE</span>, a.开户日期), <span class="keyword">CONVERT</span>(<span class="type">DATE</span>, 开户日期))) <span class="operator">&lt;=</span> <span class="variable">@days</span>) <span class="keyword">AS</span> FF</span><br><span class="line"><span class="keyword">ORDER</span>  <span class="keyword">BY</span> 身份序号,</span><br><span class="line">          开户日期</span><br></pre></td></tr></tbody></table></figure>
+<p><a href=""></a></p>
+]]></content>
+      <categories>
+        <category>SQLServer</category>
+      </categories>
+      <tags>
+        <tag>SQLServer</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>suse-linux 常用命令</title>
+    <url>/2021/03/02/suse-linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>查看 linux 版本：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># cat /etc/issue</span><br><span class="line">Welcome to SUSE Linux Enterprise Server 11 SP3  (x86_64) - Kernel \r (\l).</span><br></pre></td></tr></tbody></table></figure>
+<p>查看 linux 内核：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># cat /proc/version</span><br><span class="line">Linux version 3.0.76-0.11-default (geeko@buildhost) (gcc version 4.3.4 [gcc-4_3-branch revision 152973] (SUSE Linux) ) #1 SMP Fri Jun 14 08:21:43 UTC 2013 (ccab990)</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>suse-linux-php 安装</title>
+    <url>/2021/03/02/suse-linux-php%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="1-GCC和G-安装"><a href="#1-GCC和G-安装" class="headerlink" title="1 GCC和G++安装"></a>1 GCC 和 G++ 安装</h1><ul>
+<li>若 linux 没有安装 GCC（在编译 php 时会出错），<strong>可挂载 mount linux 镜像文件，rpm 安装。</strong></li>
+</ul>
+<h2 id="1-1-查看linux版本安装相关依赖"><a href="#1-1-查看linux版本安装相关依赖" class="headerlink" title="1.1 查看linux版本安装相关依赖"></a>1.1 查看 linux 版本安装相关依赖</h2><h3 id="1-1-1-有关查询命令"><a href="#1-1-1-有关查询命令" class="headerlink" title="1.1.1 有关查询命令"></a>1.1.1 有关查询命令</h3><ul>
+<li>查看 Linux 的版本 </li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">#cat /etc/issue</span><br><span class="line">  Welcome to SUSE Linux Enterprise Server 11SP1  (x86_64) - Kernel \r (\l).</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>查看 Linux 的内核 </li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">#cat /proc/version</span><br><span class="line">  Linux version 2.6.32.12-0.7-default(geeko@buildhost) (gcc version 4.3.4 [gcc-4_3-branch revision 152973] (SUSELinux) ) #1 SMP 2010-05-20 11:14:20 +0200</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="1-1-2-挂载linux原盘（需要root权限）"><a href="#1-1-2-挂载linux原盘（需要root权限）" class="headerlink" title="1.1.2 挂载linux原盘（需要root权限）"></a>1.1.2 挂载 linux 原盘（需要 root 权限）</h3><h4 id="1-1-2-1-挂载linux-ISO镜像文件"><a href="#1-1-2-1-挂载linux-ISO镜像文件" class="headerlink" title="1.1.2.1 挂载linux ISO镜像文件"></a>1.1.2.1 挂载 linux ISO 镜像文件</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">#mkdir  /mnt/iso</span><br><span class="line">#mount -o loop -t iso9660  &lt;iso file&gt;  /mnt/iso （linux的ISO文件预先ftp到系统）</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="1-1-2-2-插入光驱挂载"><a href="#1-1-2-2-插入光驱挂载" class="headerlink" title="1.1.2.2 插入光驱挂载"></a>1.1.2.2 插入光驱挂载</h4><ul>
+<li><p><strong>查看 CDROM 设备名称（一般为 /dev/cdrom）</strong></p>
+</li>
+<li><p>dmesg 显示开机信息</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ dmesg |egrep -i --color 'cdrom|dvd|cd/rw|writer'</span><br><span class="line">[  5.437164] sr0: scsi3-mmc drive: 24x/24x writerdvd-ram cd/rw xa/form2 cdda tray</span><br><span class="line">[    5.437307] cdrom: Uniform CD-ROM driverRevision: 3.20</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>less 查看有关文件命令 </li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ less /proc/sys/dev/cdrom/info</span><br><span class="line">CD-ROMinformation, Id: cdrom.c 3.20 2003/12/17</span><br><span class="line">drive name:        sr0</span><br><span class="line">drive speed:        24</span><br></pre></td></tr></tbody></table></figure>
+<p> 执行： lsblk（列出所有块设备）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">#lsblk</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><strong>挂载插入的光盘 </strong></li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># mkdir  /mnt/cdrom</span><br><span class="line"># mount -t iso9660 /dev/cdrom /mnt/cdrom</span><br></pre></td></tr></tbody></table></figure>
+<p>（二）进入到安装位置：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">#cd /mnt/iso/suse</span><br></pre></td></tr></tbody></table></figure>
+<p>或</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">#cd /mnt/cdrom/suse</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="1-1-3-安装依赖关系（64位即可，无需安装32位）"><a href="#1-1-3-安装依赖关系（64位即可，无需安装32位）" class="headerlink" title="1.1.3 安装依赖关系（64位即可，无需安装32位）"></a>1.1.3 安装依赖关系（64 位即可，无需安装 32 位）</h3><p>安装前分别在 noarch 目 cd 录和 x86_64 目录找到相应的文件名。如 #l glibc*</p>
+<ul>
+<li>安装 glibc-devel-2.9-13.2.x86_64.rpm<br>–需要 linux-kernel-headers-2.6.27-2.22.noarch.rpm</li>
+<li> 安装 gcc-4.3-62.198.x86_64.rpm<br>–需要安装 gcc43-4.3.3_20081022-11.18.x86_64.rpm</li>
+<li> 安装 glibc-devel-32bit-2.9-13.2.x86_64.rpm</li>
+<li> 安装 gcc-32bit-4.3-62.198.x86_64.rpm<br>　–需要安装 gcc43-32bit-4.3.3_20081022-11.18.x86_64.rpm<br>　–需要安装 libgomp43-32bit-4.3.3_20081022-11.18.x86_64.rpm</li>
+<li> 安装 libstdc++43-devel-4.3.3_20081022-11.18.x86_64.rpm</li>
+<li> 安装 gcc-c++-4.3-62.198.x86_64.rpm<br>　　–需要安装 gcc43-c++-4.3.3_20081022-11.18.x86_64.rpm</li>
+<li> 安装 libstdc++43-devel-32bit-4.3.3_20081022-11.18.x86_64.rpm</li>
+<li> 安装 libstdc++-devel-4.3-62.198.x86_64.rpm<br>（三）安装安装 glibc-devel</li>
+</ul>
+<p>rpm -ivh noarch/linux-kernel-headers-2.6.32-1.4.13.noarch.rpm</p>
+<p>rpm -ivh x86_64/glibc-devel-2.11.1-0.17.4.x86_64.rpm</p>
+<p>（四）安装 gcc</p>
+<p>rpm -ivh x86_64/gcc43-4.3.3_20081022-11.18.x86_64.rpm</p>
+<p>rpm -ivh x86_64/gcc-4.3-62.198.x86_64.rpm</p>
+<p>（五）安装 g++</p>
+<p>rpm -ivh x86_64/libstdc++43-devel-4.3.3_20081022-11.18.x86_64.rpm</p>
+<p>rpm -ivh x86_64/libstdc++-devel-4.3-62.198.x86_64.rpm</p>
+<p>rpm -ivh x86_64/gcc43-c++-4.3.3_20081022-11.18.x86_64.rpm</p>
+<p>rpm -ivh x86_64/gcc-c++-4.3-62.198.x86_64.rpm</p>
+<p>libxml2-2.7.6.tar.gz 安装<br>Linux 11 sp3 虽然安装了 libxml2.7.6，但没有生成 /usr/bin/xml2-config 文件，php5 安装时，configure 时显示找不到 xml2-config 错误而无法安装。可源码安装 libxml2 生成这个配置文件<br>#tar zxvf libxml2-2.7.6.tar.gz<br>#cd libxml2-2.7.6<br>#./configure<br>#make<br>#make install<br>php 安装<br>php-5.6.31.tar.gz<br>并上传的 Linux 目录 /home<br>$cd /home<br>$tar zvxf php-5.6.31.tar.gz<br>$cd php-5.6.31<br>$./configure –prefix=/home/spms/php5 –with-config-file-path=/home/spms/php5/etc –enable-fpm<br>$Make（时间较长）<br>$make install<br>(make clean make clean all 准备重新安装）<br>$cp /home/php-5.6.31/php.ini-production  /homel/php5/etc/php.ini<br>上述安装方式在 php5 目录下不产生 php.ini，需要单独拷贝<br>$cp   /homel/php5/etc/php-fpm.conf.default   /homel/php5/etc/php-fpm.conf<br>保存配置文件后，检验配置是否正确的方法为:<br> /homel/php5/sbin/php-fpm -t<br>如果出现诸如 “test is successful” 字样，说明配置没有问题。<br>启动 php-fpm<br>启动脚本：/home/spms/ctrl_php-fpm.sh（要变成可执行权限，要指明 php.ini，否则上传文件大小限制无法指定。）<br>检测是否启动:<br>ps aux |grep php-fpm<br>netstat -ant |grep 9000<br>Ningx 安装<br>（一）安装<br>1. 安装准备<br>（1）下载<br>openssl-1.0.2l.tar.gz<br>zlib-1.2.11.tar.gz<br>pcre-8.38.tar.gz<br>（2）查看是否安装：<br>$rpm -qa zlib<br>$rpm -qa openssl<br>$rpm -qa pcre<br>tar 三个包<br>因系统已安装上述三个包，上述三个包只解压不编译，安装 nginx 时指定为 with 目录即可。<br>tar nginx 包<br>$ tar zxvf nginx-1.12.1.tar.gz<br>$cd nginx1.12.1<br>$./configure –prefix=/home/spms/nginx –with-openssl=../openssl-1.0.2l –with-zlib=../zlib-1.2.11 –with-pcre=../pcre-8.38<br>$make<br>$make install<br>配置<br>#vi nginx.conf<br>server {<br>        listen       8850;<br>        server_name  localhost;<br>        #charset koi8-r;<br>        #access_log  logs/host.access.log  main;<br>        location / {<br>            root   html;<br>            index  index.html index.htm index.php;<br>        }</p>
+<p> location ~ .php$ {<br>            root           html;<br>            fastcgi_pass   127.0.0.1:9000;<br>            fastcgi_index  index.php;<br>            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;<br>            include        fastcgi_params;<br>        }<br>将注释的 #号去掉，并在 fastcgi_param 参数的 $fastcgi_script_name 之前加入 $document_root.<br>http {<br>　　 include       mime.types;<br>        default_type  application/octet-stream;<br>         server_names_hash_bucket_size 128;<br>         client_header_buffer_size 32k;<br>     sendfile        on;<br>      tcp_nopush     on;<br>     tcp_nodelay    on;<br>      #keepalive_timeout  0;<br>       keepalive_timeout  65;<br>         fastcgi_connect_timeout 300;<br>       fastcgi_send_timeout 300;<br>       fastcgi_read_timeout 300;<br>         fastcgi_buffer_size 64k;<br>         fastcgi_buffers 4 64k;<br>         fastcgi_busy_buffers_size 128k;<br>         fastcgi_temp_file_write_size 128k;<br>修改 fastcgi.conf 用下面内容覆盖原文件：<br>fastcgi_param  GATEWAY_INTERFACE  CGI/1.1;<br>fastcgi_param  SERVER_SOFTWARE    nginx;<br>fastcgi_param  QUERY_STRING      $query_string;<br>fastcgi_param  REQUEST_METHOD    $request_method;<br>fastcgi_param  CONTENT_TYPE      $content_type;<br>fastcgi_param  CONTENT_LENGTH    $content_length;<br>fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;<br>fastcgi_param  SCRIPT_NAME        $fastcgi_script_name;<br>fastcgi_param  REQUEST_URI        $request_uri;<br>fastcgi_param  DOCUMENT_URI      $document_uri;<br>fastcgi_param  DOCUMENT_ROOT      $document_root;<br>fastcgi_param  SERVER_PROTOCOL    $server_protocol;<br>fastcgi_param  REMOTE_ADDR        $remote_addr;<br>fastcgi_param  REMOTE_PORT        $remote_port;<br>fastcgi_param  SERVER_ADDR        $server_addr;<br>fastcgi_param  SERVER_PORT        $server_port;<br>fastcgi_param  SERVER_NAME        $server_name;</p>
+<p>原始文件多了如下三行（不用改变应该可以？）：<br>fastcgi_param  REQUEST_SCHEME     $scheme;<br>fastcgi_param  HTTPS              $https if_not_empty;<br>fastcgi_param  REDIRECT_STATUS    200;</p>
+<p>（三）检测是否安装成功<br>$ cd  /home/nginx/nginx/sbin<br>$ ./nginx -t<br>出现如下所示提示，表示安装成功 </p>
+<p>启动 nginx</p>
+<p>cd ../../nginx/sbin</p>
+<p>./nginx</p>
+<p>如果之前已经启动了 nginx 请使用如下命令：</p>
+<p>./nginx -s reload</p>
+<p>在 /usr/local/nginx/html/ 目录下创建一个文件 index.php</p>
+<p>touch index.php</p>
+<p>内容为：<!--? echo phpinfo(); ?--><br>结果为：<br>我的启动脚本：<br>/home/spms/ctrl_nginx.sh</p>
+<p>整套系统开机启动：<br>启动放到如下文件<br>/etc/init.d/after.local<br>vi after.local<br>su - db2inst1 -c “db2start”<br>su - spms -c “ctrl_tomcat.sh start”<br>su - spms -c “ctrl_php-fpm.sh start”<br>su - spms -c “ctrl_nginx.sh start”</p>
+<p>注：设置 nginx 和 php-fpm 更改上传文件大小限制<br>Nginx 和 php 默认不支持上传过大的文件。<br>假如我们要求上传的文件大小为 20M，默认配置就不允许上传了。<br>下面我们更改 nginx 和 php 配置，设定上传的限制为 20M。<br>Nginx 配置更改<br>如果上传文件时超过了 nginx 的限制，就会返回一个 “413 Request Entity Too Large” 的错误。<br>我们只要更改 nginx 的配置文件 “nginx.conf” 即可。<br>在 http {} 中添加一个 client_max_body_size 20m; 配置项；<br>修改完成之后重启 nginx 或 reload 配置。</p>
+<p>PHP 配置更改<br>除了 nginx 对文件大小有要求，php 也做了限制。<br>php 的配置文件为 php.ini。<br>我们需要修改下面的配置：</p>
+<p>file_uploads = On ; 打开文件上传选项<br>upload_max_filesize = 20M ; 上传文件上限<br>post_max_size = 20M ;post 上限 </p>
+<p>; 还需要根据实际情况调整下面的选项<br>max_execution_time = 180 ; 脚本最大执行时间（秒） ，过短会导致文件还没上传完脚本就停止了。<br>max_input_time = 180 ; 请求的最大传输时间，过短会导致文件还没上传完传输就停止了。<br>memory_limit = 128M ; 内存上限<br>修改完成后重启 php-fpm 或 reload 配置。注意：与 tomcat 共用：<br>1.Tomcat 修改 server.xml 端口为 8858<br>2.Nginx 端口为 8848<br>3.php 应用的目录复制到 /home/spms/SPMS（为了合肥转接的能用）<br>4.11.64.65.15:8848/SPMS 是原来的应用<br>  11.64.17.23:8848/SPMS（合肥转接）<br>5.11.64.65.15:8848/SPMS/ZFJS 是增加的应用<br>  11.64.17.23:8848/SPMS/ZFJS（合肥转接）<br>Nginx.conf 配置参见生产系统。</p>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>php</tag>
       </tags>
   </entry>
 </search>
