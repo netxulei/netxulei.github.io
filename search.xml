@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Github+Node.js+Hexo+NexT 博客的环境恢复</title>
+    <url>/2021/03/15/Github+Node.js+Hexo+NexT%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%8E%AF%E5%A2%83%E6%81%A2%E5%A4%8D/</url>
+    <content><![CDATA[<h1 id="博客生成系统数据"><a href="#博客生成系统数据" class="headerlink" title="博客生成系统数据"></a>博客生成系统数据</h1><p>Github+Node.js+Hexo+NexT 博客建立后，github 仅保存了生成的博客网页，原始博客生成系统未保存，可有两种备份方式</p>
+<p>一是原有本地博客目录复制备份；二是 git 备份或版本管理（先建立，再博客或一博客再变成可 git 的目录？）</p>
+<h1 id="博客生成环境恢复"><a href="#博客生成环境恢复" class="headerlink" title="博客生成环境恢复"></a>博客生成环境恢复</h1><p>重新安装系统或更换电脑后，环境的恢复</p>
+<p>一、按照顺序安装 git→配置 git→安装 NVM→安装 node.js→安装 Hexo</p>
+<p>二、恢复备份的目录或 clone github 中的内容</p>
+<p>三、以后继续 hexo new 博客；hexo g；hexo d 正常操作即可</p>
+<ul>
+<li><p>因为博客主题是安装在博客目录中，主题无需另外安装和配置</p>
+</li>
+<li><p>配置好全局用户名、邮件和密码或其他验证方式即可进行正常的博客</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name netxulei</span><br><span class="line">git config --global user.email netxulei@outlook.com</span><br><span class="line">git config --global user.pasword xxxxxxx</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>github 的三种验证方式</title>
     <url>/2021/03/13/github%E7%9A%84%E4%B8%89%E7%A7%8D%E9%AA%8C%E8%AF%81%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<p>Github 本身提供了多种认证方式，所有开发人员可以各取所需。 </p>
@@ -40,25 +64,6 @@
         <tag>SSH</tag>
         <tag>http</tag>
         <tag>token</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github+Node.js+Hexo+NexT 博客的环境恢复</title>
-    <url>/2021/03/15/Github+Node.js+Hexo+NexT%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%8E%AF%E5%A2%83%E6%81%A2%E5%A4%8D/</url>
-    <content><![CDATA[<h1 id="博客生成系统数据"><a href="#博客生成系统数据" class="headerlink" title="博客生成系统数据"></a>博客生成系统数据</h1><p>Github+Node.js+Hexo+NexT 博客建立后，github 仅保存了生成的博客网页，原始博客生成系统未保存，可有两种备份方式</p>
-<p>一是原有本地博客目录复制备份；二是 git 备份或版本管理（先建立，再博客或一博客再变成可 git 的目录？）</p>
-<h1 id="博客生成环境恢复"><a href="#博客生成环境恢复" class="headerlink" title="博客生成环境恢复"></a>博客生成环境恢复</h1><p>重新安装系统或更换电脑后，环境的恢复</p>
-<p>一、按照顺序安装 git→配置 git→安装 NVM→安装 node.js→安装 Hexo</p>
-<p>二、恢复备份的目录或 clone github 中的内容</p>
-<p>三、以后继续 hexo new 博客；hexo g；hexo d 正常操作即可</p>
-<p>配置全局用户名、邮件和密码</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name netxulei</span><br><span class="line">git config --global user.email netxulei@outlook.com</span><br><span class="line">git config --global user.pasword xxxxxxx</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -165,6 +170,22 @@
       </tags>
   </entry>
   <entry>
+    <title>suse-linux 常用命令</title>
+    <url>/2021/03/02/suse-linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>查看 linux 版本：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># cat /etc/issue</span><br><span class="line">Welcome to SUSE Linux Enterprise Server 11 SP3  (x86_64) - Kernel \r (\l).</span><br></pre></td></tr></tbody></table></figure>
+<p>查看 linux 内核：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># cat /proc/version</span><br><span class="line">Linux version 3.0.76-0.11-default (geeko@buildhost) (gcc version 4.3.4 [gcc-4_3-branch revision 152973] (SUSE Linux) ) #1 SMP Fri Jun 14 08:21:43 UTC 2013 (ccab990)</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>typora+quicker 写博客</title>
     <url>/2021/02/20/typora-quicker%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h3 id="写博客两种方式："><a href="#写博客两种方式：" class="headerlink" title="写博客两种方式："></a><strong>写博客两种方式：</strong></h3><ol>
@@ -203,22 +224,6 @@
       <tags>
         <tag>quicker</tag>
         <tag>typora</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>suse-linux 常用命令</title>
-    <url>/2021/03/02/suse-linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>查看 linux 版本：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># cat /etc/issue</span><br><span class="line">Welcome to SUSE Linux Enterprise Server 11 SP3  (x86_64) - Kernel \r (\l).</span><br></pre></td></tr></tbody></table></figure>
-<p>查看 linux 内核：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># cat /proc/version</span><br><span class="line">Linux version 3.0.76-0.11-default (geeko@buildhost) (gcc version 4.3.4 [gcc-4_3-branch revision 152973] (SUSE Linux) ) #1 SMP Fri Jun 14 08:21:43 UTC 2013 (ccab990)</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>命令</tag>
       </tags>
   </entry>
   <entry>
