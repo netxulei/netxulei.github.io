@@ -1,6 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git 和 Github 的基本使用</title>
+    <url>/2021/03/15/Git%E5%92%8CGithub%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="Git和Github的概念"><a href="#Git和Github的概念" class="headerlink" title="Git和Github的概念:"></a><strong>Git 和 Github 的概念:</strong></h1><p>　　Git 是分布式版本管理系统，简单说就是一个软件，用于记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的软件。</p>
+<p>　　Github 是一个为用户提供 Git 服务的网站，简单说就是一个可以放代码或文件的地方，Github 除了提供管理 Git 的 web 界面外，还提供订阅，关注，讨论组，在线编辑器等丰富功能。</p>
+<h1 id="Git本地仓库操作"><a href="#Git本地仓库操作" class="headerlink" title="Git本地仓库操作:"></a><strong>Git 本地仓库操作:</strong></h1><h2 id="1-首次使用需进行全局配置"><a href="#1-首次使用需进行全局配置" class="headerlink" title="1.首次使用需进行全局配置:"></a>1. 首次使用需进行全局配置:</h2><p>　　　　配置用户名：<code>git config --global user.name "用户名"</code>;</p>
+<p>　　　　配置用户邮箱：<code>git config --global user.email "邮箱"</code>;(这里使用 Github 的用户名和邮箱)</p>
+<h2 id="2-创建项目目录，并进入该目录"><a href="#2-创建项目目录，并进入该目录" class="headerlink" title="2.创建项目目录，并进入该目录"></a>2. 创建项目目录，并进入该目录</h2><h2 id="3-该目录下右键Git-Brash-Here进入命令行（Git-brash-Gui可以实现命令行功能）"><a href="#3-该目录下右键Git-Brash-Here进入命令行（Git-brash-Gui可以实现命令行功能）" class="headerlink" title="3.该目录下右键Git Brash Here进入命令行（Git brash Gui可以实现命令行功能）"></a>3. 该目录下右键 Git Brash Here 进入命令行（<strong>Git brash Gui 可以实现命令行功能</strong>）</h2><ul>
+<li><p><strong>git init，</strong>初始化</p>
+</li>
+<li><p><strong>git status</strong>，查询当前工作区所有文件的状态</p>
+</li>
+<li><p><strong>git add</strong>，添加文件到缓存区</p>
+</li>
+<li><p><strong>git commit -m “注释内容”</strong> ，提交至版本库</p>
+</li>
+<li><p><strong>git log</strong>，或 <strong>git log –pretty=oneline</strong>，查看提交的版本，<strong>黄色为版本号（commit id），回退时可不用写全，git 会自动识别</strong></p>
+</li>
+<li><p><strong>git reset –hard 版本号</strong> ，回到过去或未来</p>
+</li>
+<li><p><strong>git reflog</strong>，查看未来。git log 看不到未来</p>
+</li>
+</ul>
+<p>（1）<strong>git init，</strong>初始化</p>
+<p><img data-src="https://i.loli.net/2021/03/15/kZGdlCYIAv21Xht.png" alt="image-20210315164311428"></p>
+<p>（2）<strong>git status</strong>，查询当前工作区所有文件的状态；</p>
+<p><img data-src="https://i.loli.net/2021/03/15/LARwrtk5MUbmeZT.png" alt="image-20210315164400982"></p>
+<p>（3）新建或复制需要管理的文件</p>
+<p>（4）<strong>git add</strong>，添加文件到缓存区</p>
+<p>四种方式：</p>
+<p>语法 1：git add 文件名</p>
+<p>语法 2：git add 文件 1 文件名 2 文件名 3….</p>
+<p>语法 3:git add .  【添加当前目录到缓存区】</p>
+<p>语法 3:git add -A 【添加当前目录到缓存区】</p>
+<p><img data-src="https://i.loli.net/2021/03/15/4xwObtEM1uHKzW9.png" alt="image-20210315170246829"></p>
+<p>（5）git status，查询当前工作区所有文件的状态；</p>
+<p><img data-src="https://i.loli.net/2021/03/15/gwOqHiYWdn7lc2f.png" alt="image-20210315170623299"></p>
+<p>（6）<strong>git commit -m “注释内容”</strong> ，提交至版本库</p>
+<p><img data-src="https://i.loli.net/2021/03/15/H8GZKVxNprnuiod.png" alt="image-20210315170749964"></p>
+<p>（7）修改文件或增加文件，git add -A，git status，git commit</p>
+<p><img data-src="https://i.loli.net/2021/03/15/TY3ha7qk9btomiv.png" alt="image-20210315171333600"></p>
+<p>（8）<strong>git log</strong>，或 <strong>git log –pretty=oneline</strong>，查看提交的版本，<strong>黄色为版本号（commit id），回退时可不用写全，git 会自动识别</strong></p>
+<p><img data-src="https://i.loli.net/2021/03/15/tMlpXFkxr9VnN47.png" alt="image-20210315172303235"></p>
+<p>（9）<strong>git reset –hard 版本号</strong> ，回到过去，此时新增文件没有了或修改复原了</p>
+<p><img data-src="https://i.loli.net/2021/03/15/WGkrj5VMLTCq9t1.png" alt="image-20210315172755420"></p>
+<p>（10）<strong>git reflog</strong>，查看未来。此时 git log 看不到未来</p>
+<p><img data-src="https://i.loli.net/2021/03/15/95ueLWE2B7bsgKl.png" alt="image-20210315173341816"></p>
+<p>（11）<strong>git reset –hard 版本号</strong> ，回到未来，此时又回到未来状态</p>
+<p><img data-src="https://i.loli.net/2021/03/15/t9Eidq3IfCl4wL2.png" alt="image-20210315174010967"></p>
+<h1 id="Github远程仓库操作（首先建立仓库）"><a href="#Github远程仓库操作（首先建立仓库）" class="headerlink" title="Github远程仓库操作（首先建立仓库）"></a><strong>Github 远程仓库操作</strong>（首先建立仓库）</h1><h2 id="远程仓库克隆到本地"><a href="#远程仓库克隆到本地" class="headerlink" title="远程仓库克隆到本地"></a>远程仓库克隆到本地</h2><p>远程新建仓库或远程已有仓库 clone 到本地，本地库与远程库已建立连接。进行系列操作，进行版本管理。</p>
+<p>三个操作工具：Git brush Here 或 Git brash Gui 或 Github Desktop</p>
+<h3 id="本地无需建仓库的克隆："><a href="#本地无需建仓库的克隆：" class="headerlink" title="本地无需建仓库的克隆："></a>本地无需建仓库的克隆：</h3><h4 id="Github-Desktop克隆可采取URL方式"><a href="#Github-Desktop克隆可采取URL方式" class="headerlink" title="Github Desktop克隆可采取URL方式"></a>Github Desktop 克隆可采取 URL 方式</h4><p>Github 网页在对应的仓库用 GitHubDesktop 打开，本地无需新建目录，但要指定目录。</p>
+<img data-src="https://i.loli.net/2021/03/16/tzZVCgXLd1xbJ9y.png" alt="image-20210316172929240" style="zoom:80%;">
+
+
+
+<p><img data-src="https://i.loli.net/2021/03/16/Dae78RVjdtrCSK3.png" alt="image-20210316171821793"></p>
+<p>或（没成功，再试）</p>
+<p><img data-src="https://i.loli.net/2021/03/16/qdBPLFf1SvcKjXT.png" alt="image-20210316173753886"></p>
+<p>https 验证下，用户和密码记录在 windows 凭据中，</p>
+<ul>
+<li>GitHub - <a href="https://api.github.com/netxulei%E8%AE%B0%E5%BD%95Githup">https://api.github.com/netxulei 记录 Githup</a> Desktop 操作时录入的用户名和密码</li>
+<li> git:<a href="https://github.com记录git/">https://github.com 记录 Git</a> Brush Gui 或 Git brash Here 操作时录入的用户名和密码</li>
+<li> Git brush Here 或 Git brash Gui 或 Github Desktop 操作与远程库相关内容时，若没有提示录入界面，且错误时，可以删除上述凭据，重新操作。</li>
+</ul>
+<p>控制面板→凭据管理器→windows 凭据</p>
+<p><img data-src="https://i.loli.net/2021/03/16/Nmi7KC4dPMnVIxS.png" alt="image-20210316170517209"></p>
+<p>网络问题可多次克隆</p>
+<p>Git brush Here 或 Git brash Gui</p>
+<h2 id="一、本地库与远程库连接"><a href="#一、本地库与远程库连接" class="headerlink" title="一、本地库与远程库连接"></a>一、本地库与远程库连接</h2><p> git remote add origin2 <a href="mailto:git@github.com">git@github.com</a>:tianqixin/runoob-git-test.git，添加远程库，origin 为别名</p>
+<p> git fetch origin main ，拉到本地， origin 的远程上拉取名为 master 的分支到本地分支 origin/main 中</p>
+<p>git push [alias] [branch]，推送到远程库</p>
+<p>git remote -v，显示远程连接仓库</p>
+<p>解除 ssl 验证，push 时会自动出现 http 方式的验证：    </p>
+<p>git config –global http.sslVerify “false”</p>
+<h2 id="二、远程库clone到本地"><a href="#二、远程库clone到本地" class="headerlink" title="二、远程库clone到本地"></a>二、远程库 clone 到本地</h2>]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>gtihub</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Github+Node.js+Hexo+NexT 博客的环境恢复</title>
     <url>/2021/03/15/Github+Node.js+Hexo+NexT%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%8E%AF%E5%A2%83%E6%81%A2%E5%A4%8D/</url>
     <content><![CDATA[<h1 id="博客生成系统数据"><a href="#博客生成系统数据" class="headerlink" title="博客生成系统数据"></a>博客生成系统数据</h1><p>Github+Node.js+Hexo+NexT 博客建立后，github 仅保存了生成的博客网页，原始博客生成系统未保存，可有两种备份方式</p>
@@ -32,6 +116,95 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux 下 rpm 和 yum</title>
+    <url>/2021/03/17/Linux%E4%B8%8Brpm%E5%92%8Cyum/</url>
+    <content><![CDATA[<h1 id="linux中yum与rpm区别"><a href="#linux中yum与rpm区别" class="headerlink" title="linux中yum与rpm区别"></a><a href="https://www.cnblogs.com/ryanzheng/p/11322375.html">linux 中 yum 与 rpm 区别</a></h1><p>一、源代码形式</p>
+<p>\1.   绝大多数开源软件都是直接以原码形式发布的</p>
+<p>\2.   源代码一般会被打成.tar.gz 的归档压缩文件</p>
+<p>\3.   源代码需要编译成为二进制形式之后才能够运行使用</p>
+<p>\4.   源代码基本编译流程：</p>
+<p>1）.configure 检查编译环境；</p>
+<p>2）make 对源代码进行编译；</p>
+<p>3）make insall 将生成的可执行文件安装到当前计算机中</p>
+<hr>
+<p>二、RPM</p>
+<p>RMP 是 LINUX 下的一种软件的可执行程序，你只要安装它就可以了。这种软件安装包通常是一个 RPM 包（Redhat Linux Packet Manager，就是 Redhat 的包管理器），后缀是.rpm。</p>
+<p>RPM 是 Red Hat 公司随 Redhat Linux 推出了一个软件包管理器，通过它能够更加轻松容易地实现软件的安装。</p>
+<p> 1. 安装软件：执行 rpm -ivh rpm 包名，如：<br> #rpm -ivh apache-1.3.6.i386.rpm<br> 2. 升级软件：执行 rpm -Uvh rpm 包名。<br> 3. 反安装：执行 rpm -e rpm 包名。<br> 4. 查询软件包的详细信息：执行 rpm -qpi rpm 包名<br> 5. 查询某个文件是属于那个 rpm 包的：执行 rpm -qf rpm 包名<br> 6. 查该软件包会向系统里面写入哪些文件：执行 rpm -qpl rpm 包名</p>
+<p>1. 源代码形式的特点：操作复杂、编译时间长、极易出现问题、依赖关系复杂</p>
+<p>2. 为了方便，RPM（redhat package manager）</p>
+<p>3.RPM 通过将代码基于特定平台系统编译为可执行文件，并保存依赖关系，来简化开源软件的安装管理。针对不同的系统设定不同的包</p>
+<p>4. 常用命令规范：linuxcast-1.2.0-30.el6.1686.rpm 包名 - 版本号 - 适用平台 - 32/64-rpm</p>
+<p>5. 使用 rpm –i software.rpm (安装)；</p>
+<p>rpm -e software.rpm (卸载)；</p>
+<p>rpm –U software.rpm (升级形式安装)；</p>
+<p>rpm –ivh <a href="http://www.linuxcast.net/software.rpm(%E6%94%AF%E6%8C%81%E9%80%9A%E8%BF%87http/ftp%E5%8D%8F%E8%AE%AE%E5%BD%A2%E5%BC%8F%E5%AE%89%E8%A3%85)">http://www.linuxcast.net/software.rpm (支持通过 http\ftp 协议形式安装)</a></p>
+<p>-v 显示详细信息；-h 显示进度条</p>
+<p>查询功能：rpm –qa 列出全部已经安装的.rpm 软件  rpm –qa |grep ***</p>
+<hr>
+<p>三：YUM</p>
+<p>\1.   rpm 软件包形式的管理虽然方便，但是需要手工解决软件包的依赖关系。很多时候安装一个软件安装一个软件需要安装 1 个或者多个其他软件，手动解决时，很复杂，yum 解决这些问题。Yum 是 rpm 的前端程序，主要目的是设计用来自动解决 rpm 的依赖关系，其特点：</p>
+<ol>
+<li><p>自动解决依赖关系</p>
+</li>
+<li><p>可以对 rpm 进行分组，基于组进行安装操作</p>
+</li>
+<li><p>引入仓库概念，支持多个仓库</p>
+</li>
+<li><p>配置简单</p>
+</li>
+</ol>
+<p>\2. yum 仓库用来存放所有的现有的.rpm 包，当使用 yum 安装一个 rpm 包时，需要依赖关系，会自动在仓库中查找依赖软件并安装。仓库可以是本地的，也可以是 HTTP、FTP、nfs 形式使用的集中地、统一的网络仓库。</p>
+<p>\3. 仓库的配置文件 /etc/yum.repos.d 目录下</p>
+<p>\4. 使用：</p>
+<ol>
+<li><p>yum install 安装；</p>
+</li>
+<li><p>yum remove 卸载；</p>
+</li>
+<li><p>yum update 升级制定软件</p>
+</li>
+</ol>
+<p>\5. 安装的时候，会下载软件包.Rpm 在安装，所以用国内仓库</p>
+<p>改变镜像源</p>
+<ol>
+<li><p>访问地址 <a href="http://mirrors.163.com/">http://mirrors.163.com/</a></p>
+</li>
+<li><p> 点 centos 使用帮助</p>
+</li>
+<li><p>按步骤来</p>
+</li>
+</ol>
+<p>\6. 查询软件：可以使用 yumsearch **</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>yum</tag>
+        <tag>rpm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux 安装 mysql 时忘记临时密码后再次生成临时密码</title>
+    <url>/2021/03/19/Linux%E5%AE%89%E8%A3%85mysql%E6%97%B6%E5%BF%98%E8%AE%B0%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81%E5%90%8E%E5%86%8D%E6%AC%A1%E7%94%9F%E6%88%90%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">vi /etc/my.conf1</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">ZFQS:~ # cat /etc/my.cnf</span><br><span class="line"># For advice on how to change settings please see</span><br><span class="line"># http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html</span><br><span class="line">[mysqld]</span><br><span class="line">#</span><br><span class="line"># Remove leading # and set to the amount of RAM for the most important data</span><br><span class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span><br><span class="line"># innodb_buffer_pool_size = 128M</span><br><span class="line">#</span><br><span class="line"># Remove leading # to turn on a very important data integrity option: logging</span><br><span class="line"># changes to the binary log between backups.</span><br><span class="line"># log_bin</span><br><span class="line">#</span><br><span class="line"># Remove leading # to set options mainly useful for reporting servers.</span><br><span class="line"># The server defaults are faster for transactions and fast SELECTs.</span><br><span class="line"># Adjust sizes as needed, experiment to find the optimal values.</span><br><span class="line"># join_buffer_size = 128M</span><br><span class="line"># sort_buffer_size = 2M</span><br><span class="line"># read_rnd_buffer_size = 2M</span><br><span class="line">datadir=/var/lib/mysql</span><br><span class="line">socket=/var/lib/mysql/mysql.sock</span><br><span class="line"># Disabling symbolic-links is recommended to prevent assorted security risks</span><br><span class="line">symbolic-links=0</span><br><span class="line">log-error=/var/log/mysql/mysqld.log</span><br><span class="line">pid-file=/var/run/mysql/mysqld.pid</span><br></pre></td></tr></tbody></table></figure>
+<p>如上图所示找到 datadir 目录，删除里面的文件。在重新初始化一次。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">cd /var/lib/mysql</span><br><span class="line">rm -rf *//删除文件</span><br><span class="line">//在重新初始化一次</span><br><span class="line">cd /usr/local/mysql //这是你下载的MySQL解压目录</span><br><span class="line">./bin/mysqld --initialize --user=mysqluser -- basedir=/usr/local/mysql12345</span><br></pre></td></tr></tbody></table></figure>
+<p>这时会生成新的临时密码。</p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>mysql</tag>
+        <tag>密码</tag>
       </tags>
   </entry>
   <entry>
@@ -77,6 +250,187 @@
       </tags>
   </entry>
   <entry>
+    <title>linux 下 nginx 安装配置</title>
+    <url>/2021/03/23/linux%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="4-Ningx安装"><a href="#4-Ningx安装" class="headerlink" title="4 Ningx安装"></a>4 Ningx 安装</h1><p>（一）安装<br>1. 安装准备<br>（1）下载<br>openssl-1.0.2l.tar.gz<br>zlib-1.2.11.tar.gz<br>pcre-8.38.tar.gz<br>（2）查看是否安装：<br>$rpm -qa zlib<br>$rpm -qa openssl<br>$rpm -qa pcre<br>tar 三个包<br>因系统已安装上述三个包，上述三个包只解压不编译，安装 nginx 时指定为 with 目录即可。<br>tar nginx 包</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">tar zxvf nginx-1.18.0.tar.gz</span></span><br><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> nginx1.12.1</span></span><br><span class="line"><span class="meta">$</span><span class="bash">./configure --prefix=/home/spms/nginx --with-openssl=../openssl-1.0.2l --with-zlib=../zlib-1.2.11 --with-pcre=../pcre-8.38</span> </span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">make</span></span><br><span class="line"><span class="meta">$</span><span class="bash">make install</span></span><br></pre></td></tr></tbody></table></figure>
+<p>配置</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">#vi nginx.conf</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">server {</span><br><span class="line">        listen       8850;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        #charset koi8-r;</span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line">        location / {</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm index.php;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line"> 		location ~ \.php$ {</span><br><span class="line">            root           html;</span><br><span class="line">            fastcgi_pass   127.0.0.1:9000;</span><br><span class="line">            fastcgi_index  index.php;</span><br><span class="line">            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;</span><br><span class="line">            include        fastcgi_params;</span><br><span class="line">        }</span><br></pre></td></tr></tbody></table></figure>
+<p>将注释的 #号去掉，并在 fastcgi_param 参数的 $fastcgi_script_name 之前加入 $document_root.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">http {</span><br><span class="line">　　 include       mime.types;</span><br><span class="line">    	default_type  application/octet-stream;</span><br><span class="line">         server_names_hash_bucket_size 128;</span><br><span class="line">         client_header_buffer_size 32k;</span><br><span class="line">     sendfile        on;</span><br><span class="line"> 	 tcp_nopush     on;</span><br><span class="line">	 tcp_nodelay    on;</span><br><span class="line">      #keepalive_timeout  0;</span><br><span class="line">       keepalive_timeout  65;</span><br><span class="line">         fastcgi_connect_timeout 300;</span><br><span class="line">       fastcgi_send_timeout 300;</span><br><span class="line">       fastcgi_read_timeout 300;</span><br><span class="line">         fastcgi_buffer_size 64k;</span><br><span class="line">         fastcgi_buffers 4 64k;</span><br><span class="line">         fastcgi_busy_buffers_size 128k;</span><br><span class="line">         fastcgi_temp_file_write_size 128k;</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>修改 fastcgi.conf 用下面内容覆盖原文件：</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">fastcgi_param  GATEWAY_INTERFACE  CGI/1.1;</span><br><span class="line">fastcgi_param  SERVER_SOFTWARE    nginx;</span><br><span class="line">fastcgi_param  QUERY_STRING      $query_string;</span><br><span class="line">fastcgi_param  REQUEST_METHOD    $request_method;</span><br><span class="line">fastcgi_param  CONTENT_TYPE      $content_type;</span><br><span class="line">fastcgi_param  CONTENT_LENGTH    $content_length;</span><br><span class="line">fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;</span><br><span class="line">fastcgi_param  SCRIPT_NAME        $fastcgi_script_name;</span><br><span class="line">fastcgi_param  REQUEST_URI        $request_uri;</span><br><span class="line">fastcgi_param  DOCUMENT_URI      $document_uri;</span><br><span class="line">fastcgi_param  DOCUMENT_ROOT      $document_root;</span><br><span class="line">fastcgi_param  SERVER_PROTOCOL    $server_protocol;</span><br><span class="line">fastcgi_param  REMOTE_ADDR        $remote_addr;</span><br><span class="line">fastcgi_param  REMOTE_PORT        $remote_port;</span><br><span class="line">fastcgi_param  SERVER_ADDR        $server_addr;</span><br><span class="line">fastcgi_param  SERVER_PORT        $server_port;</span><br><span class="line">fastcgi_param  SERVER_NAME        $server_name;</span><br></pre></td></tr></tbody></table></figure>
+<p>原始文件多了如下三行（不用改变应该可以？）：<br>fastcgi_param  REQUEST_SCHEME     $scheme;<br>fastcgi_param  HTTPS              $https if_not_empty;<br>fastcgi_param  REDIRECT_STATUS    200;</p>
+<p>（三）检测是否安装成功<br>$ cd  /home/nginx/nginx/sbin<br>$ ./nginx -t<br>出现如下所示提示，表示安装成功 </p>
+<p>启动 nginx</p>
+<p>cd ../../nginx/sbin</p>
+<p>./nginx</p>
+<p>如果之前已经启动了 nginx 请使用如下命令：</p>
+<p>./nginx -s reload</p>
+<p>在 /usr/local/nginx/html/ 目录下创建一个文件 index.php</p>
+<p>touch index.php</p>
+<p>内容为：<!--? echo phpinfo(); ?--><br>结果为：<br>我的启动脚本：<br>/home/spms/ctrl_nginx.sh</p>
+<p>整套系统开机启动：<br>启动放到如下文件<br>/etc/init.d/after.local<br>vi after.local<br>su - db2inst1 -c “db2start”<br>su - spms -c “ctrl_tomcat.sh start”<br>su - spms -c “ctrl_php-fpm.sh start”<br>su - spms -c “ctrl_nginx.sh start”</p>
+<p>注：设置 nginx 和 php-fpm 更改上传文件大小限制<br>Nginx 和 php 默认不支持上传过大的文件。<br>假如我们要求上传的文件大小为 20M，默认配置就不允许上传了。<br>下面我们更改 nginx 和 php 配置，设定上传的限制为 20M。<br>Nginx 配置更改<br>如果上传文件时超过了 nginx 的限制，就会返回一个 “413 Request Entity Too Large” 的错误。<br>我们只要更改 nginx 的配置文件 “nginx.conf” 即可。<br>在 http {} 中添加一个 client_max_body_size 20m; 配置项；<br>修改完成之后重启 nginx 或 reload 配置。</p>
+<p>PHP 配置更改<br>除了 nginx 对文件大小有要求，php 也做了限制。<br>php 的配置文件为 php.ini。<br>我们需要修改下面的配置：</p>
+<p>file_uploads = On ; 打开文件上传选项<br>upload_max_filesize = 20M ; 上传文件上限<br>post_max_size = 20M ;post 上限 </p>
+<p>; 还需要根据实际情况调整下面的选项<br>max_execution_time = 180 ; 脚本最大执行时间（秒） ，过短会导致文件还没上传完脚本就停止了。<br>max_input_time = 180 ; 请求的最大传输时间，过短会导致文件还没上传完传输就停止了。<br>memory_limit = 128M ; 内存上限<br>修改完成后重启 php-fpm 或 reload 配置。注意：与 tomcat 共用：<br>1.Tomcat 修改 server.xml 端口为 8858<br>2.Nginx 端口为 8848<br>3.php 应用的目录复制到 /home/spms/SPMS（为了合肥转接的能用）<br>4.11.64.65.15:8848/SPMS 是原来的应用<br>  11.64.17.23:8848/SPMS（合肥转接）<br>5.11.64.65.15:8848/SPMS/ZFJS 是增加的应用<br>  11.64.17.23:8848/SPMS/ZFJS（合肥转接）<br>Nginx.conf 配置参见生产系统。</p>
+]]></content>
+      <categories>
+        <category>nginx</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux 下 Mysql 安装</title>
+    <url>/2021/03/17/linux%E4%B8%8BMysql%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="1-Mysql下载（linux）"><a href="#1-Mysql下载（linux）" class="headerlink" title="1.Mysql下载（linux）"></a>1.<strong>Mysql 下载（linux）</strong></h1><h2 id="1-下载源码包（一个压缩包）"><a href="#1-下载源码包（一个压缩包）" class="headerlink" title="1.下载源码包（一个压缩包）"></a>1. 下载源码包（一个压缩包）</h2><p><img data-src="https://i.loli.net/2021/03/17/e3hmViPTBd7fkoy.png" alt="image-20210317163318307"></p>
+<h2 id="2-下载-rpm安装包（四个安装包）"><a href="#2-下载-rpm安装包（四个安装包）" class="headerlink" title="2.下载.rpm安装包（四个安装包）"></a>2. 下载.rpm 安装包（四个安装包）</h2><p><img data-src="https://i.loli.net/2021/03/17/7vUQOkcEGmrioeg.png" alt="image-20210317164059672"></p>
+<h2 id="3-下载-rpm套件组（（含依赖组件）"><a href="#3-下载-rpm套件组（（含依赖组件）" class="headerlink" title="3.下载.rpm套件组（（含依赖组件）"></a>3. 下载.rpm 套件组（（含依赖组件）</h2><p><img data-src="https://i.loli.net/2021/03/17/q326p7iVjXoeTYP.png" alt="image-20210317164842225"></p>
+<h1 id="2-上传到安装目录"><a href="#2-上传到安装目录" class="headerlink" title="2.上传到安装目录"></a>2. <strong>上传到安装目录</strong></h1><p>根据安装方式（源码方式或 rpm 方式，ftp 到 /home/spms (spms 用户安装</p>
+<h1 id="3-查看和删除旧版MySql"><a href="#3-查看和删除旧版MySql" class="headerlink" title="3.查看和删除旧版MySql"></a>3. <strong>查看和删除旧版 MySql</strong></h1><h2 id="1-查询旧版mysql"><a href="#1-查询旧版mysql" class="headerlink" title="1.查询旧版mysql"></a>1. 查询旧版 mysql</h2><p>可能结果（假设）</p>
+<p><img data-src="https://i.loli.net/2021/03/19/Hg9hIFwXPqvaSkW.png" alt="image-20210319100704842"></p>
+<p>以下为我的电脑查询情况，没有安装 mysql，应该不用卸载。其中 libqt4-sql-mysql Qt 连接 MySQL 数据库的驱动，libmysqlclient 是根据 MySQL client/server 协议，使用 C 语言实现的库。有很多的客户端 api 使用 libmysqlclient 这个库去和 MySQL Server 进行通信。可能是安装 php 时安装上的，可以不用删除？</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~&gt; rpm -qa | grep mysql</span><br><span class="line">libqt4-sql-mysql-4.6.3-5.25.4</span><br><span class="line">libmysqlclient_r15-5.0.96-0.6.1</span><br><span class="line">spms@ZFQS:~&gt; </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="2-卸载旧版本MySQL"><a href="#2-卸载旧版本MySQL" class="headerlink" title="2.卸载旧版本MySQL"></a>2. <strong>卸载旧版本 MySQL</strong></h2><h3 id="普通删除（依据上述查询结果）"><a href="#普通删除（依据上述查询结果）" class="headerlink" title="普通删除（依据上述查询结果）"></a>普通删除（依据上述查询结果）</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">rpm -e mysql-libs-5.1.73-8.el6_8.x86_64 mysql-server-5.1.73-8.el6_8.x86_64 mysql-devel-5.1.73-8.el6_8.x86_64</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="可能失败，如下图所示"><a href="#可能失败，如下图所示" class="headerlink" title="可能失败，如下图所示"></a>可能失败，如下图所示</h3><p><img data-src="https://i.loli.net/2021/03/19/rguc1iVp7AXyteb.png" alt="image-20210319101026658"></p>
+<h3 id="强力删除"><a href="#强力删除" class="headerlink" title="强力删除"></a>强力删除</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">rpm -e --nodeps mysql-libs-5.1.73-8.el6_8.x86_64 mysql-server-5.1.73-8.el6_8.x86_64 mysql-devel-5.1.73-8.el6_8.x86_64</span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://i.loli.net/2021/03/19/2y8Oj9654QlWqex.png" alt="image-20210319101219951"></p>
+<h2 id="3-删除-etc-my-cnf-配置文件"><a href="#3-删除-etc-my-cnf-配置文件" class="headerlink" title="3.删除 /etc/my.cnf 配置文件"></a>3. 删除 /etc/my.cnf 配置文件</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">rm /etc/my.cnf</span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://i.loli.net/2021/03/19/vXAWDsfda2OS4Jk.png" alt="image-20210319101950684"></p>
+<p>配置文件 my.cnf 已经被另存在 my.cnf.rpmsave 中</p>
+<p><img data-src="https://i.loli.net/2021/03/19/GbLJq4xeNgBRp6t.png" alt="image-20210319102014249"></p>
+<h1 id="4-RPM方式安装MySql"><a href="#4-RPM方式安装MySql" class="headerlink" title="4.RPM方式安装MySql"></a>4.<strong>RPM 方式安装 MySql</strong></h1><p>4 个 rpm 安装包，有依赖关系，按照以下顺序分别安装。</p>
+<p>目前为 spms 用户获得超级权限后安装，否则出现权限问题，如下。spms 登录，su root 获得权限。</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~&gt; rpm -ivh mysql-community-common-5.7.32-1.sles12.x86_64.rpm</span><br><span class="line">warning: mysql-community-common-5.7.32-1.sles12.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">error: can't create transaction lock on /var/lib/rpm/__db.000</span><br><span class="line">spms@ZFQS:~&gt; </span><br></pre></td></tr></tbody></table></figure>
+
+
+<p>目前 for SUSE 12 的 5.7 的最高版本为 5.7.32 （再 suse 11 中安装时，需要依赖，不知道依赖能不能成功补上）</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">rpm -ivh mysql-community-common-5.7.32-1.sles12.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-libs-5.7.32-1.sles12.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-client-5.7.32-1.sles12.x86_64.rpm </span><br><span class="line">rpm -ivh mysql-community-server-5.7.32-1.sles12.x86_64.rpm</span><br></pre></td></tr></tbody></table></figure>
+<p>目前 for SUSE 11 的 5.7 的最高版本为 5.7.25 ，我的机器能正常安装，但最后一个包出现警告，看是否影响使用，如下</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~&gt; su root</span><br><span class="line">口令： </span><br><span class="line">ZFQS:/home/spms # </span><br><span class="line">ZFQS:/home/spms # rpm -ivh mysql-community-common-5.7.25-1.sles11.x86_64.rpm</span><br><span class="line">warning: mysql-community-common-5.7.25-1.sles11.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">Preparing...                ########################################### [100%]</span><br><span class="line">   1:mysql-community-common ########################################### [100%]</span><br><span class="line">ZFQS:/home/spms # rpm -ivh mysql-community-libs-5.7.25-1.sles11.x86_64.rpm</span><br><span class="line">warning: mysql-community-libs-5.7.25-1.sles11.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">Preparing...                ########################################### [100%]</span><br><span class="line">   1:mysql-community-libs   ########################################### [100%]</span><br><span class="line">ZFQS:/home/spms # rpm -ivh mysql-community-client-5.7.25-1.sles11.x86_64.rpm</span><br><span class="line">warning: mysql-community-client-5.7.25-1.sles11.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">Preparing...                ########################################### [100%]</span><br><span class="line">   1:mysql-community-client ########################################### [100%]</span><br><span class="line">ZFQS:/home/spms # rpm -ivh mysql-community-server-5.7.25-1.sles11.x86_64.rpm</span><br><span class="line">warning: mysql-community-server-5.7.25-1.sles11.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">Preparing...                ########################################### [100%]</span><br><span class="line">   1:mysql-community-server ########################################### [100%]</span><br><span class="line">insserv: warning: script 'S01ITMAgents1' missing LSB tags</span><br><span class="line">insserv: warning: script 'ITMAgents1' missing LSB tags</span><br><span class="line">ZFQS:/home/spms # </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="查询安装路径"><a href="#查询安装路径" class="headerlink" title="查询安装路径"></a>查询安装路径</h2><p>如果想查询 rpm 包详细的安装文件列表及每个文件的实际存储路径，可通过命令 rpm -ql 来查询，如：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">rpm -ql mysql-community-common-5.7.32-1.sles12.x86_64</span><br><span class="line">/usr/bin/mysql</span><br><span class="line">/usr/bin/mysql_config_editor</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="临时密码"><a href="#临时密码" class="headerlink" title="临时密码"></a>临时密码</h2><p>mysql 从 5.7 默认安装之后 root 是有密码的，为了加强安全性，mysql5.7 为 root 用户随机生成一个密码，它在 error log 中。<br>还有，mysql 只有启动过一次才可以查看临时密码。随机密码保存在 /var/log/mysql/mysqld.log 中，可 cat 或 grep 查看</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">grep <span class="string">'temporary password'</span> /var/<span class="built_in">log</span>/mysql/mysqld.log</span><br><span class="line">2021-03-19T08:30:03.108793Z 1 [Note] A temporary password is generated <span class="keyword">for</span> root@localhost: f85WFz&lt;2zt.j</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="登录Mysql（rpm安装完自动启动、自动自启动？）"><a href="#登录Mysql（rpm安装完自动启动、自动自启动？）" class="headerlink" title="登录Mysql（rpm安装完自动启动、自动自启动？）"></a>登录 Mysql（rpm 安装完自动启动、自动自启动？）</h2><p><strong>linux 的 root 安装，spms 可以登录</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:/&gt; mysql -u root -p</span><br><span class="line">Enter password: </span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 21</span><br><span class="line">Server version: 5.7.25</span><br><span class="line">​```</span><br><span class="line">Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line">Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</span><br><span class="line">mysql&gt; </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="修改MySQL的root本地登录密码"><a href="#修改MySQL的root本地登录密码" class="headerlink" title="修改MySQL的root本地登录密码"></a>修改 MySQL 的 root 本地登录密码</h2><p>shell 下：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">mysqladmin -u root  -p password "Mysql123@xl"</span><br></pre></td></tr></tbody></table></figure>
+<p> 或临时密码登录 mysql 后修改：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">mysql&gt; set password for 'root'@'localhost'=password('Mysql123@xl'); </span><br></pre></td></tr></tbody></table></figure>
+<h1 id="5-MySQL常用命令"><a href="#5-MySQL常用命令" class="headerlink" title="5.MySQL常用命令"></a>5.MySQL 常用命令</h1><h2 id="查询密码策略"><a href="#查询密码策略" class="headerlink" title="查询密码策略"></a>查询密码策略</h2><p>通过 msyql 环境变量可以查看密码策略的相关信息：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> show variables like <span class="string">'%password%'</span>;</span></span><br><span class="line">+---------------------------------------+--------+</span><br><span class="line">| Variable_name                         | Value  |</span><br><span class="line">+---------------------------------------+--------+</span><br><span class="line">| default_password_lifetime             | 0      |</span><br><span class="line">| disconnect_on_expired_password        | ON     |</span><br><span class="line">| log_builtin_as_identified_by_password | OFF    |</span><br><span class="line">| mysql_native_password_proxy_users     | OFF    |</span><br><span class="line">| old_passwords                         | 0      |</span><br><span class="line">| report_password                       |        |</span><br><span class="line">| sha256_password_proxy_users           | OFF    |</span><br><span class="line">| validate_password_check_user_name     | OFF    |</span><br><span class="line">| validate_password_dictionary_file     |        |</span><br><span class="line">| validate_password_length              | 8      |</span><br><span class="line">| validate_password_mixed_case_count    | 1      |</span><br><span class="line">| validate_password_number_count        | 1      |</span><br><span class="line">| validate_password_policy              | MEDIUM |</span><br><span class="line">| validate_password_special_char_count  | 1      |</span><br><span class="line">+---------------------------------------+--------+</span><br><span class="line">14 rows in set (0.01 sec)</span><br></pre></td></tr></tbody></table></figure>
+
+
+<p>validate_password_policy：密码策略，默认为 MEDIUM 策略<br>validate_password_dictionary_file：密码策略文件，策略为 STRONG 才需要<br>validate_password_length：密码最少长度<br>validate_password_mixed_case_count：大小写字符长度，至少 1 个<br>validate_password_number_count ：数字至少 1 个<br>validate_password_special_char_count：特殊字符至少 1 个<br>上述参数是默认策略 MEDIUM 的密码检查规则。</p>
+<p>共有以下几种密码策略：</p>
+<table>
+<thead>
+<tr>
+<th align="left">策略</th>
+<th align="left">检查规则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"> 0 or LOW</td>
+<td align="left">Length</td>
+</tr>
+<tr>
+<td align="left">1 or MEDIUM</td>
+<td align="left">Length; numeric, lowercase/uppercase, and special characters</td>
+</tr>
+<tr>
+<td align="left">2 or STRONG</td>
+<td align="left">Length; numeric, lowercase/uppercase, and special characters; dictionary file</td>
+</tr>
+</tbody></table>
+<h2 id="修改密码策略"><a href="#修改密码策略" class="headerlink" title="修改密码策略"></a>修改密码策略</h2><p>在 /etc/my.cnf 文件添加 validate_password_policy 配置，指定密码策略</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 选择0（LOW），1（MEDIUM），2（STRONG）其中一种，选择2需要提供密码字典文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">validate_password_policy=0121212</span><br></pre></td></tr></tbody></table></figure>
+<p>如果不需要密码策略，添加 my.cnf 文件中添加如下配置禁用即可：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">validate_password = off111</span><br></pre></td></tr></tbody></table></figure>
+<p>重新启动 mysql 服务使配置生效：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="添加远程登录用户"><a href="#添加远程登录用户" class="headerlink" title="添加远程登录用户"></a>添加远程登录用户</h2><p>默认只允许 root 帐户在本地登录，如果要在其它机器上连接 mysql，必须修改 root 允许远程连接，或者添加一个允许远程连接的帐户，为了安全起见，我添加一个新的帐户：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'yangxin'@'%' IDENTIFIED BY 'Yangxin0917!' WITH GRANT OPTION;111</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="配置默认编码为utf8"><a href="#配置默认编码为utf8" class="headerlink" title="配置默认编码为utf8"></a>配置默认编码为 utf8</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">mysql&gt; show variables like '%character%';</span><br></pre></td></tr></tbody></table></figure>
+<p>修改 /etc/my.cnf 配置文件，在 [mysqld] 下添加编码配置，如下所示：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">character_set_server=utf8</span><br><span class="line">init_connect='SET NAMES utf8'123123123</span><br></pre></td></tr></tbody></table></figure>
+<p>重新启动 mysql 服务，查看<a href="http://lib.csdn.net/base/mysql">数据库</a>默认编码如下所示：</p>
+<p>默认配置文件路径：<br>配置文件：/etc/my.cnf<br>日志文件：/var/log//var/log/mysqld.log<br>服务启动脚本：/usr/lib/systemd/system/mysqld.service<br>socket 文件：/var/run/mysqld/mysqld.pid</p>
+<h1 id="6-错误及解决"><a href="#6-错误及解决" class="headerlink" title="6.错误及解决"></a>6. 错误及解决</h1><h2 id="1-安装权限"><a href="#1-安装权限" class="headerlink" title="1.安装权限"></a>1. 安装权限</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~&gt; rpm -ivh mysql-community-common-5.7.32-1.sles12.x86_64.rpm</span><br><span class="line">warning: mysql-community-common-5.7.32-1.sles12.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">error: can't create transaction lock on /var/lib/rpm/__db.000</span><br><span class="line">spms@ZFQS:~&gt; </span><br></pre></td></tr></tbody></table></figure>
+<p>实际上是权限问题。su root 后可以安装。</p>
+<h2 id="2-mysql密码策略"><a href="#2-mysql密码策略" class="headerlink" title="2.mysql密码策略"></a>2.mysql 密码策略</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:/&gt; mysqladmin -u root -p password "Mysql123"</span><br><span class="line">Enter password: </span><br><span class="line">mysqladmin: [Warning] Using a password on the command line interface can be insecure.</span><br><span class="line">Warning: Since password will be sent to server in plain text, use ssl connection to ensure password safety.</span><br><span class="line">mysqladmin: unable to change password; error: 'Your password does not satisfy the current policy requirements'</span><br><span class="line">spms@ZFQS:/&gt; </span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">root@linuxidc php-5.6.30]# ./configure --prefix=/usr/local/php --with-apxs2=/usr/local/apache2.4/bin/apxs --with-config-file-path=/usr/local/php/etc  --with-mysql=/usr/local/mysql --with-pdo-mysql=/usr/local/mysql --with-mysqli=/usr/local/mysql/bin/mysql_config --with-libxml-dir --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-iconv-dir --with-zlib-dir --with-bz2 --with-openssl --with-mcrypt --enable-soap --enable-gd-native-ttf --enable-mbstring --enable-sockets --enable-exif  //安装PHP</span><br><span class="line">[root@linuxidc php-5.6.30]# echo $?  //安装完成没有错误用这个检查</span><br><span class="line">[root@linuxidc php-7.1.6]# ./configure --prefix=/usr/local/php7 --with-apxs2=/usr/local/apache2.4/bin/apxs --with-config-file-path=/usr/local/php7/etc  --with-pdo-mysql=/usr/local/mysql --with-mysqli=/usr/local/mysql/bin/mysql_config --with-libxml-dir --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-iconv-dir --with-zlib-dir --with-bz2 --with-openssl --with-mcrypt --enable-soap --enable-gd-native-ttf --enable-mbstring --enable-sockets --enable-exif</span><br><span class="line">6.编译安装：</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>php7.3 的 Mysql 配置和连接</title>
+    <url>/2021/03/22/php7-3%E7%9A%84Mysql%E9%85%8D%E7%BD%AE%E5%92%8C%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<p>原文链接：<a href="https://blog.csdn.net/u013785951/article/details/60876816">https://blog.csdn.net/u013785951/article/details/60876816</a></p>
+<p>PHP 官方手册: <a href="http://php.net/manual/en/book.mysqli.php">http://php.net/manual/en/book.mysqli.php</a></p>
+<p>MYSQL 也叫 Original MySQL，PHP4 版本的 MYSQL 扩展，从 PHP5 起已经被废弃，并别从 PHP7 开始已经被移除。</p>
+<p>MYSQLI 叫做 “MySQL 增强扩展”。</p>
+<p>MYSQLND MYSQL NATIVE DIRVER 叫做 MYSQL “官方驱动” 或者更加直接点的叫做 “原生驱动”</p>
+<p>PDO PHP Data Objects PHP 数据对象，是 PHP 应用中的一个数据库抽象层规范。 </p>
+<p>API 是一个应用程序接口（Application Programming Interface 的缩写），定义了类，方法，函数，变量等等一切你的应用程序中为了完成特定任务而需要调用的内容。在 PHP 应用程序需要和数据库进行交互的时候所需要的 API 通常是通过 PHP 扩展暴露出来（给终端 PHP 程序员调用）。</p>
+<p>MYSQL 和 MYSQLI 扩展就提供了这样的 API。</p>
+<p>2 什么是驱动？</p>
+<p>驱动是一段设计用来于一种特定类型的数据库服务器进行交互的软件代码。驱动可能会调用一些库，比如 MySQL 客户端库或者 MySQL Native 驱动库。 这些库实现了用于和 MySQL 数据库服务器进行交互的底层协议。</p>
+<p>在 PHP 拓展的角度上看，MYSQL 和 MYSQLi 还是比较上层的拓展，依赖更底层的库去连接和访问数据库。<br>MYSQLND 就是所说的底层的数据库驱动。当然，还有一个驱动叫做 libmysqlclient。至于如何选择使用这两种驱动的哪一种，请看这里选择哪一种底层数据库驱动。</p>
+<p>总的来说:<br>从应用的层面上看，我们通过 PHP 的 MYSQL 或者 MYSQLi 扩展提供的 API 去操作数据库。</p>
+<p>从底层来看，MYSQLND 提供了底层和数据库交互的支持 (可以简单理解为和 MySQL server 进行网络协议交互)。</p>
+<p>而 PDO，则提供了一个统一的 API 接口，使得你的 PHP 应用不去关心具体要连接的数据库服务器系统类型。也就是说，如果你使用 PDO 的 API，可以在任何需要的时候无缝切换数据库服务器。比如 MYSQL,SQLITE 任何数据库都行。</p>
+<p>即从大部分功能上看，PDO 提供的 API 接口和 MYSQLI 提供的接口对于普通的增删改查效果是一致的。</p>
+<p>最后贴下代码：</p>
+<p>MYSQL 连接：</p>
+<figure class="highlight php"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$conn</span> = @ mysql_connect(<span class="string">"localhost"</span>, <span class="string">"root"</span>, <span class="string">""</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"数据库连接错误"</span>);</span><br><span class="line">mysql_select_db(<span class="string">"bbs"</span>, <span class="variable">$conn</span>);</span><br><span class="line">mysql_query(<span class="string">"set names 'utf8'"</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"数据库连接成功"</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>MYSQLI 连接：</p>
+<figure class="highlight php"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$conn</span> = mysqli_connect(<span class="string">'localhost'</span>, <span class="string">'root'</span>, <span class="string">''</span>, <span class="string">'bbs'</span>);</span><br><span class="line"><span class="keyword">if</span>(!<span class="variable">$conn</span>){</span><br><span class="line"><span class="keyword">die</span>(<span class="string">"数据库连接错误"</span> . mysqli_connect_error());</span><br><span class="line">}<span class="keyword">else</span>{</span><br><span class="line"><span class="keyword">echo</span><span class="string">"数据库连接成功"</span>;</span><br><span class="line">}</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>PDO 连接：</p>
+<figure class="highlight php"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">try</span>{</span><br><span class="line"><span class="variable">$pdo</span>=<span class="keyword">new</span> pdo(<span class="string">"mysql:host=localhost;dbname=bbs"</span>,<span class="string">"root"</span>,<span class="string">""</span>);</span><br><span class="line">}<span class="keyword">catch</span>(PDDException <span class="variable">$e</span>){</span><br><span class="line"><span class="keyword">echo</span><span class="string">"数据库连接错误"</span>;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">echo</span><span class="string">"数据库连接成功"</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>想更多去了解他们的区别和联系，可以手动去编译一下 PHP 的源代码。注意参数</p>
+<p>–enable-pdo<br>–with-pdo-mysql<br>–enable-mysqlnd<br>–with-mysqli<br>–with-mysql//php7 的已经不再支持，此参数 configure 的时候会报 ERROR</p>
+]]></content>
+      <categories>
+        <category>php7</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>php7</tag>
+        <tag>mysqli</tag>
+        <tag>mysqlnd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>php 命令行参考</title>
+    <url>/2021/03/24/php%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E8%80%83/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~/php7/bin&gt; php -h</span><br><span class="line">Usage: php [options] [-f] &lt;file&gt; [--] [args...]</span><br><span class="line">   php [options] -r &lt;code&gt; [--] [args...]</span><br><span class="line">   php [options] [-B &lt;begin_code&gt;] -R &lt;code&gt; [-E &lt;end_code&gt;] [--] [args...]</span><br><span class="line">   php [options] [-B &lt;begin_code&gt;] -F &lt;file&gt; [-E &lt;end_code&gt;] [--] [args...]</span><br><span class="line">   php [options] -S &lt;addr&gt;:&lt;port&gt; [-t docroot] [router]</span><br><span class="line">   php [options] -- [args...]</span><br><span class="line">   php [options] -a</span><br><span class="line"></span><br><span class="line">  -a               Run interactively</span><br><span class="line">  -c &lt;path&gt;|&lt;file&gt; Look for php.ini file in this directory</span><br><span class="line">  -n               No configuration (ini) files will be used</span><br><span class="line">  -d foo[=bar]     Define INI entry foo with value 'bar'</span><br><span class="line">  -e               Generate extended information for debugger/profiler</span><br><span class="line">  -f &lt;file&gt;        Parse and execute &lt;file&gt;.</span><br><span class="line">  -h               This help</span><br><span class="line">  -i               PHP information</span><br><span class="line">  -l               Syntax check only (lint)</span><br><span class="line">  -m               Show compiled in modules</span><br><span class="line">  -r &lt;code&gt;        Run PHP &lt;code&gt; without using script tags &lt;?..?&gt;</span><br><span class="line">  -B &lt;begin_code&gt;  Run PHP &lt;begin_code&gt; before processing input lines</span><br><span class="line">  -R &lt;code&gt;        Run PHP &lt;code&gt; for every input line</span><br><span class="line">  -F &lt;file&gt;        Parse and execute &lt;file&gt; for every input line</span><br><span class="line">  -E &lt;end_code&gt;    Run PHP &lt;end_code&gt; after processing all input lines</span><br><span class="line">  -H               Hide any passed arguments from external tools.</span><br><span class="line">  -S &lt;addr&gt;:&lt;port&gt; Run with built-in web server.</span><br><span class="line">  -t &lt;docroot&gt;     Specify document root &lt;docroot&gt; for built-in web server.</span><br><span class="line">  -s               Output HTML syntax highlighted source.</span><br><span class="line">  -v               Version number</span><br><span class="line">  -w               Output source with stripped comments and whitespace.</span><br><span class="line">  -z &lt;file&gt;        Load Zend extension &lt;file&gt;.</span><br><span class="line"></span><br><span class="line">  args...          Arguments passed to script. Use -- args when first argument</span><br><span class="line">                   starts with - or script is read from stdin</span><br><span class="line"></span><br><span class="line">  --ini            Show configuration file names</span><br><span class="line"></span><br><span class="line">  --rf &lt;name&gt;      Show information about function &lt;name&gt;.</span><br><span class="line">  --rc &lt;name&gt;      Show information about class &lt;name&gt;.</span><br><span class="line">  --re &lt;name&gt;      Show information about extension &lt;name&gt;.</span><br><span class="line">  --rz &lt;name&gt;      Show information about Zend extension &lt;name&gt;.</span><br><span class="line">  --ri &lt;name&gt;      Show configuration for extension &lt;name&gt;.</span><br><span class="line"></span><br><span class="line">spms@ZFQS:~/php7/bin&gt; </span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+        <tag>命令行</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>sqlserver 语句记录</title>
     <url>/2021/03/03/sqlserver%E8%AF%AD%E5%8F%A5%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h2 id="SQLServer显示从第-bgn行的数据共-num行"><a href="#SQLServer显示从第-bgn行的数据共-num行" class="headerlink" title="SQLServer显示从第@bgn行的数据共@num行"></a>SQLServer 显示从第 @bgn 行的数据共 @num 行</h2><p>根据某字段排序，形成 row 列，以 row 列为为条件任意显示所需行数的记录</p>
@@ -97,7 +451,97 @@
       </tags>
   </entry>
   <entry>
-    <title>suse-linux-php 安装</title>
+    <title>php 编译安装 configure 参数解释</title>
+    <url>/2021/03/17/php%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85configure%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A/</url>
+    <content><![CDATA[<p>具体参数含义可以用./configure –help 来查看。</p>
+<p>列表如下（部分参数未得到解释）：</p>
+<p>指定 php 安装目录</p>
+<p>–prefix=/usr/local/php </p>
+<p>指定 php.ini 位置</p>
+<p>–with-config-file-path=/usr/local/php/etc </p>
+<p>mysql 安装目录，对 mysql 的支持</p>
+<p>–with-mysql=/usr/local/mysql</p>
+<p>mysqli 扩展技术不仅可以调用 MySQL 的存储过程、处理 MySQL 事务，而且还可以使访问数据库工作变得更加稳定。</p>
+<p>–with-mysqli=/usr/local/mysql/bin/mysql_config   </p>
+<p>整合 apache，apxs 功能是使用 mod_so 中的 LoadModule 指令，加载指定模块到 apache，要求 apache 要打开 SO 模块</p>
+<p>–with-apxs2=/usr/local/apache/bin/apxs </p>
+<p>选项指令 –with-iconv-dir 用于 PHP 编译时指定 iconv 在系统里的路径，否则会扫描默认路径。</p>
+<p>–with-iconv-dir=/usr/local </p>
+<p>–with-freetype-dir   打开对 freetype 字体库的支持 </p>
+<p>–with-jpeg-dir   打开对 jpeg 图片的支持 </p>
+<p>–with-png-dir   打开对 png 图片的支持 </p>
+<p>–with-zlib-dir   打开 zlib 库的支持，用于 http 压缩传输</p>
+<p>–with-libxml-dir   打开 libxml2 库的支持</p>
+<p>–disable-rpath    关闭额外的运行库文件 </p>
+<p>–enable-bcmath    打开图片大小调整，用到 zabbix 监控的时候用到了这个模块</p>
+<p>–enable-shmop –enable-sysvsem  这样就使得你的 PHP 系统可以处理相关的 IPC 函数了。</p>
+<p>–enable-inline-optimization  优化线程</p>
+<p>–with-curl    打开 curl 浏览工具的支持 </p>
+<p>–with-curlwrappers    运用 curl 工具打开 url 流 </p>
+<p>–enable-mbregex</p>
+<p>–enable-fpm 打上 PHP-fpm 补丁后才有这个参数，CGI 方式安装的启动程序</p>
+<p>–enable-mbstring    多字节，字符串的支持 </p>
+<p>–with-mcrypt                    mcrypt 算法扩展</p>
+<p>–with-mhash                     mhash 算法扩展</p>
+<p>–with-gd    打开 gd 库的支持 </p>
+<p>–enable-gd-native-ttf   支持 TrueType 字符串函数库</p>
+<p>–with-openssl      openssl 的支持，加密传输 https 时用到的</p>
+<p>–enable-pcntl   freeTDS 需要用到的，可能是链接 mssql 才用到</p>
+<p>–enable-sockets     打开 sockets 支持</p>
+<p>–with-xmlrpc    打开 xml-rpc 的 c 语言 </p>
+<p>–enable-zip   打开对 zip 的支持 </p>
+<p>–enable-ftp   打开 ftp 的支持 </p>
+<p>–with-bz2    打开对 bz2 文件的支持        </p>
+<p>–without-iconv   关闭 iconv 函数，字符集间的转换 </p>
+<p>–with-ttf     打开 freetype1.* 的支持，可以不加了 </p>
+<p>–with-xsl     打开 XSLT 文件支持，扩展了 libXML2 库 ，需要 libxslt 软件 </p>
+<p>–with-gettext     打开 gnu 的 gettext 支持，编码库用到 </p>
+<p>–with-pear    打开 pear 命令的支持，PHP 扩展用的 </p>
+<p>–enable-calendar    打开日历扩展功能</p>
+<p>–enable-exif    图片的元数据支持 </p>
+<p>–enable-magic-quotes    魔术引用的支持 </p>
+<p>–disable-debug    关闭调试模式 </p>
+<p>–with-mime-magic=/usr/share/file/magic.mime      魔术头文件位置</p>
+<p>CGI 方式安装才用的参数</p>
+<p>–enable-fastCGI            支持 fastcgi 方式启动 PHP</p>
+<p>–enable-force-CGI-redirect        重定向方式启动 PHP</p>
+<p>–with-ncurses         支持 ncurses 屏幕绘制以及基于文本终端的图形互动功能的动态库</p>
+<p>–with-gmp  应该是支持一种规范</p>
+<p>–enable-dbase                     建立 DBA 作为共享模块</p>
+<p>–with-pcre-dir=/usr/local/bin/pcre-config      perl 的正则库案安装位置</p>
+<p>–disable-dmalloc</p>
+<p>–with-gdbm                     dba 的 gdbm 支持</p>
+<p>–enable-sigchild</p>
+<p>–enable-sysvshm</p>
+<p>–enable-zend-multibyte         支持 zend 的多字节</p>
+<p>–enable-wddx</p>
+<p>–enable-soap<br>————————————————<br>版权声明：本文为 CSDN 博主「NiluChen」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/niluchen/article/details/41513217">https://blog.csdn.net/niluchen/article/details/41513217</a></p>
+]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+        <tag>config</tag>
+        <tag>参数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>typora 图片左对齐</title>
+    <url>/2021/03/15/typora%E5%9B%BE%E7%89%87%E5%B7%A6%E5%AF%B9%E9%BD%90/</url>
+    <content><![CDATA[<h2 id="Align-images"><a href="#Align-images" class="headerlink" title="Align images"></a>Align images</h2><p>Currently Typora does not support image alignment. But you can use HTML code like <code>&lt;center&gt;![img](src)&lt;/center&gt;</code> to align images in exported HTML or PDF.</p>
+<p>Also, by default, if a paragraph only contains one image, it will be center aligned. It is controlled by CSS, and can be changed by <a href="http://support.typora.io/Add-Custom-CSS/">add custom CSS</a>:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">p .md-image:only-child{</span><br><span class="line">    width: auto;</span><br><span class="line">    text-align: inherit;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <categories>
+        <category>typora</category>
+      </categories>
+      <tags>
+        <tag>typora</tag>
+        <tag>图片</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
     <url>/2021/03/02/suse-linux-php%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h1 id="1-GCC和G-安装"><a href="#1-GCC和G-安装" class="headerlink" title="1 GCC和G++安装"></a>1 GCC 和 G++ 安装</h1><p>若 linux 没有安装 GCC（在编译 php 时会出错），<strong>可挂载 mount linux 镜像文件，rpm 安装。</strong></p>
 <h2 id="1-1-有关查询命令"><a href="#1-1-有关查询命令" class="headerlink" title="1.1 有关查询命令"></a>1.1 有关查询命令</h2><ul>
@@ -164,39 +608,23 @@
 <h2 id="2-下载或上传安装包"><a href="#2-下载或上传安装包" class="headerlink" title="2.下载或上传安装包"></a>2. 下载或上传安装包</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">cd </span><br><span class="line">wget https://www.php.net/distributions/php-7.3.27.tar.gz</span><br></pre></td></tr></tbody></table></figure>
 <p>内网 linux 可外网下载，将 php-7.3.27.tar.gz 上传至 linux 的 /home 目录（/home/spms)，</p>
 <h2 id="3-解压"><a href="#3-解压" class="headerlink" title="3.解压"></a>3. 解压</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">tar -zxvf php-7.3.27.tar.gz</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="4-检查和配置PHP安装环境"><a href="#4-检查和配置PHP安装环境" class="headerlink" title="4.检查和配置PHP安装环境"></a>4. 检查和配置 PHP 安装环境</h2><p>以下为能够安装的基本配置，网上很多参数的那种，要写 /usr/lib 等目录，非 root 用户没有权限，不能安装。需要配置其他功能室再查资料。</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> php-7.3.27</span></span><br><span class="line"><span class="meta">$</span><span class="bash">./configure --prefix=/home/spms/php7 --with-config-file-path=/home/spms/php7/etc --enable-fpm</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="5-编译安装"><a href="#5-编译安装" class="headerlink" title="5.编译安装"></a>5. 编译安装</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="6-参数配置"><a href="#6-参数配置" class="headerlink" title="6.参数配置"></a>6. 参数配置</h2><h3 id="php-ini"><a href="#php-ini" class="headerlink" title="php.ini"></a>php.ini</h3><p>在之前编译的源码包中，找到 php.ini-production，复制到 /home/spms/php7 下，并改名为 php.ini：</p>
+<h2 id="4-配置PHP安装环境"><a href="#4-配置PHP安装环境" class="headerlink" title="4.配置PHP安装环境"></a>4. 配置 PHP 安装环境</h2><p>以下为能够安装的基本配置，网上很多参数的那种，要写 /usr/lib 等目录，非 root 用户没有权限，不能安装。需要配置其他功能室再查资料。</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> php-7.3.27</span></span><br><span class="line"><span class="meta">$</span><span class="bash">./configure --prefix=/home/spms/php7 --with-config-file-path=/home/spms/php7/etc --enable-fpm --enable-pdo --with-pdo-mysql --enable-mysqlnd --with-mysqli --with-openssl</span> </span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">./configure --prefix=/usr/local/php --with-zlib --enable-zip --with-openssl --enable-fpm --enable-mbstring --with-libdir=lib64</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="5-编译安装"><a href="#5-编译安装" class="headerlink" title="5.编译安装"></a>5. 编译安装</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">make clear #重新配置和编译时使用</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="6-参数配置php-ini"><a href="#6-参数配置php-ini" class="headerlink" title="6.参数配置php.ini"></a>6. 参数配置 php.ini</h2><p>在之前编译的源码包中，找到 php.ini-production，复制到 /home/spms/php7 下，并改名为 php.ini：</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">cd /home/spms/php-7.3.27</span><br><span class="line">cp php.ini-production /home/spms/php7/etc/php.ini</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="php-fpm-conf"><a href="#php-fpm-conf" class="headerlink" title="php-fpm.conf"></a>php-fpm.conf</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">cd /home/spms/php7/etc/php-fpm.d</span><br><span class="line">cp www.conf.default www.conf</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="php-fpm-conf"><a href="#php-fpm-conf" class="headerlink" title="php-fpm.conf"></a>php-fpm.conf</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">cd /home/spms/php7/etc</span><br><span class="line">cp php-fpm.conf.default php-fpm.conf</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="www-conf"><a href="#www-conf" class="headerlink" title="www.conf"></a><a href="http://www.conf/">www.conf</a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">cd /home/spms/php7/etc/php-fpm.d</span><br><span class="line">cp www.conf.default www.conf</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="修改php7端口号"><a href="#修改php7端口号" class="headerlink" title="修改php7端口号"></a>修改 php7 端口号</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">vim /usr/local/php7/etc/php-fpm.d/www.conf</span><br><span class="line">listen = 0.0.0.0:9000</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="7-启动php"><a href="#7-启动php" class="headerlink" title="7.启动php"></a>7. 启动 php</h2><p>/usr/local/php7/sbin/php-fpm </p>
-<h2 id="8-php状态查看"><a href="#8-php状态查看" class="headerlink" title="8.php状态查看"></a>8.php 状态查看</h2><p>查看是否已经开启</p>
+<h2 id="8-php常用命令"><a href="#8-php常用命令" class="headerlink" title="8.php常用命令"></a>8.php 常用命令</h2><p>查看是否已经开启</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">ps -ef|grep php</span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">ps -A | grep -i php </span><br></pre></td></tr></tbody></table></figure>
 <p>关闭 php-fpm 服务</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">pkill php-fpm</span><br></pre></td></tr></tbody></table></figure>
-
-
-<h1 id="4-Ningx安装"><a href="#4-Ningx安装" class="headerlink" title="4 Ningx安装"></a>4 Ningx 安装</h1><p>（一）安装<br>1. 安装准备<br>（1）下载<br>openssl-1.0.2l.tar.gz<br>zlib-1.2.11.tar.gz<br>pcre-8.38.tar.gz<br>（2）查看是否安装：<br>$rpm -qa zlib<br>$rpm -qa openssl<br>$rpm -qa pcre<br>tar 三个包<br>因系统已安装上述三个包，上述三个包只解压不编译，安装 nginx 时指定为 with 目录即可。<br>tar nginx 包<br>$ tar zxvf nginx-1.12.1.tar.gz<br>$cd nginx1.12.1<br>$./configure –prefix=/home/spms/nginx –with-openssl=../openssl-1.0.2l –with-zlib=../zlib-1.2.11 –with-pcre=../pcre-8.38<br>$make<br>$make install<br>配置<br>#vi nginx.conf<br>server {<br>        listen       8850;<br>        server_name  localhost;<br>        #charset koi8-r;<br>        #access_log  logs/host.access.log  main;<br>        location / {<br>            root   html;<br>            index  index.html index.htm index.php;<br>        }</p>
-<p> location ~ .php$ {<br>            root           html;<br>            fastcgi_pass   127.0.0.1:9000;<br>            fastcgi_index  index.php;<br>            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;<br>            include        fastcgi_params;<br>        }<br>将注释的 #号去掉，并在 fastcgi_param 参数的 $fastcgi_script_name 之前加入 $document_root.<br>http {<br>　　 include       mime.types;<br>        default_type  application/octet-stream;<br>         server_names_hash_bucket_size 128;<br>         client_header_buffer_size 32k;<br>     sendfile        on;<br>      tcp_nopush     on;<br>     tcp_nodelay    on;<br>      #keepalive_timeout  0;<br>       keepalive_timeout  65;<br>         fastcgi_connect_timeout 300;<br>       fastcgi_send_timeout 300;<br>       fastcgi_read_timeout 300;<br>         fastcgi_buffer_size 64k;<br>         fastcgi_buffers 4 64k;<br>         fastcgi_busy_buffers_size 128k;<br>         fastcgi_temp_file_write_size 128k;<br>修改 fastcgi.conf 用下面内容覆盖原文件：<br>fastcgi_param  GATEWAY_INTERFACE  CGI/1.1;<br>fastcgi_param  SERVER_SOFTWARE    nginx;<br>fastcgi_param  QUERY_STRING      $query_string;<br>fastcgi_param  REQUEST_METHOD    $request_method;<br>fastcgi_param  CONTENT_TYPE      $content_type;<br>fastcgi_param  CONTENT_LENGTH    $content_length;<br>fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;<br>fastcgi_param  SCRIPT_NAME        $fastcgi_script_name;<br>fastcgi_param  REQUEST_URI        $request_uri;<br>fastcgi_param  DOCUMENT_URI      $document_uri;<br>fastcgi_param  DOCUMENT_ROOT      $document_root;<br>fastcgi_param  SERVER_PROTOCOL    $server_protocol;<br>fastcgi_param  REMOTE_ADDR        $remote_addr;<br>fastcgi_param  REMOTE_PORT        $remote_port;<br>fastcgi_param  SERVER_ADDR        $server_addr;<br>fastcgi_param  SERVER_PORT        $server_port;<br>fastcgi_param  SERVER_NAME        $server_name;</p>
-<p>原始文件多了如下三行（不用改变应该可以？）：<br>fastcgi_param  REQUEST_SCHEME     $scheme;<br>fastcgi_param  HTTPS              $https if_not_empty;<br>fastcgi_param  REDIRECT_STATUS    200;</p>
-<p>（三）检测是否安装成功<br>$ cd  /home/nginx/nginx/sbin<br>$ ./nginx -t<br>出现如下所示提示，表示安装成功 </p>
-<p>启动 nginx</p>
-<p>cd ../../nginx/sbin</p>
-<p>./nginx</p>
-<p>如果之前已经启动了 nginx 请使用如下命令：</p>
-<p>./nginx -s reload</p>
-<p>在 /usr/local/nginx/html/ 目录下创建一个文件 index.php</p>
-<p>touch index.php</p>
-<p>内容为：<!--? echo phpinfo(); ?--><br>结果为：<br>我的启动脚本：<br>/home/spms/ctrl_nginx.sh</p>
-<p>整套系统开机启动：<br>启动放到如下文件<br>/etc/init.d/after.local<br>vi after.local<br>su - db2inst1 -c “db2start”<br>su - spms -c “ctrl_tomcat.sh start”<br>su - spms -c “ctrl_php-fpm.sh start”<br>su - spms -c “ctrl_nginx.sh start”</p>
-<p>注：设置 nginx 和 php-fpm 更改上传文件大小限制<br>Nginx 和 php 默认不支持上传过大的文件。<br>假如我们要求上传的文件大小为 20M，默认配置就不允许上传了。<br>下面我们更改 nginx 和 php 配置，设定上传的限制为 20M。<br>Nginx 配置更改<br>如果上传文件时超过了 nginx 的限制，就会返回一个 “413 Request Entity Too Large” 的错误。<br>我们只要更改 nginx 的配置文件 “nginx.conf” 即可。<br>在 http {} 中添加一个 client_max_body_size 20m; 配置项；<br>修改完成之后重启 nginx 或 reload 配置。</p>
-<p>PHP 配置更改<br>除了 nginx 对文件大小有要求，php 也做了限制。<br>php 的配置文件为 php.ini。<br>我们需要修改下面的配置：</p>
-<p>file_uploads = On ; 打开文件上传选项<br>upload_max_filesize = 20M ; 上传文件上限<br>post_max_size = 20M ;post 上限 </p>
-<p>; 还需要根据实际情况调整下面的选项<br>max_execution_time = 180 ; 脚本最大执行时间（秒） ，过短会导致文件还没上传完脚本就停止了。<br>max_input_time = 180 ; 请求的最大传输时间，过短会导致文件还没上传完传输就停止了。<br>memory_limit = 128M ; 内存上限<br>修改完成后重启 php-fpm 或 reload 配置。注意：与 tomcat 共用：<br>1.Tomcat 修改 server.xml 端口为 8858<br>2.Nginx 端口为 8848<br>3.php 应用的目录复制到 /home/spms/SPMS（为了合肥转接的能用）<br>4.11.64.65.15:8848/SPMS 是原来的应用<br>  11.64.17.23:8848/SPMS（合肥转接）<br>5.11.64.65.15:8848/SPMS/ZFJS 是增加的应用<br>  11.64.17.23:8848/SPMS/ZFJS（合肥转接）<br>Nginx.conf 配置参见生产系统。</p>
+<p>查看模块</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~/php7/bin&gt; php -m</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>php</category>
@@ -220,6 +648,45 @@
       <tags>
         <tag>linux</tag>
         <tag>命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用好软件（随时发现随时更新）</title>
+    <url>/2021/03/24/%E5%B8%B8%E7%94%A8%E5%A5%BD%E8%BD%AF%E4%BB%B6%EF%BC%88%E9%9A%8F%E6%97%B6%E5%8F%91%E7%8E%B0%E9%9A%8F%E6%97%B6%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="quicker您的指尖工具箱"><a href="#quicker您的指尖工具箱" class="headerlink" title="quicker您的指尖工具箱"></a>quicker 您的指尖工具箱</h1><p><strong>Quicker</strong> 是一个让 <strong>Windows 用户</strong>可以用<strong>最合适的方式</strong>、<strong>最快地</strong>触发想要的<strong>操作</strong>的软件工具，是一个<strong>场景化</strong>的工具箱，也是一个可以<strong>创造和分享新工具</strong>的平台。<a href="https://getquicker.net/">https://getquicker.net/</a></p>
+<ul>
+<li> 可以利用写博客头功能，省去 hexo new blog 命令</li>
+<li>安装→注册→运行→鼠标中间或 ctrl+q 激活面板→工具箱→相应动作拖到面板→应用时激活执行</li>
+</ul>
+<img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210222112957.png" alt="image-20210220122832855" style="zoom:25%;">
+
+
+
+<ul>
+<li>有免费版和专业版（按年收费）</li>
+</ul>
+<h1 id="Everything基于名称快速定位文件和文件夹"><a href="#Everything基于名称快速定位文件和文件夹" class="headerlink" title="Everything基于名称快速定位文件和文件夹"></a>Everything 基于名称快速定位文件和文件夹</h1><p><a href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
+<p>Everything” 是 Windows 上一款搜索引擎，它能够基于文件名快速定文件和文件夹位置。</p>
+<p>不像 Windows 内置搜索，”Everything” 默认显示电脑上每个文件和文件夹 (就如其名 “Everything”)。您在搜索框输入的关键词将会筛选显示的文件和文件夹。</p>
+<p>“Everything” 可以通过搜索函数 content: 来搜索文件内容。文件内容未被索引时，搜索内容将会很慢。</p>
+<ul>
+<li>免费软件。软件开发维护不易，请考虑<a href="https://www.voidtools.com/zh-cn/donate">捐赠</a>。</li>
+</ul>
+<h1 id="Snipaste-帮你提高工作效率"><a href="#Snipaste-帮你提高工作效率" class="headerlink" title="Snipaste 帮你提高工作效率"></a>Snipaste 帮你提高工作效率</h1><p><a href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
+<p>Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上！下载并打开 Snipaste，按下 <code>F1</code> 来开始截图，再按 <code>F3</code>，截图就在桌面置顶显示了。就这么简单！</p>
+<p>你还可以将剪贴板里的文字或者颜色信息转化为图片窗口，并且将它们进行缩放、旋转、翻转、设为半透明，甚至让鼠标能穿透它们！如果你是程序员、设计师，或者是大部分工作时间都在电脑前，贴图功能将改变你的工作方式、提升工作效率。</p>
+<p>Snipaste 使用很简单，但同时也有一些较高级的用法可以进一步提升你的工作效率。感兴趣的话，请抽空读一读<a href="https://docs.snipaste.com/#/zh-cn/">用户手册</a>。</p>
+<p>Snipaste 是免费软件，它也很安全，没有广告、不会扫描你的硬盘、更不会上传用户数据，它只做它应该做的事。</p>
+<ul>
+<li>个人免费（够用了）</li>
+<li>专业版需购买，解锁 30 多个功能，Snipaste 2 专业版已经可从 <a href="https://www.microsoft.com/store/apps/9P1WXPKB68KX">微软商店版</a> <strong>内购</strong>获得！定价 99 CNY / 19.99 USD，授权机制为<strong>大版本买断</strong>，即永久使用，子版本免费更新。已购买用户将来可优惠升级到 Snipaste 3</li>
+</ul>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>quicker</tag>
       </tags>
   </entry>
   <entry>
@@ -259,8 +726,8 @@
         <category>书写博客</category>
       </categories>
       <tags>
-        <tag>quicker</tag>
         <tag>typora</tag>
+        <tag>quicker</tag>
       </tags>
   </entry>
   <entry>
@@ -326,6 +793,19 @@
         <tag>typora</tag>
         <tag>PicGo</tag>
         <tag>jsdelivr</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>php7.3 编译安装参数</title>
+    <url>/2021/03/22/php7-3%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%8F%82%E6%95%B0/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~/php-7.3.27&gt; ./configure -h</span><br><span class="line">`configure' configures this package to adapt to many kinds of systems.</span><br><span class="line"></span><br><span class="line">Usage: ./configure [OPTION]... [VAR=VALUE]...</span><br><span class="line"></span><br><span class="line">To assign environment variables (e.g., CC, CFLAGS...), specify them as</span><br><span class="line">VAR=VALUE.  See below for descriptions of some of the useful variables.</span><br><span class="line"></span><br><span class="line">Defaults for the options are specified in brackets.</span><br><span class="line"></span><br><span class="line">Configuration:</span><br><span class="line">  -h, --help              display this help and exit</span><br><span class="line">      --help=short        display options specific to this package</span><br><span class="line">      --help=recursive    display the short help of all the included packages</span><br><span class="line">  -V, --version           display version information and exit</span><br><span class="line">  -q, --quiet, --silent   do not print `checking ...' messages</span><br><span class="line">      --cache-file=FILE   cache test results in FILE [disabled]</span><br><span class="line">  -C, --config-cache      alias for `--cache-file=config.cache'</span><br><span class="line">  -n, --no-create         do not create output files</span><br><span class="line">      --srcdir=DIR        find the sources in DIR [configure dir or `..']</span><br><span class="line"></span><br><span class="line">Installation directories:</span><br><span class="line">  --prefix=PREFIX         install architecture-independent files in PREFIX</span><br><span class="line">                          [/usr/local]</span><br><span class="line">  --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX</span><br><span class="line">                          [PREFIX]</span><br><span class="line"></span><br><span class="line">By default, `make install' will install all the files in</span><br><span class="line">`/usr/local/bin', `/usr/local/lib' etc.  You can specify</span><br><span class="line">an installation prefix other than `/usr/local' using `--prefix',</span><br><span class="line">for instance `--prefix=$HOME'.</span><br><span class="line"></span><br><span class="line">For better control, use the options below.</span><br><span class="line"></span><br><span class="line">Fine tuning of the installation directories:</span><br><span class="line">  --bindir=DIR            user executables [EPREFIX/bin]</span><br><span class="line">  --sbindir=DIR           system admin executables [EPREFIX/sbin]</span><br><span class="line">  --libexecdir=DIR        program executables [EPREFIX/libexec]</span><br><span class="line">  --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]</span><br><span class="line">  --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]</span><br><span class="line">  --localstatedir=DIR     modifiable single-machine data [PREFIX/var]</span><br><span class="line">  --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]</span><br><span class="line">  --libdir=DIR            object code libraries [EPREFIX/lib]</span><br><span class="line">  --includedir=DIR        C header files [PREFIX/include]</span><br><span class="line">  --oldincludedir=DIR     C header files for non-gcc [/usr/include]</span><br><span class="line">  --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share]</span><br><span class="line">  --datadir=DIR           read-only architecture-independent data [DATAROOTDIR]</span><br><span class="line">  --infodir=DIR           info documentation [DATAROOTDIR/info]</span><br><span class="line">  --localedir=DIR         locale-dependent data [DATAROOTDIR/locale]</span><br><span class="line">  --mandir=DIR            man documentation [DATAROOTDIR/man]</span><br><span class="line">  --docdir=DIR            documentation root [DATAROOTDIR/doc/PACKAGE]</span><br><span class="line">  --htmldir=DIR           html documentation [DOCDIR]</span><br><span class="line">  --dvidir=DIR            dvi documentation [DOCDIR]</span><br><span class="line">  --pdfdir=DIR            pdf documentation [DOCDIR]</span><br><span class="line">  --psdir=DIR             ps documentation [DOCDIR]</span><br><span class="line"></span><br><span class="line">System types:</span><br><span class="line">  --build=BUILD     configure for building on BUILD [guessed]</span><br><span class="line">  --host=HOST       cross-compile to build programs to run on HOST [BUILD]</span><br><span class="line">  --target=TARGET   configure for building compilers for TARGET [HOST]</span><br><span class="line"></span><br><span class="line">Optional Features and Packages:</span><br><span class="line">  --disable-option-checking  ignore unrecognized --enable/--with options</span><br><span class="line">  --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)</span><br><span class="line">  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]</span><br><span class="line">  --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]</span><br><span class="line">  --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)</span><br><span class="line">  --with-libdir=NAME      Look for libraries in .../NAME rather than .../lib</span><br><span class="line">  --disable-rpath         Disable passing additional runtime library</span><br><span class="line">                          search paths</span><br><span class="line">  --enable-re2c-cgoto     Enable -g flag to re2c to use computed goto gcc extension</span><br><span class="line">  --disable-gcc-global-regs</span><br><span class="line">                          whether to enable GCC global register variables</span><br><span class="line"></span><br><span class="line">SAPI modules:</span><br><span class="line"></span><br><span class="line">  --with-apxs2=FILE       Build shared Apache 2.0 Handler module. FILE is the optional</span><br><span class="line">                          pathname to the Apache apxs tool apxs</span><br><span class="line">  --disable-cli           Disable building CLI version of PHP</span><br><span class="line">                          (this forces --without-pear)</span><br><span class="line">  --enable-embed=TYPE     EXPERIMENTAL: Enable building of embedded SAPI library</span><br><span class="line">                          TYPE is either 'shared' or 'static'. TYPE=shared</span><br><span class="line">  --enable-fpm            Enable building of the fpm SAPI executable</span><br><span class="line">  --with-fpm-user=USER    Set the user for php-fpm to run as. (default: nobody)</span><br><span class="line">  --with-fpm-group=GRP    Set the group for php-fpm to run as. For a system user, this</span><br><span class="line">                          should usually be set to match the fpm username (default: nobody)</span><br><span class="line">  --with-fpm-systemd      Activate systemd integration</span><br><span class="line">  --with-fpm-acl          Use POSIX Access Control Lists</span><br><span class="line">  --with-litespeed        Build PHP as litespeed module</span><br><span class="line">  --enable-phpdbg         Build phpdbg</span><br><span class="line">  --enable-phpdbg-webhelper</span><br><span class="line">                          Build phpdbg web SAPI support</span><br><span class="line">  --enable-phpdbg-debug   Build phpdbg in debug mode</span><br><span class="line">  --enable-phpdbg-readline   Enable readline support in phpdbg (depends on static ext/readline)</span><br><span class="line">  --disable-cgi           Disable building CGI version of PHP</span><br><span class="line">  --with-valgrind=DIR     Enable valgrind support</span><br><span class="line"></span><br><span class="line">General settings:</span><br><span class="line"></span><br><span class="line">  --enable-gcov           Enable GCOV code coverage (requires LTP) - FOR DEVELOPERS ONLY!!</span><br><span class="line">  --enable-debug          Compile with debugging symbols</span><br><span class="line">  --with-layout=TYPE      Set how installed files will be laid out.  Type can</span><br><span class="line">                          be either PHP or GNU [PHP]</span><br><span class="line">  --with-config-file-path=PATH</span><br><span class="line">                          Set the path in which to look for php.ini [PREFIX/lib]</span><br><span class="line">  --with-config-file-scan-dir=PATH</span><br><span class="line">                          Set the path where to scan for configuration files</span><br><span class="line">  --enable-sigchild       Enable PHP's own SIGCHLD handler</span><br><span class="line">  --enable-libgcc         Enable explicitly linking against libgcc</span><br><span class="line">  --disable-short-tags    Disable the short-form &lt;? start tag by default</span><br><span class="line">  --enable-dmalloc        Enable dmalloc</span><br><span class="line">  --disable-ipv6          Disable IPv6 support</span><br><span class="line">  --enable-dtrace         Enable DTrace support</span><br><span class="line">  --enable-fd-setsize     Set size of descriptor sets</span><br><span class="line"></span><br><span class="line">Extensions:</span><br><span class="line"></span><br><span class="line">  --with-EXTENSION=shared[,PATH]</span><br><span class="line"></span><br><span class="line">    NOTE: Not all extensions can be build as 'shared'.</span><br><span class="line">    </span><br><span class="line">    Example: --with-foobar=shared,/usr/local/foobar/</span><br><span class="line">    </span><br><span class="line">      o Builds the foobar extension as shared extension.</span><br><span class="line">      o foobar package install prefix is /usr/local/foobar/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  --disable-all           Disable all extensions which are enabled by default</span><br><span class="line"></span><br><span class="line">  --disable-libxml        Disable LIBXML support</span><br><span class="line">  --with-libxml-dir=DIR   LIBXML: libxml2 install prefix</span><br><span class="line">  --with-openssl=DIR      Include OpenSSL support (requires OpenSSL &gt;= 1.0.1)</span><br><span class="line">  --with-kerberos=DIR     OPENSSL: Include Kerberos support</span><br><span class="line">  --with-system-ciphers   OPENSSL: Use system default cipher list instead of hardcoded value</span><br><span class="line">  --with-pcre-regex=DIR   Include Perl Compatible Regular Expressions support.</span><br><span class="line">                          DIR is the PCRE install prefix BUNDLED</span><br><span class="line">  --with-pcre-jit         Enable PCRE JIT functionality (BUNDLED only)</span><br><span class="line">  --with-pcre-valgrind=DIR</span><br><span class="line">                          Enable PCRE valgrind support. Developers only!</span><br><span class="line">  --without-sqlite3=DIR   Do not include SQLite3 support. DIR is the prefix to</span><br><span class="line">                          SQLite3 installation directory.</span><br><span class="line">  --with-zlib=DIR         Include ZLIB support (requires zlib &gt;= 1.2.0.4)</span><br><span class="line">  --with-zlib-dir=&lt;DIR&gt;   Define the location of zlib install directory</span><br><span class="line">  --enable-bcmath         Enable bc style precision math functions</span><br><span class="line">  --with-bz2=DIR          Include BZip2 support</span><br><span class="line">  --enable-calendar       Enable support for calendar conversion</span><br><span class="line">  --disable-ctype         Disable ctype functions</span><br><span class="line">  --with-curl=DIR         Include cURL support</span><br><span class="line">  --enable-dba            Build DBA with bundled modules. To build shared DBA</span><br><span class="line">                          extension use --enable-dba=shared</span><br><span class="line">  --with-qdbm=DIR         DBA: QDBM support</span><br><span class="line">  --with-gdbm=DIR         DBA: GDBM support</span><br><span class="line">  --with-ndbm=DIR         DBA: NDBM support</span><br><span class="line">  --with-db4=DIR          DBA: Oracle Berkeley DB 4.x or 5.x support</span><br><span class="line">  --with-db3=DIR          DBA: Oracle Berkeley DB 3.x support</span><br><span class="line">  --with-db2=DIR          DBA: Oracle Berkeley DB 2.x support</span><br><span class="line">  --with-db1=DIR          DBA: Oracle Berkeley DB 1.x support/emulation</span><br><span class="line">  --with-dbm=DIR          DBA: DBM support</span><br><span class="line">  --with-tcadb=DIR        DBA: Tokyo Cabinet abstract DB support</span><br><span class="line">  --with-lmdb=DIR         DBA: Lightning memory-mapped database support</span><br><span class="line">  --without-cdb=DIR       DBA: CDB support (bundled)</span><br><span class="line">  --disable-inifile       DBA: INI support (bundled)</span><br><span class="line">  --disable-flatfile      DBA: FlatFile support (bundled)</span><br><span class="line">  --disable-dom           Disable DOM support</span><br><span class="line">  --with-libxml-dir=DIR   DOM: libxml2 install prefix</span><br><span class="line">  --with-enchant=DIR      Include enchant support.</span><br><span class="line">                          GNU Aspell version 1.1.3 or higher required.</span><br><span class="line">  --enable-exif           Enable EXIF (metadata from images) support</span><br><span class="line">  --disable-fileinfo      Disable fileinfo support</span><br><span class="line">  --disable-filter        Disable input filter support</span><br><span class="line">  --with-pcre-dir         FILTER: pcre install prefix</span><br><span class="line">  --enable-ftp            Enable FTP support</span><br><span class="line">  --with-openssl-dir=DIR  FTP: openssl install prefix</span><br><span class="line">  --with-gd=DIR           Include GD support.  DIR is the GD library base</span><br><span class="line">                          install directory BUNDLED</span><br><span class="line">  --with-webp-dir=DIR     GD: Set the path to libwebp install prefix</span><br><span class="line">  --with-jpeg-dir=DIR     GD: Set the path to libjpeg install prefix</span><br><span class="line">  --with-png-dir=DIR      GD: Set the path to libpng install prefix</span><br><span class="line">  --with-zlib-dir=DIR     GD: Set the path to libz install prefix</span><br><span class="line">  --with-xpm-dir=DIR      GD: Set the path to libXpm install prefix</span><br><span class="line">  --with-freetype-dir=DIR GD: Set the path to FreeType 2 install prefix</span><br><span class="line">  --enable-gd-jis-conv    GD: Enable JIS-mapped Japanese font support</span><br><span class="line">  --with-gettext=DIR      Include GNU gettext support</span><br><span class="line">  --with-gmp=DIR          Include GNU MP support</span><br><span class="line">  --with-mhash=DIR        Include mhash support</span><br><span class="line">  --disable-hash          Disable hash support</span><br><span class="line">  --without-iconv=DIR     Exclude iconv support</span><br><span class="line">  --with-imap=DIR         Include IMAP support. DIR is the c-client install prefix</span><br><span class="line">  --with-kerberos=DIR     IMAP: Include Kerberos support. DIR is the Kerberos install prefix</span><br><span class="line">  --with-imap-ssl=DIR     IMAP: Include SSL support. DIR is the OpenSSL install prefix</span><br><span class="line">  --with-interbase=DIR    Include Firebird support.  DIR is the Firebird base</span><br><span class="line">                          install directory /opt/firebird</span><br><span class="line">  --enable-intl           Enable internationalization support</span><br><span class="line">  --with-icu-dir=DIR      Specify where ICU libraries and headers can be found</span><br><span class="line">  --disable-json          Disable JavaScript Object Serialization support</span><br><span class="line">  --with-ldap=DIR         Include LDAP support</span><br><span class="line">  --with-ldap-sasl=DIR    LDAP: Include Cyrus SASL support</span><br><span class="line">  --enable-mbstring       Enable multibyte string support</span><br><span class="line">  --disable-mbregex       MBSTRING: Disable multibyte regex support</span><br><span class="line">  --disable-mbregex-backtrack</span><br><span class="line">                          MBSTRING: Disable multibyte regex backtrack check</span><br><span class="line">  --with-onig=DIR         MBSTRING: Use external oniguruma. DIR is the oniguruma install prefix.</span><br><span class="line">                          If DIR is not set, the bundled oniguruma will be used</span><br><span class="line">  --with-mysqli=FILE      Include MySQLi support.  FILE is the path</span><br><span class="line">                          to mysql_config.  If no value or mysqlnd is passed</span><br><span class="line">                          as FILE, the MySQL native driver will be used</span><br><span class="line">  --enable-embedded-mysqli</span><br><span class="line">                          MYSQLi: Enable embedded support</span><br><span class="line">                          Note: Does not work with MySQL native driver!</span><br><span class="line">  --with-mysql-sock=SOCKPATH</span><br><span class="line">                          MySQLi/PDO_MYSQL: Location of the MySQL unix socket pointer.</span><br><span class="line">                          If unspecified, the default locations are searched</span><br><span class="line">  --with-oci8=DIR         Include Oracle Database OCI8 support. DIR defaults to $ORACLE_HOME.</span><br><span class="line">                          Use --with-oci8=instantclient,/path/to/instant/client/lib</span><br><span class="line">                          to use an Oracle Instant Client installation</span><br><span class="line">  --with-odbcver=HEX      Force support for the passed ODBC version. A hex number is expected, default 0x0350.</span><br><span class="line">                          Use the special value of 0 to prevent an explicit ODBCVER to be defined.</span><br><span class="line">  --with-adabas=DIR       Include Adabas D support /usr/local</span><br><span class="line">  --with-sapdb=DIR        Include SAP DB support /usr/local</span><br><span class="line">  --with-solid=DIR        Include Solid support /usr/local/solid</span><br><span class="line">  --with-ibm-db2=DIR      Include IBM DB2 support /home/db2inst1/sqllib</span><br><span class="line">  --with-empress=DIR      Include Empress support \$EMPRESSPATH</span><br><span class="line">                          (Empress Version &gt;= 8.60 required)</span><br><span class="line">  --with-empress-bcs=DIR  Include Empress Local Access support \$EMPRESSPATH</span><br><span class="line">                          (Empress Version &gt;= 8.60 required)</span><br><span class="line">  --with-custom-odbc=DIR  Include user defined ODBC support. DIR is ODBC install base</span><br><span class="line">                          directory /usr/local. Make sure to define CUSTOM_ODBC_LIBS and</span><br><span class="line">                          have some odbc.h in your include dirs. f.e. you should define</span><br><span class="line">                          following for Sybase SQL Anywhere 5.5.00 on QNX, prior to</span><br><span class="line">                          running this configure script:</span><br><span class="line">                            CPPFLAGS=\"-DODBC_QNX -DSQLANY_BUG\"</span><br><span class="line">                            LDFLAGS=-lunix</span><br><span class="line">                            CUSTOM_ODBC_LIBS=\"-ldblib -lodbc\"</span><br><span class="line">  --with-iodbc=DIR        Include iODBC support /usr/local</span><br><span class="line">  --with-esoob=DIR        Include Easysoft OOB support /usr/local/easysoft/oob/client</span><br><span class="line">  --with-unixODBC=DIR     Include unixODBC support /usr/local</span><br><span class="line">  --with-dbmaker=DIR      Include DBMaker support</span><br><span class="line">  --disable-opcache       Disable Zend OPcache support</span><br><span class="line">  --disable-opcache-file  Disable file based caching</span><br><span class="line">  --disable-huge-code-pages</span><br><span class="line">                          Disable copying PHP CODE pages into HUGE PAGES</span><br><span class="line">  --enable-pcntl          Enable pcntl support (CLI/CGI only)</span><br><span class="line">  --disable-pdo           Disable PHP Data Objects support</span><br><span class="line">  --with-pdo-dblib=DIR    PDO: DBLIB-DB support.  DIR is the FreeTDS home directory</span><br><span class="line">  --with-pdo-firebird=DIR PDO: Firebird support.  DIR is the Firebird base</span><br><span class="line">                          install directory /opt/firebird</span><br><span class="line">  --with-pdo-mysql=DIR    PDO: MySQL support. DIR is the MySQL base directory</span><br><span class="line">                          If no value or mysqlnd is passed as DIR, the</span><br><span class="line">                          MySQL native driver will be used</span><br><span class="line">  --with-zlib-dir=DIR     PDO_MySQL: Set the path to libz install prefix</span><br><span class="line">  --with-pdo-oci=DIR      PDO: Oracle OCI support. DIR defaults to $ORACLE_HOME.</span><br><span class="line">                          Use --with-pdo-oci=instantclient,/path/to/instant/client/lib</span><br><span class="line">                          for an Oracle Instant Client installation.</span><br><span class="line">  --with-pdo-odbc=flavour,dir</span><br><span class="line">                          PDO: Support for 'flavour' ODBC driver.</span><br><span class="line">                          include and lib dirs are looked for under 'dir'.</span><br><span class="line"></span><br><span class="line">                          'flavour' can be one of:  ibm-db2, iODBC, unixODBC, generic</span><br><span class="line">                          If ',dir' part is omitted, default for the flavour</span><br><span class="line">                          you have selected will be used. e.g.:</span><br><span class="line">    </span><br><span class="line">                            --with-pdo-odbc=unixODBC</span><br><span class="line">    </span><br><span class="line">                          will check for unixODBC under /usr/local. You may attempt</span><br><span class="line">                          to use an otherwise unsupported driver using the 'generic'</span><br><span class="line">                          flavour.  The syntax for generic ODBC support is:</span><br><span class="line">    </span><br><span class="line">                            --with-pdo-odbc=generic,dir,libname,ldflags,cflags</span><br><span class="line">    </span><br><span class="line">                          When built as 'shared' the extension filename is always pdo_odbc.so</span><br><span class="line"></span><br><span class="line">  --with-pdo-pgsql=DIR    PDO: PostgreSQL support.  DIR is the PostgreSQL base</span><br><span class="line">                          install directory or the path to pg_config</span><br><span class="line">  --without-pdo-sqlite=DIR</span><br><span class="line">                          PDO: sqlite 3 support.  DIR is the sqlite base</span><br><span class="line">                          install directory BUNDLED</span><br><span class="line">  --with-pgsql=DIR        Include PostgreSQL support.  DIR is the PostgreSQL</span><br><span class="line">                          base install directory or the path to pg_config</span><br><span class="line">  --disable-phar          Disable phar support</span><br><span class="line">  --disable-posix         Disable POSIX-like functions</span><br><span class="line">  --with-pspell=DIR       Include PSPELL support.</span><br><span class="line">                          GNU Aspell version 0.50.0 or higher required</span><br><span class="line">  --with-libedit=DIR      Include libedit readline replacement (CLI/CGI only)</span><br><span class="line">  --with-readline=DIR     Include readline support (CLI/CGI only)</span><br><span class="line">  --with-recode=DIR       Include recode support</span><br><span class="line">  --disable-session       Disable session support</span><br><span class="line">  --with-mm=DIR           SESSION: Include mm support for session storage</span><br><span class="line">  --enable-shmop          Enable shmop support</span><br><span class="line">  --disable-simplexml     Disable SimpleXML support</span><br><span class="line">  --with-libxml-dir=DIR   SimpleXML: libxml2 install prefix</span><br><span class="line">  --with-snmp=DIR         Include SNMP support</span><br><span class="line">  --with-openssl-dir=DIR  SNMP: openssl install prefix</span><br><span class="line">  --enable-soap           Enable SOAP support</span><br><span class="line">  --with-libxml-dir=DIR   SOAP: libxml2 install prefix</span><br><span class="line">  --enable-sockets        Enable sockets support</span><br><span class="line">  --with-sodium=DIR       Include sodium support</span><br><span class="line">  --with-password-argon2=DIR</span><br><span class="line">                          Include Argon2 support in password_*. DIR is the Argon2 shared library path</span><br><span class="line">  --enable-sysvmsg        Enable sysvmsg support</span><br><span class="line">  --enable-sysvsem        Enable System V semaphore support</span><br><span class="line">  --enable-sysvshm        Enable the System V shared memory support</span><br><span class="line">  --with-tidy=DIR         Include TIDY support</span><br><span class="line">  --disable-tokenizer     Disable tokenizer support</span><br><span class="line">  --enable-wddx           Enable WDDX support</span><br><span class="line">  --with-libxml-dir=DIR   WDDX: libxml2 install prefix</span><br><span class="line">  --with-libexpat-dir=DIR WDDX: libexpat dir for XMLRPC-EPI (deprecated)</span><br><span class="line">  --disable-xml           Disable XML support</span><br><span class="line">  --with-libxml-dir=DIR   XML: libxml2 install prefix</span><br><span class="line">  --with-libexpat-dir=DIR XML: libexpat install prefix (deprecated)</span><br><span class="line">  --disable-xmlreader     Disable XMLReader support</span><br><span class="line">  --with-libxml-dir=DIR   XMLReader: libxml2 install prefix</span><br><span class="line">  --with-xmlrpc=DIR       Include XMLRPC-EPI support</span><br><span class="line">  --with-libxml-dir=DIR   XMLRPC-EPI: libxml2 install prefix</span><br><span class="line">  --with-libexpat-dir=DIR XMLRPC-EPI: libexpat dir for XMLRPC-EPI (deprecated)</span><br><span class="line">  --with-iconv-dir=DIR    XMLRPC-EPI: iconv dir for XMLRPC-EPI</span><br><span class="line">  --disable-xmlwriter     Disable XMLWriter support</span><br><span class="line">  --with-libxml-dir=DIR   XMLWriter: libxml2 install prefix</span><br><span class="line">  --with-xsl=DIR          Include XSL support.  DIR is the libxslt base</span><br><span class="line">                          install directory (libxslt &gt;= 1.1.0 required)</span><br><span class="line">  --enable-zend-test      Enable zend-test extension</span><br><span class="line">  --enable-zip            Include Zip read/write support</span><br><span class="line">  --with-zlib-dir=DIR     ZIP: Set the path to libz install prefix</span><br><span class="line">  --with-pcre-dir         ZIP: pcre install prefix</span><br><span class="line">  --with-libzip=DIR       ZIP: use libzip</span><br><span class="line">  --enable-mysqlnd        Enable mysqlnd explicitly, will be done implicitly</span><br><span class="line">                          when required by other extensions</span><br><span class="line">  --disable-mysqlnd-compression-support</span><br><span class="line">                          Disable support for the MySQL compressed protocol in mysqlnd</span><br><span class="line">  --with-zlib-dir=DIR     mysqlnd: Set the path to libz install prefix</span><br><span class="line"></span><br><span class="line">PEAR:</span><br><span class="line"></span><br><span class="line">  --with-pear=DIR         Install PEAR in DIR [PREFIX/lib/php]</span><br><span class="line">  --without-pear          Do not install PEAR</span><br><span class="line"></span><br><span class="line">Zend:</span><br><span class="line"></span><br><span class="line">  --enable-maintainer-zts Enable thread safety - for code maintainers only!!</span><br><span class="line">  --disable-inline-optimization</span><br><span class="line">                          If building zend_execute.lo fails, try this switch</span><br><span class="line">  --disable-zend-signals  whether to enable zend signal handling</span><br><span class="line"></span><br><span class="line">TSRM:</span><br><span class="line"></span><br><span class="line">  --with-tsrm-pth=pth-config</span><br><span class="line">                          Use GNU Pth</span><br><span class="line">  --with-tsrm-st          Use SGI's State Threads</span><br><span class="line">  --with-tsrm-pthreads    Use POSIX threads (default)</span><br><span class="line"></span><br><span class="line">Libtool:</span><br><span class="line"></span><br><span class="line">  --enable-shared=PKGS    Build shared libraries default=yes</span><br><span class="line">  --enable-static=PKGS    Build static libraries default=yes</span><br><span class="line">  --enable-fast-install=PKGS</span><br><span class="line">                          Optimize for fast installation default=yes</span><br><span class="line">  --with-gnu-ld           Assume the C compiler uses GNU ld default=no</span><br><span class="line">  --disable-libtool-lock  Avoid locking (might break parallel builds)</span><br><span class="line">  --with-pic              Try to use only PIC/non-PIC objects default=use both</span><br><span class="line">  --with-tags=TAGS        Include additional configurations automatic</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Some influential environment variables:</span><br><span class="line">  CC          C compiler command</span><br><span class="line">  CFLAGS      C compiler flags</span><br><span class="line">  LDFLAGS     linker flags, e.g. -L&lt;lib dir&gt; if you have libraries in a</span><br><span class="line">              nonstandard directory &lt;lib dir&gt;</span><br><span class="line">  LIBS        libraries to pass to the linker, e.g. -l&lt;library&gt;</span><br><span class="line">  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I&lt;include dir&gt; if</span><br><span class="line">              you have headers in a nonstandard directory &lt;include dir&gt;</span><br><span class="line">  CPP         C preprocessor</span><br><span class="line">  YACC        The `Yet Another Compiler Compiler' implementation to use.</span><br><span class="line">              Defaults to the first program found out of: `bison -y', `byacc',</span><br><span class="line">              `yacc'.</span><br><span class="line">  YFLAGS      The list of arguments that will be passed by default to $YACC.</span><br><span class="line">              This script will default YFLAGS to the empty string to avoid a</span><br><span class="line">              default value of `-d' given by some make applications.</span><br><span class="line">  CXX         C++ compiler command</span><br><span class="line">  CXXFLAGS    C++ compiler flags</span><br><span class="line">  CXXCPP      C++ preprocessor</span><br><span class="line"></span><br><span class="line">Use these variables to override the choices made by `configure' or to help</span><br><span class="line">it to find libraries and programs with nonstandard names/locations.</span><br><span class="line"></span><br><span class="line">Report bugs to the package provider.</span><br><span class="line">spms@ZFQS:~/php-7.3.27&gt; </span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+        <tag>编译参数</tag>
       </tags>
   </entry>
   <entry>
@@ -796,415 +1276,6 @@
         <tag>Github</tag>
         <tag>Hexo</tag>
         <tag>nexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git 和 Github 的基本使用</title>
-    <url>/2021/03/15/Git%E5%92%8CGithub%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="Git和Github的概念"><a href="#Git和Github的概念" class="headerlink" title="Git和Github的概念:"></a><strong>Git 和 Github 的概念:</strong></h1><p>　　Git 是分布式版本管理系统，简单说就是一个软件，用于记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的软件。</p>
-<p>　　Github 是一个为用户提供 Git 服务的网站，简单说就是一个可以放代码或文件的地方，Github 除了提供管理 Git 的 web 界面外，还提供订阅，关注，讨论组，在线编辑器等丰富功能。</p>
-<h1 id="Git本地仓库操作"><a href="#Git本地仓库操作" class="headerlink" title="Git本地仓库操作:"></a><strong>Git 本地仓库操作:</strong></h1><h2 id="1-首次使用需进行全局配置"><a href="#1-首次使用需进行全局配置" class="headerlink" title="1.首次使用需进行全局配置:"></a>1. 首次使用需进行全局配置:</h2><p>　　　　配置用户名：<code>git config --global user.name "用户名"</code>;</p>
-<p>　　　　配置用户邮箱：<code>git config --global user.email "邮箱"</code>;(这里使用 Github 的用户名和邮箱)</p>
-<h2 id="2-创建项目目录，并进入该目录"><a href="#2-创建项目目录，并进入该目录" class="headerlink" title="2.创建项目目录，并进入该目录"></a>2. 创建项目目录，并进入该目录</h2><h2 id="3-该目录下右键Git-Brash-Here进入命令行（Git-brash-Gui可以实现命令行功能）"><a href="#3-该目录下右键Git-Brash-Here进入命令行（Git-brash-Gui可以实现命令行功能）" class="headerlink" title="3.该目录下右键Git Brash Here进入命令行（Git brash Gui可以实现命令行功能）"></a>3. 该目录下右键 Git Brash Here 进入命令行（<strong>Git brash Gui 可以实现命令行功能</strong>）</h2><ul>
-<li><p><strong>git init，</strong>初始化</p>
-</li>
-<li><p><strong>git status</strong>，查询当前工作区所有文件的状态</p>
-</li>
-<li><p><strong>git add</strong>，添加文件到缓存区</p>
-</li>
-<li><p><strong>git commit -m “注释内容”</strong> ，提交至版本库</p>
-</li>
-<li><p><strong>git log</strong>，或 <strong>git log –pretty=oneline</strong>，查看提交的版本，<strong>黄色为版本号（commit id），回退时可不用写全，git 会自动识别</strong></p>
-</li>
-<li><p><strong>git reset –hard 版本号</strong> ，回到过去或未来</p>
-</li>
-<li><p><strong>git reflog</strong>，查看未来。git log 看不到未来</p>
-</li>
-</ul>
-<p>（1）<strong>git init，</strong>初始化</p>
-<p><img data-src="https://i.loli.net/2021/03/15/kZGdlCYIAv21Xht.png" alt="image-20210315164311428"></p>
-<p>（2）<strong>git status</strong>，查询当前工作区所有文件的状态；</p>
-<p><img data-src="https://i.loli.net/2021/03/15/LARwrtk5MUbmeZT.png" alt="image-20210315164400982"></p>
-<p>（3）新建或复制需要管理的文件</p>
-<p>（4）<strong>git add</strong>，添加文件到缓存区</p>
-<p>四种方式：</p>
-<p>语法 1：git add 文件名</p>
-<p>语法 2：git add 文件 1 文件名 2 文件名 3….</p>
-<p>语法 3:git add .  【添加当前目录到缓存区】</p>
-<p>语法 3:git add -A 【添加当前目录到缓存区】</p>
-<p><img data-src="https://i.loli.net/2021/03/15/4xwObtEM1uHKzW9.png" alt="image-20210315170246829"></p>
-<p>（5）git status，查询当前工作区所有文件的状态；</p>
-<p><img data-src="https://i.loli.net/2021/03/15/gwOqHiYWdn7lc2f.png" alt="image-20210315170623299"></p>
-<p>（6）<strong>git commit -m “注释内容”</strong> ，提交至版本库</p>
-<p><img data-src="https://i.loli.net/2021/03/15/H8GZKVxNprnuiod.png" alt="image-20210315170749964"></p>
-<p>（7）修改文件或增加文件，git add -A，git status，git commit</p>
-<p><img data-src="https://i.loli.net/2021/03/15/TY3ha7qk9btomiv.png" alt="image-20210315171333600"></p>
-<p>（8）<strong>git log</strong>，或 <strong>git log –pretty=oneline</strong>，查看提交的版本，<strong>黄色为版本号（commit id），回退时可不用写全，git 会自动识别</strong></p>
-<p><img data-src="https://i.loli.net/2021/03/15/tMlpXFkxr9VnN47.png" alt="image-20210315172303235"></p>
-<p>（9）<strong>git reset –hard 版本号</strong> ，回到过去，此时新增文件没有了或修改复原了</p>
-<p><img data-src="https://i.loli.net/2021/03/15/WGkrj5VMLTCq9t1.png" alt="image-20210315172755420"></p>
-<p>（10）<strong>git reflog</strong>，查看未来。此时 git log 看不到未来</p>
-<p><img data-src="https://i.loli.net/2021/03/15/95ueLWE2B7bsgKl.png" alt="image-20210315173341816"></p>
-<p>（11）<strong>git reset –hard 版本号</strong> ，回到未来，此时又回到未来状态</p>
-<p><img data-src="https://i.loli.net/2021/03/15/t9Eidq3IfCl4wL2.png" alt="image-20210315174010967"></p>
-<h1 id="Github远程仓库操作（首先建立仓库）"><a href="#Github远程仓库操作（首先建立仓库）" class="headerlink" title="Github远程仓库操作（首先建立仓库）"></a><strong>Github 远程仓库操作</strong>（首先建立仓库）</h1><h2 id="远程仓库克隆到本地"><a href="#远程仓库克隆到本地" class="headerlink" title="远程仓库克隆到本地"></a>远程仓库克隆到本地</h2><p>远程新建仓库或远程已有仓库 clone 到本地，本地库与远程库已建立连接。进行系列操作，进行版本管理。</p>
-<p>三个操作工具：Git brush Here 或 Git brash Gui 或 Github Desktop</p>
-<h3 id="本地无需建仓库的克隆："><a href="#本地无需建仓库的克隆：" class="headerlink" title="本地无需建仓库的克隆："></a>本地无需建仓库的克隆：</h3><h4 id="Github-Desktop克隆可采取URL方式"><a href="#Github-Desktop克隆可采取URL方式" class="headerlink" title="Github Desktop克隆可采取URL方式"></a>Github Desktop 克隆可采取 URL 方式</h4><p>Github 网页在对应的仓库用 GitHubDesktop 打开，本地无需新建目录，但要指定目录。</p>
-<img data-src="https://i.loli.net/2021/03/16/tzZVCgXLd1xbJ9y.png" alt="image-20210316172929240" style="zoom:80%;">
-
-
-
-<p><img data-src="https://i.loli.net/2021/03/16/Dae78RVjdtrCSK3.png" alt="image-20210316171821793"></p>
-<p>或（没成功，再试）</p>
-<p><img data-src="https://i.loli.net/2021/03/16/qdBPLFf1SvcKjXT.png" alt="image-20210316173753886"></p>
-<p>https 验证下，用户和密码记录在 windows 凭据中，</p>
-<ul>
-<li>GitHub - <a href="https://api.github.com/netxulei%E8%AE%B0%E5%BD%95Githup">https://api.github.com/netxulei 记录 Githup</a> Desktop 操作时录入的用户名和密码</li>
-<li> git:<a href="https://github.com记录git/">https://github.com 记录 Git</a> Brush Gui 或 Git brash Here 操作时录入的用户名和密码</li>
-<li> Git brush Here 或 Git brash Gui 或 Github Desktop 操作与远程库相关内容时，若没有提示录入界面，且错误时，可以删除上述凭据，重新操作。</li>
-</ul>
-<p>控制面板→凭据管理器→windows 凭据</p>
-<p><img data-src="https://i.loli.net/2021/03/16/Nmi7KC4dPMnVIxS.png" alt="image-20210316170517209"></p>
-<p>网络问题可多次克隆</p>
-<p>Git brush Here 或 Git brash Gui</p>
-<h2 id="一、本地库与远程库连接"><a href="#一、本地库与远程库连接" class="headerlink" title="一、本地库与远程库连接"></a>一、本地库与远程库连接</h2><p> git remote add origin2 <a href="mailto:git@github.com">git@github.com</a>:tianqixin/runoob-git-test.git，添加远程库，origin 为别名</p>
-<p> git fetch origin main ，拉到本地， origin 的远程上拉取名为 master 的分支到本地分支 origin/main 中</p>
-<p>git push [alias] [branch]，推送到远程库</p>
-<p>git remote -v，显示远程连接仓库</p>
-<p>解除 ssl 验证，push 时会自动出现 http 方式的验证：    </p>
-<p>git config –global http.sslVerify “false”</p>
-<h2 id="二、远程库clone到本地"><a href="#二、远程库clone到本地" class="headerlink" title="二、远程库clone到本地"></a>二、远程库 clone 到本地</h2>]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>gtihub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>typora 图片左对齐</title>
-    <url>/2021/03/15/typora%E5%9B%BE%E7%89%87%E5%B7%A6%E5%AF%B9%E9%BD%90/</url>
-    <content><![CDATA[<h2 id="Align-images"><a href="#Align-images" class="headerlink" title="Align images"></a>Align images</h2><p>Currently Typora does not support image alignment. But you can use HTML code like <code>&lt;center&gt;![img](src)&lt;/center&gt;</code> to align images in exported HTML or PDF.</p>
-<p>Also, by default, if a paragraph only contains one image, it will be center aligned. It is controlled by CSS, and can be changed by <a href="http://support.typora.io/Add-Custom-CSS/">add custom CSS</a>:</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">p .md-image:only-child{</span><br><span class="line">    width: auto;</span><br><span class="line">    text-align: inherit;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
-      <categories>
-        <category>typora</category>
-      </categories>
-      <tags>
-        <tag>typora</tag>
-        <tag>图片</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux 下 rpm 和 yum</title>
-    <url>/2021/03/17/Linux%E4%B8%8Brpm%E5%92%8Cyum/</url>
-    <content><![CDATA[<h1 id="linux中yum与rpm区别"><a href="#linux中yum与rpm区别" class="headerlink" title="linux中yum与rpm区别"></a><a href="https://www.cnblogs.com/ryanzheng/p/11322375.html">linux 中 yum 与 rpm 区别</a></h1><p>一、源代码形式</p>
-<p>\1.   绝大多数开源软件都是直接以原码形式发布的</p>
-<p>\2.   源代码一般会被打成.tar.gz 的归档压缩文件</p>
-<p>\3.   源代码需要编译成为二进制形式之后才能够运行使用</p>
-<p>\4.   源代码基本编译流程：</p>
-<p>1）.configure 检查编译环境；</p>
-<p>2）make 对源代码进行编译；</p>
-<p>3）make insall 将生成的可执行文件安装到当前计算机中</p>
-<hr>
-<p>二、RPM</p>
-<p>RMP 是 LINUX 下的一种软件的可执行程序，你只要安装它就可以了。这种软件安装包通常是一个 RPM 包（Redhat Linux Packet Manager，就是 Redhat 的包管理器），后缀是.rpm。</p>
-<p>RPM 是 Red Hat 公司随 Redhat Linux 推出了一个软件包管理器，通过它能够更加轻松容易地实现软件的安装。</p>
-<p> 1. 安装软件：执行 rpm -ivh rpm 包名，如：<br> #rpm -ivh apache-1.3.6.i386.rpm<br> 2. 升级软件：执行 rpm -Uvh rpm 包名。<br> 3. 反安装：执行 rpm -e rpm 包名。<br> 4. 查询软件包的详细信息：执行 rpm -qpi rpm 包名<br> 5. 查询某个文件是属于那个 rpm 包的：执行 rpm -qf rpm 包名<br> 6. 查该软件包会向系统里面写入哪些文件：执行 rpm -qpl rpm 包名</p>
-<p>1. 源代码形式的特点：操作复杂、编译时间长、极易出现问题、依赖关系复杂</p>
-<p>2. 为了方便，RPM（redhat package manager）</p>
-<p>3.RPM 通过将代码基于特定平台系统编译为可执行文件，并保存依赖关系，来简化开源软件的安装管理。针对不同的系统设定不同的包</p>
-<p>4. 常用命令规范：linuxcast-1.2.0-30.el6.1686.rpm 包名 - 版本号 - 适用平台 - 32/64-rpm</p>
-<p>5. 使用 rpm –i software.rpm (安装)；</p>
-<p>rpm -e software.rpm (卸载)；</p>
-<p>rpm –U software.rpm (升级形式安装)；</p>
-<p>rpm –ivh <a href="http://www.linuxcast.net/software.rpm(%E6%94%AF%E6%8C%81%E9%80%9A%E8%BF%87http/ftp%E5%8D%8F%E8%AE%AE%E5%BD%A2%E5%BC%8F%E5%AE%89%E8%A3%85)">http://www.linuxcast.net/software.rpm (支持通过 http\ftp 协议形式安装)</a></p>
-<p>-v 显示详细信息；-h 显示进度条</p>
-<p>查询功能：rpm –qa 列出全部已经安装的.rpm 软件  rpm –qa |grep ***</p>
-<hr>
-<p>三：YUM</p>
-<p>\1.   rpm 软件包形式的管理虽然方便，但是需要手工解决软件包的依赖关系。很多时候安装一个软件安装一个软件需要安装 1 个或者多个其他软件，手动解决时，很复杂，yum 解决这些问题。Yum 是 rpm 的前端程序，主要目的是设计用来自动解决 rpm 的依赖关系，其特点：</p>
-<ol>
-<li><p>自动解决依赖关系</p>
-</li>
-<li><p>可以对 rpm 进行分组，基于组进行安装操作</p>
-</li>
-<li><p>引入仓库概念，支持多个仓库</p>
-</li>
-<li><p>配置简单</p>
-</li>
-</ol>
-<p>\2. yum 仓库用来存放所有的现有的.rpm 包，当使用 yum 安装一个 rpm 包时，需要依赖关系，会自动在仓库中查找依赖软件并安装。仓库可以是本地的，也可以是 HTTP、FTP、nfs 形式使用的集中地、统一的网络仓库。</p>
-<p>\3. 仓库的配置文件 /etc/yum.repos.d 目录下</p>
-<p>\4. 使用：</p>
-<ol>
-<li><p>yum install 安装；</p>
-</li>
-<li><p>yum remove 卸载；</p>
-</li>
-<li><p>yum update 升级制定软件</p>
-</li>
-</ol>
-<p>\5. 安装的时候，会下载软件包.Rpm 在安装，所以用国内仓库</p>
-<p>改变镜像源</p>
-<ol>
-<li><p>访问地址 <a href="http://mirrors.163.com/">http://mirrors.163.com/</a></p>
-</li>
-<li><p> 点 centos 使用帮助</p>
-</li>
-<li><p>按步骤来</p>
-</li>
-</ol>
-<p>\6. 查询软件：可以使用 yumsearch **</p>
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>yum</tag>
-        <tag>rpm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux 安装 mysql 时忘记临时密码后再次生成临时密码</title>
-    <url>/2021/03/19/Linux%E5%AE%89%E8%A3%85mysql%E6%97%B6%E5%BF%98%E8%AE%B0%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81%E5%90%8E%E5%86%8D%E6%AC%A1%E7%94%9F%E6%88%90%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">vi /etc/my.conf1</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">ZFQS:~ # cat /etc/my.cnf</span><br><span class="line"># For advice on how to change settings please see</span><br><span class="line"># http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html</span><br><span class="line">[mysqld]</span><br><span class="line">#</span><br><span class="line"># Remove leading # and set to the amount of RAM for the most important data</span><br><span class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span><br><span class="line"># innodb_buffer_pool_size = 128M</span><br><span class="line">#</span><br><span class="line"># Remove leading # to turn on a very important data integrity option: logging</span><br><span class="line"># changes to the binary log between backups.</span><br><span class="line"># log_bin</span><br><span class="line">#</span><br><span class="line"># Remove leading # to set options mainly useful for reporting servers.</span><br><span class="line"># The server defaults are faster for transactions and fast SELECTs.</span><br><span class="line"># Adjust sizes as needed, experiment to find the optimal values.</span><br><span class="line"># join_buffer_size = 128M</span><br><span class="line"># sort_buffer_size = 2M</span><br><span class="line"># read_rnd_buffer_size = 2M</span><br><span class="line">datadir=/var/lib/mysql</span><br><span class="line">socket=/var/lib/mysql/mysql.sock</span><br><span class="line"># Disabling symbolic-links is recommended to prevent assorted security risks</span><br><span class="line">symbolic-links=0</span><br><span class="line">log-error=/var/log/mysql/mysqld.log</span><br><span class="line">pid-file=/var/run/mysql/mysqld.pid</span><br></pre></td></tr></tbody></table></figure>
-<p>如上图所示找到 datadir 目录，删除里面的文件。在重新初始化一次。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">cd /var/lib/mysql</span><br><span class="line">rm -rf *//删除文件</span><br><span class="line">//在重新初始化一次</span><br><span class="line">cd /usr/local/mysql //这是你下载的MySQL解压目录</span><br><span class="line">./bin/mysqld --initialize --user=mysqluser -- basedir=/usr/local/mysql12345</span><br></pre></td></tr></tbody></table></figure>
-<p>这时会生成新的临时密码。</p>
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>mysql</tag>
-        <tag>密码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux 下 Mysql 安装</title>
-    <url>/2021/03/17/linux%E4%B8%8BMysql%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h1 id="1-Mysql下载（linux）"><a href="#1-Mysql下载（linux）" class="headerlink" title="1.Mysql下载（linux）"></a>1.<strong>Mysql 下载（linux）</strong></h1><h2 id="1-下载源码包（一个压缩包）"><a href="#1-下载源码包（一个压缩包）" class="headerlink" title="1.下载源码包（一个压缩包）"></a>1. 下载源码包（一个压缩包）</h2><p><img data-src="https://i.loli.net/2021/03/17/e3hmViPTBd7fkoy.png" alt="image-20210317163318307"></p>
-<h2 id="2-下载-rpm安装包（四个安装包）"><a href="#2-下载-rpm安装包（四个安装包）" class="headerlink" title="2.下载.rpm安装包（四个安装包）"></a>2. 下载.rpm 安装包（四个安装包）</h2><p><img data-src="https://i.loli.net/2021/03/17/7vUQOkcEGmrioeg.png" alt="image-20210317164059672"></p>
-<h2 id="3-下载-rpm套件组（（含依赖组件）"><a href="#3-下载-rpm套件组（（含依赖组件）" class="headerlink" title="3.下载.rpm套件组（（含依赖组件）"></a>3. 下载.rpm 套件组（（含依赖组件）</h2><p><img data-src="https://i.loli.net/2021/03/17/q326p7iVjXoeTYP.png" alt="image-20210317164842225"></p>
-<h1 id="2-上传到安装目录"><a href="#2-上传到安装目录" class="headerlink" title="2.上传到安装目录"></a>2. <strong>上传到安装目录</strong></h1><p>根据安装方式（源码方式或 rpm 方式，ftp 到 /home/spms (spms 用户安装</p>
-<h1 id="3-查看和删除旧版MySql"><a href="#3-查看和删除旧版MySql" class="headerlink" title="3.查看和删除旧版MySql"></a>3. <strong>查看和删除旧版 MySql</strong></h1><h2 id="1-查询旧版mysql"><a href="#1-查询旧版mysql" class="headerlink" title="1.查询旧版mysql"></a>1. 查询旧版 mysql</h2><p>可能结果（假设）</p>
-<p><img data-src="https://i.loli.net/2021/03/19/Hg9hIFwXPqvaSkW.png" alt="image-20210319100704842"></p>
-<p>以下为我的电脑查询情况，没有安装 mysql，应该不用卸载。其中 libqt4-sql-mysql Qt 连接 MySQL 数据库的驱动，libmysqlclient 是根据 MySQL client/server 协议，使用 C 语言实现的库。有很多的客户端 api 使用 libmysqlclient 这个库去和 MySQL Server 进行通信。可能是安装 php 时安装上的，可以不用删除？</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~&gt; rpm -qa | grep mysql</span><br><span class="line">libqt4-sql-mysql-4.6.3-5.25.4</span><br><span class="line">libmysqlclient_r15-5.0.96-0.6.1</span><br><span class="line">spms@ZFQS:~&gt; </span><br></pre></td></tr></tbody></table></figure>
-<h2 id="2-卸载旧版本MySQL"><a href="#2-卸载旧版本MySQL" class="headerlink" title="2.卸载旧版本MySQL"></a>2. <strong>卸载旧版本 MySQL</strong></h2><h3 id="普通删除（依据上述查询结果）"><a href="#普通删除（依据上述查询结果）" class="headerlink" title="普通删除（依据上述查询结果）"></a>普通删除（依据上述查询结果）</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">rpm -e mysql-libs-5.1.73-8.el6_8.x86_64 mysql-server-5.1.73-8.el6_8.x86_64 mysql-devel-5.1.73-8.el6_8.x86_64</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="可能失败，如下图所示"><a href="#可能失败，如下图所示" class="headerlink" title="可能失败，如下图所示"></a>可能失败，如下图所示</h3><p><img data-src="https://i.loli.net/2021/03/19/rguc1iVp7AXyteb.png" alt="image-20210319101026658"></p>
-<h3 id="强力删除"><a href="#强力删除" class="headerlink" title="强力删除"></a>强力删除</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">rpm -e --nodeps mysql-libs-5.1.73-8.el6_8.x86_64 mysql-server-5.1.73-8.el6_8.x86_64 mysql-devel-5.1.73-8.el6_8.x86_64</span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="https://i.loli.net/2021/03/19/2y8Oj9654QlWqex.png" alt="image-20210319101219951"></p>
-<h2 id="3-删除-etc-my-cnf-配置文件"><a href="#3-删除-etc-my-cnf-配置文件" class="headerlink" title="3.删除 /etc/my.cnf 配置文件"></a>3. 删除 /etc/my.cnf 配置文件</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">rm /etc/my.cnf</span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="https://i.loli.net/2021/03/19/vXAWDsfda2OS4Jk.png" alt="image-20210319101950684"></p>
-<p>配置文件 my.cnf 已经被另存在 my.cnf.rpmsave 中</p>
-<p><img data-src="https://i.loli.net/2021/03/19/GbLJq4xeNgBRp6t.png" alt="image-20210319102014249"></p>
-<h1 id="4-RPM方式安装MySql"><a href="#4-RPM方式安装MySql" class="headerlink" title="4.RPM方式安装MySql"></a>4.<strong>RPM 方式安装 MySql</strong></h1><p>4 个 rpm 安装包，有依赖关系，按照以下顺序分别安装。</p>
-<p>目前为 spms 用户获得超级权限后安装，否则出现权限问题，如下。spms 登录，su root 获得权限。</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~&gt; rpm -ivh mysql-community-common-5.7.32-1.sles12.x86_64.rpm</span><br><span class="line">warning: mysql-community-common-5.7.32-1.sles12.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">error: can't create transaction lock on /var/lib/rpm/__db.000</span><br><span class="line">spms@ZFQS:~&gt; </span><br></pre></td></tr></tbody></table></figure>
-
-
-<p>目前 for SUSE 12 的 5.7 的最高版本为 5.7.32 （再 suse 11 中安装时，需要依赖，不知道依赖能不能成功补上）</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">rpm -ivh mysql-community-common-5.7.32-1.sles12.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-libs-5.7.32-1.sles12.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-client-5.7.32-1.sles12.x86_64.rpm </span><br><span class="line">rpm -ivh mysql-community-server-5.7.32-1.sles12.x86_64.rpm</span><br></pre></td></tr></tbody></table></figure>
-<p>目前 for SUSE 11 的 5.7 的最高版本为 5.7.25 ，我的机器能正常安装，但最后一个包出现警告，看是否影响使用，如下</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~&gt; su root</span><br><span class="line">口令： </span><br><span class="line">ZFQS:/home/spms # </span><br><span class="line">ZFQS:/home/spms # rpm -ivh mysql-community-common-5.7.25-1.sles11.x86_64.rpm</span><br><span class="line">warning: mysql-community-common-5.7.25-1.sles11.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">Preparing...                ########################################### [100%]</span><br><span class="line">   1:mysql-community-common ########################################### [100%]</span><br><span class="line">ZFQS:/home/spms # rpm -ivh mysql-community-libs-5.7.25-1.sles11.x86_64.rpm</span><br><span class="line">warning: mysql-community-libs-5.7.25-1.sles11.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">Preparing...                ########################################### [100%]</span><br><span class="line">   1:mysql-community-libs   ########################################### [100%]</span><br><span class="line">ZFQS:/home/spms # rpm -ivh mysql-community-client-5.7.25-1.sles11.x86_64.rpm</span><br><span class="line">warning: mysql-community-client-5.7.25-1.sles11.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">Preparing...                ########################################### [100%]</span><br><span class="line">   1:mysql-community-client ########################################### [100%]</span><br><span class="line">ZFQS:/home/spms # rpm -ivh mysql-community-server-5.7.25-1.sles11.x86_64.rpm</span><br><span class="line">warning: mysql-community-server-5.7.25-1.sles11.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">Preparing...                ########################################### [100%]</span><br><span class="line">   1:mysql-community-server ########################################### [100%]</span><br><span class="line">insserv: warning: script 'S01ITMAgents1' missing LSB tags</span><br><span class="line">insserv: warning: script 'ITMAgents1' missing LSB tags</span><br><span class="line">ZFQS:/home/spms # </span><br></pre></td></tr></tbody></table></figure>
-<h2 id="查询安装路径"><a href="#查询安装路径" class="headerlink" title="查询安装路径"></a>查询安装路径</h2><p>如果想查询 rpm 包详细的安装文件列表及每个文件的实际存储路径，可通过命令 rpm -ql 来查询，如：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">rpm -ql mysql-community-common-5.7.32-1.sles12.x86_64</span><br><span class="line">/usr/bin/mysql</span><br><span class="line">/usr/bin/mysql_config_editor</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="临时密码"><a href="#临时密码" class="headerlink" title="临时密码"></a>临时密码</h2><p>mysql 从 5.7 默认安装之后 root 是有密码的，为了加强安全性，mysql5.7 为 root 用户随机生成一个密码，它在 error log 中。<br>还有，mysql 只有启动过一次才可以查看临时密码。随机密码保存在 /var/log/mysql/mysqld.log 中，可 cat 或 grep 查看</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">grep <span class="string">'temporary password'</span> /var/<span class="built_in">log</span>/mysql/mysqld.log</span><br><span class="line">2021-03-19T08:30:03.108793Z 1 [Note] A temporary password is generated <span class="keyword">for</span> root@localhost: f85WFz&lt;2zt.j</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="登录Mysql"><a href="#登录Mysql" class="headerlink" title="登录Mysql"></a>登录 Mysql</h2><p><strong>linux 的 root 安装，spms 可以登录</strong></p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:/&gt; mysql -u root -p</span><br><span class="line">Enter password: </span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 21</span><br><span class="line">Server version: 5.7.25</span><br><span class="line">​```</span><br><span class="line">Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line">Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</span><br><span class="line">mysql&gt; </span><br></pre></td></tr></tbody></table></figure>
-<h2 id="修改MySQL的root本地登录密码"><a href="#修改MySQL的root本地登录密码" class="headerlink" title="修改MySQL的root本地登录密码"></a>修改 MySQL 的 root 本地登录密码</h2><p>shell 下：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">mysqladmin -u root  -p password "Mysql123@xl"</span><br></pre></td></tr></tbody></table></figure>
-<p> 或临时密码登录 mysql 后修改：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">mysql&gt; set password for 'root'@'localhost'=password('Mysql123@xl'); </span><br></pre></td></tr></tbody></table></figure>
-<h1 id="5-MySQL常用命令"><a href="#5-MySQL常用命令" class="headerlink" title="5.MySQL常用命令"></a>5.MySQL 常用命令</h1><h2 id="查询密码策略"><a href="#查询密码策略" class="headerlink" title="查询密码策略"></a>查询密码策略</h2><p>通过 msyql 环境变量可以查看密码策略的相关信息：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> show variables like <span class="string">'%password%'</span>;</span></span><br><span class="line">+---------------------------------------+--------+</span><br><span class="line">| Variable_name                         | Value  |</span><br><span class="line">+---------------------------------------+--------+</span><br><span class="line">| default_password_lifetime             | 0      |</span><br><span class="line">| disconnect_on_expired_password        | ON     |</span><br><span class="line">| log_builtin_as_identified_by_password | OFF    |</span><br><span class="line">| mysql_native_password_proxy_users     | OFF    |</span><br><span class="line">| old_passwords                         | 0      |</span><br><span class="line">| report_password                       |        |</span><br><span class="line">| sha256_password_proxy_users           | OFF    |</span><br><span class="line">| validate_password_check_user_name     | OFF    |</span><br><span class="line">| validate_password_dictionary_file     |        |</span><br><span class="line">| validate_password_length              | 8      |</span><br><span class="line">| validate_password_mixed_case_count    | 1      |</span><br><span class="line">| validate_password_number_count        | 1      |</span><br><span class="line">| validate_password_policy              | MEDIUM |</span><br><span class="line">| validate_password_special_char_count  | 1      |</span><br><span class="line">+---------------------------------------+--------+</span><br><span class="line">14 rows in set (0.01 sec)</span><br></pre></td></tr></tbody></table></figure>
-
-
-<p>validate_password_policy：密码策略，默认为 MEDIUM 策略<br>validate_password_dictionary_file：密码策略文件，策略为 STRONG 才需要<br>validate_password_length：密码最少长度<br>validate_password_mixed_case_count：大小写字符长度，至少 1 个<br>validate_password_number_count ：数字至少 1 个<br>validate_password_special_char_count：特殊字符至少 1 个<br>上述参数是默认策略 MEDIUM 的密码检查规则。</p>
-<p>共有以下几种密码策略：</p>
-<table>
-<thead>
-<tr>
-<th align="left">策略</th>
-<th align="left">检查规则</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"> 0 or LOW</td>
-<td align="left">Length</td>
-</tr>
-<tr>
-<td align="left">1 or MEDIUM</td>
-<td align="left">Length; numeric, lowercase/uppercase, and special characters</td>
-</tr>
-<tr>
-<td align="left">2 or STRONG</td>
-<td align="left">Length; numeric, lowercase/uppercase, and special characters; dictionary file</td>
-</tr>
-</tbody></table>
-<h2 id="修改密码策略"><a href="#修改密码策略" class="headerlink" title="修改密码策略"></a>修改密码策略</h2><p>在 /etc/my.cnf 文件添加 validate_password_policy 配置，指定密码策略</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 选择0（LOW），1（MEDIUM），2（STRONG）其中一种，选择2需要提供密码字典文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">validate_password_policy=0121212</span><br></pre></td></tr></tbody></table></figure>
-<p>如果不需要密码策略，添加 my.cnf 文件中添加如下配置禁用即可：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">validate_password = off111</span><br></pre></td></tr></tbody></table></figure>
-<p>重新启动 mysql 服务使配置生效：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="添加远程登录用户"><a href="#添加远程登录用户" class="headerlink" title="添加远程登录用户"></a>添加远程登录用户</h2><p>默认只允许 root 帐户在本地登录，如果要在其它机器上连接 mysql，必须修改 root 允许远程连接，或者添加一个允许远程连接的帐户，为了安全起见，我添加一个新的帐户：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'yangxin'@'%' IDENTIFIED BY 'Yangxin0917!' WITH GRANT OPTION;111</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="配置默认编码为utf8"><a href="#配置默认编码为utf8" class="headerlink" title="配置默认编码为utf8"></a>配置默认编码为 utf8</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">mysql&gt; show variables like '%character%';</span><br></pre></td></tr></tbody></table></figure>
-<p>修改 /etc/my.cnf 配置文件，在 [mysqld] 下添加编码配置，如下所示：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">character_set_server=utf8</span><br><span class="line">init_connect='SET NAMES utf8'123123123</span><br></pre></td></tr></tbody></table></figure>
-<p>重新启动 mysql 服务，查看<a href="http://lib.csdn.net/base/mysql">数据库</a>默认编码如下所示：</p>
-<p>默认配置文件路径：<br>配置文件：/etc/my.cnf<br>日志文件：/var/log//var/log/mysqld.log<br>服务启动脚本：/usr/lib/systemd/system/mysqld.service<br>socket 文件：/var/run/mysqld/mysqld.pid</p>
-<h1 id="6-错误及解决"><a href="#6-错误及解决" class="headerlink" title="6.错误及解决"></a>6. 错误及解决</h1><h2 id="1-安装权限"><a href="#1-安装权限" class="headerlink" title="1.安装权限"></a>1. 安装权限</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~&gt; rpm -ivh mysql-community-common-5.7.32-1.sles12.x86_64.rpm</span><br><span class="line">warning: mysql-community-common-5.7.32-1.sles12.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">error: can't create transaction lock on /var/lib/rpm/__db.000</span><br><span class="line">spms@ZFQS:~&gt; </span><br></pre></td></tr></tbody></table></figure>
-<p>实际上是权限问题。su root 后可以安装。</p>
-<h2 id="2-mysql密码策略"><a href="#2-mysql密码策略" class="headerlink" title="2.mysql密码策略"></a>2.mysql 密码策略</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:/&gt; mysqladmin -u root -p password "Mysql123"</span><br><span class="line">Enter password: </span><br><span class="line">mysqladmin: [Warning] Using a password on the command line interface can be insecure.</span><br><span class="line">Warning: Since password will be sent to server in plain text, use ssl connection to ensure password safety.</span><br><span class="line">mysqladmin: unable to change password; error: 'Your password does not satisfy the current policy requirements'</span><br><span class="line">spms@ZFQS:/&gt; </span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">root@linuxidc php-5.6.30]# ./configure --prefix=/usr/local/php --with-apxs2=/usr/local/apache2.4/bin/apxs --with-config-file-path=/usr/local/php/etc  --with-mysql=/usr/local/mysql --with-pdo-mysql=/usr/local/mysql --with-mysqli=/usr/local/mysql/bin/mysql_config --with-libxml-dir --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-iconv-dir --with-zlib-dir --with-bz2 --with-openssl --with-mcrypt --enable-soap --enable-gd-native-ttf --enable-mbstring --enable-sockets --enable-exif  //安装PHP</span><br><span class="line">[root@linuxidc php-5.6.30]# echo $?  //安装完成没有错误用这个检查</span><br><span class="line">[root@linuxidc php-7.1.6]# ./configure --prefix=/usr/local/php7 --with-apxs2=/usr/local/apache2.4/bin/apxs --with-config-file-path=/usr/local/php7/etc  --with-pdo-mysql=/usr/local/mysql --with-mysqli=/usr/local/mysql/bin/mysql_config --with-libxml-dir --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-iconv-dir --with-zlib-dir --with-bz2 --with-openssl --with-mcrypt --enable-soap --enable-gd-native-ttf --enable-mbstring --enable-sockets --enable-exif</span><br><span class="line">6.编译安装：</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>php-config--PHP 配置信息的查看</title>
-    <url>/2021/03/17/php-config-PHP%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF%E7%9A%84%E6%9F%A5%E7%9C%8B/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>php7.3 的 Mysql 配置和连接</title>
-    <url>/2021/03/22/php7-3%E7%9A%84Mysql%E9%85%8D%E7%BD%AE%E5%92%8C%E8%BF%9E%E6%8E%A5/</url>
-    <content><![CDATA[<p>原文链接：<a href="https://blog.csdn.net/u013785951/article/details/60876816">https://blog.csdn.net/u013785951/article/details/60876816</a></p>
-<p>PHP 官方手册: <a href="http://php.net/manual/en/book.mysqli.php">http://php.net/manual/en/book.mysqli.php</a></p>
-<p>MYSQL 也叫 Original MySQL，PHP4 版本的 MYSQL 扩展，从 PHP5 起已经被废弃，并别从 PHP7 开始已经被移除。</p>
-<p>MYSQLI 叫做 “MySQL 增强扩展”。</p>
-<p>MYSQLND MYSQL NATIVE DIRVER 叫做 MYSQL “官方驱动” 或者更加直接点的叫做 “原生驱动”</p>
-<p>PDO PHP Data Objects PHP 数据对象，是 PHP 应用中的一个数据库抽象层规范。 </p>
-<p>API 是一个应用程序接口（Application Programming Interface 的缩写），定义了类，方法，函数，变量等等一切你的应用程序中为了完成特定任务而需要调用的内容。在 PHP 应用程序需要和数据库进行交互的时候所需要的 API 通常是通过 PHP 扩展暴露出来（给终端 PHP 程序员调用）。</p>
-<p>MYSQL 和 MYSQLI 扩展就提供了这样的 API。</p>
-<p>2 什么是驱动？</p>
-<p>驱动是一段设计用来于一种特定类型的数据库服务器进行交互的软件代码。驱动可能会调用一些库，比如 MySQL 客户端库或者 MySQL Native 驱动库。 这些库实现了用于和 MySQL 数据库服务器进行交互的底层协议。</p>
-<p>在 PHP 拓展的角度上看，MYSQL 和 MYSQLi 还是比较上层的拓展，依赖更底层的库去连接和访问数据库。<br>MYSQLND 就是所说的底层的数据库驱动。当然，还有一个驱动叫做 libmysqlclient。至于如何选择使用这两种驱动的哪一种，请看这里选择哪一种底层数据库驱动。</p>
-<p>总的来说:<br>从应用的层面上看，我们通过 PHP 的 MYSQL 或者 MYSQLi 扩展提供的 API 去操作数据库。</p>
-<p>从底层来看，MYSQLND 提供了底层和数据库交互的支持 (可以简单理解为和 MySQL server 进行网络协议交互)。</p>
-<p>而 PDO，则提供了一个统一的 API 接口，使得你的 PHP 应用不去关心具体要连接的数据库服务器系统类型。也就是说，如果你使用 PDO 的 API，可以在任何需要的时候无缝切换数据库服务器。比如 MYSQL,SQLITE 任何数据库都行。</p>
-<p>即从大部分功能上看，PDO 提供的 API 接口和 MYSQLI 提供的接口对于普通的增删改查效果是一致的。</p>
-<p>最后贴下代码：</p>
-<p>MYSQL 连接：</p>
-<figure class="highlight php"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$conn</span> = @ mysql_connect(<span class="string">"localhost"</span>, <span class="string">"root"</span>, <span class="string">""</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"数据库连接错误"</span>);</span><br><span class="line">mysql_select_db(<span class="string">"bbs"</span>, <span class="variable">$conn</span>);</span><br><span class="line">mysql_query(<span class="string">"set names 'utf8'"</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"数据库连接成功"</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>MYSQLI 连接：</p>
-<figure class="highlight php"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$conn</span> = mysqli_connect(<span class="string">'localhost'</span>, <span class="string">'root'</span>, <span class="string">''</span>, <span class="string">'bbs'</span>);</span><br><span class="line"><span class="keyword">if</span>(!<span class="variable">$conn</span>){</span><br><span class="line"><span class="keyword">die</span>(<span class="string">"数据库连接错误"</span> . mysqli_connect_error());</span><br><span class="line">}<span class="keyword">else</span>{</span><br><span class="line"><span class="keyword">echo</span><span class="string">"数据库连接成功"</span>;</span><br><span class="line">}</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>PDO 连接：</p>
-<figure class="highlight php"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">try</span>{</span><br><span class="line"><span class="variable">$pdo</span>=<span class="keyword">new</span> pdo(<span class="string">"mysql:host=localhost;dbname=bbs"</span>,<span class="string">"root"</span>,<span class="string">""</span>);</span><br><span class="line">}<span class="keyword">catch</span>(PDDException <span class="variable">$e</span>){</span><br><span class="line"><span class="keyword">echo</span><span class="string">"数据库连接错误"</span>;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">echo</span><span class="string">"数据库连接成功"</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>想更多去了解他们的区别和联系，可以手动去编译一下 PHP 的源代码。注意参数</p>
-<p>–enable-pdo<br>–with-pdo-mysql<br>–enable-mysqlnd<br>–with-mysqli<br>–with-mysql//php7 的已经不再支持，此参数 configure 的时候会报 ERROR</p>
-]]></content>
-      <categories>
-        <category>php7</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>php7</tag>
-        <tag>mysqli</tag>
-        <tag>mysqlnd</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>php 编译安装 configure 参数解释</title>
-    <url>/2021/03/17/php%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85configure%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A/</url>
-    <content><![CDATA[<p>具体参数含义可以用./configure –help 来查看。</p>
-<p>列表如下（部分参数未得到解释）：</p>
-<p>指定 php 安装目录</p>
-<p>–prefix=/usr/local/php </p>
-<p>指定 php.ini 位置</p>
-<p>–with-config-file-path=/usr/local/php/etc </p>
-<p>mysql 安装目录，对 mysql 的支持</p>
-<p>–with-mysql=/usr/local/mysql</p>
-<p>mysqli 扩展技术不仅可以调用 MySQL 的存储过程、处理 MySQL 事务，而且还可以使访问数据库工作变得更加稳定。</p>
-<p>–with-mysqli=/usr/local/mysql/bin/mysql_config   </p>
-<p>整合 apache，apxs 功能是使用 mod_so 中的 LoadModule 指令，加载指定模块到 apache，要求 apache 要打开 SO 模块</p>
-<p>–with-apxs2=/usr/local/apache/bin/apxs </p>
-<p>选项指令 –with-iconv-dir 用于 PHP 编译时指定 iconv 在系统里的路径，否则会扫描默认路径。</p>
-<p>–with-iconv-dir=/usr/local </p>
-<p>–with-freetype-dir   打开对 freetype 字体库的支持 </p>
-<p>–with-jpeg-dir   打开对 jpeg 图片的支持 </p>
-<p>–with-png-dir   打开对 png 图片的支持 </p>
-<p>–with-zlib-dir   打开 zlib 库的支持，用于 http 压缩传输</p>
-<p>–with-libxml-dir   打开 libxml2 库的支持</p>
-<p>–disable-rpath    关闭额外的运行库文件 </p>
-<p>–enable-bcmath    打开图片大小调整，用到 zabbix 监控的时候用到了这个模块</p>
-<p>–enable-shmop –enable-sysvsem  这样就使得你的 PHP 系统可以处理相关的 IPC 函数了。</p>
-<p>–enable-inline-optimization  优化线程</p>
-<p>–with-curl    打开 curl 浏览工具的支持 </p>
-<p>–with-curlwrappers    运用 curl 工具打开 url 流 </p>
-<p>–enable-mbregex</p>
-<p>–enable-fpm 打上 PHP-fpm 补丁后才有这个参数，CGI 方式安装的启动程序</p>
-<p>–enable-mbstring    多字节，字符串的支持 </p>
-<p>–with-mcrypt                    mcrypt 算法扩展</p>
-<p>–with-mhash                     mhash 算法扩展</p>
-<p>–with-gd    打开 gd 库的支持 </p>
-<p>–enable-gd-native-ttf   支持 TrueType 字符串函数库</p>
-<p>–with-openssl      openssl 的支持，加密传输 https 时用到的</p>
-<p>–enable-pcntl   freeTDS 需要用到的，可能是链接 mssql 才用到</p>
-<p>–enable-sockets     打开 sockets 支持</p>
-<p>–with-xmlrpc    打开 xml-rpc 的 c 语言 </p>
-<p>–enable-zip   打开对 zip 的支持 </p>
-<p>–enable-ftp   打开 ftp 的支持 </p>
-<p>–with-bz2    打开对 bz2 文件的支持        </p>
-<p>–without-iconv   关闭 iconv 函数，字符集间的转换 </p>
-<p>–with-ttf     打开 freetype1.* 的支持，可以不加了 </p>
-<p>–with-xsl     打开 XSLT 文件支持，扩展了 libXML2 库 ，需要 libxslt 软件 </p>
-<p>–with-gettext     打开 gnu 的 gettext 支持，编码库用到 </p>
-<p>–with-pear    打开 pear 命令的支持，PHP 扩展用的 </p>
-<p>–enable-calendar    打开日历扩展功能</p>
-<p>–enable-exif    图片的元数据支持 </p>
-<p>–enable-magic-quotes    魔术引用的支持 </p>
-<p>–disable-debug    关闭调试模式 </p>
-<p>–with-mime-magic=/usr/share/file/magic.mime      魔术头文件位置</p>
-<p>CGI 方式安装才用的参数</p>
-<p>–enable-fastCGI            支持 fastcgi 方式启动 PHP</p>
-<p>–enable-force-CGI-redirect        重定向方式启动 PHP</p>
-<p>–with-ncurses         支持 ncurses 屏幕绘制以及基于文本终端的图形互动功能的动态库</p>
-<p>–with-gmp  应该是支持一种规范</p>
-<p>–enable-dbase                     建立 DBA 作为共享模块</p>
-<p>–with-pcre-dir=/usr/local/bin/pcre-config      perl 的正则库案安装位置</p>
-<p>–disable-dmalloc</p>
-<p>–with-gdbm                     dba 的 gdbm 支持</p>
-<p>–enable-sigchild</p>
-<p>–enable-sysvshm</p>
-<p>–enable-zend-multibyte         支持 zend 的多字节</p>
-<p>–enable-wddx</p>
-<p>–enable-soap<br>————————————————<br>版权声明：本文为 CSDN 博主「NiluChen」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/niluchen/article/details/41513217">https://blog.csdn.net/niluchen/article/details/41513217</a></p>
-]]></content>
-      <categories>
-        <category>PHP</category>
-      </categories>
-      <tags>
-        <tag>php</tag>
-        <tag>config</tag>
-        <tag>参数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>php7.3 编译安装参数</title>
-    <url>/2021/03/22/php7-3%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%8F%82%E6%95%B0/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~/php-7.3.27&gt; ./configure -h</span><br><span class="line">`configure' configures this package to adapt to many kinds of systems.</span><br><span class="line"></span><br><span class="line">Usage: ./configure [OPTION]... [VAR=VALUE]...</span><br><span class="line"></span><br><span class="line">To assign environment variables (e.g., CC, CFLAGS...), specify them as</span><br><span class="line">VAR=VALUE.  See below for descriptions of some of the useful variables.</span><br><span class="line"></span><br><span class="line">Defaults for the options are specified in brackets.</span><br><span class="line"></span><br><span class="line">Configuration:</span><br><span class="line">  -h, --help              display this help and exit</span><br><span class="line">      --help=short        display options specific to this package</span><br><span class="line">      --help=recursive    display the short help of all the included packages</span><br><span class="line">  -V, --version           display version information and exit</span><br><span class="line">  -q, --quiet, --silent   do not print `checking ...' messages</span><br><span class="line">      --cache-file=FILE   cache test results in FILE [disabled]</span><br><span class="line">  -C, --config-cache      alias for `--cache-file=config.cache'</span><br><span class="line">  -n, --no-create         do not create output files</span><br><span class="line">      --srcdir=DIR        find the sources in DIR [configure dir or `..']</span><br><span class="line"></span><br><span class="line">Installation directories:</span><br><span class="line">  --prefix=PREFIX         install architecture-independent files in PREFIX</span><br><span class="line">                          [/usr/local]</span><br><span class="line">  --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX</span><br><span class="line">                          [PREFIX]</span><br><span class="line"></span><br><span class="line">By default, `make install' will install all the files in</span><br><span class="line">`/usr/local/bin', `/usr/local/lib' etc.  You can specify</span><br><span class="line">an installation prefix other than `/usr/local' using `--prefix',</span><br><span class="line">for instance `--prefix=$HOME'.</span><br><span class="line"></span><br><span class="line">For better control, use the options below.</span><br><span class="line"></span><br><span class="line">Fine tuning of the installation directories:</span><br><span class="line">  --bindir=DIR            user executables [EPREFIX/bin]</span><br><span class="line">  --sbindir=DIR           system admin executables [EPREFIX/sbin]</span><br><span class="line">  --libexecdir=DIR        program executables [EPREFIX/libexec]</span><br><span class="line">  --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]</span><br><span class="line">  --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]</span><br><span class="line">  --localstatedir=DIR     modifiable single-machine data [PREFIX/var]</span><br><span class="line">  --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]</span><br><span class="line">  --libdir=DIR            object code libraries [EPREFIX/lib]</span><br><span class="line">  --includedir=DIR        C header files [PREFIX/include]</span><br><span class="line">  --oldincludedir=DIR     C header files for non-gcc [/usr/include]</span><br><span class="line">  --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share]</span><br><span class="line">  --datadir=DIR           read-only architecture-independent data [DATAROOTDIR]</span><br><span class="line">  --infodir=DIR           info documentation [DATAROOTDIR/info]</span><br><span class="line">  --localedir=DIR         locale-dependent data [DATAROOTDIR/locale]</span><br><span class="line">  --mandir=DIR            man documentation [DATAROOTDIR/man]</span><br><span class="line">  --docdir=DIR            documentation root [DATAROOTDIR/doc/PACKAGE]</span><br><span class="line">  --htmldir=DIR           html documentation [DOCDIR]</span><br><span class="line">  --dvidir=DIR            dvi documentation [DOCDIR]</span><br><span class="line">  --pdfdir=DIR            pdf documentation [DOCDIR]</span><br><span class="line">  --psdir=DIR             ps documentation [DOCDIR]</span><br><span class="line"></span><br><span class="line">System types:</span><br><span class="line">  --build=BUILD     configure for building on BUILD [guessed]</span><br><span class="line">  --host=HOST       cross-compile to build programs to run on HOST [BUILD]</span><br><span class="line">  --target=TARGET   configure for building compilers for TARGET [HOST]</span><br><span class="line"></span><br><span class="line">Optional Features and Packages:</span><br><span class="line">  --disable-option-checking  ignore unrecognized --enable/--with options</span><br><span class="line">  --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)</span><br><span class="line">  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]</span><br><span class="line">  --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]</span><br><span class="line">  --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)</span><br><span class="line">  --with-libdir=NAME      Look for libraries in .../NAME rather than .../lib</span><br><span class="line">  --disable-rpath         Disable passing additional runtime library</span><br><span class="line">                          search paths</span><br><span class="line">  --enable-re2c-cgoto     Enable -g flag to re2c to use computed goto gcc extension</span><br><span class="line">  --disable-gcc-global-regs</span><br><span class="line">                          whether to enable GCC global register variables</span><br><span class="line"></span><br><span class="line">SAPI modules:</span><br><span class="line"></span><br><span class="line">  --with-apxs2=FILE       Build shared Apache 2.0 Handler module. FILE is the optional</span><br><span class="line">                          pathname to the Apache apxs tool apxs</span><br><span class="line">  --disable-cli           Disable building CLI version of PHP</span><br><span class="line">                          (this forces --without-pear)</span><br><span class="line">  --enable-embed=TYPE     EXPERIMENTAL: Enable building of embedded SAPI library</span><br><span class="line">                          TYPE is either 'shared' or 'static'. TYPE=shared</span><br><span class="line">  --enable-fpm            Enable building of the fpm SAPI executable</span><br><span class="line">  --with-fpm-user=USER    Set the user for php-fpm to run as. (default: nobody)</span><br><span class="line">  --with-fpm-group=GRP    Set the group for php-fpm to run as. For a system user, this</span><br><span class="line">                          should usually be set to match the fpm username (default: nobody)</span><br><span class="line">  --with-fpm-systemd      Activate systemd integration</span><br><span class="line">  --with-fpm-acl          Use POSIX Access Control Lists</span><br><span class="line">  --with-litespeed        Build PHP as litespeed module</span><br><span class="line">  --enable-phpdbg         Build phpdbg</span><br><span class="line">  --enable-phpdbg-webhelper</span><br><span class="line">                          Build phpdbg web SAPI support</span><br><span class="line">  --enable-phpdbg-debug   Build phpdbg in debug mode</span><br><span class="line">  --enable-phpdbg-readline   Enable readline support in phpdbg (depends on static ext/readline)</span><br><span class="line">  --disable-cgi           Disable building CGI version of PHP</span><br><span class="line">  --with-valgrind=DIR     Enable valgrind support</span><br><span class="line"></span><br><span class="line">General settings:</span><br><span class="line"></span><br><span class="line">  --enable-gcov           Enable GCOV code coverage (requires LTP) - FOR DEVELOPERS ONLY!!</span><br><span class="line">  --enable-debug          Compile with debugging symbols</span><br><span class="line">  --with-layout=TYPE      Set how installed files will be laid out.  Type can</span><br><span class="line">                          be either PHP or GNU [PHP]</span><br><span class="line">  --with-config-file-path=PATH</span><br><span class="line">                          Set the path in which to look for php.ini [PREFIX/lib]</span><br><span class="line">  --with-config-file-scan-dir=PATH</span><br><span class="line">                          Set the path where to scan for configuration files</span><br><span class="line">  --enable-sigchild       Enable PHP's own SIGCHLD handler</span><br><span class="line">  --enable-libgcc         Enable explicitly linking against libgcc</span><br><span class="line">  --disable-short-tags    Disable the short-form &lt;? start tag by default</span><br><span class="line">  --enable-dmalloc        Enable dmalloc</span><br><span class="line">  --disable-ipv6          Disable IPv6 support</span><br><span class="line">  --enable-dtrace         Enable DTrace support</span><br><span class="line">  --enable-fd-setsize     Set size of descriptor sets</span><br><span class="line"></span><br><span class="line">Extensions:</span><br><span class="line"></span><br><span class="line">  --with-EXTENSION=shared[,PATH]</span><br><span class="line"></span><br><span class="line">    NOTE: Not all extensions can be build as 'shared'.</span><br><span class="line">    </span><br><span class="line">    Example: --with-foobar=shared,/usr/local/foobar/</span><br><span class="line">    </span><br><span class="line">      o Builds the foobar extension as shared extension.</span><br><span class="line">      o foobar package install prefix is /usr/local/foobar/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  --disable-all           Disable all extensions which are enabled by default</span><br><span class="line"></span><br><span class="line">  --disable-libxml        Disable LIBXML support</span><br><span class="line">  --with-libxml-dir=DIR   LIBXML: libxml2 install prefix</span><br><span class="line">  --with-openssl=DIR      Include OpenSSL support (requires OpenSSL &gt;= 1.0.1)</span><br><span class="line">  --with-kerberos=DIR     OPENSSL: Include Kerberos support</span><br><span class="line">  --with-system-ciphers   OPENSSL: Use system default cipher list instead of hardcoded value</span><br><span class="line">  --with-pcre-regex=DIR   Include Perl Compatible Regular Expressions support.</span><br><span class="line">                          DIR is the PCRE install prefix BUNDLED</span><br><span class="line">  --with-pcre-jit         Enable PCRE JIT functionality (BUNDLED only)</span><br><span class="line">  --with-pcre-valgrind=DIR</span><br><span class="line">                          Enable PCRE valgrind support. Developers only!</span><br><span class="line">  --without-sqlite3=DIR   Do not include SQLite3 support. DIR is the prefix to</span><br><span class="line">                          SQLite3 installation directory.</span><br><span class="line">  --with-zlib=DIR         Include ZLIB support (requires zlib &gt;= 1.2.0.4)</span><br><span class="line">  --with-zlib-dir=&lt;DIR&gt;   Define the location of zlib install directory</span><br><span class="line">  --enable-bcmath         Enable bc style precision math functions</span><br><span class="line">  --with-bz2=DIR          Include BZip2 support</span><br><span class="line">  --enable-calendar       Enable support for calendar conversion</span><br><span class="line">  --disable-ctype         Disable ctype functions</span><br><span class="line">  --with-curl=DIR         Include cURL support</span><br><span class="line">  --enable-dba            Build DBA with bundled modules. To build shared DBA</span><br><span class="line">                          extension use --enable-dba=shared</span><br><span class="line">  --with-qdbm=DIR         DBA: QDBM support</span><br><span class="line">  --with-gdbm=DIR         DBA: GDBM support</span><br><span class="line">  --with-ndbm=DIR         DBA: NDBM support</span><br><span class="line">  --with-db4=DIR          DBA: Oracle Berkeley DB 4.x or 5.x support</span><br><span class="line">  --with-db3=DIR          DBA: Oracle Berkeley DB 3.x support</span><br><span class="line">  --with-db2=DIR          DBA: Oracle Berkeley DB 2.x support</span><br><span class="line">  --with-db1=DIR          DBA: Oracle Berkeley DB 1.x support/emulation</span><br><span class="line">  --with-dbm=DIR          DBA: DBM support</span><br><span class="line">  --with-tcadb=DIR        DBA: Tokyo Cabinet abstract DB support</span><br><span class="line">  --with-lmdb=DIR         DBA: Lightning memory-mapped database support</span><br><span class="line">  --without-cdb=DIR       DBA: CDB support (bundled)</span><br><span class="line">  --disable-inifile       DBA: INI support (bundled)</span><br><span class="line">  --disable-flatfile      DBA: FlatFile support (bundled)</span><br><span class="line">  --disable-dom           Disable DOM support</span><br><span class="line">  --with-libxml-dir=DIR   DOM: libxml2 install prefix</span><br><span class="line">  --with-enchant=DIR      Include enchant support.</span><br><span class="line">                          GNU Aspell version 1.1.3 or higher required.</span><br><span class="line">  --enable-exif           Enable EXIF (metadata from images) support</span><br><span class="line">  --disable-fileinfo      Disable fileinfo support</span><br><span class="line">  --disable-filter        Disable input filter support</span><br><span class="line">  --with-pcre-dir         FILTER: pcre install prefix</span><br><span class="line">  --enable-ftp            Enable FTP support</span><br><span class="line">  --with-openssl-dir=DIR  FTP: openssl install prefix</span><br><span class="line">  --with-gd=DIR           Include GD support.  DIR is the GD library base</span><br><span class="line">                          install directory BUNDLED</span><br><span class="line">  --with-webp-dir=DIR     GD: Set the path to libwebp install prefix</span><br><span class="line">  --with-jpeg-dir=DIR     GD: Set the path to libjpeg install prefix</span><br><span class="line">  --with-png-dir=DIR      GD: Set the path to libpng install prefix</span><br><span class="line">  --with-zlib-dir=DIR     GD: Set the path to libz install prefix</span><br><span class="line">  --with-xpm-dir=DIR      GD: Set the path to libXpm install prefix</span><br><span class="line">  --with-freetype-dir=DIR GD: Set the path to FreeType 2 install prefix</span><br><span class="line">  --enable-gd-jis-conv    GD: Enable JIS-mapped Japanese font support</span><br><span class="line">  --with-gettext=DIR      Include GNU gettext support</span><br><span class="line">  --with-gmp=DIR          Include GNU MP support</span><br><span class="line">  --with-mhash=DIR        Include mhash support</span><br><span class="line">  --disable-hash          Disable hash support</span><br><span class="line">  --without-iconv=DIR     Exclude iconv support</span><br><span class="line">  --with-imap=DIR         Include IMAP support. DIR is the c-client install prefix</span><br><span class="line">  --with-kerberos=DIR     IMAP: Include Kerberos support. DIR is the Kerberos install prefix</span><br><span class="line">  --with-imap-ssl=DIR     IMAP: Include SSL support. DIR is the OpenSSL install prefix</span><br><span class="line">  --with-interbase=DIR    Include Firebird support.  DIR is the Firebird base</span><br><span class="line">                          install directory /opt/firebird</span><br><span class="line">  --enable-intl           Enable internationalization support</span><br><span class="line">  --with-icu-dir=DIR      Specify where ICU libraries and headers can be found</span><br><span class="line">  --disable-json          Disable JavaScript Object Serialization support</span><br><span class="line">  --with-ldap=DIR         Include LDAP support</span><br><span class="line">  --with-ldap-sasl=DIR    LDAP: Include Cyrus SASL support</span><br><span class="line">  --enable-mbstring       Enable multibyte string support</span><br><span class="line">  --disable-mbregex       MBSTRING: Disable multibyte regex support</span><br><span class="line">  --disable-mbregex-backtrack</span><br><span class="line">                          MBSTRING: Disable multibyte regex backtrack check</span><br><span class="line">  --with-onig=DIR         MBSTRING: Use external oniguruma. DIR is the oniguruma install prefix.</span><br><span class="line">                          If DIR is not set, the bundled oniguruma will be used</span><br><span class="line">  --with-mysqli=FILE      Include MySQLi support.  FILE is the path</span><br><span class="line">                          to mysql_config.  If no value or mysqlnd is passed</span><br><span class="line">                          as FILE, the MySQL native driver will be used</span><br><span class="line">  --enable-embedded-mysqli</span><br><span class="line">                          MYSQLi: Enable embedded support</span><br><span class="line">                          Note: Does not work with MySQL native driver!</span><br><span class="line">  --with-mysql-sock=SOCKPATH</span><br><span class="line">                          MySQLi/PDO_MYSQL: Location of the MySQL unix socket pointer.</span><br><span class="line">                          If unspecified, the default locations are searched</span><br><span class="line">  --with-oci8=DIR         Include Oracle Database OCI8 support. DIR defaults to $ORACLE_HOME.</span><br><span class="line">                          Use --with-oci8=instantclient,/path/to/instant/client/lib</span><br><span class="line">                          to use an Oracle Instant Client installation</span><br><span class="line">  --with-odbcver=HEX      Force support for the passed ODBC version. A hex number is expected, default 0x0350.</span><br><span class="line">                          Use the special value of 0 to prevent an explicit ODBCVER to be defined.</span><br><span class="line">  --with-adabas=DIR       Include Adabas D support /usr/local</span><br><span class="line">  --with-sapdb=DIR        Include SAP DB support /usr/local</span><br><span class="line">  --with-solid=DIR        Include Solid support /usr/local/solid</span><br><span class="line">  --with-ibm-db2=DIR      Include IBM DB2 support /home/db2inst1/sqllib</span><br><span class="line">  --with-empress=DIR      Include Empress support \$EMPRESSPATH</span><br><span class="line">                          (Empress Version &gt;= 8.60 required)</span><br><span class="line">  --with-empress-bcs=DIR  Include Empress Local Access support \$EMPRESSPATH</span><br><span class="line">                          (Empress Version &gt;= 8.60 required)</span><br><span class="line">  --with-custom-odbc=DIR  Include user defined ODBC support. DIR is ODBC install base</span><br><span class="line">                          directory /usr/local. Make sure to define CUSTOM_ODBC_LIBS and</span><br><span class="line">                          have some odbc.h in your include dirs. f.e. you should define</span><br><span class="line">                          following for Sybase SQL Anywhere 5.5.00 on QNX, prior to</span><br><span class="line">                          running this configure script:</span><br><span class="line">                            CPPFLAGS=\"-DODBC_QNX -DSQLANY_BUG\"</span><br><span class="line">                            LDFLAGS=-lunix</span><br><span class="line">                            CUSTOM_ODBC_LIBS=\"-ldblib -lodbc\"</span><br><span class="line">  --with-iodbc=DIR        Include iODBC support /usr/local</span><br><span class="line">  --with-esoob=DIR        Include Easysoft OOB support /usr/local/easysoft/oob/client</span><br><span class="line">  --with-unixODBC=DIR     Include unixODBC support /usr/local</span><br><span class="line">  --with-dbmaker=DIR      Include DBMaker support</span><br><span class="line">  --disable-opcache       Disable Zend OPcache support</span><br><span class="line">  --disable-opcache-file  Disable file based caching</span><br><span class="line">  --disable-huge-code-pages</span><br><span class="line">                          Disable copying PHP CODE pages into HUGE PAGES</span><br><span class="line">  --enable-pcntl          Enable pcntl support (CLI/CGI only)</span><br><span class="line">  --disable-pdo           Disable PHP Data Objects support</span><br><span class="line">  --with-pdo-dblib=DIR    PDO: DBLIB-DB support.  DIR is the FreeTDS home directory</span><br><span class="line">  --with-pdo-firebird=DIR PDO: Firebird support.  DIR is the Firebird base</span><br><span class="line">                          install directory /opt/firebird</span><br><span class="line">  --with-pdo-mysql=DIR    PDO: MySQL support. DIR is the MySQL base directory</span><br><span class="line">                          If no value or mysqlnd is passed as DIR, the</span><br><span class="line">                          MySQL native driver will be used</span><br><span class="line">  --with-zlib-dir=DIR     PDO_MySQL: Set the path to libz install prefix</span><br><span class="line">  --with-pdo-oci=DIR      PDO: Oracle OCI support. DIR defaults to $ORACLE_HOME.</span><br><span class="line">                          Use --with-pdo-oci=instantclient,/path/to/instant/client/lib</span><br><span class="line">                          for an Oracle Instant Client installation.</span><br><span class="line">  --with-pdo-odbc=flavour,dir</span><br><span class="line">                          PDO: Support for 'flavour' ODBC driver.</span><br><span class="line">                          include and lib dirs are looked for under 'dir'.</span><br><span class="line"></span><br><span class="line">                          'flavour' can be one of:  ibm-db2, iODBC, unixODBC, generic</span><br><span class="line">                          If ',dir' part is omitted, default for the flavour</span><br><span class="line">                          you have selected will be used. e.g.:</span><br><span class="line">    </span><br><span class="line">                            --with-pdo-odbc=unixODBC</span><br><span class="line">    </span><br><span class="line">                          will check for unixODBC under /usr/local. You may attempt</span><br><span class="line">                          to use an otherwise unsupported driver using the 'generic'</span><br><span class="line">                          flavour.  The syntax for generic ODBC support is:</span><br><span class="line">    </span><br><span class="line">                            --with-pdo-odbc=generic,dir,libname,ldflags,cflags</span><br><span class="line">    </span><br><span class="line">                          When built as 'shared' the extension filename is always pdo_odbc.so</span><br><span class="line"></span><br><span class="line">  --with-pdo-pgsql=DIR    PDO: PostgreSQL support.  DIR is the PostgreSQL base</span><br><span class="line">                          install directory or the path to pg_config</span><br><span class="line">  --without-pdo-sqlite=DIR</span><br><span class="line">                          PDO: sqlite 3 support.  DIR is the sqlite base</span><br><span class="line">                          install directory BUNDLED</span><br><span class="line">  --with-pgsql=DIR        Include PostgreSQL support.  DIR is the PostgreSQL</span><br><span class="line">                          base install directory or the path to pg_config</span><br><span class="line">  --disable-phar          Disable phar support</span><br><span class="line">  --disable-posix         Disable POSIX-like functions</span><br><span class="line">  --with-pspell=DIR       Include PSPELL support.</span><br><span class="line">                          GNU Aspell version 0.50.0 or higher required</span><br><span class="line">  --with-libedit=DIR      Include libedit readline replacement (CLI/CGI only)</span><br><span class="line">  --with-readline=DIR     Include readline support (CLI/CGI only)</span><br><span class="line">  --with-recode=DIR       Include recode support</span><br><span class="line">  --disable-session       Disable session support</span><br><span class="line">  --with-mm=DIR           SESSION: Include mm support for session storage</span><br><span class="line">  --enable-shmop          Enable shmop support</span><br><span class="line">  --disable-simplexml     Disable SimpleXML support</span><br><span class="line">  --with-libxml-dir=DIR   SimpleXML: libxml2 install prefix</span><br><span class="line">  --with-snmp=DIR         Include SNMP support</span><br><span class="line">  --with-openssl-dir=DIR  SNMP: openssl install prefix</span><br><span class="line">  --enable-soap           Enable SOAP support</span><br><span class="line">  --with-libxml-dir=DIR   SOAP: libxml2 install prefix</span><br><span class="line">  --enable-sockets        Enable sockets support</span><br><span class="line">  --with-sodium=DIR       Include sodium support</span><br><span class="line">  --with-password-argon2=DIR</span><br><span class="line">                          Include Argon2 support in password_*. DIR is the Argon2 shared library path</span><br><span class="line">  --enable-sysvmsg        Enable sysvmsg support</span><br><span class="line">  --enable-sysvsem        Enable System V semaphore support</span><br><span class="line">  --enable-sysvshm        Enable the System V shared memory support</span><br><span class="line">  --with-tidy=DIR         Include TIDY support</span><br><span class="line">  --disable-tokenizer     Disable tokenizer support</span><br><span class="line">  --enable-wddx           Enable WDDX support</span><br><span class="line">  --with-libxml-dir=DIR   WDDX: libxml2 install prefix</span><br><span class="line">  --with-libexpat-dir=DIR WDDX: libexpat dir for XMLRPC-EPI (deprecated)</span><br><span class="line">  --disable-xml           Disable XML support</span><br><span class="line">  --with-libxml-dir=DIR   XML: libxml2 install prefix</span><br><span class="line">  --with-libexpat-dir=DIR XML: libexpat install prefix (deprecated)</span><br><span class="line">  --disable-xmlreader     Disable XMLReader support</span><br><span class="line">  --with-libxml-dir=DIR   XMLReader: libxml2 install prefix</span><br><span class="line">  --with-xmlrpc=DIR       Include XMLRPC-EPI support</span><br><span class="line">  --with-libxml-dir=DIR   XMLRPC-EPI: libxml2 install prefix</span><br><span class="line">  --with-libexpat-dir=DIR XMLRPC-EPI: libexpat dir for XMLRPC-EPI (deprecated)</span><br><span class="line">  --with-iconv-dir=DIR    XMLRPC-EPI: iconv dir for XMLRPC-EPI</span><br><span class="line">  --disable-xmlwriter     Disable XMLWriter support</span><br><span class="line">  --with-libxml-dir=DIR   XMLWriter: libxml2 install prefix</span><br><span class="line">  --with-xsl=DIR          Include XSL support.  DIR is the libxslt base</span><br><span class="line">                          install directory (libxslt &gt;= 1.1.0 required)</span><br><span class="line">  --enable-zend-test      Enable zend-test extension</span><br><span class="line">  --enable-zip            Include Zip read/write support</span><br><span class="line">  --with-zlib-dir=DIR     ZIP: Set the path to libz install prefix</span><br><span class="line">  --with-pcre-dir         ZIP: pcre install prefix</span><br><span class="line">  --with-libzip=DIR       ZIP: use libzip</span><br><span class="line">  --enable-mysqlnd        Enable mysqlnd explicitly, will be done implicitly</span><br><span class="line">                          when required by other extensions</span><br><span class="line">  --disable-mysqlnd-compression-support</span><br><span class="line">                          Disable support for the MySQL compressed protocol in mysqlnd</span><br><span class="line">  --with-zlib-dir=DIR     mysqlnd: Set the path to libz install prefix</span><br><span class="line"></span><br><span class="line">PEAR:</span><br><span class="line"></span><br><span class="line">  --with-pear=DIR         Install PEAR in DIR [PREFIX/lib/php]</span><br><span class="line">  --without-pear          Do not install PEAR</span><br><span class="line"></span><br><span class="line">Zend:</span><br><span class="line"></span><br><span class="line">  --enable-maintainer-zts Enable thread safety - for code maintainers only!!</span><br><span class="line">  --disable-inline-optimization</span><br><span class="line">                          If building zend_execute.lo fails, try this switch</span><br><span class="line">  --disable-zend-signals  whether to enable zend signal handling</span><br><span class="line"></span><br><span class="line">TSRM:</span><br><span class="line"></span><br><span class="line">  --with-tsrm-pth=pth-config</span><br><span class="line">                          Use GNU Pth</span><br><span class="line">  --with-tsrm-st          Use SGI's State Threads</span><br><span class="line">  --with-tsrm-pthreads    Use POSIX threads (default)</span><br><span class="line"></span><br><span class="line">Libtool:</span><br><span class="line"></span><br><span class="line">  --enable-shared=PKGS    Build shared libraries default=yes</span><br><span class="line">  --enable-static=PKGS    Build static libraries default=yes</span><br><span class="line">  --enable-fast-install=PKGS</span><br><span class="line">                          Optimize for fast installation default=yes</span><br><span class="line">  --with-gnu-ld           Assume the C compiler uses GNU ld default=no</span><br><span class="line">  --disable-libtool-lock  Avoid locking (might break parallel builds)</span><br><span class="line">  --with-pic              Try to use only PIC/non-PIC objects default=use both</span><br><span class="line">  --with-tags=TAGS        Include additional configurations automatic</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Some influential environment variables:</span><br><span class="line">  CC          C compiler command</span><br><span class="line">  CFLAGS      C compiler flags</span><br><span class="line">  LDFLAGS     linker flags, e.g. -L&lt;lib dir&gt; if you have libraries in a</span><br><span class="line">              nonstandard directory &lt;lib dir&gt;</span><br><span class="line">  LIBS        libraries to pass to the linker, e.g. -l&lt;library&gt;</span><br><span class="line">  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I&lt;include dir&gt; if</span><br><span class="line">              you have headers in a nonstandard directory &lt;include dir&gt;</span><br><span class="line">  CPP         C preprocessor</span><br><span class="line">  YACC        The `Yet Another Compiler Compiler' implementation to use.</span><br><span class="line">              Defaults to the first program found out of: `bison -y', `byacc',</span><br><span class="line">              `yacc'.</span><br><span class="line">  YFLAGS      The list of arguments that will be passed by default to $YACC.</span><br><span class="line">              This script will default YFLAGS to the empty string to avoid a</span><br><span class="line">              default value of `-d' given by some make applications.</span><br><span class="line">  CXX         C++ compiler command</span><br><span class="line">  CXXFLAGS    C++ compiler flags</span><br><span class="line">  CXXCPP      C++ preprocessor</span><br><span class="line"></span><br><span class="line">Use these variables to override the choices made by `configure' or to help</span><br><span class="line">it to find libraries and programs with nonstandard names/locations.</span><br><span class="line"></span><br><span class="line">Report bugs to the package provider.</span><br><span class="line">spms@ZFQS:~/php-7.3.27&gt; </span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <tags>
-        <tag>php</tag>
-        <tag>编译参数</tag>
       </tags>
   </entry>
 </search>

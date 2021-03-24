@@ -25,13 +25,13 @@
   </script>
 <meta name="description" content="suse linux下安装php记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="suse-linux-php 安装">
+<meta property="og:title" content="RaySir&#39;s Blog">
 <meta property="og:url" content="http://example.com/2021/03/02/suse-linux-php%E5%AE%89%E8%A3%85/index.html">
 <meta property="og:site_name" content="RaySir&#39;s Blog">
 <meta property="og:description" content="suse linux下安装php记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-02T03:26:41.000Z">
-<meta property="article:modified_time" content="2021-03-22T08:48:05.060Z">
+<meta property="article:modified_time" content="2021-03-23T10:01:12.431Z">
 <meta property="article:author" content="Layne">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="php">
@@ -50,7 +50,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>suse-linux-php 安装 | RaySir's Blog</title>
+<title> | RaySir's Blog</title>
   
 
 
@@ -114,7 +114,7 @@
       <h1 class="site-title">RaySir's Blog</h1>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">--随心记录学习、生活--</p>
+      <p class="site-subtitle" itemprop="description">随记，备查。学广浅，吹牛B；学专深，干专业。学，趣也……</p>
       <img class="custom-logo-image" src="/images/custom-logo.png" alt="RaySir's Blog">
   </div>
 
@@ -131,9 +131,9 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">12</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">14</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">19</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -190,7 +190,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-GCC%E5%92%8CG-%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">1 GCC 和 G++ 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E6%9C%89%E5%85%B3%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 有关查询命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%8C%82%E8%BD%BDlinux%E5%8E%9F%E7%9B%98%EF%BC%88%E9%9C%80%E8%A6%81root%E6%9D%83%E9%99%90%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 挂载 linux 原盘（需要 root 权限）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-%E6%8C%82%E8%BD%BDlinux-ISO%E9%95%9C%E5%83%8F%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 挂载 linux ISO 镜像文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-%E6%8F%92%E5%85%A5%E5%85%89%E9%A9%B1%E6%8C%82%E8%BD%BD"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 插入光驱挂载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%EF%BC%8864%E4%BD%8D%E5%8D%B3%E5%8F%AF%EF%BC%8C%E6%97%A0%E9%9C%80%E5%AE%89%E8%A3%8532%E4%BD%8D%EF%BC%89%E9%98%B2%E9%94%88021"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 安装依赖关系（64 位即可，无需安装 32 位）防锈 021</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-%E5%AE%89%E8%A3%85%E5%AE%89%E8%A3%85glibc-devel"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1 安装安装 glibc-devel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-%E5%AE%89%E8%A3%85gcc"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.3.2 安装 gcc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-%E5%AE%89%E8%A3%85g"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3.3 安装 g++</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-libxml2-2-7-6-tar-gz%E5%AE%89%E8%A3%85"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 libxml2-2.7.6.tar.gz 安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-php5-%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">2 php5 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%B8%8A%E4%BC%A0"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 下载并上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-12-%E8%A7%A3%E5%8E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">2.12 解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8D%E7%9A%84%E7%8E%AF%E5%A2%83%E6%98%AF%E5%90%A6%E6%BB%A1%E8%B6%B3%E8%A6%81%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB"><span class="nav-number">2.3.</span> <span class="nav-text">2.2 检查当前的环境是否满足要安装软件的依赖关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E7%BC%96%E8%AF%91"><span class="nav-number">2.4.</span> <span class="nav-text">2.3 编译</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-php7%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">3 php7 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="nav-number">3.1.</span> <span class="nav-text">1. 安装依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%B8%8B%E8%BD%BD%E6%88%96%E4%B8%8A%E4%BC%A0%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">3.2.</span> <span class="nav-text">2. 下载或上传安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%A7%A3%E5%8E%8B"><span class="nav-number">3.3.</span> <span class="nav-text">3. 解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%A3%80%E6%9F%A5%E5%92%8C%E9%85%8D%E7%BD%AEPHP%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="nav-number">3.4.</span> <span class="nav-text">4. 检查和配置 PHP 安装环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85"><span class="nav-number">3.5.</span> <span class="nav-text">5. 编译安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE"><span class="nav-number">3.6.</span> <span class="nav-text">6. 参数配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#php-ini"><span class="nav-number">3.6.1.</span> <span class="nav-text">php.ini</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-fpm-conf"><span class="nav-number">3.6.2.</span> <span class="nav-text">php-fpm.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#www-conf"><span class="nav-number">3.6.3.</span> <span class="nav-text">www.conf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9php7%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="nav-number">3.6.3.1.</span> <span class="nav-text">修改 php7 端口号</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%90%AF%E5%8A%A8php"><span class="nav-number">3.7.</span> <span class="nav-text">7. 启动 php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-php%E7%8A%B6%E6%80%81%E6%9F%A5%E7%9C%8B"><span class="nav-number">3.8.</span> <span class="nav-text">8.php 状态查看</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Ningx%E5%AE%89%E8%A3%85"><span class="nav-number">4.</span> <span class="nav-text">4 Ningx 安装</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-GCC%E5%92%8CG-%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">1 GCC 和 G++ 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E6%9C%89%E5%85%B3%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 有关查询命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%8C%82%E8%BD%BDlinux%E5%8E%9F%E7%9B%98%EF%BC%88%E9%9C%80%E8%A6%81root%E6%9D%83%E9%99%90%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 挂载 linux 原盘（需要 root 权限）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-%E6%8C%82%E8%BD%BDlinux-ISO%E9%95%9C%E5%83%8F%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 挂载 linux ISO 镜像文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-%E6%8F%92%E5%85%A5%E5%85%89%E9%A9%B1%E6%8C%82%E8%BD%BD"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 插入光驱挂载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%EF%BC%8864%E4%BD%8D%E5%8D%B3%E5%8F%AF%EF%BC%8C%E6%97%A0%E9%9C%80%E5%AE%89%E8%A3%8532%E4%BD%8D%EF%BC%89%E9%98%B2%E9%94%88021"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 安装依赖关系（64 位即可，无需安装 32 位）防锈 021</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-%E5%AE%89%E8%A3%85%E5%AE%89%E8%A3%85glibc-devel"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1 安装安装 glibc-devel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-%E5%AE%89%E8%A3%85gcc"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.3.2 安装 gcc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-%E5%AE%89%E8%A3%85g"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3.3 安装 g++</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-libxml2-2-7-6-tar-gz%E5%AE%89%E8%A3%85"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 libxml2-2.7.6.tar.gz 安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-php5-%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">2 php5 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%B8%8A%E4%BC%A0"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 下载并上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-12-%E8%A7%A3%E5%8E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">2.12 解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8D%E7%9A%84%E7%8E%AF%E5%A2%83%E6%98%AF%E5%90%A6%E6%BB%A1%E8%B6%B3%E8%A6%81%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB"><span class="nav-number">2.3.</span> <span class="nav-text">2.2 检查当前的环境是否满足要安装软件的依赖关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E7%BC%96%E8%AF%91"><span class="nav-number">2.4.</span> <span class="nav-text">2.3 编译</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-php7%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">3 php7 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="nav-number">3.1.</span> <span class="nav-text">1. 安装依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%B8%8B%E8%BD%BD%E6%88%96%E4%B8%8A%E4%BC%A0%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">3.2.</span> <span class="nav-text">2. 下载或上传安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%A7%A3%E5%8E%8B"><span class="nav-number">3.3.</span> <span class="nav-text">3. 解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E9%85%8D%E7%BD%AEPHP%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="nav-number">3.4.</span> <span class="nav-text">4. 配置 PHP 安装环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85"><span class="nav-number">3.5.</span> <span class="nav-text">5. 编译安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AEphp-ini"><span class="nav-number">3.6.</span> <span class="nav-text">6. 参数配置 php.ini</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#php-fpm-conf"><span class="nav-number">3.6.1.</span> <span class="nav-text">php-fpm.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#www-conf"><span class="nav-number">3.6.2.</span> <span class="nav-text">www.conf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9php7%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="nav-number">3.6.2.1.</span> <span class="nav-text">修改 php7 端口号</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%90%AF%E5%8A%A8php"><span class="nav-number">3.7.</span> <span class="nav-text">7. 启动 php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-php%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">3.8.</span> <span class="nav-text">8.php 常用命令</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -199,27 +199,27 @@
     <img class="site-author-image" itemprop="image" alt="Layne"
       src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">Layne</p>
-  <div class="site-description" itemprop="description">学广学浅，可以帮你吹牛逼；学专学深，可以帮你干专业。学习可以是很有意思的事……</div>
+  <div class="site-description" itemprop="description">内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -293,7 +293,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Layne">
-      <meta itemprop="description" content="学广学浅，可以帮你吹牛逼；学专学深，可以帮你干专业。学习可以是很有意思的事……">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -301,7 +301,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          suse-linux-php 安装<a href="https://github.com/netxulei/tree/master/source/_posts/_posts/suse-linux-php%E5%AE%89%E8%A3%85.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          <a href="https://github.com/netxulei/tree/master/source/_posts/_posts/suse-linux-php%E5%AE%89%E8%A3%85.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -319,7 +319,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-22 16:48:05" itemprop="dateModified" datetime="2021-03-22T16:48:05+08:00">2021-03-22</time>
+        <time title="修改时间：2021-03-23 18:01:12" itemprop="dateModified" datetime="2021-03-23T18:01:12+08:00">2021-03-23</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -346,14 +346,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7.6k</span>
+      <span>4.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>13 分钟</span>
+      <span>8 分钟</span>
     </span>
 </div>
 
@@ -430,39 +430,23 @@
 <h2 id="2-下载或上传安装包"><a href="#2-下载或上传安装包" class="headerlink" title="2.下载或上传安装包"></a>2. 下载或上传安装包</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd </span><br><span class="line">wget https://www.php.net/distributions/php-7.3.27.tar.gz</span><br></pre></td></tr></tbody></table></figure>
 <p>内网 linux 可外网下载，将 php-7.3.27.tar.gz 上传至 linux 的 /home 目录（/home/spms)，</p>
 <h2 id="3-解压"><a href="#3-解压" class="headerlink" title="3.解压"></a>3. 解压</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf php-7.3.27.tar.gz</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="4-检查和配置PHP安装环境"><a href="#4-检查和配置PHP安装环境" class="headerlink" title="4.检查和配置PHP安装环境"></a>4. 检查和配置 PHP 安装环境</h2><p>以下为能够安装的基本配置，网上很多参数的那种，要写 /usr/lib 等目录，非 root 用户没有权限，不能安装。需要配置其他功能室再查资料。</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> php-7.3.27</span></span><br><span class="line"><span class="meta">$</span><span class="bash">./configure --prefix=/home/spms/php7 --with-config-file-path=/home/spms/php7/etc --enable-fpm</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="5-编译安装"><a href="#5-编译安装" class="headerlink" title="5.编译安装"></a>5. 编译安装</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="6-参数配置"><a href="#6-参数配置" class="headerlink" title="6.参数配置"></a>6. 参数配置</h2><h3 id="php-ini"><a href="#php-ini" class="headerlink" title="php.ini"></a>php.ini</h3><p>在之前编译的源码包中，找到 php.ini-production，复制到 /home/spms/php7 下，并改名为 php.ini：</p>
+<h2 id="4-配置PHP安装环境"><a href="#4-配置PHP安装环境" class="headerlink" title="4.配置PHP安装环境"></a>4. 配置 PHP 安装环境</h2><p>以下为能够安装的基本配置，网上很多参数的那种，要写 /usr/lib 等目录，非 root 用户没有权限，不能安装。需要配置其他功能室再查资料。</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> php-7.3.27</span></span><br><span class="line"><span class="meta">$</span><span class="bash">./configure --prefix=/home/spms/php7 --with-config-file-path=/home/spms/php7/etc --enable-fpm --enable-pdo --with-pdo-mysql --enable-mysqlnd --with-mysqli --with-openssl</span> </span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/php --with-zlib --enable-zip --with-openssl --enable-fpm --enable-mbstring --with-libdir=lib64</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="5-编译安装"><a href="#5-编译安装" class="headerlink" title="5.编译安装"></a>5. 编译安装</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make clear #重新配置和编译时使用</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="6-参数配置php-ini"><a href="#6-参数配置php-ini" class="headerlink" title="6.参数配置php.ini"></a>6. 参数配置 php.ini</h2><p>在之前编译的源码包中，找到 php.ini-production，复制到 /home/spms/php7 下，并改名为 php.ini：</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /home/spms/php-7.3.27</span><br><span class="line">cp php.ini-production /home/spms/php7/etc/php.ini</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="php-fpm-conf"><a href="#php-fpm-conf" class="headerlink" title="php-fpm.conf"></a>php-fpm.conf</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /home/spms/php7/etc/php-fpm.d</span><br><span class="line">cp www.conf.default www.conf</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="php-fpm-conf"><a href="#php-fpm-conf" class="headerlink" title="php-fpm.conf"></a>php-fpm.conf</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /home/spms/php7/etc</span><br><span class="line">cp php-fpm.conf.default php-fpm.conf</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="www-conf"><a href="#www-conf" class="headerlink" title="www.conf"></a><a target="_blank" rel="noopener" href="http://www.conf/">www.conf</a></h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /home/spms/php7/etc/php-fpm.d</span><br><span class="line">cp www.conf.default www.conf</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="修改php7端口号"><a href="#修改php7端口号" class="headerlink" title="修改php7端口号"></a>修改 php7 端口号</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/php7/etc/php-fpm.d/www.conf</span><br><span class="line">listen = 0.0.0.0:9000</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="7-启动php"><a href="#7-启动php" class="headerlink" title="7.启动php"></a>7. 启动 php</h2><p>/usr/local/php7/sbin/php-fpm </p>
-<h2 id="8-php状态查看"><a href="#8-php状态查看" class="headerlink" title="8.php状态查看"></a>8.php 状态查看</h2><p>查看是否已经开启</p>
+<h2 id="8-php常用命令"><a href="#8-php常用命令" class="headerlink" title="8.php常用命令"></a>8.php 常用命令</h2><p>查看是否已经开启</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep php</span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -A | grep -i php </span><br></pre></td></tr></tbody></table></figure>
 <p>关闭 php-fpm 服务</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkill php-fpm</span><br></pre></td></tr></tbody></table></figure>
-
-
-<h1 id="4-Ningx安装"><a href="#4-Ningx安装" class="headerlink" title="4 Ningx安装"></a>4 Ningx 安装</h1><p>（一）安装<br>1. 安装准备<br>（1）下载<br>openssl-1.0.2l.tar.gz<br>zlib-1.2.11.tar.gz<br>pcre-8.38.tar.gz<br>（2）查看是否安装：<br>$rpm -qa zlib<br>$rpm -qa openssl<br>$rpm -qa pcre<br>tar 三个包<br>因系统已安装上述三个包，上述三个包只解压不编译，安装 nginx 时指定为 with 目录即可。<br>tar nginx 包<br>$ tar zxvf nginx-1.12.1.tar.gz<br>$cd nginx1.12.1<br>$./configure –prefix=/home/spms/nginx –with-openssl=../openssl-1.0.2l –with-zlib=../zlib-1.2.11 –with-pcre=../pcre-8.38<br>$make<br>$make install<br>配置<br>#vi nginx.conf<br>server {<br>        listen       8850;<br>        server_name  localhost;<br>        #charset koi8-r;<br>        #access_log  logs/host.access.log  main;<br>        location / {<br>            root   html;<br>            index  index.html index.htm index.php;<br>        }</p>
-<p> location ~ .php$ {<br>            root           html;<br>            fastcgi_pass   127.0.0.1:9000;<br>            fastcgi_index  index.php;<br>            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;<br>            include        fastcgi_params;<br>        }<br>将注释的 #号去掉，并在 fastcgi_param 参数的 $fastcgi_script_name 之前加入 $document_root.<br>http {<br>　　 include       mime.types;<br>        default_type  application/octet-stream;<br>         server_names_hash_bucket_size 128;<br>         client_header_buffer_size 32k;<br>     sendfile        on;<br>      tcp_nopush     on;<br>     tcp_nodelay    on;<br>      #keepalive_timeout  0;<br>       keepalive_timeout  65;<br>         fastcgi_connect_timeout 300;<br>       fastcgi_send_timeout 300;<br>       fastcgi_read_timeout 300;<br>         fastcgi_buffer_size 64k;<br>         fastcgi_buffers 4 64k;<br>         fastcgi_busy_buffers_size 128k;<br>         fastcgi_temp_file_write_size 128k;<br>修改 fastcgi.conf 用下面内容覆盖原文件：<br>fastcgi_param  GATEWAY_INTERFACE  CGI/1.1;<br>fastcgi_param  SERVER_SOFTWARE    nginx;<br>fastcgi_param  QUERY_STRING      $query_string;<br>fastcgi_param  REQUEST_METHOD    $request_method;<br>fastcgi_param  CONTENT_TYPE      $content_type;<br>fastcgi_param  CONTENT_LENGTH    $content_length;<br>fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;<br>fastcgi_param  SCRIPT_NAME        $fastcgi_script_name;<br>fastcgi_param  REQUEST_URI        $request_uri;<br>fastcgi_param  DOCUMENT_URI      $document_uri;<br>fastcgi_param  DOCUMENT_ROOT      $document_root;<br>fastcgi_param  SERVER_PROTOCOL    $server_protocol;<br>fastcgi_param  REMOTE_ADDR        $remote_addr;<br>fastcgi_param  REMOTE_PORT        $remote_port;<br>fastcgi_param  SERVER_ADDR        $server_addr;<br>fastcgi_param  SERVER_PORT        $server_port;<br>fastcgi_param  SERVER_NAME        $server_name;</p>
-<p>原始文件多了如下三行（不用改变应该可以？）：<br>fastcgi_param  REQUEST_SCHEME     $scheme;<br>fastcgi_param  HTTPS              $https if_not_empty;<br>fastcgi_param  REDIRECT_STATUS    200;</p>
-<p>（三）检测是否安装成功<br>$ cd  /home/nginx/nginx/sbin<br>$ ./nginx -t<br>出现如下所示提示，表示安装成功 </p>
-<p>启动 nginx</p>
-<p>cd ../../nginx/sbin</p>
-<p>./nginx</p>
-<p>如果之前已经启动了 nginx 请使用如下命令：</p>
-<p>./nginx -s reload</p>
-<p>在 /usr/local/nginx/html/ 目录下创建一个文件 index.php</p>
-<p>touch index.php</p>
-<p>内容为：<!--? echo phpinfo(); ?--><br>结果为：<br>我的启动脚本：<br>/home/spms/ctrl_nginx.sh</p>
-<p>整套系统开机启动：<br>启动放到如下文件<br>/etc/init.d/after.local<br>vi after.local<br>su - db2inst1 -c “db2start”<br>su - spms -c “ctrl_tomcat.sh start”<br>su - spms -c “ctrl_php-fpm.sh start”<br>su - spms -c “ctrl_nginx.sh start”</p>
-<p>注：设置 nginx 和 php-fpm 更改上传文件大小限制<br>Nginx 和 php 默认不支持上传过大的文件。<br>假如我们要求上传的文件大小为 20M，默认配置就不允许上传了。<br>下面我们更改 nginx 和 php 配置，设定上传的限制为 20M。<br>Nginx 配置更改<br>如果上传文件时超过了 nginx 的限制，就会返回一个 “413 Request Entity Too Large” 的错误。<br>我们只要更改 nginx 的配置文件 “nginx.conf” 即可。<br>在 http {} 中添加一个 client_max_body_size 20m; 配置项；<br>修改完成之后重启 nginx 或 reload 配置。</p>
-<p>PHP 配置更改<br>除了 nginx 对文件大小有要求，php 也做了限制。<br>php 的配置文件为 php.ini。<br>我们需要修改下面的配置：</p>
-<p>file_uploads = On ; 打开文件上传选项<br>upload_max_filesize = 20M ; 上传文件上限<br>post_max_size = 20M ;post 上限 </p>
-<p>; 还需要根据实际情况调整下面的选项<br>max_execution_time = 180 ; 脚本最大执行时间（秒） ，过短会导致文件还没上传完脚本就停止了。<br>max_input_time = 180 ; 请求的最大传输时间，过短会导致文件还没上传完传输就停止了。<br>memory_limit = 128M ; 内存上限<br>修改完成后重启 php-fpm 或 reload 配置。注意：与 tomcat 共用：<br>1.Tomcat 修改 server.xml 端口为 8858<br>2.Nginx 端口为 8848<br>3.php 应用的目录复制到 /home/spms/SPMS（为了合肥转接的能用）<br>4.11.64.65.15:8848/SPMS 是原来的应用<br>  11.64.17.23:8848/SPMS（合肥转接）<br>5.11.64.65.15:8848/SPMS/ZFJS 是增加的应用<br>  11.64.17.23:8848/SPMS/ZFJS（合肥转接）<br>Nginx.conf 配置参见生产系统。</p>
+<p>查看模块</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spms@ZFQS:~/php7/bin&gt; php -m</span><br></pre></td></tr></tbody></table></figure>
 
     </div>
 
@@ -559,13 +543,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">65k</span>
+    <span title="站点总字数">69k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:49</span>
+    <span title="站点阅读时长">1:54</span>
   </span>
 </div>
 <div class="busuanzi-count">
