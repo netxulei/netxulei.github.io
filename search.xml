@@ -363,10 +363,20 @@
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">character_set_server=utf8</span><br><span class="line">init_connect='SET NAMES utf8'123123123</span><br></pre></td></tr></tbody></table></figure>
 <p>重新启动 mysql 服务，查看<a href="http://lib.csdn.net/base/mysql">数据库</a>默认编码如下所示：</p>
 <p>默认配置文件路径：<br>配置文件：/etc/my.cnf<br>日志文件：/var/log//var/log/mysqld.log<br>服务启动脚本：/usr/lib/systemd/system/mysqld.service<br>socket 文件：/var/run/mysqld/mysqld.pid</p>
+<h2 id="查看数据库的状态"><a href="#查看数据库的状态" class="headerlink" title="查看数据库的状态"></a>查看数据库的状态</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> status</span></span><br><span class="line">--------------</span><br><span class="line"></span><br><span class="line">mysql  Ver 14.14 Distrib 5.7.25, for Linux (x86_64) using  EditLine wrapper</span><br><span class="line"></span><br><span class="line">Connection id:		4</span><br><span class="line">Current database:	</span><br><span class="line">Current user:		root@localhost</span><br><span class="line">SSL:			Not in use</span><br><span class="line">Current pager:		less</span><br><span class="line">Using outfile:		''</span><br><span class="line">Using delimiter:	;</span><br><span class="line">Server version:		5.7.25 MySQL Community Server (GPL)</span><br><span class="line">Protocol version:	10</span><br><span class="line">Connection:		Localhost via UNIX socket</span><br><span class="line">Server characterset:	latin1</span><br><span class="line">Db     characterset:	latin1</span><br><span class="line">Client characterset:	gbk</span><br><span class="line">Conn.  characterset:	gbk</span><br><span class="line">UNIX socket:		/var/lib/mysql/mysql.sock</span><br><span class="line">Uptime:			10 hours 20 min 53 sec</span><br><span class="line"></span><br><span class="line">Threads: 1  Questions: 5  Slow queries: 0  Opens: 105  Flush tables: 1  Open tables: 98  Queries per second avg: 0.000</span><br><span class="line">--------------</span><br></pre></td></tr></tbody></table></figure>
+
+
 <h1 id="6-错误及解决"><a href="#6-错误及解决" class="headerlink" title="6.错误及解决"></a>6. 错误及解决</h1><h2 id="1-安装权限"><a href="#1-安装权限" class="headerlink" title="1.安装权限"></a>1. 安装权限</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:~&gt; rpm -ivh mysql-community-common-5.7.32-1.sles12.x86_64.rpm</span><br><span class="line">warning: mysql-community-common-5.7.32-1.sles12.x86_64.rpm: Header V3 DSA signature: NOKEY, key ID 5072e1f5</span><br><span class="line">error: can't create transaction lock on /var/lib/rpm/__db.000</span><br><span class="line">spms@ZFQS:~&gt; </span><br></pre></td></tr></tbody></table></figure>
 <p>实际上是权限问题。su root 后可以安装。</p>
 <h2 id="2-mysql密码策略"><a href="#2-mysql密码策略" class="headerlink" title="2.mysql密码策略"></a>2.mysql 密码策略</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">spms@ZFQS:/&gt; mysqladmin -u root -p password "Mysql123"</span><br><span class="line">Enter password: </span><br><span class="line">mysqladmin: [Warning] Using a password on the command line interface can be insecure.</span><br><span class="line">Warning: Since password will be sent to server in plain text, use ssl connection to ensure password safety.</span><br><span class="line">mysqladmin: unable to change password; error: 'Your password does not satisfy the current policy requirements'</span><br><span class="line">spms@ZFQS:/&gt; </span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">root@linuxidc php-5.6.30]# ./configure --prefix=/usr/local/php --with-apxs2=/usr/local/apache2.4/bin/apxs --with-config-file-path=/usr/local/php/etc  --with-mysql=/usr/local/mysql --with-pdo-mysql=/usr/local/mysql --with-mysqli=/usr/local/mysql/bin/mysql_config --with-libxml-dir --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-iconv-dir --with-zlib-dir --with-bz2 --with-openssl --with-mcrypt --enable-soap --enable-gd-native-ttf --enable-mbstring --enable-sockets --enable-exif  //安装PHP</span><br><span class="line">[root@linuxidc php-5.6.30]# echo $?  //安装完成没有错误用这个检查</span><br><span class="line">[root@linuxidc php-7.1.6]# ./configure --prefix=/usr/local/php7 --with-apxs2=/usr/local/apache2.4/bin/apxs --with-config-file-path=/usr/local/php7/etc  --with-pdo-mysql=/usr/local/mysql --with-mysqli=/usr/local/mysql/bin/mysql_config --with-libxml-dir --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-iconv-dir --with-zlib-dir --with-bz2 --with-openssl --with-mcrypt --enable-soap --enable-gd-native-ttf --enable-mbstring --enable-sockets --enable-exif</span><br><span class="line">6.编译安装：</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="3-phpMyAdmin连接错误"><a href="#3-phpMyAdmin连接错误" class="headerlink" title="3.phpMyAdmin连接错误"></a>3.phpMyAdmin 连接错误</h2><p>phpMyAdmin mysqli_real_connect(): (HY000/2002)</p>
+<p>进入 phpMyAdmin 目录，复制配置文件 config.sample.inc.php，重命名为 config.inc.php</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">cp config.sample.inc.php config.inc.php</span><br></pre></td></tr></tbody></table></figure>
+<p>将配置文件里 host 的值 localhost 改为 127.0.0.1,</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">vi config.inc.php</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$cfg['Servers'][$i]['host'] = '127.0.0.1';</span><br></pre></td></tr></tbody></table></figure>
+
 ]]></content>
       <categories>
         <category>mysql</category>
@@ -637,11 +647,20 @@
   <entry>
     <title>suse-linux 常用命令</title>
     <url>/2021/03/02/suse-linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>查看 linux 版本：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># cat /etc/issue</span><br><span class="line">Welcome to SUSE Linux Enterprise Server 11 SP3  (x86_64) - Kernel \r (\l).</span><br></pre></td></tr></tbody></table></figure>
-<p>查看 linux 内核：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># cat /proc/version</span><br><span class="line">Linux version 3.0.76-0.11-default (geeko@buildhost) (gcc version 4.3.4 [gcc-4_3-branch revision 152973] (SUSE Linux) ) #1 SMP Fri Jun 14 08:21:43 UTC 2013 (ccab990)</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
+    <content><![CDATA[<h1 id="查看linux版本："><a href="#查看linux版本：" class="headerlink" title="查看linux版本："></a>查看 linux 版本：</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># cat /etc/issue</span><br><span class="line">Welcome to SUSE Linux Enterprise Server 11 SP3  (x86_64) - Kernel \r (\l).</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="查看linux内核："><a href="#查看linux内核：" class="headerlink" title="查看linux内核："></a>查看 linux 内核：</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># cat /proc/version</span><br><span class="line">Linux version 3.0.76-0.11-default (geeko@buildhost) (gcc version 4.3.4 [gcc-4_3-branch revision 152973] (SUSE Linux) ) #1 SMP Fri Jun 14 08:21:43 UTC 2013 (ccab990)</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="netstat-lntp-查看监听端口"><a href="#netstat-lntp-查看监听端口" class="headerlink" title="netstat -lntp 查看监听端口"></a>netstat -lntp 查看监听端口</h1><h1 id="chkconfig检查，设置系统服务"><a href="#chkconfig检查，设置系统服务" class="headerlink" title="chkconfig检查，设置系统服务"></a>chkconfig 检查，设置系统服务</h1><p>这是 Red Hat 公司遵循 GPL 规则所开发的程序，它可查询操作系统在每一个执行等级中会执行哪些系统服务，其中包括各类常驻服务。</p>
+<p>语法</p>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">chkconfig [--<span class="type">add</span>][--<span class="type">del</span>][--<span class="type">list</span>][系统服务] 或 chkconfig [--<span class="type">level</span> &lt;等级代号&gt;][系统服务][<span class="type">on</span>/<span class="type">off</span>/<span class="type">reset</span>]</span><br></pre></td></tr></tbody></table></figure>
+<p>参数：</p>
+<p>参数：</p>
+<p>–add 　增加所指定的系统服务，让 chkconfig 指令得以管理它，并同时在系统启动的叙述文件内增加相关数据。<br>–del 　删除所指定的系统服务，不再由 chkconfig 指令管理，并同时在系统启动的叙述文件内删除相关数据。<br>–level &lt;等级代号&gt; 　指定读系统服务要在哪一个执行等级中开启或关毕。</p>
+<p>实例<br>列出 chkconfig 所知道的所有命令。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">chkconfig -list </span><br></pre></td></tr></tbody></table></figure>
+<p>开启服务。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">chkconfig telnet on //开启Telnet服务</span><br></pre></td></tr></tbody></table></figure>
+<p>关闭服务</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">chkconfig telnet off  //关闭Telnet服务</span><br></pre></td></tr></tbody></table></figure>]]></content>
       <categories>
         <category>linux</category>
       </categories>
