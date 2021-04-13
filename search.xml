@@ -1297,4 +1297,100 @@
         <tag>nexT</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LibXL 直接读写 Excel 文件</title>
+    <url>/2021/03/29/LibXL%E7%9B%B4%E6%8E%A5%E8%AF%BB%E5%86%99Excel%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>LibXL is a library for direct reading and writing Excel files.</p>
+<p>Package contents:</p>
+<p>  bin              32-bit dynamic library<br>  bin64            64-bit dynamic library<br>  doc              C++ documentation<br>  examples         C, C++, C#, Delphi and Fortran examples (MinGW, Visual Studio, Qt, Code::Blocks)<br>  include_c        headers for C<br>  include_cpp      headers for C++<br>  lib              32-bit import library for Microsoft Visual C++<br>  lib64            64-bit import library for Microsoft Visual C++<br>  net              .NET wrapper (assembly)<br>  php              compiled plug-in for PHP<br>  stdcall          32-bit dynamic library with stdcall calling convention<br>  changelog.txt    change log<br>  libxl.url        link to home page<br>  license.txt      end-user license agreement<br>  readme.txt       this file</p>
+<p>Using library:</p>
+<ol>
+<li><p>Microsoft Visual C++</p>
+<ul>
+<li><p>add include directory in your project, for example: c:\libxl\include_cpp</p>
+<p>Project -&gt; Properties -&gt; C/C++ -&gt; General -&gt; Additional Include Directories</p>
+</li>
+<li><p>add library directory in your project, for example: c:\libxl\lib</p>
+<p>Project -&gt; Properties -&gt; Linker -&gt; General -&gt; Additional Library Directories</p>
+</li>
+<li><p>add libxl.lib in project dependencies:</p>
+<p>Project -&gt; Properties -&gt; Linker -&gt; Input -&gt; Additional Dependencies</p>
+</li>
+<li><p>copy bin\libxl.dll to directory of your project</p>
+</li>
+</ul>
+</li>
+<li><p>MinGW</p>
+<p>Type in examples/c++/mingw directory:</p>
+<p>  g++ generate.cpp -o generate -I../../../include_cpp -L../../../bin -lxl</p>
+<p>Use mingw32-make for building examples.</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>C# and other .NET languages</p>
+<p>Use assembly libxl.net.dll in net directory: Project -&gt; Add reference… -&gt; Browse</p>
+<p>Also copy bin\libxl.dll to Debug or Release directory of your project.</p>
+</li>
+</ol>
+<ol start="4">
+<li><p>Qt</p>
+<ul>
+<li><p>add the following lines to a configuration file (.pro):</p>
+<p>INCLUDEPATH = c:/libxl-3.6.4.0/include_cpp<br>LIBS += c:/libxl-3.6.4.0/lib/libxl.lib</p>
+</li>
+<li><p>copy bin\libxl.dll to the build directory of your project   </p>
+</li>
+</ul>
+</li>
+<li><p>Borland C++ and Embarcadero C++ Builder</p>
+<ul>
+<li><p>create an import library for your compiler:</p>
+<p>  implib -a libxl.lib libxl.dll</p>
+</li>
+<li><p>add the include directory to your project, for example: c:\libxl-3.9.1.0\include_cpp</p>
+<p>Project -&gt; Options -&gt; Building -&gt; C++ Compiler -&gt; Directories and Conditionals -&gt; Include file search path</p>
+<p>or </p>
+<p>Project -&gt; Options -&gt; Directories/Conditionals -&gt; Include path (for old C++ Bulder versions)</p>
+</li>
+<li><p>add library directory to your project (only for old C++ Builder versions)</p>
+<p>Project -&gt; Options -&gt; Directories/Conditionals -&gt; Library path</p>
+</li>
+<li><p>add libxl.lib to your project</p>
+<p>Project -&gt; Add to Project…</p>
+</li>
+<li><p>copy libxl.dll from the bin folder to <your_project_directory>/Win32/Debug or <your_project_directory>/Win32/Release folder</your_project_directory></your_project_directory></p>
+<p>If your target is “Windows 64-bit” copy libxl.dll from the bin64 folder.</p>
+</li>
+</ul>
+</li>
+<li><p>Delphi</p>
+<ul>
+<li><p>add the directory with the LibXL.pas unit, for example: c:\libxl-3.9.1.0\examples\delphi12</p>
+<p>Project -&gt; Options -&gt; Building -&gt; Delphi Compiler -&gt; Search path</p>
+</li>
+<li><p>copy libxl.dll from the bin folder to <your_project_directory>\Win32\Debug or <your_project_directory>\Win32\Release folder</your_project_directory></your_project_directory></p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Documentation:</p>
+<p>  <a href="http://www.libxl.com/doc">http://www.libxl.com/doc</a></p>
+<p>Contact:</p>
+<p>  <a href="mailto:support@libxl.com">support@libxl.com</a></p>
+]]></content>
+      <categories>
+        <category>三方库</category>
+      </categories>
+      <tags>
+        <tag>Libxl</tag>
+        <tag>Excel</tag>
+        <tag>Delphi</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/2021/03/31/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[]]></content>
+  </entry>
 </search>
