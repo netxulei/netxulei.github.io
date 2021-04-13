@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="suse linux下安装php记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lane&#39;s Blog 随记备查">
+<meta property="og:url" content="http://example.com/2021/03/02/suse-linux-php%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:site_name" content="Lane&#39;s Blog 随记备查">
+<meta property="og:description" content="suse linux下安装php记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-02T03:26:41.000Z">
+<meta property="article:modified_time" content="2021-03-23T10:01:12.431Z">
+<meta property="article:author" content="Lane">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="php">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/03/02/suse-linux-php%E5%AE%89%E8%A3%85/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title> | Lane's Blog 随记备查</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Lane's Blog 随记备查</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学，浅而广，可牛B，深而专，可为业，趣乎</p>
+      <img class="custom-logo-image" src="/images/custom-logo.png" alt="Lane's Blog 随记备查">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">37</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">22</span></a></li>
+        <li class="menu-item menu-item-guestbook"><a href="/guestbook/" rel="section"><i class="fa fa-book fa-fw"></i>留言板</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-GCC%E5%92%8CG-%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">1 GCC 和 G++ 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E6%9C%89%E5%85%B3%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 有关查询命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%8C%82%E8%BD%BDlinux%E5%8E%9F%E7%9B%98%EF%BC%88%E9%9C%80%E8%A6%81root%E6%9D%83%E9%99%90%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 挂载 linux 原盘（需要 root 权限）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-%E6%8C%82%E8%BD%BDlinux-ISO%E9%95%9C%E5%83%8F%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 挂载 linux ISO 镜像文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-%E6%8F%92%E5%85%A5%E5%85%89%E9%A9%B1%E6%8C%82%E8%BD%BD"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 插入光驱挂载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%EF%BC%8864%E4%BD%8D%E5%8D%B3%E5%8F%AF%EF%BC%8C%E6%97%A0%E9%9C%80%E5%AE%89%E8%A3%8532%E4%BD%8D%EF%BC%89%E9%98%B2%E9%94%88021"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 安装依赖关系（64 位即可，无需安装 32 位）防锈 021</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-%E5%AE%89%E8%A3%85%E5%AE%89%E8%A3%85glibc-devel"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1 安装安装 glibc-devel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-%E5%AE%89%E8%A3%85gcc"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.3.2 安装 gcc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-%E5%AE%89%E8%A3%85g"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3.3 安装 g++</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-libxml2-2-7-6-tar-gz%E5%AE%89%E8%A3%85"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 libxml2-2.7.6.tar.gz 安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-php5-%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">2 php5 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%B8%8A%E4%BC%A0"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 下载并上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-12-%E8%A7%A3%E5%8E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">2.12 解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8D%E7%9A%84%E7%8E%AF%E5%A2%83%E6%98%AF%E5%90%A6%E6%BB%A1%E8%B6%B3%E8%A6%81%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB"><span class="nav-number">2.3.</span> <span class="nav-text">2.2 检查当前的环境是否满足要安装软件的依赖关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E7%BC%96%E8%AF%91"><span class="nav-number">2.4.</span> <span class="nav-text">2.3 编译</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-php7%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">3 php7 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="nav-number">3.1.</span> <span class="nav-text">1. 安装依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%B8%8B%E8%BD%BD%E6%88%96%E4%B8%8A%E4%BC%A0%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">3.2.</span> <span class="nav-text">2. 下载或上传安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%A7%A3%E5%8E%8B"><span class="nav-number">3.3.</span> <span class="nav-text">3. 解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E9%85%8D%E7%BD%AEPHP%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="nav-number">3.4.</span> <span class="nav-text">4. 配置 PHP 安装环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85"><span class="nav-number">3.5.</span> <span class="nav-text">5. 编译安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AEphp-ini"><span class="nav-number">3.6.</span> <span class="nav-text">6. 参数配置 php.ini</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#php-fpm-conf"><span class="nav-number">3.6.1.</span> <span class="nav-text">php-fpm.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#www-conf"><span class="nav-number">3.6.2.</span> <span class="nav-text">www.conf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9php7%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="nav-number">3.6.2.1.</span> <span class="nav-text">修改 php7 端口号</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%90%AF%E5%8A%A8php"><span class="nav-number">3.7.</span> <span class="nav-text">7. 启动 php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-php%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">3.8.</span> <span class="nav-text">8.php 常用命令</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Lane"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Lane</p>
+  <div class="site-description" itemprop="description">内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated">
+    <a onclick="Chatra('openChat', true);"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/netxulei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;netxulei" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:netxuleii@gmail.com" title="E-Mail → mailto:netxuleii@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com">链接1</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com">链接2</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/netxulei" class="github-corner" title="转到我的GitHub" aria-label="转到我的GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/02/suse-linux-php%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lane">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lane's Blog 随记备查">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          <a href="https://github.com/netxulei/tree/master/source/_posts/_posts/suse-linux-php%E5%AE%89%E8%A3%85.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-02 11:26:41" itemprop="dateCreated datePublished" datetime="2021-03-02T11:26:41+08:00">2021-03-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-03-23 18:01:12" itemprop="dateModified" datetime="2021-03-23T18:01:12+08:00">2021-03-23</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>8 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">suse linux下安装php记录</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="1-GCC和G-安装"><a href="#1-GCC和G-安装" class="headerlink" title="1 GCC和G++安装"></a>1 GCC 和 G++ 安装</h1><p>若 linux 没有安装 GCC（在编译 php 时会出错），<strong>可挂载 mount linux 镜像文件，rpm 安装。</strong></p>
+<h2 id="1-1-有关查询命令"><a href="#1-1-有关查询命令" class="headerlink" title="1.1 有关查询命令"></a>1.1 有关查询命令</h2><ul>
+<li>查看 Linux 的版本 </li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#cat /etc/issue</span><br><span class="line">  Welcome to SUSE Linux Enterprise Server 11SP1  (x86_64) - Kernel \r (\l).</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>查看 Linux 的内核 </li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#cat /proc/version</span><br><span class="line">  Linux version 2.6.32.12-0.7-default(geeko@buildhost) (gcc version 4.3.4 [gcc-4_3-branch revision 152973] (SUSELinux) ) #1 SMP 2010-05-20 11:14:20 +0200</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="1-2-挂载linux原盘（需要root权限）"><a href="#1-2-挂载linux原盘（需要root权限）" class="headerlink" title="1.2 挂载linux原盘（需要root权限）"></a>1.2 挂载 linux 原盘（需要 root 权限）</h2><h3 id="1-2-1-挂载linux-ISO镜像文件"><a href="#1-2-1-挂载linux-ISO镜像文件" class="headerlink" title="1.2.1 挂载linux ISO镜像文件"></a>1.2.1 挂载 linux ISO 镜像文件</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#mkdir  /mnt/iso</span><br><span class="line">#mount -o loop -t iso9660  &lt;iso file&gt;  /mnt/iso （linux的ISO文件预先ftp到系统）</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="1-2-2-插入光驱挂载"><a href="#1-2-2-插入光驱挂载" class="headerlink" title="1.2.2 插入光驱挂载"></a>1.2.2 插入光驱挂载</h3><ul>
+<li><p><strong>查看 CDROM 设备名称（一般为 /dev/cdrom）</strong></p>
+</li>
+<li><p>dmesg 显示开机信息</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ dmesg |egrep -i --color 'cdrom|dvd|cd/rw|writer'</span><br><span class="line">[  5.437164] sr0: scsi3-mmc drive: 24x/24x writerdvd-ram cd/rw xa/form2 cdda tray</span><br><span class="line">[    5.437307] cdrom: Uniform CD-ROM driverRevision: 3.20</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>less 查看有关文件命令 </li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ less /proc/sys/dev/cdrom/info</span><br><span class="line">CD-ROMinformation, Id: cdrom.c 3.20 2003/12/17</span><br><span class="line">drive name:        sr0</span><br><span class="line">drive speed:        24</span><br></pre></td></tr></tbody></table></figure>
+<p> 执行： lsblk（列出所有块设备）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#lsblk</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><strong>挂载插入的光盘 </strong></li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># mkdir  /mnt/cdrom</span><br><span class="line"># mount -t iso9660 /dev/cdrom /mnt/cdrom</span><br></pre></td></tr></tbody></table></figure>
+<p>（二）进入到安装位置：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#cd /mnt/iso/suse</span><br></pre></td></tr></tbody></table></figure>
+<p>或</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#cd /mnt/cdrom/suse</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="1-3-安装依赖关系（64位即可，无需安装32位）防锈021"><a href="#1-3-安装依赖关系（64位即可，无需安装32位）防锈021" class="headerlink" title="1.3 安装依赖关系（64位即可，无需安装32位）防锈021"></a>1.3 安装依赖关系（64 位即可，无需安装 32 位）防锈 021</h2><p>安装前分别在 noarch 目 cd 录和 x86_64 目录找到相应的文件名。如 #l glibc*</p>
+<ul>
+<li>安装 glibc-devel-2.9-13.2.x86_64.rpm<br>–需要 linux-kernel-headers-2.6.27-2.22.noarch.rpm</li>
+<li> 安装 gcc-4.3-62.198.x86_64.rpm<br>–需要安装 gcc43-4.3.3_20081022-11.18.x86_64.rpm</li>
+<li> 安装 glibc-devel-32bit-2.9-13.2.x86_64.rpm</li>
+<li> 安装 gcc-32bit-4.3-62.198.x86_64.rpm<br>　–需要安装 gcc43-32bit-4.3.3_20081022-11.18.x86_64.rpm<br>　–需要安装 libgomp43-32bit-4.3.3_20081022-11.18.x86_64.rpm</li>
+<li> 安装 libstdc++43-devel-4.3.3_20081022-11.18.x86_64.rpm</li>
+<li> 安装 gcc-c++-4.3-62.198.x86_64.rpm<br>　　–需要安装 gcc43-c++-4.3.3_20081022-11.18.x86_64.rpm</li>
+<li> 安装 libstdc++43-devel-32bit-4.3.3_20081022-11.18.x86_64.rpm</li>
+<li> 安装 libstdc++-devel-4.3-62.198.x86_64.rpm</li>
+</ul>
+<h3 id="1-3-1-安装安装glibc-devel"><a href="#1-3-1-安装安装glibc-devel" class="headerlink" title="1.3.1 安装安装glibc-devel"></a>1.3.1 安装安装 glibc-devel</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh noarch/linux-kernel-headers-2.6.32-1.4.13.noarch.rpm</span><br><span class="line">rpm -ivh x86_64/glibc-devel-2.11.1-0.17.4.x86_64.rpm</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="1-3-2-安装gcc"><a href="#1-3-2-安装gcc" class="headerlink" title="1.3.2 安装gcc"></a>1.3.2 安装 gcc</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh x86_64/gcc43-4.3.3_20081022-11.18.x86_64.rpm</span><br><span class="line">rpm -ivh x86_64/gcc-4.3-62.198.x86_64.rpm</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="1-3-3-安装g"><a href="#1-3-3-安装g" class="headerlink" title="1.3.3 安装g++"></a>1.3.3 安装 g++</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh x86_64/libstdc++43-devel-4.3.3_20081022-11.18.x86_64.rpm</span><br><span class="line">rpm -ivh x86_64/libstdc++-devel-4.3-62.198.x86_64.rpm</span><br><span class="line">rpm -ivh x86_64/gcc43-c++-4.3.3_20081022-11.18.x86_64.rpm</span><br><span class="line">rpm -ivh x86_64/gcc-c++-4.3-62.198.x86_64.rpm</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="1-4-libxml2-2-7-6-tar-gz安装"><a href="#1-4-libxml2-2-7-6-tar-gz安装" class="headerlink" title="1.4 libxml2-2.7.6.tar.gz安装"></a>1.4 libxml2-2.7.6.tar.gz 安装</h2><p>Linux 11 sp3 虽然安装了 libxml2.7.6，但没有生成 /usr/bin/xml2-config 文件，php5 安装时，configure 时显示找不到 xml2-config 错误而无法安装。可源码安装 libxml2 生成这个配置文件</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#tar zxvf libxml2-2.7.6.tar.gz</span><br><span class="line">#cd libxml2-2.7.6</span><br><span class="line">#./configure</span><br><span class="line">#make</span><br><span class="line">#make install</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="2-php5-安装"><a href="#2-php5-安装" class="headerlink" title="2 php5 安装"></a>2 php5 安装</h1><ul>
+<li>内网 spms 用户安装</li>
+</ul>
+<h2 id="2-1-下载并上传"><a href="#2-1-下载并上传" class="headerlink" title="2.1 下载并上传"></a>2.1 下载并上传</h2><p>下载 php-5.6.31.tar.gz，并上传的 Linux 目录 /home/spms</p>
+<h2 id="2-12-解压"><a href="#2-12-解压" class="headerlink" title="2.12 解压"></a>2.12 解压</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$cd </span><br><span class="line">$tar -zvxf php-5.6.31.tar.gz</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="2-2-检查当前的环境是否满足要安装软件的依赖关系"><a href="#2-2-检查当前的环境是否满足要安装软件的依赖关系" class="headerlink" title="2.2 检查当前的环境是否满足要安装软件的依赖关系"></a>2.2 检查当前的环境是否满足要安装软件的依赖关系</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$cd php-5.6.31</span><br><span class="line">$./configure --prefix=/home/spms/php5 --with-config-file-path=/home/spms/php5/etc --enable-fpm</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="2-3-编译"><a href="#2-3-编译" class="headerlink" title="2.3 编译"></a>2.3 编译</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$Make（时间较长）</span><br><span class="line">$make install</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>(make clean make clean all 准备重新安装）</li>
+</ul>
+<p>$cp /home/php-5.6.31/php.ini-production  /homel/php5/etc/php.ini<br>上述安装方式在 php5 目录下不产生 php.ini，需要单独拷贝</p>
+<p>$cp   /homel/php5/etc/php-fpm.conf.default   /homel/php5/etc/php-fpm.conf</p>
+<p>保存配置文件后，检验配置是否正确的方法为:<br> /homel/php5/sbin/php-fpm -t<br>如果出现诸如 “test is successful” 字样，说明配置没有问题。<br>启动 php-fpm<br>启动脚本：/home/spms/ctrl_php-fpm.sh（要变成可执行权限，要指明 php.ini，否则上传文件大小限制无法指定。）<br>检测是否启动:<br>ps aux |grep php-fpm<br>netstat -ant |grep 9000</p>
+<h1 id="3-php7安装"><a href="#3-php7安装" class="headerlink" title="3 php7安装"></a>3 php7 安装</h1><h2 id="1-安装依赖包"><a href="#1-安装依赖包" class="headerlink" title="1.安装依赖包"></a>1. 安装依赖包</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y gcc gcc-c++  make zlib zlib-devel pcre pcre-devel  libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libxml2 libxml2-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel ncurses ncurses-devel curl curl-devel e2fsprogs e2fsprogs-devel krb5 krb5-devel openssl openssl-devel openldap openldap-devel nss_ldap openldap-clients openldap-servers</span><br></pre></td></tr></tbody></table></figure>
+<p>suse linux 没有 yum 命令，其它方式安装依赖包</p>
+<h2 id="2-下载或上传安装包"><a href="#2-下载或上传安装包" class="headerlink" title="2.下载或上传安装包"></a>2. 下载或上传安装包</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd </span><br><span class="line">wget https://www.php.net/distributions/php-7.3.27.tar.gz</span><br></pre></td></tr></tbody></table></figure>
+<p>内网 linux 可外网下载，将 php-7.3.27.tar.gz 上传至 linux 的 /home 目录（/home/spms)，</p>
+<h2 id="3-解压"><a href="#3-解压" class="headerlink" title="3.解压"></a>3. 解压</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf php-7.3.27.tar.gz</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="4-配置PHP安装环境"><a href="#4-配置PHP安装环境" class="headerlink" title="4.配置PHP安装环境"></a>4. 配置 PHP 安装环境</h2><p>以下为能够安装的基本配置，网上很多参数的那种，要写 /usr/lib 等目录，非 root 用户没有权限，不能安装。需要配置其他功能室再查资料。</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> php-7.3.27</span></span><br><span class="line"><span class="meta">$</span><span class="bash">./configure --prefix=/home/spms/php7 --with-config-file-path=/home/spms/php7/etc --enable-fpm --enable-pdo --with-pdo-mysql --enable-mysqlnd --with-mysqli --with-openssl</span> </span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/php --with-zlib --enable-zip --with-openssl --enable-fpm --enable-mbstring --with-libdir=lib64</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="5-编译安装"><a href="#5-编译安装" class="headerlink" title="5.编译安装"></a>5. 编译安装</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make clear #重新配置和编译时使用</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="6-参数配置php-ini"><a href="#6-参数配置php-ini" class="headerlink" title="6.参数配置php.ini"></a>6. 参数配置 php.ini</h2><p>在之前编译的源码包中，找到 php.ini-production，复制到 /home/spms/php7 下，并改名为 php.ini：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /home/spms/php-7.3.27</span><br><span class="line">cp php.ini-production /home/spms/php7/etc/php.ini</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="php-fpm-conf"><a href="#php-fpm-conf" class="headerlink" title="php-fpm.conf"></a>php-fpm.conf</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /home/spms/php7/etc</span><br><span class="line">cp php-fpm.conf.default php-fpm.conf</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="www-conf"><a href="#www-conf" class="headerlink" title="www.conf"></a><a target="_blank" rel="noopener" href="http://www.conf/">www.conf</a></h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /home/spms/php7/etc/php-fpm.d</span><br><span class="line">cp www.conf.default www.conf</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="修改php7端口号"><a href="#修改php7端口号" class="headerlink" title="修改php7端口号"></a>修改 php7 端口号</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/php7/etc/php-fpm.d/www.conf</span><br><span class="line">listen = 0.0.0.0:9000</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="7-启动php"><a href="#7-启动php" class="headerlink" title="7.启动php"></a>7. 启动 php</h2><p>/usr/local/php7/sbin/php-fpm </p>
+<h2 id="8-php常用命令"><a href="#8-php常用命令" class="headerlink" title="8.php常用命令"></a>8.php 常用命令</h2><p>查看是否已经开启</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep php</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -A | grep -i php </span><br></pre></td></tr></tbody></table></figure>
+<p>关闭 php-fpm 服务</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkill php-fpm</span><br></pre></td></tr></tbody></table></figure>
+<p>查看模块</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spms@ZFQS:~/php7/bin&gt; php -m</span><br></pre></td></tr></tbody></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Lane 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="Lane 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/php/" rel="tag"><i class="fa fa-tag"></i> php</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/02/20/typora%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/" rel="prev" title="typora 自动上传图片">
+                  <i class="fa fa-chevron-left"></i> typora 自动上传图片
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/03/02/suse-linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="next" title="suse-linux 常用命令">
+                  suse-linux 常用命令 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">版权信息：暂时没有版权</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">73k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:02</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div><script defer src="/lib/three.js"></script>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
+
+  <script>
+    (function(d, w, c) {
+      w.ChatraID = 'TZxKwcawSDrmJNFkp';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+  </script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
