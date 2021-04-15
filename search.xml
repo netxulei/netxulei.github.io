@@ -1480,6 +1480,7 @@
 <p>注释一个库，提交另外的库</p>
 <p>发布两次即可（hexo d）</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line"> type: git</span><br><span class="line"> repository: https://github.com/netxulei/netxulei.github.io.git</span><br><span class="line"> branch: main</span><br><span class="line"> # repo: https://gitee.com/netxulei/netxulei.git</span><br><span class="line"> # branch: master</span><br></pre></td></tr></tbody></table></figure>
+<p>注意 gitee 的博客需要再 pages 服务力做一次更新</p>
 ]]></content>
       <categories>
         <category>blog</category>
