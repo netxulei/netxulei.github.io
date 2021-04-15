@@ -828,10 +828,10 @@
       </tags>
   </entry>
   <entry>
-    <title>本博创建记录（Github+Node.js+Hexo+nexT）</title>
+    <title>Git+node.js+hexo+（GitHub 或 Gitee）创建博客</title>
     <url>/2021/02/20/%E6%9C%AC%E5%8D%9A%E5%88%9B%E5%BB%BA%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>（Git+Github+node.js+hexo 创建博客整理）</p>
-<h2 id="一、Github-Pages"><a href="#一、Github-Pages" class="headerlink" title="一、Github Pages"></a>一、Github Pages</h2><p> Github Pages 其实本身就是 Github 提供的博客服务。 我们在 Github 中创建一个特定格式的 Repository，Github Pages 就会将里面的信息生成一个网页，展示出来。</p>
+    <content><![CDATA[<h2 id="一、Github和Gitee提供的page服务"><a href="#一、Github和Gitee提供的page服务" class="headerlink" title="一、Github和Gitee提供的page服务"></a>一、Github 和 Gitee 提供的 page 服务</h2><p>（一） Github Pages </p>
+<p>其实本身就是 Github 提供的博客服务。在 Github 中创建一个特定格式的 Repository，Github Pages 就会将里面的信息生成一个网页，展示出来。</p>
 <p><strong>操作如下：</strong></p>
 <ol>
 <li>注册 Github 账号，然后在 Github 中创建一个以 .github.io 结尾的 Repository（注：可以创建多个 Repositry，但作为博客 name 的前缀必须与账号相同，如 netxulei.github.io ，即只能用这种命名方式创建 GitHub Pages 网站）。<ol>
@@ -845,6 +845,14 @@
 </ol>
 <p>如果没有太多的要求，其实直接用 README.md 来写博客也是不错的。</p>
 <p>这个生成好的 Repository 就是用来存放博客内容的地方，也只有这个仓库里的内容，才会被 netxulei.github.io 这个网页显示出来。</p>
+<p>（二）Gitee Pages</p>
+<p>1. 申请码云账户，新建仓库，打开 pages 服务<br>注意：仓库名，公开访问权限，语言为 JavaScript，仓库名 netxulei 必须与你注册 github 或 gitee 的注册名 netxulei 相同，不然 css 路径会读错。</p>
+<p><img data-src="https://i.loli.net/2021/04/15/pmVgMsfLrOIRHnk.png" alt="image-20210415114333908"></p>
+<p><img data-src="https://i.loli.net/2021/04/15/RTLAopg8Xij4MJO.png" alt="image-20210415114612052"></p>
+<p>●GitHub 与 Gitee 发布博客的区别：</p>
+<p>GitHub：hexo d 发布后，博客可直接访问</p>
+<p>Gitee：hexo d 发布后，还需到 pages 的服务更新后，博客才能访问。</p>
+<p><img data-src="https://i.loli.net/2021/04/15/ATcPwRYsmLtUEuv.png" alt="image-20210415114937764"></p>
 <h2 id="二、安装Git"><a href="#二、安装Git" class="headerlink" title="二、安装Git"></a>二、安装 Git</h2><ul>
 <li><p>前往 <a href="https://git-scm.com/">https://git-scm.com/</a></p>
 </li>
@@ -1416,6 +1424,53 @@
       </categories>
       <tags>
         <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PicGo 安装 Gitee 图床</title>
+    <url>/2021/04/15/PicGo%E5%AE%89%E8%A3%85Gitee%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="下载gitee插件"><a href="#下载gitee插件" class="headerlink" title="下载gitee插件"></a>下载 gitee 插件</h1><p><img data-src="https://i.loli.net/2021/04/15/pBF4HX21CvShzuU.png" alt="image-20210415163125263"></p>
+<p>●必须要先安装 node.js 才能安装插件，否则先安装 node.js，然后重启就行。</p>
+<p>插件安装在 C:\Users\ 用户名 \AppData\Roaming\picgo\node_modules 下，npm 可查看，或删除之。</p>
+<p>●插件删除</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/image-20210415184503902.png" alt="image-20210415184503902"></p>
+<p>●关闭（或最小化）PicGo，再打开，多出 Gitee 图床</p>
+<p><img data-src="https://i.loli.net/2021/04/15/uLpYiK4BmShdEFU.png" alt="image-20210415163226725"></p>
+<h1 id="新建码云图床仓库gitee-com"><a href="#新建码云图床仓库gitee-com" class="headerlink" title="新建码云图床仓库gitee.com"></a>新建码云图床仓库 gitee.com</h1><p><img data-src="https://i.loli.net/2021/04/15/MgD8mw1htIN9vjx.png" alt="image-20210415165941893"></p>
+<h1 id="设置私人令牌"><a href="#设置私人令牌" class="headerlink" title="设置私人令牌"></a>设置私人令牌</h1><p><img data-src="https://i.loli.net/2021/04/15/FaKTZ9GgYceC1dN.png" alt="image-20210415170145047"></p>
+<p><img data-src="https://i.loli.net/2021/04/15/x4g7TS6LKIU9sio.png" alt="image-20210415170427111"></p>
+<p><img data-src="https://i.loli.net/2021/04/15/1pUCGk6gv3bYf4n.png" alt="image-20210415170547646"></p>
+<p><img data-src="https://i.loli.net/2021/04/15/lZzbkiUDCRhLt8J.png" alt="image-20210415170758431"></p>
+<h1 id="Gitee图床设置"><a href="#Gitee图床设置" class="headerlink" title="Gitee图床设置"></a>Gitee 图床设置</h1><p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/image-20210415184004382.png" alt="image-20210415184004382"></p>
+<p>GitHub 与 Gitee 仓库不同：Gitee 有一个仓库名，与路径不一定一致，Github 仓库名就是路径名。gitee 的 repo 必须路径名。</p>
+]]></content>
+      <categories>
+        <category>PicGo</category>
+      </categories>
+      <tags>
+        <tag>PicGo</tag>
+        <tag>Gitee</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个项目同时提交到 GitHub 和 Gitee 两个仓库</title>
+    <url>/2021/04/15/%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E6%8F%90%E4%BA%A4%E5%88%B0GitHub%E5%92%8CGitee%E4%B8%A4%E4%B8%AA%E4%BB%93%E5%BA%93/</url>
+    <content><![CDATA[<h5 id="在-Gitee-新建仓库并关联克隆-GitHub仓库"><a href="#在-Gitee-新建仓库并关联克隆-GitHub仓库" class="headerlink" title="在 Gitee 新建仓库并关联克隆 GitHub仓库"></a>在 <code>Gitee</code> 新建仓库并关联克隆 <code>GitHub</code> 仓库</h5><p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/image-20210415193414023.png" alt="image-20210415193414023"></p>
+<h5 id="修改-Git-的配置文件-git-config"><a href="#修改-Git-的配置文件-git-config" class="headerlink" title="修改 Git 的配置文件./git/config"></a>修改 <code>Git</code> 的配置文件./git/config</h5><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[core]</span><br><span class="line">  repositoryformatversion = 0</span><br><span class="line">  filemode = false</span><br><span class="line">  bare = false</span><br><span class="line">  logallrefupdates = true</span><br><span class="line">  symlinks = false</span><br><span class="line">  ignorecase = true</span><br><span class="line">[remote "origin"]</span><br><span class="line">  # github仓库地址</span><br><span class="line">  url = https://github.com/netxulei/hngk-git.git</span><br><span class="line">  # gitee仓库地址</span><br><span class="line">  url = https://gitee.com/netxulei/hngk-git.git</span><br><span class="line">  fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch "master"]</span><br><span class="line">  remote = origin</span><br><span class="line">  merge = refs/heads/master</span><br></pre></td></tr></tbody></table></figure>
+<p>git remote -v 可查看配置</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">origin  https://github.com/netxulei/hngk-git.git (fetch)</span><br><span class="line">origin  https://github.com/netxulei/hngk-git.git (push)</span><br><span class="line">origin  https://gitee.com/netxulei/hngk-git.git (push)</span><br></pre></td></tr></tbody></table></figure>
+<p>提交命令</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">git commit -m "注释"</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ git push origin master</span><br><span class="line">Enumerating objects: 3, done.</span><br><span class="line">Counting objects: 100% (3/3), done.</span><br><span class="line">Delta compression using up to 6 threads</span><br><span class="line">Compressing objects: 100% (2/2), done.</span><br><span class="line">Writing objects: 100% (2/2), 229 bytes | 229.00 KiB/s, done.</span><br><span class="line">Total 2 (delta 1), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Resolving deltas: 100% (1/1), completed with 1 local object.</span><br><span class="line">To https://github.com/netxulei/hngk-git.git</span><br><span class="line">   46859bb..974d410  master -&gt; master</span><br><span class="line">Enumerating objects: 3, done.</span><br><span class="line">Counting objects: 100% (3/3), done.</span><br><span class="line">Delta compression using up to 6 threads</span><br><span class="line">Compressing objects: 100% (2/2), done.</span><br><span class="line">Writing objects: 100% (2/2), 229 bytes | 229.00 KiB/s, done.</span><br><span class="line">Total 2 (delta 1), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Powered by GITEE.COM [GNK-5.0]</span><br><span class="line">To https://gitee.com/netxulei/hngk-git.git</span><br><span class="line">   46859bb..974d410  master -&gt; master</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>github</category>
+        <category>gitee</category>
+      </categories>
+      <tags>
+        <tag>同时提交两个库</tag>
       </tags>
   </entry>
 </search>
