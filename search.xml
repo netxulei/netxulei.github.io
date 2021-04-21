@@ -1490,4 +1490,252 @@
         <tag>两个库</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Jupyter NBextensions 插件</title>
+    <url>/2021/04/16/JupyterNotebook%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a><strong>插件安装</strong></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">pip install jupyter_contrib_nbextensions -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">jupyter contrib nbextension install --user</span><br><span class="line">pip install jupyter_nbextensions_configurator -i </span><br></pre></td></tr></tbody></table></figure>
+<p>以上三步结束，重新启动 jupyter notebook 即可搞定，出现以下表示安装完毕。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/v2-2b32a8733f8d5fdd98134578a2716230_1440w.jpg" alt="img"></p>
+]]></content>
+      <categories>
+        <category>jupyter</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>jupyter</tag>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyCharm 永久激活插件</title>
+    <url>/2021/04/19/PyCharm%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<p><strong>Windows、Mac、Linux 系统都适用</strong></p>
+<p>插件是全自动无限激活一个月到期自动激活，无需每月找激活码找安装参数，适用最新 JetBrains 全家桶</p>
+<p><strong>本插件可以离线激活</strong></p>
+<p>通过自动无限重置 PyCharm 试用期的方法来达到永久激活；</p>
+<p>收费插件的试用信息也会一并重置，试用期的 PyCharm 没有任何功能限制</p>
+<p><strong>下载 PyCharm 永久激活插件</strong></p>
+<p><strong>👇👇👇👇👇👇👇👇👇</strong></p>
+<p><a href="https://pan.baidu.com/s/1U3ebBUz9RF8xzRA7TkE6Yw"><strong>点击下载 PyCharm 永久激活插件 2.1.9</strong></a></p>
+<p>提取码：u4ry</p>
+<p><a href="https://pan.baidu.com/s/1jaNrPBgrUu6Hc2LYQ7msmA"><strong>点击下载 PyCharm 永久激活插件 2.1.12 版</strong></a></p>
+<p>提取码：2w6t</p>
+<p><strong>安装 PyCharm 永久激活插件</strong></p>
+<p>插件下载成功后拖动 ide-eval-resetter.zip 插件至 PyCharm 主界面中 如下图</p>
+<p>(<strong>注意：如果右侧有打开的文件请关闭所有文件，然后再</strong>)</p>
+<p><img data-src="https://uploader.shimo.im/f/X4Vgpieb7CDVybC3.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjE2MTg4MzQzNjMsImciOiJwWHdqd3dkWXlxSzg5cTlwIiwiaWF0IjoxNjE4ODMyNTYzLCJ1IjowfQ.otpP7dFZmTeaFW1Blrpk24olwDsbjFQmv--bog7Axn4" alt="img"></p>
+<p>拖动 ide-eval-resetter.zip 插件至 PyCharm 主界面后，提示重启 PyCharm ，如下图</p>
+<p>(<strong>注意：在最新的 2021 版 Pycharm 中不在提示重启，可直接在【Help】菜单中找到插件菜单</strong>)</p>
+<p><img data-src="https://uploader.shimo.im/f/ywEcBceGRcIkIL97.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjE2MTg4MzQzNjMsImciOiJwWHdqd3dkWXlxSzg5cTlwIiwiaWF0IjoxNjE4ODMyNTYzLCJ1IjowfQ.otpP7dFZmTeaFW1Blrpk24olwDsbjFQmv--bog7Axn4" alt="img"></p>
+<p>PyCharm 重启完成并进入 PyCharm 主界面，点击菜单【Help】-&gt;【Eval Reset】如下图</p>
+<p><img data-src="https://uploader.shimo.im/f/0OuEIzAfXHcypYXf.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjE2MTg4MzQzNjMsImciOiJwWHdqd3dkWXlxSzg5cTlwIiwiaWF0IjoxNjE4ODMyNTYzLCJ1IjowfQ.otpP7dFZmTeaFW1Blrpk24olwDsbjFQmv--bog7Axn4" alt="img"></p>
+<p>点击菜单【Help】-&gt;【Eval Reset】后会弹出插件主界面 ，插件主要功能介绍如下</p>
+<ul>
+<li><p>按钮【Reload】刷新界面上的显示信息。</p>
+</li>
+<li><p>按钮【Reset】点击后会询问是否重置试用信息并重启 IDE。选择 Yes 则执行重置操作并重启 IDE 生效，选择 No 则什么也不做。（此为手动重置方式）</p>
+</li>
+<li><p>勾选项【Auto reset before per restart 】如果勾选了，则自勾选后每次重启 / 退出 IDE 时会自动重置试用信息，你无需做额外的事情。（此为自动重置方式）；如果不勾选的话每次 PyCharm 试用期到期后需要手动点击【Reset】按钮</p>
+</li>
+</ul>
+<p><img data-src="https://uploader.shimo.im/f/jLZ9b7r1q9TyvTl5.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjE2MTg4MzQzNjMsImciOiJwWHdqd3dkWXlxSzg5cTlwIiwiaWF0IjoxNjE4ODMyNTYzLCJ1IjowfQ.otpP7dFZmTeaFW1Blrpk24olwDsbjFQmv--bog7Axn4" alt="img"></p>
+<p>勾选【Auto reset before per restart 】并点击按钮【Reset】然后系统自动重启 PyCharm</p>
+<p><img data-src="https://uploader.shimo.im/f/0koVC8W6WdPayrZ6.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjE2MTg4MzQzNjMsImciOiJwWHdqd3dkWXlxSzg5cTlwIiwiaWF0IjoxNjE4ODMyNTYzLCJ1IjowfQ.otpP7dFZmTeaFW1Blrpk24olwDsbjFQmv--bog7Axn4" alt="img"></p>
+<p>重启完成后点击菜单【Help】-&gt;【About】查看是否续命成功如下图</p>
+<p><img data-src="https://uploader.shimo.im/f/iKT0B6JcTz7TdxZz.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjE2MTg4MzQzNjMsImciOiJwWHdqd3dkWXlxSzg5cTlwIiwiaWF0IjoxNjE4ODMyNTYzLCJ1IjowfQ.otpP7dFZmTeaFW1Blrpk24olwDsbjFQmv--bog7Axn4" alt="img"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Python 的 Django 框架小白初步（pycharm 下）</title>
+    <url>/2021/04/19/Python%E7%9A%84Django%E6%A1%86%E6%9E%B6%E5%B0%8F%E7%99%BD%E5%88%9D%E6%AD%A5%EF%BC%88pycharm%E4%B8%8B%EF%BC%89/</url>
+    <content><![CDATA[<p>安装 pycharm</p>
+<p>新建 pycharm 的 django 工程（企业版）</p>
+<p>社区办要手工创建</p>
+<p>查看效果</p>
+<p>pycharm 终端</p>
+<p>python manage.py runserver</p>
+<p>127.0.0.1:8000</p>
+<p>进入后台管理</p>
+<p>127.0.0.1:8000/admin</p>
+<p>迁移？</p>
+<p>python manage.py migrate</p>
+<p>建立超级用户 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">(venv) D:\MyPycharm\DjangoTest&gt;python manage.py createsuperuser</span><br><span class="line">用户名 (leave blank to use 'lenovo'): netxulei</span><br><span class="line">电子邮件地址: netxulei@outlook.com</span><br><span class="line">Password:</span><br><span class="line">Password (again):</span><br><span class="line">Superuser created successfully.</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>django</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python 的 pip 国内镜像</title>
+    <url>/2021/04/16/python%E7%9A%84pip%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</url>
+    <content><![CDATA[<p><a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站</a></p>
+<p>pypi 镜像每 5 分钟同步一次。</p>
+<h1 id="临时使用"><a href="#临时使用" class="headerlink" title="临时使用"></a>临时使用</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></tbody></table></figure>
+<p>注意，<code>simple</code> 不能少，是 <code>https</code> 而不是 <code>http</code></p>
+<h1 id="设为默认"><a href="#设为默认" class="headerlink" title="设为默认"></a>设为默认</h1><p>升级 pip 到最新的版本 (&gt;=10.0.0) 后进行配置：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">pip install pip -U</span><br><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></tbody></table></figure>
+<p>如果您到 pip 默认源的网络连接较差，临时使用本镜像站来升级 pip：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>镜像</tag>
+        <tag>pip</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python 库随记</title>
+    <url>/2021/04/21/python%E5%BA%93%E9%9A%8F%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="requests库"><a href="#requests库" class="headerlink" title="requests库"></a>requests 库</h1><h2 id="get-请求"><a href="#get-请求" class="headerlink" title="get 请求"></a>get 请求</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">r = requests.get(<span class="string">"https://unsplash.com"</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>向网站发送了一个 get 请求，然后网站会返回一个 response。r 就是 response。可以在运行的时候查看 r 的 type。</p>
+<ul>
+<li>get 传递参数请求 </li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">payload = {<span class="string">'key1'</span>: <span class="string">'value1'</span>, <span class="string">'key2'</span>: <span class="string">'value2'</span>}</span><br><span class="line">r = requests.get(<span class="string">"http://httpbin.org/get"</span>, params=payload)</span><br></pre></td></tr></tbody></table></figure>
+<p>向服务器发送的请求中包含了两个参数 key1 和 key2，以及两个参数的值。实际上它构造成了如下网址：<br><code>http://httpbin.org/get?key1=value1&amp;key2=value2</code></p>
+<h4 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST 请求</h4><ul>
+<li>无参数 post 请求：</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">r = requests.post(<span class="string">"http://httpbin.org/post"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>有参数 post 请求：</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">payload = {<span class="string">'key1'</span>: <span class="string">'value1'</span>, <span class="string">'key2'</span>: <span class="string">'value2'</span>}</span><br><span class="line">r = requests.post(<span class="string">"http://httpbin.org/post"</span>, data=payload)</span><br></pre></td></tr></tbody></table></figure>
+<p>post 请求多用来提交表单数据，即填写一堆输入框，然后提交。</p>
+<h2 id="其他请求"><a href="#其他请求" class="headerlink" title="其他请求"></a>其他请求</h2><p>平时用的不多，可以看官网文档。阅读官方文档是必备技能！</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">r = requests.put(<span class="string">"http://httpbin.org/put"</span>)</span><br><span class="line">r = requests.delete(<span class="string">"http://httpbin.org/delete"</span>)</span><br><span class="line">r = requests.head(<span class="string">"http://httpbin.org/get"</span>)</span><br><span class="line">r = requests.options(<span class="string">"http://httpbin.org/get"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="BeautifulSoup-库"><a href="#BeautifulSoup-库" class="headerlink" title="BeautifulSoup 库"></a>BeautifulSoup 库</h1><p><strong>可另外安装 lxml</strong>，BeautifulSoup 对文档进行解析。使用 lxml 比 Python 内置解析器速度快。</p>
+<h2 id="BeautifulSoup对象类型"><a href="#BeautifulSoup对象类型" class="headerlink" title="BeautifulSoup对象类型"></a>BeautifulSoup 对象类型</h2><p>Beautiful Soup 将复杂 HTML 文档转换成一个复杂的树形结构，每个节点都是 Python 对象。所有对象可以归纳为 4 种类型: Tag , NavigableString , BeautifulSoup , Comment 。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A(BeautifulSoup )--&gt;|"find = soup.find('p')"|B[Tag]</span><br><span class="line">B--"find.name"--&gt; C("class 'str'")</span><br><span class="line">B--"find['class']"--&gt;D(class 'list')</span><br><span class="line">B--"find.string"--&gt;E(class 'bs4.element.NavigableString')</span><br><span class="line">B--"find.string"--&gt;F(class 'bs4.element.Comment')</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="BeautifulSoup对象"><a href="#BeautifulSoup对象" class="headerlink" title="BeautifulSoup对象"></a>BeautifulSoup 对象</h3><p>BeautifulSoup 对象表示一个文档的全部内容。支持遍历文档树和搜索文档树。 </p>
+<ul>
+<li>html_doc 为字符串 </li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">html_doc = <span class="string">"""</span></span><br><span class="line"><span class="string">字符串内容</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">soup = BeautifulSoup(html_doc, <span class="string">'lxml'</span>)  <span class="comment"># BeautifulSoup使用lxml解析</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">html_doc = <span class="string">"""</span></span><br><span class="line"><span class="string">字符串</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">soup = BeautifulSoup(html_doc, <span class="string">'html.parser'</span>)  <span class="comment"># BeautifulSoup使用python内部解析</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>htmlfile 为 open 的文件 </li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'result.html'</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> htmlfile:</span><br><span class="line">    soup = BeautifulSoup(htmlfile, <span class="string">'html.parser'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Tag对象"><a href="#Tag对象" class="headerlink" title="Tag对象"></a>Tag 对象</h3><ul>
+<li>find () 方法返回返回标签</li>
+</ul>
+<p>这个就跟 HTML 或者 XML（还能解析 XML？是的，能！）中的标签是一样的。我们使用 find () 方法返回的类型就是这个（插一句：使用 find-all () 返回的是多个该对象的集合，是可以用 for 循环遍历的。）。返回标签之后，还可以对提取标签中的信息。</p>
+<ul>
+<li> 使用 find 方法查到第一个 p 标签：&lt;class ‘bs4.element.Tag’&gt;</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">find = soup.find(<span class="string">'p'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>提取标签的名字：&lt;class ‘str’&gt;</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">find.name</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>提取标签的属性：&lt;class ‘list’&gt;</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">find['attribute']</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="NavigableString对象"><a href="#NavigableString对象" class="headerlink" title="NavigableString对象"></a>NavigableString 对象</h3><ul>
+<li>提取标签的内容（不包含标签）：&lt;class ‘bs4.element.NavigableString’&gt; 或 &lt; class ‘bs4.element.Comment’&gt;，若返回 &lt; class ‘bs4.element.Comment’&gt;，则为注释 </li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">find.string</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">html_doc = <span class="string">"""</span></span><br><span class="line"><span class="string">&lt;html&gt;&lt;head&gt;&lt;title&gt;The Dormouse's story&lt;/title&gt;&lt;/head&gt;</span></span><br><span class="line"><span class="string">&lt;body&gt;</span></span><br><span class="line"><span class="string">&lt;p class="title"&gt;&lt;b&gt;The Dormouse's story&lt;/b&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="string">&lt;p class="story"&gt;Once upon a time there were three little sisters; and their names were</span></span><br><span class="line"><span class="string">&lt;a href="http://example.com/elsie" class="sister" id="link1"&gt;Elsie&lt;/a&gt;,</span></span><br><span class="line"><span class="string">&lt;a href="http://example.com/lacie" class="sister" id="link2"&gt;Lacie&lt;/a&gt; and</span></span><br><span class="line"><span class="string">&lt;a href="http://example.com/tillie" class="sister" id="link3"&gt;Tillie&lt;/a&gt;;</span></span><br><span class="line"><span class="string">and they lived at the bottom of a well.&lt;/p&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;p class="story"&gt;...&lt;/p&gt;</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">soup = BeautifulSoup(html_doc, <span class="string">'lxml'</span>)  <span class="comment">#声明BeautifulSoup对象</span></span><br><span class="line">find = soup.find(<span class="string">'p'</span>)  <span class="comment">#使用find方法查到第一个p标签</span></span><br><span class="line">print(<span class="string">"find's return type is "</span>, <span class="built_in">type</span>(find))  <span class="comment">#输出返回值类型</span></span><br><span class="line">print(<span class="string">"find's content is"</span>, find)  <span class="comment">#输出find获取的值</span></span><br><span class="line">print(<span class="string">"find's Tag Name is "</span>, find.name)  <span class="comment">#输出标签的名字</span></span><br><span class="line">print(<span class="string">"find's Attribute(class) is "</span>, find[<span class="string">'class'</span>])  <span class="comment">#输出标签的class属性值</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Comment对象"><a href="#Comment对象" class="headerlink" title="Comment对象"></a>Comment 对象</h3><p>这个对象其实就是 HTML 和 XML 中的注释。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">markup = <span class="string">"&lt;b&gt;&lt;!--Hey, buddy. Want to buy a used parser?--&gt;&lt;/b&gt;"</span></span><br><span class="line">soup = BeautifulSoup(markup, <span class="string">'lxml'</span>)</span><br><span class="line">comment = soup.b.string</span><br><span class="line"><span class="built_in">type</span>(comment)</span><br><span class="line"><span class="comment"># &lt;class 'bs4.element.Comment'&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>有些时候，并不想获取 HTML 中的注释内容，所以用这个类型来判断是否是注释。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">type</span>(SomeString) == bs4.element.Comment:</span><br><span class="line">    print(<span class="string">'该字符是注释'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'该字符不是注释'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="其他语法"><a href="#其他语法" class="headerlink" title="其他语法"></a>其他语法</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">soup.head  #查找第一个head标签,相当于soup.find('head')</span><br><span class="line">soup.p  #查找第一个p标签，相当于soup.find('p')</span><br><span class="line">soup.b  #查找b标签,相当于soup.find('b')</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="BeautifulSoup遍历方法"><a href="#BeautifulSoup遍历方法" class="headerlink" title="BeautifulSoup遍历方法"></a>BeautifulSoup 遍历方法</h2><h3 id="节点和标签名"><a href="#节点和标签名" class="headerlink" title="节点和标签名"></a>节点和标签名</h3><p>可以使用子节点、父节点、 及标签名的方式遍历：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">soup.head <span class="comment">#查找head标签</span></span><br><span class="line">soup.p <span class="comment">#查找第一个p标签</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#对标签的直接子节点进行循环</span></span><br><span class="line"><span class="keyword">for</span> child <span class="keyword">in</span> title_tag.children:</span><br><span class="line">    print(child)</span><br><span class="line"></span><br><span class="line">soup.parent <span class="comment">#父节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 所有父节点</span></span><br><span class="line"><span class="keyword">for</span> parent <span class="keyword">in</span> link.parents:</span><br><span class="line">    <span class="keyword">if</span> parent <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        print(parent)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(parent.name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 兄弟节点</span></span><br><span class="line">sibling_soup.b.next_sibling <span class="comment">#后面的兄弟节点</span></span><br><span class="line">sibling_soup.c.previous_sibling <span class="comment">#前面的兄弟节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#所有兄弟节点</span></span><br><span class="line"><span class="keyword">for</span> sibling <span class="keyword">in</span> soup.a.next_siblings:</span><br><span class="line">    print(<span class="built_in">repr</span>(sibling))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> sibling <span class="keyword">in</span> soup.find(<span class="built_in">id</span>=<span class="string">"link3"</span>).previous_siblings:</span><br><span class="line">    print(<span class="built_in">repr</span>(sibling))</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="搜索文档树"><a href="#搜索文档树" class="headerlink" title="搜索文档树"></a>搜索文档树</h3><p>主要 find () 和 find_all () 啦，当然还有其他的。比如 find_parent () 和 find_parents ()、 find_next_sibling () 和 find_next_siblings () 、find_all_next () 和 find_next ()、find_all_previous () 和 find_previous () 等等</p>
+<ul>
+<li><p>find_all()<br>搜索当前 tag 的所有 tag 子节点，并判断是否符合过滤器的条件。返回值类型是 <strong>bs4.element.ResultSet</strong>。<br>完整的语法：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">find_all( name , attrs , recursive , string , **kwargs )</span><br></pre></td></tr></tbody></table></figure>
+<p>例：</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">soup.find_all(<span class="string">"title"</span>)</span><br><span class="line"><span class="comment"># [&lt;title&gt;The Dormouse's story&lt;/title&gt;]</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">soup.find_all(<span class="string">"p"</span>, <span class="string">"title"</span>)</span><br><span class="line"><span class="comment"># [&lt;p class="title"&gt;&lt;b&gt;The Dormouse's story&lt;/b&gt;&lt;/p&gt;]</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line">soup.find_all(<span class="string">"a"</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;]</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">soup.find_all(<span class="built_in">id</span>=<span class="string">"link2"</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;]</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">soup.find(string=re.<span class="built_in">compile</span>(<span class="string">"sisters"</span>))</span><br><span class="line"><span class="comment"># u'Once upon a time there were three little sisters; and their names were\n'</span></span><br></pre></td></tr></tbody></table></figure>
+<p>name 参数：可以查找所有名字为 name 的 tag。<br>attr 参数：就是 tag 里的属性。<br>string 参数：搜索文档中字符串的内容。<br>recursive 参数： 调用 tag 的 find_all () 方法时，Beautiful Soup 会检索当前 tag 的所有子孙节点。如果只想搜索 tag 的直接子节点，可以使用参数 recursive=False 。</p>
+<ul>
+<li>find()<br>与 find_all () 类似，只不过只返回找到的第一个值。返回值类型是 bs4.element.Tag。<br>完整语法：<br><code>find( name , attrs , recursive , string , **kwargs )</code><br>看例子：</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">soup.find('title')</span><br><span class="line"># &lt;title&gt;The Dormouse's story&lt;/title&gt;</span><br><span class="line">#</span><br><span class="line">soup.find("head").find("title")</span><br><span class="line"># &lt;title&gt;The Dormouse's story&lt;/title&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="BeautifulSoup参数调用方法"><a href="#BeautifulSoup参数调用方法" class="headerlink" title="BeautifulSoup参数调用方法"></a>BeautifulSoup 参数调用方法</h2><h4 id="find-和find-all-："><a href="#find-和find-all-：" class="headerlink" title="find()和find_all()："></a>find () 和 find_all ()：</h4><p><strong>find ()** 只返回第一个匹配到的对象，</strong>find_all ()** 返回所有匹配到的结果，语法一样，相当于 limit=1</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">find(name, attrs, recursive, text, **wargs)　　</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">find_all(name, attrs, recursive, text, limit, **kwargs)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h4><p>这些参数相当于过滤器一样可以进行筛选处理。不同的参数过滤可以应用到以下情况：</p>
+<ul>
+<li>查找标签，基于 name 参数</li>
+<li>查找文本，基于 text 参数，可以使正则表达式</li>
+<li>查找标签的属性，基于 attrs 参数</li>
+<li>基于函数的查找</li>
+<li>如下参数可组合查找，并且的关系？</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> name</td>
+<td> 基于 name 参数</td>
+</tr>
+<tr>
+<td> text</td>
+<td> 基于 text 参数，文本或正则表达式</td>
+</tr>
+<tr>
+<td> attrs</td>
+<td> 基于 attrs 参数</td>
+</tr>
+<tr>
+<td> recursive</td>
+<td> 递归的，循环的，true 或 false</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>find_all () 显示结果范围</td>
+</tr>
+<tr>
+<td>函数</td>
+<td>必须返回</td>
+</tr>
+</tbody></table>
+<p>调用方法（class_是特殊属性，替换 class 属性）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 直接按规则输入条件</span><br><span class="line">li_quick = soup.find_all('li', {'class': 'item-1'})</span><br><span class="line"># 加上对象名称</span><br><span class="line">li_quick = soup.find_all(name='li', attrs={'class': 'item-1'})</span><br><span class="line"># 可综合使用</span><br><span class="line">li_quick = soup.find_all('li', attrs={'class': 'item-1'})</span><br><span class="line"># class属性查找</span><br><span class="line">beautifulsoup_class_ = soup.find_all(class_='item-1')</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解析 python 爬虫 puklaw4pbc</title>
+    <url>/2021/04/19/%E8%A7%A3%E6%9E%90python%E7%88%AC%E8%99%ABpuklaw4pbc/</url>
+    <content><![CDATA[<p>spider.py</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">from bs4 import BeautifulSou</span><br></pre></td></tr></tbody></table></figure>
+<p>Beautiful Soup 是一个可以从 HTML 或 XML 文件中提取数据的 Python 库，简单来说，它能将 HTML 的标签文件解析成树形结构，然后方便地获取到指定标签的对应属性。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">from configparser import ConfigParser</span><br><span class="line">import pandas as pd</span><br><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">from sqlalchemy import create_engine</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>爬虫</tag>
+        <tag>pkulaw</tag>
+      </tags>
+  </entry>
 </search>

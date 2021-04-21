@@ -127,9 +127,9 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">41</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">19</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">49</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">22</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">31</span></a></li>
         <li class="menu-item menu-item-guestbook"><a href="/guestbook/" rel="section"><i class="fa fa-book fa-fw"></i>留言板</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
@@ -202,20 +202,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">49</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -274,6 +274,627 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/21/python%E5%BA%93%E9%9A%8F%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lane">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lane's Blog 随记备查">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/21/python%E5%BA%93%E9%9A%8F%E8%AE%B0/" class="post-title-link" itemprop="url">python 库随记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-04-21 09:31:30 / 修改时间：19:30:20" itemprop="dateCreated datePublished" datetime="2021-04-21T09:31:30+08:00">2021-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>12 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="requests库"><a href="#requests库" class="headerlink" title="requests库"></a>requests 库</h1><h2 id="get-请求"><a href="#get-请求" class="headerlink" title="get 请求"></a>get 请求</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = requests.get(<span class="string">"https://unsplash.com"</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>向网站发送了一个 get 请求，然后网站会返回一个 response。r 就是 response。可以在运行的时候查看 r 的 type。</p>
+<ul>
+<li>get 传递参数请求 </li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload = {<span class="string">'key1'</span>: <span class="string">'value1'</span>, <span class="string">'key2'</span>: <span class="string">'value2'</span>}</span><br><span class="line">r = requests.get(<span class="string">"http://httpbin.org/get"</span>, params=payload)</span><br></pre></td></tr></tbody></table></figure>
+<p>向服务器发送的请求中包含了两个参数 key1 和 key2，以及两个参数的值。实际上它构造成了如下网址：<br><code>http://httpbin.org/get?key1=value1&amp;key2=value2</code></p>
+<h4 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST 请求</h4><ul>
+<li>无参数 post 请求：</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = requests.post(<span class="string">"http://httpbin.org/post"</span>)</span><br></pre></td></tr></tbody></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/21/python%E5%BA%93%E9%9A%8F%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/19/%E8%A7%A3%E6%9E%90python%E7%88%AC%E8%99%ABpuklaw4pbc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lane">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lane's Blog 随记备查">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/19/%E8%A7%A3%E6%9E%90python%E7%88%AC%E8%99%ABpuklaw4pbc/" class="post-title-link" itemprop="url">解析 python 爬虫 puklaw4pbc</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-04-19 20:01:22" itemprop="dateCreated datePublished" datetime="2021-04-19T20:01:22+08:00">2021-04-19</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-04-20 12:13:32" itemprop="dateModified" datetime="2021-04-20T12:13:32+08:00">2021-04-20</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>249</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>spider.py</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from bs4 import BeautifulSou</span><br></pre></td></tr></tbody></table></figure>
+<p>Beautiful Soup 是一个可以从 HTML 或 XML 文件中提取数据的 Python 库，简单来说，它能将 HTML 的标签文件解析成树形结构，然后方便地获取到指定标签的对应属性。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from configparser import ConfigParser</span><br><span class="line">import pandas as pd</span><br><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">from sqlalchemy import create_engine</span><br></pre></td></tr></tbody></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/19/%E8%A7%A3%E6%9E%90python%E7%88%AC%E8%99%ABpuklaw4pbc/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/19/PyCharm%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB%E6%8F%92%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lane">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lane's Blog 随记备查">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/19/PyCharm%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB%E6%8F%92%E4%BB%B6/" class="post-title-link" itemprop="url">PyCharm 永久激活插件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-04-19 19:49:56 / 修改时间：19:51:51" itemprop="dateCreated datePublished" datetime="2021-04-19T19:49:56+08:00">2021-04-19</time>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>836</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>Windows、Mac、Linux 系统都适用</strong></p>
+<p>插件是全自动无限激活一个月到期自动激活，无需每月找激活码找安装参数，适用最新 JetBrains 全家桶</p>
+<p><strong>本插件可以离线激活</strong></p>
+<p>通过自动无限重置 PyCharm 试用期的方法来达到永久激活；</p>
+<p>收费插件的试用信息也会一并重置，试用期的 PyCharm 没有任何功能限制</p>
+<p><strong>下载 PyCharm 永久激活插件</strong></p>
+<p><strong>👇👇👇👇👇👇👇👇👇</strong></p>
+<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1U3ebBUz9RF8xzRA7TkE6Yw"><strong>点击下载 PyCharm 永久激活插件 2.1.9</strong></a></p>
+<p>提取码：u4ry</p>
+<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1jaNrPBgrUu6Hc2LYQ7msmA"><strong>点击下载 PyCharm 永久激活插件 2.1.12 版</strong></a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/19/PyCharm%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB%E6%8F%92%E4%BB%B6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/19/Python%E7%9A%84Django%E6%A1%86%E6%9E%B6%E5%B0%8F%E7%99%BD%E5%88%9D%E6%AD%A5%EF%BC%88pycharm%E4%B8%8B%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lane">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lane's Blog 随记备查">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/19/Python%E7%9A%84Django%E6%A1%86%E6%9E%B6%E5%B0%8F%E7%99%BD%E5%88%9D%E6%AD%A5%EF%BC%88pycharm%E4%B8%8B%EF%BC%89/" class="post-title-link" itemprop="url">Python 的 Django 框架小白初步（pycharm 下）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-04-19 12:22:08 / 修改时间：15:13:20" itemprop="dateCreated datePublished" datetime="2021-04-19T12:22:08+08:00">2021-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/django/" itemprop="url" rel="index"><span itemprop="name">django</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>343</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>安装 pycharm</p>
+<p>新建 pycharm 的 django 工程（企业版）</p>
+<p>社区办要手工创建</p>
+<p>查看效果</p>
+<p>pycharm 终端</p>
+<p>python manage.py runserver</p>
+<p>127.0.0.1:8000</p>
+<p>进入后台管理</p>
+<p>127.0.0.1:8000/admin</p>
+<p>迁移？</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/19/Python%E7%9A%84Django%E6%A1%86%E6%9E%B6%E5%B0%8F%E7%99%BD%E5%88%9D%E6%AD%A5%EF%BC%88pycharm%E4%B8%8B%EF%BC%89/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/16/python%E7%9A%84pip%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lane">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lane's Blog 随记备查">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/16/python%E7%9A%84pip%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/" class="post-title-link" itemprop="url">python 的 pip 国内镜像</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-04-16 17:06:42 / 修改时间：17:09:34" itemprop="dateCreated datePublished" datetime="2021-04-16T17:06:42+08:00">2021-04-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>376</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站</a></p>
+<p>pypi 镜像每 5 分钟同步一次。</p>
+<h1 id="临时使用"><a href="#临时使用" class="headerlink" title="临时使用"></a>临时使用</h1><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></tbody></table></figure>
+<p>注意，<code>simple</code> 不能少，是 <code>https</code> 而不是 <code>http</code></p>
+<h1 id="设为默认"><a href="#设为默认" class="headerlink" title="设为默认"></a>设为默认</h1><p>升级 pip 到最新的版本 (&gt;=10.0.0) 后进行配置：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pip -U</span><br><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></tbody></table></figure>
+<p>如果您到 pip 默认源的网络连接较差，临时使用本镜像站来升级 pip：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U</span><br></pre></td></tr></tbody></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/16/python%E7%9A%84pip%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/16/JupyterNotebook%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lane">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lane's Blog 随记备查">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/16/JupyterNotebook%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/" class="post-title-link" itemprop="url">Jupyter NBextensions 插件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-04-16 16:47:24 / 修改时间：17:05:21" itemprop="dateCreated datePublished" datetime="2021-04-16T16:47:24+08:00">2021-04-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/jupyter/" itemprop="url" rel="index"><span itemprop="name">jupyter</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>212</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a><strong>插件安装</strong></h1><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install jupyter_contrib_nbextensions -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">jupyter contrib nbextension install --user</span><br><span class="line">pip install jupyter_nbextensions_configurator -i </span><br></pre></td></tr></tbody></table></figure>
+<p>以上三步结束，重新启动 jupyter notebook 即可搞定，出现以下表示安装完毕。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/v2-2b32a8733f8d5fdd98134578a2716230_1440w.jpg" alt="img"></p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/16/JupyterNotebook%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -679,674 +1300,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/31/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lane">
-      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lane's Blog 随记备查">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/31/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">正则表达式</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-31 12:23:16" itemprop="dateCreated datePublished" datetime="2021-03-31T12:23:16+08:00">2021-03-31</time>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>0</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/29/LibXL%E7%9B%B4%E6%8E%A5%E8%AF%BB%E5%86%99Excel%E6%96%87%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lane">
-      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lane's Blog 随记备查">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/29/LibXL%E7%9B%B4%E6%8E%A5%E8%AF%BB%E5%86%99Excel%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">LibXL 直接读写 Excel 文件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-03-29 15:59:31 / 修改时间：16:00:53" itemprop="dateCreated datePublished" datetime="2021-03-29T15:59:31+08:00">2021-03-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%89%E6%96%B9%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">三方库</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>LibXL is a library for direct reading and writing Excel files.</p>
-<p>Package contents:</p>
-<p>  bin              32-bit dynamic library<br>  bin64            64-bit dynamic library<br>  doc              C++ documentation<br>  examples         C, C++, C#, Delphi and Fortran examples (MinGW, Visual Studio, Qt, Code::Blocks)<br>  include_c        headers for C<br>  include_cpp      headers for C++<br>  lib              32-bit import library for Microsoft Visual C++<br>  lib64            64-bit import library for Microsoft Visual C++<br>  net              .NET wrapper (assembly)<br>  php              compiled plug-in for PHP<br>  stdcall          32-bit dynamic library with stdcall calling convention<br>  changelog.txt    change log<br>  libxl.url        link to home page<br>  license.txt      end-user license agreement<br>  readme.txt       this file</p>
-<p>Using library:</p>
-<ol>
-<li><p>Microsoft Visual C++</p>
-<ul>
-<li><p>add include directory in your project, for example: c:\libxl\include_cpp</p>
-<p>Project -&gt; Properties -&gt; C/C++ -&gt; General -&gt; Additional Include Directories</p>
-</li>
-<li><p>add library directory in your project, for example: c:\libxl\lib</p>
-<p>Project -&gt; Properties -&gt; Linker -&gt; General -&gt; Additional Library Directories</p>
-</li>
-<li><p>add libxl.lib in project dependencies:</p>
-<p>Project -&gt; Properties -&gt; Linker -&gt; Input -&gt; Additional Dependencies</p>
-</li>
-<li><p>copy bin\libxl.dll to directory of your project</p>
-</li>
-</ul>
-</li>
-<li><p>MinGW</p>
-<p>Type in examples/c++/mingw directory:</p>
-<p>  g++ generate.cpp -o generate -I../../../include_cpp -L../../../bin -lxl</p>
-<p>Use mingw32-make for building examples.</p>
-</li>
-</ol>
-<ol start="3">
-<li><p>C# and other .NET languages</p>
-<p>Use assembly libxl.net.dll in net directory: Project -&gt; Add reference… -&gt; Browse</p>
-<p>Also copy bin\libxl.dll to Debug or Release directory of your project.</p>
-</li>
-</ol>
-<ol start="4">
-<li><p>Qt</p>
-<ul>
-<li><p>add the following lines to a configuration file (.pro):</p>
-<p>INCLUDEPATH = c:/libxl-3.6.4.0/include_cpp<br>LIBS += c:/libxl-3.6.4.0/lib/libxl.lib</p>
-</li>
-<li><p>copy bin\libxl.dll to the build directory of your project   </p>
-</li>
-</ul>
-</li>
-<li><p>Borland C++ and Embarcadero C++ Builder</p>
-<ul>
-<li><p>create an import library for your compiler:</p>
-<p>  implib -a libxl.lib libxl.dll</p>
-</li>
-<li><p>add the include directory to your project, for example: c:\libxl-3.9.1.0\include_cpp</p>
-<p>Project -&gt; Options -&gt; Building -&gt; C++ Compiler -&gt; Directories and Conditionals -&gt; Include file search path</p>
-<p>or </p>
-<p>Project -&gt; Options -&gt; Directories/Conditionals -&gt; Include path (for old C++ Bulder versions)</p>
-</li>
-<li><p>add library directory to your project (only for old C++ Builder versions)</p>
-<p>Project -&gt; Options -&gt; Directories/Conditionals -&gt; Library path</p>
-</li>
-<li><p>add libxl.lib to your project</p>
-<p>Project -&gt; Add to Project…</p>
-</li>
-<li><p>copy libxl.dll from the bin folder to <your_project_directory>/Win32/Debug or <your_project_directory>/Win32/Release folder</your_project_directory></your_project_directory></p>
-<p>If your target is “Windows 64-bit” copy libxl.dll from the bin64 folder.</p>
-</li>
-</ul>
-</li>
-<li><p>Delphi</p>
-<ul>
-<li><p>add the directory with the LibXL.pas unit, for example: c:\libxl-3.9.1.0\examples\delphi12</p>
-<p>Project -&gt; Options -&gt; Building -&gt; Delphi Compiler -&gt; Search path</p>
-</li>
-<li><p>copy libxl.dll from the bin folder to <your_project_directory>\Win32\Debug or <your_project_directory>\Win32\Release folder</your_project_directory></your_project_directory></p>
-</li>
-</ul>
-</li>
-</ol>
-<p>Documentation:</p>
-<p>  <a target="_blank" rel="noopener" href="http://www.libxl.com/doc">http://www.libxl.com/doc</a></p>
-<p>Contact:</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/29/LibXL%E7%9B%B4%E6%8E%A5%E8%AF%BB%E5%86%99Excel%E6%96%87%E4%BB%B6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/24/%E5%B8%B8%E7%94%A8%E5%A5%BD%E8%BD%AF%E4%BB%B6%EF%BC%88%E9%9A%8F%E6%97%B6%E5%8F%91%E7%8E%B0%E9%9A%8F%E6%97%B6%E6%9B%B4%E6%96%B0%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lane">
-      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lane's Blog 随记备查">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/24/%E5%B8%B8%E7%94%A8%E5%A5%BD%E8%BD%AF%E4%BB%B6%EF%BC%88%E9%9A%8F%E6%97%B6%E5%8F%91%E7%8E%B0%E9%9A%8F%E6%97%B6%E6%9B%B4%E6%96%B0%EF%BC%89/" class="post-title-link" itemprop="url">常用好软件（随时发现随时更新）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-03-24 09:15:33 / 修改时间：09:44:17" itemprop="dateCreated datePublished" datetime="2021-03-24T09:15:33+08:00">2021-03-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>919</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="quicker您的指尖工具箱"><a href="#quicker您的指尖工具箱" class="headerlink" title="quicker您的指尖工具箱"></a>quicker 您的指尖工具箱</h1><p><strong>Quicker</strong> 是一个让 <strong>Windows 用户</strong>可以用<strong>最合适的方式</strong>、<strong>最快地</strong>触发想要的<strong>操作</strong>的软件工具，是一个<strong>场景化</strong>的工具箱，也是一个可以<strong>创造和分享新工具</strong>的平台。<a target="_blank" rel="noopener" href="https://getquicker.net/">https://getquicker.net/</a></p>
-<ul>
-<li> 可以利用写博客头功能，省去 hexo new blog 命令</li>
-<li>安装→注册→运行→鼠标中间或 ctrl+q 激活面板→工具箱→相应动作拖到面板→应用时激活执行</li>
-</ul>
-<img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210222112957.png" alt="image-20210220122832855" style="zoom:25%;">
-
-
-
-<ul>
-<li>有免费版和专业版（按年收费）</li>
-</ul>
-<h1 id="Everything基于名称快速定位文件和文件夹"><a href="#Everything基于名称快速定位文件和文件夹" class="headerlink" title="Everything基于名称快速定位文件和文件夹"></a>Everything 基于名称快速定位文件和文件夹</h1><p><a target="_blank" rel="noopener" href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
-<p>Everything” 是 Windows 上一款搜索引擎，它能够基于文件名快速定文件和文件夹位置。</p>
-<p>不像 Windows 内置搜索，”Everything” 默认显示电脑上每个文件和文件夹 (就如其名 “Everything”)。您在搜索框输入的关键词将会筛选显示的文件和文件夹。</p>
-<p>“Everything” 可以通过搜索函数 content: 来搜索文件内容。文件内容未被索引时，搜索内容将会很慢。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/24/%E5%B8%B8%E7%94%A8%E5%A5%BD%E8%BD%AF%E4%BB%B6%EF%BC%88%E9%9A%8F%E6%97%B6%E5%8F%91%E7%8E%B0%E9%9A%8F%E6%97%B6%E6%9B%B4%E6%96%B0%EF%BC%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/24/php%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E8%80%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lane">
-      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lane's Blog 随记备查">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/24/php%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E8%80%83/" class="post-title-link" itemprop="url">php 命令行参考</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-03-24 09:09:28 / 修改时间：10:23:43" itemprop="dateCreated datePublished" datetime="2021-03-24T09:09:28+08:00">2021-03-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>php -h结果备忘</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/24/php%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E8%80%83/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/23/linux%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lane">
-      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lane's Blog 随记备查">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/23/linux%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">linux 下 nginx 安装配置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-23 09:53:33" itemprop="dateCreated datePublished" datetime="2021-03-23T09:53:33+08:00">2021-03-23</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-24 10:59:56" itemprop="dateModified" datetime="2021-03-24T10:59:56+08:00">2021-03-24</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Ningx安装和配置</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/23/linux%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/22/php7-3%E7%9A%84Mysql%E9%85%8D%E7%BD%AE%E5%92%8C%E8%BF%9E%E6%8E%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lane">
-      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lane's Blog 随记备查">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/22/php7-3%E7%9A%84Mysql%E9%85%8D%E7%BD%AE%E5%92%8C%E8%BF%9E%E6%8E%A5/" class="post-title-link" itemprop="url">php7.3 的 Mysql 配置和连接</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-22 18:27:47" itemprop="dateCreated datePublished" datetime="2021-03-22T18:27:47+08:00">2021-03-22</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-24 10:22:34" itemprop="dateModified" datetime="2021-03-24T10:22:34+08:00">2021-03-24</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/php7/" itemprop="url" rel="index"><span itemprop="name">php7</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>MYSQL 也叫 Original MySQL，PHP4版本的MYSQL扩展，从PHP5起已经被废弃，并别从PHP7开始已经被移除。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/22/php7-3%E7%9A%84Mysql%E9%85%8D%E7%BD%AE%E5%92%8C%E8%BF%9E%E6%8E%A5/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1391,13 +1346,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">76k</span>
+    <span title="站点总字数">85k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:06</span>
+    <span title="站点阅读时长">2:21</span>
   </span>
 </div>
 <div class="busuanzi-count">
