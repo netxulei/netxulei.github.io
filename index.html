@@ -127,9 +127,9 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">49</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">22</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">31</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">55</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">35</span></a></li>
         <li class="menu-item menu-item-guestbook"><a href="/guestbook/" rel="section"><i class="fa fa-book fa-fw"></i>留言板</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
@@ -202,20 +202,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -283,6 +283,423 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/28/selenium%E4%B8%AD%E7%9A%84%E4%B8%89%E7%A7%8D%E7%AD%89%E5%BE%85%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lane">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lane's Blog 随记备查">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/28/selenium%E4%B8%AD%E7%9A%84%E4%B8%89%E7%A7%8D%E7%AD%89%E5%BE%85%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">selenium 中的三种等待方式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-04-28 11:42:36 / 修改时间：12:24:36" itemprop="dateCreated datePublished" datetime="2021-04-28T11:42:36+08:00">2021-04-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/selinium/" itemprop="url" rel="index"><span itemprop="name">selinium</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>selenium中的三种等待方式（显示等待WebDriverWait()、隐式等待implicitly()、强制等待sleep()</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/28/selenium%E4%B8%AD%E7%9A%84%E4%B8%89%E7%A7%8D%E7%AD%89%E5%BE%85%E6%96%B9%E5%BC%8F/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/27/http%E5%8D%8F%E8%AE%AE%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%90%AB%E4%B9%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lane">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lane's Blog 随记备查">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/27/http%E5%8D%8F%E8%AE%AE%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%90%AB%E4%B9%89/" class="post-title-link" itemprop="url">http 协议</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-04-27 15:19:39 / 修改时间：15:38:33" itemprop="dateCreated datePublished" datetime="2021-04-27T15:19:39+08:00">2021-04-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/http/" itemprop="url" rel="index"><span itemprop="name">http</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="1-URL"><a href="#1-URL" class="headerlink" title="1.URL"></a>1.<strong>URL</strong></h2><p>URL 即统一资源定位符（Uniform Resource Locator），用来唯一地标识万维网中的某一个文档。URL 由协议、主机和端口（默认为 80）以及文件名三部分构成，如：</p>
+<p><img data-src="https://mmbiz.qpic.cn/mmbiz_png/qxddLVhoNhdL16yR9IribHZpZwFL87hcn8IXEjKKc0OicdmR6w5KbLgNc7icUEibaUvy1ZMcrxGH3icfgV6PAZLpiaKA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<h2 id="2-HTTP具体工作流程"><a href="#2-HTTP具体工作流程" class="headerlink" title="2.HTTP具体工作流程"></a>2.<strong>HTTP 具体工作流程</strong></h2><p>前面已经讲过，HTTP 的工作原理就是一个请求 - 响应交互模型，那当用户从浏览器输入网址到浏览器呈现给用户内容之间的过程到底发生了什么？下面举例来说明：</p>
+<p>在用户点击 URL 为 <a target="_blank" rel="noopener" href="http://www.sxtyu.com/index.html%E7%9A%84%E9%93%BE%E6%8E%A5%E5%90%8E%EF%BC%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%92%8Cweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%89%A7%E8%A1%8C%E4%BA%86%E4%BB%A5%E4%B8%8B%E5%8A%A8%E4%BD%9C%EF%BC%9A">http://www.sxtyu.com/index.html 的链接后，浏览器和 web 服务器执行了以下动作：</a></p>
+<ul>
+<li>浏览器分析超链接中的 URL</li>
+<li> 浏览器向 DNS 请求解析 <a target="_blank" rel="noopener" href="http://www.sxtyu.com的ip地址/">http://www.sxtyu.com 的 IP 地址</a></li>
+<li> DNS 将解析出来的 IP 地址 202.2.16.21 返回浏览器</li>
+<li>浏览器与服务器建立 TCP 链接（80 端口）</li>
+<li>浏览器请求文档：GET/index.html</li>
+<li> 服务器给出响应，将文档 index.html 发送给浏览器</li>
+<li>释放 TCP 链接</li>
+<li>浏览器显示 index.html 中的内容</li>
+</ul>
+<p><img data-src="https://mmbiz.qpic.cn/mmbiz_png/qxddLVhoNhdL16yR9IribHZpZwFL87hcnYNjUEqL0IibzsnmejMXwiaEAdj3XOacVEwcjSFxiciaJyvQT9y8H50Y6Lg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<h2 id="3-HTTP头信息"><a href="#3-HTTP头信息" class="headerlink" title="3.HTTP头信息"></a>3.<strong>HTTP 头信息</strong></h2><p>HTTP 头信息分为了请求头信息和响应头信息，其中，请求头只出现在 HTTP 请求中，请求报头允许客户端向服务端传递请求的附加信息和客户端自身信息；响应头是服务器根据请求向客户端发送的 HTTP 头。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/27/http%E5%8D%8F%E8%AE%AE%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%90%AB%E4%B9%89/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/25/fiddler-evrywhere%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lane">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lane's Blog 随记备查">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/25/fiddler-evrywhere%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">fiddler_evrywhere 基本使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-04-25 14:47:54 / 修改时间：14:54:15" itemprop="dateCreated datePublished" datetime="2021-04-25T14:47:54+08:00">2021-04-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/fiddler/" itemprop="url" rel="index"><span itemprop="name">fiddler</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>30</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="使用页面简介"><a href="#使用页面简介" class="headerlink" title="使用页面简介"></a>使用页面简介</h1><h2 id="申请账号登录"><a href="#申请账号登录" class="headerlink" title="申请账号登录"></a>申请账号登录</h2><p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210425145208.png" alt="image-20210425145208447"></p>
+<h2 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h2><p>开启 https，设置代理端口号：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210425145046.png" alt="image-20210425145046552"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210425145110.png" alt="image-20210425145110349"></p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/25/fiddler-evrywhere%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/25/python%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lane">
+      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lane's Blog 随记备查">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/25/python%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">python 函数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-04-25 10:21:41" itemprop="dateCreated datePublished" datetime="2021-04-25T10:21:41+08:00">2021-04-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-04-27 16:32:46" itemprop="dateModified" datetime="2021-04-27T16:32:46+08:00">2021-04-27</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>449</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>pandas </p>
+<h1 id="数据库函数"><a href="#数据库函数" class="headerlink" title="数据库函数"></a>数据库函数</h1><h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><h6 id="create-engine-‘dialect-driver-username-password-host-port-database’"><a href="#create-engine-‘dialect-driver-username-password-host-port-database’" class="headerlink" title="create_engine(‘dialect+driver://username:password@host:port/database’)"></a>create_engine(‘dialect+driver://username:password@host:port/database’)</h6><p>dialect – 数据库类型  driver – 数据库驱动选择  username – 数据库用户名  password – 用户密码  host 服务器地址  port 端口  database 数据库</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">engine = create_engine(<span class="string">'sqlite:///datastore.db'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>数据库文件若存在，则连接；不存在，则新建。</p>
+<h1 id="python错误和异常"><a href="#python错误和异常" class="headerlink" title="python错误和异常"></a>python 错误和异常</h1><h2 id="assert（断言）"><a href="#assert（断言）" class="headerlink" title="assert（断言）"></a>assert（断言）</h2><p>语法格式如下：expression 为 false 是触发异常</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/25/python%E5%87%BD%E6%95%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/21/python%E5%BA%93%E9%9A%8F%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -306,10 +723,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-04-21 09:31:30 / 修改时间：19:30:20" itemprop="dateCreated datePublished" datetime="2021-04-21T09:31:30+08:00">2021-04-21</time>
+      <time title="创建时间：2021-04-21 09:31:30" itemprop="dateCreated datePublished" datetime="2021-04-21T09:31:30+08:00">2021-04-21</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-04-25 10:12:06" itemprop="dateModified" datetime="2021-04-25T10:12:06+08:00">2021-04-25</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -328,14 +751,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7.1k</span>
+      <span>11k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>12 分钟</span>
+      <span>18 分钟</span>
     </span>
 </div>
 
@@ -896,410 +1319,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/15/%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E4%B8%A4%E4%B8%AA%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lane">
-      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lane's Blog 随记备查">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/15/%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E4%B8%A4%E4%B8%AA%E5%BA%93/" class="post-title-link" itemprop="url">一个博客提交两个库</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-04-15 19:49:41 / 修改时间：19:56:21" itemprop="dateCreated datePublished" datetime="2021-04-15T19:49:41+08:00">2021-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>265</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>修改博客目录下_config.yml 配置文件</p>
-<p>注释一个库，提交另外的库</p>
-<p>发布两次即可（hexo d）</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line"> type: git</span><br><span class="line"> repository: https://github.com/netxulei/netxulei.github.io.git</span><br><span class="line"> branch: main</span><br><span class="line"> # repo: https://gitee.com/netxulei/netxulei.git</span><br><span class="line"> # branch: master</span><br></pre></td></tr></tbody></table></figure>
-<p>注意 gitee 的博客需要再 pages 服务力做一次更新</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/15/%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E4%B8%A4%E4%B8%AA%E5%BA%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/15/%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E6%8F%90%E4%BA%A4%E5%88%B0GitHub%E5%92%8CGitee%E4%B8%A4%E4%B8%AA%E4%BB%93%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lane">
-      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lane's Blog 随记备查">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/15/%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E6%8F%90%E4%BA%A4%E5%88%B0GitHub%E5%92%8CGitee%E4%B8%A4%E4%B8%AA%E4%BB%93%E5%BA%93/" class="post-title-link" itemprop="url">一个项目同时提交到 GitHub 和 Gitee 两个仓库</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-04-15 19:31:23 / 修改时间：19:39:05" itemprop="dateCreated datePublished" datetime="2021-04-15T19:31:23+08:00">2021-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/github/" itemprop="url" rel="index"><span itemprop="name">github</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/github/gitee/" itemprop="url" rel="index"><span itemprop="name">gitee</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h5 id="在-Gitee-新建仓库并关联克隆-GitHub仓库"><a href="#在-Gitee-新建仓库并关联克隆-GitHub仓库" class="headerlink" title="在 Gitee 新建仓库并关联克隆 GitHub仓库"></a>在 <code>Gitee</code> 新建仓库并关联克隆 <code>GitHub</code> 仓库</h5><p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/image-20210415193414023.png" alt="image-20210415193414023"></p>
-<h5 id="修改-Git-的配置文件-git-config"><a href="#修改-Git-的配置文件-git-config" class="headerlink" title="修改 Git 的配置文件./git/config"></a>修改 <code>Git</code> 的配置文件./git/config</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">  repositoryformatversion = 0</span><br><span class="line">  filemode = false</span><br><span class="line">  bare = false</span><br><span class="line">  logallrefupdates = true</span><br><span class="line">  symlinks = false</span><br><span class="line">  ignorecase = true</span><br><span class="line">[remote "origin"]</span><br><span class="line">  # github仓库地址</span><br><span class="line">  url = https://github.com/netxulei/hngk-git.git</span><br><span class="line">  # gitee仓库地址</span><br><span class="line">  url = https://gitee.com/netxulei/hngk-git.git</span><br><span class="line">  fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch "master"]</span><br><span class="line">  remote = origin</span><br><span class="line">  merge = refs/heads/master</span><br></pre></td></tr></tbody></table></figure>
-<p>git remote -v 可查看配置</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">origin  https://github.com/netxulei/hngk-git.git (fetch)</span><br><span class="line">origin  https://github.com/netxulei/hngk-git.git (push)</span><br><span class="line">origin  https://gitee.com/netxulei/hngk-git.git (push)</span><br></pre></td></tr></tbody></table></figure>
-<p>提交命令</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m "注释"</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br><span class="line">Enumerating objects: 3, done.</span><br><span class="line">Counting objects: 100% (3/3), done.</span><br><span class="line">Delta compression using up to 6 threads</span><br><span class="line">Compressing objects: 100% (2/2), done.</span><br><span class="line">Writing objects: 100% (2/2), 229 bytes | 229.00 KiB/s, done.</span><br><span class="line">Total 2 (delta 1), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Resolving deltas: 100% (1/1), completed with 1 local object.</span><br><span class="line">To https://github.com/netxulei/hngk-git.git</span><br><span class="line">   46859bb..974d410  master -&gt; master</span><br><span class="line">Enumerating objects: 3, done.</span><br><span class="line">Counting objects: 100% (3/3), done.</span><br><span class="line">Delta compression using up to 6 threads</span><br><span class="line">Compressing objects: 100% (2/2), done.</span><br><span class="line">Writing objects: 100% (2/2), 229 bytes | 229.00 KiB/s, done.</span><br><span class="line">Total 2 (delta 1), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Powered by GITEE.COM [GNK-5.0]</span><br><span class="line">To https://gitee.com/netxulei/hngk-git.git</span><br><span class="line">   46859bb..974d410  master -&gt; master</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/15/%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E6%8F%90%E4%BA%A4%E5%88%B0GitHub%E5%92%8CGitee%E4%B8%A4%E4%B8%AA%E4%BB%93%E5%BA%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/15/PicGo%E5%AE%89%E8%A3%85Gitee%E5%9B%BE%E5%BA%8A/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lane">
-      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lane's Blog 随记备查">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/15/PicGo%E5%AE%89%E8%A3%85Gitee%E5%9B%BE%E5%BA%8A/" class="post-title-link" itemprop="url">PicGo 安装 Gitee 图床</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-04-15 12:09:24 / 修改时间：18:47:28" itemprop="dateCreated datePublished" datetime="2021-04-15T12:09:24+08:00">2021-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/PicGo/" itemprop="url" rel="index"><span itemprop="name">PicGo</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>250</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>插件方式安装Gitee图床</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/15/PicGo%E5%AE%89%E8%A3%85Gitee%E5%9B%BE%E5%BA%8A/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/14/%E5%B7%B2%E6%9C%89%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E5%88%B0Github/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lane">
-      <meta itemprop="description" content="内容多为学习过程，实践操作时网络摘录整理和自己记录而来，整篇摘录尽量标明出处，摘录部分无法标明出处的，尽请原谅，感谢原创者。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lane's Blog 随记备查">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/14/%E5%B7%B2%E6%9C%89%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E5%88%B0Github/" class="post-title-link" itemprop="url">已有项目添加到 Github</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-04-14 00:03:49 / 修改时间：10:45:23" itemprop="dateCreated datePublished" datetime="2021-04-14T00:03:49+08:00">2021-04-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Github/" itemprop="url" rel="index"><span itemprop="name">Github</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>750</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>已存在项目添加到Github的新仓库</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/14/%E5%B7%B2%E6%9C%89%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E5%88%B0Github/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1346,13 +1365,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">85k</span>
+    <span title="站点总字数">96k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:21</span>
+    <span title="站点阅读时长">2:39</span>
   </span>
 </div>
 <div class="busuanzi-count">

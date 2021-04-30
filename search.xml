@@ -1713,7 +1713,52 @@
 </tbody></table>
 <p>调用方法（class_是特殊属性，替换 class 属性）</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 直接按规则输入条件</span><br><span class="line">li_quick = soup.find_all('li', {'class': 'item-1'})</span><br><span class="line"># 加上对象名称</span><br><span class="line">li_quick = soup.find_all(name='li', attrs={'class': 'item-1'})</span><br><span class="line"># 可综合使用</span><br><span class="line">li_quick = soup.find_all('li', attrs={'class': 'item-1'})</span><br><span class="line"># class属性查找</span><br><span class="line">beautifulsoup_class_ = soup.find_all(class_='item-1')</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
+<h1 id="ConfigParser库"><a href="#ConfigParser库" class="headerlink" title="ConfigParser库"></a>ConfigParser 库</h1><p>configparser 模块主要用于读取配置文件，导入方法：import configparser</p>
+<h2 id="configparser初始化"><a href="#configparser初始化" class="headerlink" title="configparser初始化"></a>configparser 初始化</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> configparser</span><br><span class="line"><span class="comment"># 生成ConfigParser对象</span></span><br><span class="line">config = configparser.ConfigParser()</span><br><span class="line"><span class="comment"># 读取配置文件</span></span><br><span class="line">filename = <span class="string">'config.ini'</span></span><br><span class="line">config.read(filename, encoding=<span class="string">'utf-8'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>配置文件 config.ini</p>
+<figure class="highlight csharp"><table><tbody><tr><td class="code"><pre><span class="line">[<span class="meta">user</span>]</span><br><span class="line">user_name = Mr,X</span><br><span class="line">password = <span class="number">222</span></span><br><span class="line"></span><br><span class="line">[<span class="meta">connect</span>]</span><br><span class="line">ip = <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">port = <span class="number">4723</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="1-获取节点sections"><a href="#1-获取节点sections" class="headerlink" title="1. 获取节点sections"></a>1. 获取节点 sections</h3><ul>
+<li>ConfigParserObject.sections()<br> 以列表形式返回 configparser 对象的所有节点信息 </li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 获取所有节点</span></span><br><span class="line">all_sections = config.sections()</span><br><span class="line">print(<span class="string">'sections: '</span>, all_sections)   <span class="comment"># 结果sections:  ['user', 'connect']</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="2-获取指定节点的的所有配置信息"><a href="#2-获取指定节点的的所有配置信息" class="headerlink" title="2. 获取指定节点的的所有配置信息"></a>2. 获取指定节点的的所有配置信息</h6><ul>
+<li>ConfigParserObject.items(section)<br> 以列表形式返回某个节点 section 对应的所有配置信息 </li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 获取指定节点的配置信息</span></span><br><span class="line">items = config.items(<span class="string">'user'</span>)</span><br><span class="line">print(items)            <span class="comment"># 结果 [('user_name', "'Mr,X'"), ('password', "'222'")]</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="3-获取指定节点的options"><a href="#3-获取指定节点的options" class="headerlink" title="3. 获取指定节点的options"></a>3. 获取指定节点的 options</h6><ul>
+<li>ConfigParserObject.options(section)<br> 以列表形式返回某个节点 section 的所有 key 值 </li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 获取指定节点的options信息</span></span><br><span class="line">options = config.options(<span class="string">'user'</span>)</span><br><span class="line">print(options)          <span class="comment"># 结果 ['user_name', 'password']</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="4-获取指定节点下指定option的值"><a href="#4-获取指定节点下指定option的值" class="headerlink" title="4. 获取指定节点下指定option的值"></a>4. 获取指定节点下指定 option 的值</h6><ul>
+<li>ConfigParserObject.get(section, option)<br> 返回结果是字符串类型</li>
+<li> ConfigParserObject.getint(section, option)<br> 返回结果是 int 类型</li>
+<li> ConfigParserObject.getboolean(section, option)<br> 返回结果是 bool 类型</li>
+<li> ConfigParserObject.getfloat(section, option)<br> 返回结果是 float 类型 </li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 获取指定节点指定option的值</span></span><br><span class="line">name = config.get(<span class="string">'user'</span>, <span class="string">'user_name'</span>)</span><br><span class="line"><span class="built_in">print</span>(name, <span class="built_in">type</span>(name))            <span class="comment"># 结果 'Mr,X' &lt;class 'str'&gt;</span></span><br><span class="line">port = config.getint(<span class="string">'connect'</span>, <span class="string">'port'</span>)</span><br><span class="line"><span class="built_in">print</span>(port, <span class="built_in">type</span>(port))           <span class="comment"># 结果  4723 &lt;class 'int'&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="5-检查section或option是否存在"><a href="#5-检查section或option是否存在" class="headerlink" title="5. 检查section或option是否存在"></a>5. 检查 section 或 option 是否存在</h6><ul>
+<li>ConfigParserObject.has_section(section)</li>
+<li>ConfigParserObject.has_option(section, option)<br> 返回 bool 值，若存在返回 True，不存在返回 False</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 检查section是否存在</span></span><br><span class="line">result = config.has_section(<span class="string">'user'</span>)</span><br><span class="line"><span class="built_in">print</span>(result)   <span class="comment"># 结果 True</span></span><br><span class="line">result = config.has_section(<span class="string">'user1'</span>)</span><br><span class="line"><span class="built_in">print</span>(result)   <span class="comment"># 结果 False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查option是否存在</span></span><br><span class="line">result = config.has_option(<span class="string">'user'</span>, <span class="string">'user_name'</span>)</span><br><span class="line"><span class="built_in">print</span>(result)   <span class="comment"># 结果 True</span></span><br><span class="line">result = config.has_option(<span class="string">'user'</span>, <span class="string">'user_name1'</span>)</span><br><span class="line"><span class="built_in">print</span>(result)   <span class="comment"># 结果 False</span></span><br><span class="line">result = config.has_option(<span class="string">'user1'</span>, <span class="string">'user_name'</span>)</span><br><span class="line"><span class="built_in">print</span>(result)   <span class="comment"># 结果 False</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="6-添加section"><a href="#6-添加section" class="headerlink" title="6. 添加section"></a>6. 添加 section</h6><ul>
+<li>ConfigParserObject.add_section(section)<br> 如果 section 不存在，则添加节点 section；<br> 若 section 已存在，再执行 add 操作会报错 configparser.DuplicateSectionError: Section XX already exists</li>
+</ul>
+<figure class="highlight dart"><table><tbody><tr><td class="code"><pre><span class="line"># 添加section</span><br><span class="line"><span class="keyword">if</span> not config.has_section(<span class="string">'remark'</span>):</span><br><span class="line">    config.add_section(<span class="string">'remark'</span>)</span><br><span class="line">config.<span class="keyword">set</span>(<span class="string">'remark'</span>, <span class="string">'info'</span>, <span class="string">'ok'</span>)</span><br><span class="line">config.write(open(filename, <span class="string">'w'</span>))</span><br><span class="line">remark = config.items(<span class="string">'remark'</span>)</span><br><span class="line"><span class="built_in">print</span>(remark)    # 结果 [(<span class="string">'info'</span>, <span class="string">'ok'</span>)]</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="7-修改或添加指定节点下指定option的值"><a href="#7-修改或添加指定节点下指定option的值" class="headerlink" title="7. 修改或添加指定节点下指定option的值"></a>7. 修改或添加指定节点下指定 option 的值</h6><ul>
+<li>ConfigParserObject.set(section, option, value)<br> 若 option 存在，则会替换之前 option 的值为 value；<br> 若 option 不存在，则会创建 optiion 并赋值为 value</li>
+</ul>
+<figure class="highlight dart"><table><tbody><tr><td class="code"><pre><span class="line"># 修改指定option的值</span><br><span class="line">config.<span class="keyword">set</span>(<span class="string">'user'</span>, <span class="string">'user_name'</span>, <span class="string">'Mr L'</span>)</span><br><span class="line">config.<span class="keyword">set</span>(<span class="string">'user'</span>, <span class="string">'isRemember'</span>, <span class="string">'True'</span>)</span><br><span class="line">config.write(open(filename, <span class="string">'w'</span>))</span><br><span class="line"># 重新查看修改后节点信息</span><br><span class="line">items = config.items(<span class="string">'user'</span>)</span><br><span class="line"><span class="built_in">print</span>(items)    # 结果 [(<span class="string">'user_name'</span>, <span class="string">'Mr L'</span>), (<span class="string">'password'</span>, <span class="string">'222'</span>), (<span class="string">'isremember'</span>, <span class="string">'True'</span>)]</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="8-删除section或option"><a href="#8-删除section或option" class="headerlink" title="8.删除section或option"></a>8. 删除 section 或 option</h6><ul>
+<li>ConfigParserObject.remove_section(section)<br> 若 section 存在，执行删除操作；<br> 若 section 不存在，则不会执行任何操作</li>
+<li> ConfigParserObject.remove_option(section, option)<br> 若 option 存在，执行删除操作；<br> 若 option 不存在，则不会执行任何操作；<br> 若 section 不存在，则会报错 configparser.NoSectionError: No section: XXX</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 删除section</span></span><br><span class="line">config.remove_section(<span class="string">'remark'</span>)         <span class="comment"># section存在</span></span><br><span class="line">config.remove_section(<span class="string">'no_section'</span>)     <span class="comment"># section不存在</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除option</span></span><br><span class="line">config.remove_option(<span class="string">'user'</span>, <span class="string">'isremember'</span>)  <span class="comment"># option存在</span></span><br><span class="line">config.remove_option(<span class="string">'user'</span>, <span class="string">'no_option'</span>)   <span class="comment"># option不存在</span></span><br><span class="line">config.write(open(filename, <span class="string">'w'</span>))</span><br><span class="line"></span><br><span class="line">all_sections = config.sections()</span><br><span class="line"><span class="built_in">print</span>(all_sections)     <span class="comment"># 结果 ['user', 'connect']</span></span><br><span class="line">options = config.options(<span class="string">'user'</span>)</span><br><span class="line"><span class="built_in">print</span>(options)      <span class="comment"># 结果 ['user_name', 'password']</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="9-写入内容"><a href="#9-写入内容" class="headerlink" title="9.写入内容"></a>9. 写入内容</h6><ul>
+<li>ConfigParserObject.write(open(filename, ‘w’))<br> 对 configparser 对象执行的一些修改操作，必须重新写回到文件才可生效 </li>
+</ul>
+<figure class="highlight kotlin"><table><tbody><tr><td class="code"><pre><span class="line">config.write(<span class="keyword">open</span>(filename, <span class="string">'w'</span>))</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="SQLAlchemy"><a href="#SQLAlchemy" class="headerlink" title="SQLAlchemy"></a>SQLAlchemy</h1>]]></content>
       <categories>
         <category>python</category>
       </categories>
@@ -1736,6 +1781,159 @@
         <tag>python</tag>
         <tag>爬虫</tag>
         <tag>pkulaw</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>fiddler_evrywhere 基本使用</title>
+    <url>/2021/04/25/fiddler-evrywhere%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="使用页面简介"><a href="#使用页面简介" class="headerlink" title="使用页面简介"></a>使用页面简介</h1><h2 id="申请账号登录"><a href="#申请账号登录" class="headerlink" title="申请账号登录"></a>申请账号登录</h2><p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210425145208.png" alt="image-20210425145208447"></p>
+<h2 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h2><p>开启 https，设置代理端口号：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210425145046.png" alt="image-20210425145046552"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210425145110.png" alt="image-20210425145110349"></p>
+]]></content>
+      <categories>
+        <category>fiddler</category>
+      </categories>
+      <tags>
+        <tag>fiddler</tag>
+        <tag>抓包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>http 协议</title>
+    <url>/2021/04/27/http%E5%8D%8F%E8%AE%AE%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%90%AB%E4%B9%89/</url>
+    <content><![CDATA[<h2 id="1-URL"><a href="#1-URL" class="headerlink" title="1.URL"></a>1.<strong>URL</strong></h2><p>URL 即统一资源定位符（Uniform Resource Locator），用来唯一地标识万维网中的某一个文档。URL 由协议、主机和端口（默认为 80）以及文件名三部分构成，如：</p>
+<p><img data-src="https://mmbiz.qpic.cn/mmbiz_png/qxddLVhoNhdL16yR9IribHZpZwFL87hcn8IXEjKKc0OicdmR6w5KbLgNc7icUEibaUvy1ZMcrxGH3icfgV6PAZLpiaKA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<h2 id="2-HTTP具体工作流程"><a href="#2-HTTP具体工作流程" class="headerlink" title="2.HTTP具体工作流程"></a>2.<strong>HTTP 具体工作流程</strong></h2><p>前面已经讲过，HTTP 的工作原理就是一个请求 - 响应交互模型，那当用户从浏览器输入网址到浏览器呈现给用户内容之间的过程到底发生了什么？下面举例来说明：</p>
+<p>在用户点击 URL 为 <a href="http://www.sxtyu.com/index.html%E7%9A%84%E9%93%BE%E6%8E%A5%E5%90%8E%EF%BC%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%92%8Cweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%89%A7%E8%A1%8C%E4%BA%86%E4%BB%A5%E4%B8%8B%E5%8A%A8%E4%BD%9C%EF%BC%9A">http://www.sxtyu.com/index.html 的链接后，浏览器和 web 服务器执行了以下动作：</a></p>
+<ul>
+<li>浏览器分析超链接中的 URL</li>
+<li> 浏览器向 DNS 请求解析 <a href="http://www.sxtyu.com的ip地址/">http://www.sxtyu.com 的 IP 地址</a></li>
+<li> DNS 将解析出来的 IP 地址 202.2.16.21 返回浏览器</li>
+<li>浏览器与服务器建立 TCP 链接（80 端口）</li>
+<li>浏览器请求文档：GET/index.html</li>
+<li> 服务器给出响应，将文档 index.html 发送给浏览器</li>
+<li>释放 TCP 链接</li>
+<li>浏览器显示 index.html 中的内容</li>
+</ul>
+<p><img data-src="https://mmbiz.qpic.cn/mmbiz_png/qxddLVhoNhdL16yR9IribHZpZwFL87hcnYNjUEqL0IibzsnmejMXwiaEAdj3XOacVEwcjSFxiciaJyvQT9y8H50Y6Lg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<h2 id="3-HTTP头信息"><a href="#3-HTTP头信息" class="headerlink" title="3.HTTP头信息"></a>3.<strong>HTTP 头信息</strong></h2><p>HTTP 头信息分为了请求头信息和响应头信息，其中，请求头只出现在 HTTP 请求中，请求报头允许客户端向服务端传递请求的附加信息和客户端自身信息；响应头是服务器根据请求向客户端发送的 HTTP 头。</p>
+<p>HTTP 的请求头主要包含的参数信息有：</p>
+<ul>
+<li>Host 请求报头域主要用于指定被请求资源的 Internet 主机和端口。</li>
+<li>User-Agent 请求报头域允许客户端将它的操作系统、浏览器和其他属性告诉服务器。</li>
+<li>Referer 包含一个 URL，代表当前访问 URL 的上一个 URL，也就是说，用户是从什么地方来到本页面。当前请求的原始 URL 地址。</li>
+<li>Cookie 是非常重要的请求头，常用来表示请求者的身份等。</li>
+<li>Accept 这个消息头用于告诉服务器客户端愿意接受那些内容，比如图像类，办公文档格式等等。</li>
+</ul>
+<p>HTTP 的响应头主要包含的参数信息有：</p>
+<ul>
+<li>Allow：服务器支持哪些请求方法（如 GET、POST 等）。</li>
+<li>Content-Encoding：文档的编码（Encode）方法。只有在解码之后才可以得到 Content-Type 头指定的内容类型。利用 gzip 压缩文档能够显著地减少 HTML 文档的下载时间。</li>
+<li>Content-Length：表示内容长度。</li>
+<li>Content-Type：<strong>表示后面的文档属于什么 MIME 类型。</strong>Servlet 默认为 text/plain，但通常需要显式地指定为 text/html。</li>
+<li>Date：当前的 GMT 时间。</li>
+<li>Expires：应该在什么时候认为文档已经过期，从而不再缓存它？</li>
+<li>Last-Modified：<strong>文档的最后改动时间。</strong>客户可以通过 If-Modified-Since 请求头提供一个日期，该请求将被视为一个条件 GET，只有改动时间迟于指定时间的文档才会返回，否则返回一个 304（Not Modified）状态。</li>
+<li>Location：<strong>表示客户应当到哪里去提取文档。</strong>Location 通常不是直接设置的，而是通过 HttpServletResponse 的 sendRedirect 方法，该方法同时设置状态代码为 302。</li>
+<li>Refresh：表示浏览器应该在多少时间之后刷新文档，以秒计。注意 Refresh 头不属于 HTTP 1.1 正式规范的一部分，而是一个扩展，但 Netscape 和 IE 都支持它。</li>
+<li>Server：服务器名字。Servlet 一般不设置这个值，而是由 Web 服务器自己设置。</li>
+<li>Set-Cookie：设置和页面关联的 Cookie。</li>
+<li>WWW-Authenticate：客户应该在 Authorization 头中提供什么类型的授权信息？在包含 401（Unauthorized）状态行的应答中这个头是必需的。</li>
+</ul>
+<h2 id="4-HTTP状态码"><a href="#4-HTTP状态码" class="headerlink" title="4.HTTP状态码"></a>4.<strong>HTTP 状态码</strong></h2><p>当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含 HTTP 状态码的信息头（server header）用以响应浏览器的请求。</p>
+<p>HTTP 状态码的英文为 HTTP Status Code，一般有五种状态码：</p>
+<p>1xx：信息提示，表示请求已被成功接收，继续处理。</p>
+<p>2xx：请求被成功提交。</p>
+<p>3xx：客户端被重定向到其他资源。</p>
+<p>4xx：客户端错误状态码，格式错误或者不存在资源。</p>
+<p>5xx：描述服务器内部错误。</p>
+<p>常见的状态码描述如下：</p>
+<p>200：客户端请求成功，是最常见的状态。</p>
+<p>302：重定向。</p>
+<p>404：请求资源不存在，是最常见的状态。</p>
+<p>400：客户端请求有语法错误，不能被服务器所理解。</p>
+<p>401：请求未经授权。</p>
+<p>403：服务器收到请求，但是拒绝提供服务。</p>
+<p>500：服务器内部错误，是最常见的状态。</p>
+<p>503：服务器当前不能处理客户端的请求。</p>
+<h2 id="5-HTTP会话"><a href="#5-HTTP会话" class="headerlink" title="5.HTTP会话"></a>5.<strong>HTTP 会话</strong></h2><p>WEB 应用中的会话是指一个客户端浏览器与 WEB 服务器之间连续发生的一系列请求和响应过程。</p>
+<p>WEB 应用的会话状态是指 WEB 服务器与浏览器在会话过程中产生的状态信息，借助会话状态，WEB 服务器能够把属于同一会话中的一系列的请求和响应过程关联起来。</p>
+<h2 id="6-Cookie技术"><a href="#6-Cookie技术" class="headerlink" title="6.Cookie技术"></a>6.<strong>Cookie 技术</strong></h2><p>Cookie 是一种在客户端保持 HTTP 状态信息的技术，它好比商场发放的优惠卡。</p>
+<p>Cookie 是在浏览器访问 WEB 服务器的某个资源时，由 WEB 服务器在 HTTP 响应消息头中附带传送给浏览器的一片数据，WEB 服务器传送给各个客户端浏览器的数据是可以各不相同的。</p>
+<p>一旦 WEB 浏览器保存了某个 Cookie，那么它在以后每次访问该 WEB 服务器时，都应在 HTTP 请求头中将这个 Cookie 回传给 WEB 服务器。</p>
+<p>WEB 服务器通过在 HTTP 响应消息中增加 Set-Cookie 响应头字段将 Cookie 信息发送给浏览器，浏览器则通过在 HTTP 请求消息中增加 Cookie 请求头字段将 Cookie 回传给 WEB 服务器。</p>
+<p>一个 Cookie 只能标识一种信息，它至少含有一个标识该信息的名称（NAME）和设置值（VALUE）。</p>
+<p>一个 WEB 站点可以给一个 WEB 浏览器发送多个 Cookie，一个 WEB 浏览器也可以存储多个 WEB 站点提供的 Cookie。</p>
+<p>浏览器一般只允许存放 300 个 Cookie，每个站点最多存放 20 个 Cookie，每个 Cookie 的大小限制为 4KB。</p>
+<p>Cookie 的传送过程示意图：</p>
+<p><img data-src="https://mmbiz.qpic.cn/mmbiz_png/qxddLVhoNhdL16yR9IribHZpZwFL87hcnkNWmcUWjF7UaIGSD3mmkDiaPYWWIDEV3ibXFcsdjuAt4YIJv6icqMEt0Q/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+        <tag>请求头</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python 函数</title>
+    <url>/2021/04/25/python%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<p>pandas </p>
+<h1 id="数据库函数"><a href="#数据库函数" class="headerlink" title="数据库函数"></a>数据库函数</h1><h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><h6 id="create-engine-‘dialect-driver-username-password-host-port-database’"><a href="#create-engine-‘dialect-driver-username-password-host-port-database’" class="headerlink" title="create_engine(‘dialect+driver://username:password@host:port/database’)"></a>create_engine(‘dialect+driver://username:password@host:port/database’)</h6><p>dialect – 数据库类型  driver – 数据库驱动选择  username – 数据库用户名  password – 用户密码  host 服务器地址  port 端口  database 数据库</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">engine = create_engine(<span class="string">'sqlite:///datastore.db'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>数据库文件若存在，则连接；不存在，则新建。</p>
+<h1 id="python错误和异常"><a href="#python错误和异常" class="headerlink" title="python错误和异常"></a>python 错误和异常</h1><h2 id="assert（断言）"><a href="#assert（断言）" class="headerlink" title="assert（断言）"></a>assert（断言）</h2><p>语法格式如下：expression 为 false 是触发异常</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">assert</span> expression</span><br></pre></td></tr></tbody></table></figure>
+<p>等价于：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> expression:</span><br><span class="line">    <span class="keyword">raise</span> AssertionError</span><br></pre></td></tr></tbody></table></figure>
+<p>assert 后面也可以紧跟参数:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">assert</span> expression [, arguments]</span><br></pre></td></tr></tbody></table></figure>
+<p>等价于：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> expression:</span><br><span class="line">    <span class="keyword">raise</span> AssertionError(arguments)</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>selenium 中的三种等待方式</title>
+    <url>/2021/04/28/selenium%E4%B8%AD%E7%9A%84%E4%B8%89%E7%A7%8D%E7%AD%89%E5%BE%85%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<p>我们在实际使用 selenium 或者 appium 时，等待下个等待定位的元素出现，特别是 web 端加载的过程，都需要用到等待，而等待方式的设置是保证脚本稳定有效运行的一个非常重要的手段，在 selenium 中（appium 通用）常用的等待分为<strong>显示等待 WebDriverWait ()**、</strong>隐式等待 implicitly_wait ()<strong>、</strong>强制等待 sleep ()** 三种</p>
+<h1 id="1-强制等待sleep-："><a href="#1-强制等待sleep-：" class="headerlink" title="1.强制等待sleep()："></a>1. 强制等待 sleep ()：</h1><p>强制等待，设置固定休眠时间。 python 的 time 包提供了休眠方法 sleep () ， 导入 time 包后就可以使用 sleep ()，进行脚本的执行过程进行休眠。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line">driver = webdriver.Firefox()</span><br><span class="line">driver.get(<span class="string">'https://netxulei.github.io'</span>)</span><br><span class="line">sleep(<span class="number">3</span>) <span class="comment"># 强制等待3秒再执行下一步</span></span><br><span class="line"><span class="built_in">print</span> driver.current_url</span><br><span class="line">driver.quit()</span><br></pre></td></tr></tbody></table></figure>
+<p>这种叫强制等待，不管你浏览器是否加载完了，程序都得等待 3 秒，3 秒一到，继续执行下面的代码，作为调试很有用，有时候也可以在代码里这样等待，不过不建议总用这种等待方式，太死板，严重影响程序执行速度。</p>
+<h1 id="2-隐性等待implicitly-wait-："><a href="#2-隐性等待implicitly-wait-：" class="headerlink" title="2.隐性等待implicitly_wait()："></a>2. 隐性等待 implicitly_wait ()：</h1><p>隐式等待，也叫智能等待，是 webdirver 提供的一个超时等待。隐式等待一个元素被发现，或一个命令完成。如果超出了设置时间的则抛出异常。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium  <span class="keyword">import</span> webdriver</span><br><span class="line">driver = webdriver.Firefox()</span><br><span class="line">driver.implicitly_wait(<span class="number">30</span>)  <span class="comment"># 隐性等待，最长等30秒</span></span><br><span class="line">driver.get( <span class="string">'https://netxulei.github.io'</span> )</span><br><span class="line">print(driver.current_url)</span><br><span class="line">driver.quit()</span><br></pre></td></tr></tbody></table></figure>
+<p>隐形等待是设置了一个最长等待时间，如果在规定时间内网页加载完成，则执行下一步，否则一直等到时间截止，然后执行下一步。注意这里有一个弊端，那就是程序会一直等待整个页面加载完成，也就是一般情况下你看到浏览器标签栏那个小圈不再转，才会执行下一步，但有时候页面想要的元素早就在加载完成了，但是因为个别 js 之类的东西特别慢，我仍得等到页面全部完成才能执行下一步，我想等我要的元素出来之后就下一步怎么办？有办法，这就要看 selenium 提供的另一种等待方式 —— 显性等待 wait 了。</p>
+<p>需要特别说明的是：隐性等待对整个 driver 的周期都起作用，所以只要设置一次即可，我曾看到有人把隐性等待当成了 sleep 在用，走哪儿都来一下</p>
+<h1 id="3-显性等待WebDriverWait-："><a href="#3-显性等待WebDriverWait-：" class="headerlink" title="3.显性等待WebDriverWait()："></a>3. 显性等待 WebDriverWait ()：</h1><p>配合该类的 until () 和 until_not () 方法，就能够根据判断条件而进行灵活地等待了。它主要的意思就是：程序每隔 xx 秒看一眼，如果条件成立了，则执行下一步，否则继续等待，直到超过设置的最长时间，然后抛出 TimeoutException。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.wait <span class="keyword">import</span> WebDriverWait</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line">driver = webdriver.Firefox()</span><br><span class="line">driver.implicitly_wait(<span class="number">10</span>) <span class="comment"># 隐性等待和显性等待可以同时用，但要注意：等待的最长时间取两者之中的大者</span></span><br><span class="line">driver.get(<span class="string">'https://netxulei.github.io'</span>)</span><br><span class="line">locator = (By.LINK_TEXT, <span class="string">'CSDN'</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">WebDriverWait(driver, <span class="number">20</span>, <span class="number">0.5</span>).until(EC.presence_of_element_located(locator))</span><br><span class="line"><span class="built_in">print</span> driver.find_element_by_link_text(<span class="string">'CSDN'</span>).get_attribute(<span class="string">'href'</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">driver.close()</span><br></pre></td></tr></tbody></table></figure>
+<p>上例中，设置了隐性等待和显性等待，在其他操作中，隐性等待起决定性作用，在 WebDriverWait.. 中显性等待起主要作用，但要注意的是：最长的等待时间取决于两者之间的大者，此例中为 20，如果隐性等待时间 &gt; 显性等待时间，则该句代码的最长等待时间等于隐性等待时间。</p>
+<h1 id="4-WebDriverWait"><a href="#4-WebDriverWait" class="headerlink" title="4.WebDriverWait"></a>4.<strong>WebDriverWait</strong></h1><p>wait 模块的 WebDriverWait 类是显性等待类，先看下它有哪些参数与方法：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">selenium.webdriver.support.wait.WebDriverWait（类）</span><br><span class="line">__init__</span><br><span class="line">driver: 传入WebDriver实例，即我们上例中的driver</span><br><span class="line">timeout: 超时时间，等待的最长时间（同时要考虑隐性等待时间）</span><br><span class="line">poll_frequency: 调用until或until_not中的方法的间隔时间，默认是0.5秒</span><br><span class="line">ignored_exceptions: 忽略的异常，如果在调用until或until_not的过程中抛出这个元组中的异常，则不中断代码，继续等待，如果抛出的是这个元组外的异常，则中断代码，抛出异常。默认只有NoSuchElementException。</span><br><span class="line">until</span><br><span class="line">method: 在等待期间，每隔一段时间调用这个传入的方法，直到返回值不False</span><br><span class="line">message: 如果超时，抛出TimeoutException，将message传入异常</span><br><span class="line">until_not 与until相反，until是当某元素出现或什么条件成立则继续执行，until_not是当某元素消失或什么条件不成立则继续执行，参数也相同，不再赘述。</span><br><span class="line">method</span><br><span class="line">message</span><br></pre></td></tr></tbody></table></figure>
+<p>调用方法如下：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">WebDriverWait(driver, 超时时长, 调用频率, 忽略异常).until(可执行方法, 超时时返回的信息)</span><br></pre></td></tr></tbody></table></figure>
+<p>这里需要特别注意的是 until 或 until_not 中的可执行方法 method 参数，很多人传入了 WebElement 对象，如下：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">WebDriverWait(driver, <span class="number">10</span>).until(driver.find_element_by_id(<span class="string">'kw'</span>))  <span class="comment"># 错误</span></span><br></pre></td></tr></tbody></table></figure>
+<p>这是错误的用法，这里的参数一定要是可以调用的，即这个对象一定有 <strong>call</strong>() 方法，否则会抛出异常：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">TypeError: 'xxx' object is not callable</span><br></pre></td></tr></tbody></table></figure>
+<p>在这里，你可以用 selenium 提供的 expected_conditions 模块中的各种条件，也可以用 WebElement 的 is_displayed () 、is_enabled ()、is_selected () 方法，或者用自己封装的方法都可以，那么接下来我们看一下 selenium 提供的条件有哪些：</p>
+<h1 id="5-expected-conditions"><a href="#5-expected-conditions" class="headerlink" title="5.expected_conditions"></a>5.<strong>expected_conditions</strong></h1><p>expected_conditions 是 selenium 的一个模块，其中包含一系列可用于判断的条件：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">selenium.webdriver.support.expected_conditions（模块） </span><br><span class="line">这两个条件类验证title，验证传入的参数title是否等于或包含于driver.title </span><br><span class="line">title_is </span><br><span class="line">title_contains </span><br><span class="line"></span><br><span class="line">两个条件验证元素是否出现，传入的参数都是元组类型的locator，如(By.ID ,  <span class="string">'kw'</span> ) 顾名思义，一个只要一个符合条件的元素加载出来就通过；另一个必须所有符合条件的元素都加载出来才行 </span><br><span class="line">presence_of_element_located </span><br><span class="line">presence_of_all_elements_located</span><br><span class="line"></span><br><span class="line">三个条件验证元素是否可见，前两个传入参数是元组类型的locator，第三个传入WebElement 第一个和第三个其实质是一样的 </span><br><span class="line">visibility_of_element_located </span><br><span class="line">invisibility_of_element_located </span><br><span class="line">visibility_of </span><br><span class="line"></span><br><span class="line">两个条件判断某段文本是否出现在某元素中，一个判断元素的text，一个判断元素的value text_to_be_present_in_element </span><br><span class="line">text_to_be_present_in_element_value</span><br><span class="line"></span><br><span class="line">这个条件判断frame是否可切入，可传入locator元组或者直接传入定位方式： <span class="built_in">id</span> 、name、index或WebElement frame_to_be_available_and_switch_to_it </span><br><span class="line"></span><br><span class="line">这个条件判断是否有alert出现 alert_is_present 这个条件判断元素是否可点击，传入locator element_to_be_clickable </span><br><span class="line"></span><br><span class="line">这四个条件判断元素是否被选中，第一个条件传入WebElement对象，第二个传入locator元组 第三个传入WebElement对象以及状态，相等返回 <span class="literal">True</span> ，否则返回 <span class="literal">False</span> 第四个传入locator以及状态，相等返回 <span class="literal">True</span> ，否则返回 <span class="literal">False</span> element_to_be_selected </span><br><span class="line">element_located_to_be_selected </span><br><span class="line">element_selection_state_to_be </span><br><span class="line">element_located_selection_state_to_be </span><br><span class="line">这个条件判断一个元素是否仍在DOM中，传入WebElement对象，可以判断页面是否刷新了 </span><br><span class="line">staleness_of</span><br></pre></td></tr></tbody></table></figure>
+<p>上面是所有 17 个 condition，与 until、until_not 组合能够实现很多判断，如果能自己灵活封装，将会大大提高脚本的稳定性。</p>
+]]></content>
+      <categories>
+        <category>selinium</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>selinium</tag>
+        <tag>等待</tag>
       </tags>
   </entry>
 </search>

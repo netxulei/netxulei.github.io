@@ -31,7 +31,7 @@
 <meta property="og:description" content="requests 库get 请求1r &#x3D; requests.get(&quot;https:&#x2F;&#x2F;unsplash.com&quot;)  向网站发送了一个 get 请求，然后网站会返回一个 response。r 就是 response。可以在运行的时候查看 r 的 type。  get 传递参数请求   12payload &#x3D; {&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: &#39;value2&#39;}r &#x3D; reque">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-21T01:31:30.000Z">
-<meta property="article:modified_time" content="2021-04-21T11:30:20.795Z">
+<meta property="article:modified_time" content="2021-04-25T02:12:06.953Z">
 <meta property="article:author" content="Lane">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="库">
@@ -131,9 +131,9 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">49</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">22</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">31</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">55</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">35</span></a></li>
         <li class="menu-item menu-item-guestbook"><a href="/guestbook/" rel="section"><i class="fa fa-book fa-fw"></i>留言板</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
@@ -191,7 +191,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#requests%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">requests 库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#get-%E8%AF%B7%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">get 请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#POST%E8%AF%B7%E6%B1%82"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">POST 请求</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%AF%B7%E6%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">其他请求</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BeautifulSoup-%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">BeautifulSoup 库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BeautifulSoup%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">BeautifulSoup 对象类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautifulSoup%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.1.</span> <span class="nav-text">BeautifulSoup 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tag%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.2.</span> <span class="nav-text">Tag 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NavigableString%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.3.</span> <span class="nav-text">NavigableString 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comment%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.4.</span> <span class="nav-text">Comment 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%AF%AD%E6%B3%95"><span class="nav-number">2.1.5.</span> <span class="nav-text">其他语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeautifulSoup%E9%81%8D%E5%8E%86%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">BeautifulSoup 遍历方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%92%8C%E6%A0%87%E7%AD%BE%E5%90%8D"><span class="nav-number">2.2.1.</span> <span class="nav-text">节点和标签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E6%96%87%E6%A1%A3%E6%A0%91"><span class="nav-number">2.2.2.</span> <span class="nav-text">搜索文档树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeautifulSoup%E5%8F%82%E6%95%B0%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">BeautifulSoup 参数调用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#find-%E5%92%8Cfind-all-%EF%BC%9A"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">find () 和 find_all ()：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">2.3.0.2.</span> <span class="nav-text">参数：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#requests%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">requests 库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#get-%E8%AF%B7%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">get 请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#POST%E8%AF%B7%E6%B1%82"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">POST 请求</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%AF%B7%E6%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">其他请求</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BeautifulSoup-%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">BeautifulSoup 库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BeautifulSoup%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">BeautifulSoup 对象类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautifulSoup%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.1.</span> <span class="nav-text">BeautifulSoup 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tag%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.2.</span> <span class="nav-text">Tag 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NavigableString%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.3.</span> <span class="nav-text">NavigableString 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comment%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.4.</span> <span class="nav-text">Comment 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%AF%AD%E6%B3%95"><span class="nav-number">2.1.5.</span> <span class="nav-text">其他语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeautifulSoup%E9%81%8D%E5%8E%86%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">BeautifulSoup 遍历方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%92%8C%E6%A0%87%E7%AD%BE%E5%90%8D"><span class="nav-number">2.2.1.</span> <span class="nav-text">节点和标签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E6%96%87%E6%A1%A3%E6%A0%91"><span class="nav-number">2.2.2.</span> <span class="nav-text">搜索文档树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeautifulSoup%E5%8F%82%E6%95%B0%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">BeautifulSoup 参数调用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#find-%E5%92%8Cfind-all-%EF%BC%9A"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">find () 和 find_all ()：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="nav-number">2.3.0.2.</span> <span class="nav-text">参数：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ConfigParser%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">ConfigParser 库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#configparser%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text">configparser 初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">3.2.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%8E%B7%E5%8F%96%E8%8A%82%E7%82%B9sections"><span class="nav-number">3.2.1.</span> <span class="nav-text">1. 获取节点 sections</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E8%8E%B7%E5%8F%96%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9%E7%9A%84%E7%9A%84%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="nav-number">3.2.1.0.0.1.</span> <span class="nav-text">2. 获取指定节点的的所有配置信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-%E8%8E%B7%E5%8F%96%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9%E7%9A%84options"><span class="nav-number">3.2.1.0.0.2.</span> <span class="nav-text">3. 获取指定节点的 options</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-%E8%8E%B7%E5%8F%96%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9%E4%B8%8B%E6%8C%87%E5%AE%9Aoption%E7%9A%84%E5%80%BC"><span class="nav-number">3.2.1.0.0.3.</span> <span class="nav-text">4. 获取指定节点下指定 option 的值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-%E6%A3%80%E6%9F%A5section%E6%88%96option%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="nav-number">3.2.1.0.0.4.</span> <span class="nav-text">5. 检查 section 或 option 是否存在</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#6-%E6%B7%BB%E5%8A%A0section"><span class="nav-number">3.2.1.0.0.5.</span> <span class="nav-text">6. 添加 section</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-%E4%BF%AE%E6%94%B9%E6%88%96%E6%B7%BB%E5%8A%A0%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9%E4%B8%8B%E6%8C%87%E5%AE%9Aoption%E7%9A%84%E5%80%BC"><span class="nav-number">3.2.1.0.0.6.</span> <span class="nav-text">7. 修改或添加指定节点下指定 option 的值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#8-%E5%88%A0%E9%99%A4section%E6%88%96option"><span class="nav-number">3.2.1.0.0.7.</span> <span class="nav-text">8. 删除 section 或 option</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#9-%E5%86%99%E5%85%A5%E5%86%85%E5%AE%B9"><span class="nav-number">3.2.1.0.0.8.</span> <span class="nav-text">9. 写入内容</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQLAlchemy"><span class="nav-number">4.</span> <span class="nav-text">SQLAlchemy</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -207,20 +207,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -312,10 +312,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-04-21 09:31:30 / 修改时间：19:30:20" itemprop="dateCreated datePublished" datetime="2021-04-21T09:31:30+08:00">2021-04-21</time>
+      <time title="创建时间：2021-04-21 09:31:30" itemprop="dateCreated datePublished" datetime="2021-04-21T09:31:30+08:00">2021-04-21</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-04-25 10:12:06" itemprop="dateModified" datetime="2021-04-25T10:12:06+08:00">2021-04-25</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -341,14 +347,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7.1k</span>
+      <span>11k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>12 分钟</span>
+      <span>18 分钟</span>
     </span>
 </div>
 
@@ -480,7 +486,52 @@
 </tbody></table>
 <p>调用方法（class_是特殊属性，替换 class 属性）</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 直接按规则输入条件</span><br><span class="line">li_quick = soup.find_all('li', {'class': 'item-1'})</span><br><span class="line"># 加上对象名称</span><br><span class="line">li_quick = soup.find_all(name='li', attrs={'class': 'item-1'})</span><br><span class="line"># 可综合使用</span><br><span class="line">li_quick = soup.find_all('li', attrs={'class': 'item-1'})</span><br><span class="line"># class属性查找</span><br><span class="line">beautifulsoup_class_ = soup.find_all(class_='item-1')</span><br></pre></td></tr></tbody></table></figure>
-
+<h1 id="ConfigParser库"><a href="#ConfigParser库" class="headerlink" title="ConfigParser库"></a>ConfigParser 库</h1><p>configparser 模块主要用于读取配置文件，导入方法：import configparser</p>
+<h2 id="configparser初始化"><a href="#configparser初始化" class="headerlink" title="configparser初始化"></a>configparser 初始化</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> configparser</span><br><span class="line"><span class="comment"># 生成ConfigParser对象</span></span><br><span class="line">config = configparser.ConfigParser()</span><br><span class="line"><span class="comment"># 读取配置文件</span></span><br><span class="line">filename = <span class="string">'config.ini'</span></span><br><span class="line">config.read(filename, encoding=<span class="string">'utf-8'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>配置文件 config.ini</p>
+<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">user</span>]</span><br><span class="line">user_name = Mr,X</span><br><span class="line">password = <span class="number">222</span></span><br><span class="line"></span><br><span class="line">[<span class="meta">connect</span>]</span><br><span class="line">ip = <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">port = <span class="number">4723</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="1-获取节点sections"><a href="#1-获取节点sections" class="headerlink" title="1. 获取节点sections"></a>1. 获取节点 sections</h3><ul>
+<li>ConfigParserObject.sections()<br> 以列表形式返回 configparser 对象的所有节点信息 </li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取所有节点</span></span><br><span class="line">all_sections = config.sections()</span><br><span class="line">print(<span class="string">'sections: '</span>, all_sections)   <span class="comment"># 结果sections:  ['user', 'connect']</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="2-获取指定节点的的所有配置信息"><a href="#2-获取指定节点的的所有配置信息" class="headerlink" title="2. 获取指定节点的的所有配置信息"></a>2. 获取指定节点的的所有配置信息</h6><ul>
+<li>ConfigParserObject.items(section)<br> 以列表形式返回某个节点 section 对应的所有配置信息 </li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取指定节点的配置信息</span></span><br><span class="line">items = config.items(<span class="string">'user'</span>)</span><br><span class="line">print(items)            <span class="comment"># 结果 [('user_name', "'Mr,X'"), ('password', "'222'")]</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="3-获取指定节点的options"><a href="#3-获取指定节点的options" class="headerlink" title="3. 获取指定节点的options"></a>3. 获取指定节点的 options</h6><ul>
+<li>ConfigParserObject.options(section)<br> 以列表形式返回某个节点 section 的所有 key 值 </li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取指定节点的options信息</span></span><br><span class="line">options = config.options(<span class="string">'user'</span>)</span><br><span class="line">print(options)          <span class="comment"># 结果 ['user_name', 'password']</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="4-获取指定节点下指定option的值"><a href="#4-获取指定节点下指定option的值" class="headerlink" title="4. 获取指定节点下指定option的值"></a>4. 获取指定节点下指定 option 的值</h6><ul>
+<li>ConfigParserObject.get(section, option)<br> 返回结果是字符串类型</li>
+<li> ConfigParserObject.getint(section, option)<br> 返回结果是 int 类型</li>
+<li> ConfigParserObject.getboolean(section, option)<br> 返回结果是 bool 类型</li>
+<li> ConfigParserObject.getfloat(section, option)<br> 返回结果是 float 类型 </li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取指定节点指定option的值</span></span><br><span class="line">name = config.get(<span class="string">'user'</span>, <span class="string">'user_name'</span>)</span><br><span class="line"><span class="built_in">print</span>(name, <span class="built_in">type</span>(name))            <span class="comment"># 结果 'Mr,X' &lt;class 'str'&gt;</span></span><br><span class="line">port = config.getint(<span class="string">'connect'</span>, <span class="string">'port'</span>)</span><br><span class="line"><span class="built_in">print</span>(port, <span class="built_in">type</span>(port))           <span class="comment"># 结果  4723 &lt;class 'int'&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="5-检查section或option是否存在"><a href="#5-检查section或option是否存在" class="headerlink" title="5. 检查section或option是否存在"></a>5. 检查 section 或 option 是否存在</h6><ul>
+<li>ConfigParserObject.has_section(section)</li>
+<li>ConfigParserObject.has_option(section, option)<br> 返回 bool 值，若存在返回 True，不存在返回 False</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查section是否存在</span></span><br><span class="line">result = config.has_section(<span class="string">'user'</span>)</span><br><span class="line"><span class="built_in">print</span>(result)   <span class="comment"># 结果 True</span></span><br><span class="line">result = config.has_section(<span class="string">'user1'</span>)</span><br><span class="line"><span class="built_in">print</span>(result)   <span class="comment"># 结果 False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查option是否存在</span></span><br><span class="line">result = config.has_option(<span class="string">'user'</span>, <span class="string">'user_name'</span>)</span><br><span class="line"><span class="built_in">print</span>(result)   <span class="comment"># 结果 True</span></span><br><span class="line">result = config.has_option(<span class="string">'user'</span>, <span class="string">'user_name1'</span>)</span><br><span class="line"><span class="built_in">print</span>(result)   <span class="comment"># 结果 False</span></span><br><span class="line">result = config.has_option(<span class="string">'user1'</span>, <span class="string">'user_name'</span>)</span><br><span class="line"><span class="built_in">print</span>(result)   <span class="comment"># 结果 False</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="6-添加section"><a href="#6-添加section" class="headerlink" title="6. 添加section"></a>6. 添加 section</h6><ul>
+<li>ConfigParserObject.add_section(section)<br> 如果 section 不存在，则添加节点 section；<br> 若 section 已存在，再执行 add 操作会报错 configparser.DuplicateSectionError: Section XX already exists</li>
+</ul>
+<figure class="highlight dart"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 添加section</span><br><span class="line"><span class="keyword">if</span> not config.has_section(<span class="string">'remark'</span>):</span><br><span class="line">    config.add_section(<span class="string">'remark'</span>)</span><br><span class="line">config.<span class="keyword">set</span>(<span class="string">'remark'</span>, <span class="string">'info'</span>, <span class="string">'ok'</span>)</span><br><span class="line">config.write(open(filename, <span class="string">'w'</span>))</span><br><span class="line">remark = config.items(<span class="string">'remark'</span>)</span><br><span class="line"><span class="built_in">print</span>(remark)    # 结果 [(<span class="string">'info'</span>, <span class="string">'ok'</span>)]</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="7-修改或添加指定节点下指定option的值"><a href="#7-修改或添加指定节点下指定option的值" class="headerlink" title="7. 修改或添加指定节点下指定option的值"></a>7. 修改或添加指定节点下指定 option 的值</h6><ul>
+<li>ConfigParserObject.set(section, option, value)<br> 若 option 存在，则会替换之前 option 的值为 value；<br> 若 option 不存在，则会创建 optiion 并赋值为 value</li>
+</ul>
+<figure class="highlight dart"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 修改指定option的值</span><br><span class="line">config.<span class="keyword">set</span>(<span class="string">'user'</span>, <span class="string">'user_name'</span>, <span class="string">'Mr L'</span>)</span><br><span class="line">config.<span class="keyword">set</span>(<span class="string">'user'</span>, <span class="string">'isRemember'</span>, <span class="string">'True'</span>)</span><br><span class="line">config.write(open(filename, <span class="string">'w'</span>))</span><br><span class="line"># 重新查看修改后节点信息</span><br><span class="line">items = config.items(<span class="string">'user'</span>)</span><br><span class="line"><span class="built_in">print</span>(items)    # 结果 [(<span class="string">'user_name'</span>, <span class="string">'Mr L'</span>), (<span class="string">'password'</span>, <span class="string">'222'</span>), (<span class="string">'isremember'</span>, <span class="string">'True'</span>)]</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="8-删除section或option"><a href="#8-删除section或option" class="headerlink" title="8.删除section或option"></a>8. 删除 section 或 option</h6><ul>
+<li>ConfigParserObject.remove_section(section)<br> 若 section 存在，执行删除操作；<br> 若 section 不存在，则不会执行任何操作</li>
+<li> ConfigParserObject.remove_option(section, option)<br> 若 option 存在，执行删除操作；<br> 若 option 不存在，则不会执行任何操作；<br> 若 section 不存在，则会报错 configparser.NoSectionError: No section: XXX</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除section</span></span><br><span class="line">config.remove_section(<span class="string">'remark'</span>)         <span class="comment"># section存在</span></span><br><span class="line">config.remove_section(<span class="string">'no_section'</span>)     <span class="comment"># section不存在</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除option</span></span><br><span class="line">config.remove_option(<span class="string">'user'</span>, <span class="string">'isremember'</span>)  <span class="comment"># option存在</span></span><br><span class="line">config.remove_option(<span class="string">'user'</span>, <span class="string">'no_option'</span>)   <span class="comment"># option不存在</span></span><br><span class="line">config.write(open(filename, <span class="string">'w'</span>))</span><br><span class="line"></span><br><span class="line">all_sections = config.sections()</span><br><span class="line"><span class="built_in">print</span>(all_sections)     <span class="comment"># 结果 ['user', 'connect']</span></span><br><span class="line">options = config.options(<span class="string">'user'</span>)</span><br><span class="line"><span class="built_in">print</span>(options)      <span class="comment"># 结果 ['user_name', 'password']</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="9-写入内容"><a href="#9-写入内容" class="headerlink" title="9.写入内容"></a>9. 写入内容</h6><ul>
+<li>ConfigParserObject.write(open(filename, ‘w’))<br> 对 configparser 对象执行的一些修改操作，必须重新写回到文件才可生效 </li>
+</ul>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.write(<span class="keyword">open</span>(filename, <span class="string">'w'</span>))</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="SQLAlchemy"><a href="#SQLAlchemy" class="headerlink" title="SQLAlchemy"></a>SQLAlchemy</h1>
     </div>
 
     
@@ -520,6 +571,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/04/25/python%E5%87%BD%E6%95%B0/" rel="next" title="python 函数">
+                  python 函数 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -573,13 +627,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">85k</span>
+    <span title="站点总字数">96k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:21</span>
+    <span title="站点阅读时长">2:39</span>
   </span>
 </div>
 <div class="busuanzi-count">
