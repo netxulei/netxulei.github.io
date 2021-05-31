@@ -31,7 +31,7 @@
 <meta property="og:description" content="pandas  数据库函数连接数据库create_engine(‘dialect+driver:&#x2F;&#x2F;username:password@host:port&#x2F;database’)dialect – 数据库类型  driver – 数据库驱动选择  username – 数据库用户名  password – 用户密码  host 服务器地址  port 端口  database 数据库 1engine">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-25T02:21:41.000Z">
-<meta property="article:modified_time" content="2021-04-27T08:32:46.178Z">
+<meta property="article:modified_time" content="2021-05-11T07:38:20.337Z">
 <meta property="article:author" content="Lane">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="函数">
@@ -131,9 +131,9 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">55</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">35</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">62</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">28</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">39</span></a></li>
         <li class="menu-item menu-item-guestbook"><a href="/guestbook/" rel="section"><i class="fa fa-book fa-fw"></i>留言板</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
@@ -191,7 +191,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">数据库函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">连接数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#create-engine-%E2%80%98dialect-driver-username-password-host-port-database%E2%80%99"><span class="nav-number">1.1.0.0.0.1.</span> <span class="nav-text">create_engine(‘dialect+driver:&#x2F;&#x2F;username:password@host:port&#x2F;database’)</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python%E9%94%99%E8%AF%AF%E5%92%8C%E5%BC%82%E5%B8%B8"><span class="nav-number">2.</span> <span class="nav-text">python 错误和异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#assert%EF%BC%88%E6%96%AD%E8%A8%80%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">assert（断言）</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">数据库函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">连接数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#create-engine-%E2%80%98dialect-driver-username-password-host-port-database%E2%80%99"><span class="nav-number">1.1.0.0.0.1.</span> <span class="nav-text">create_engine(‘dialect+driver:&#x2F;&#x2F;username:password@host:port&#x2F;database’)</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-f-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">2.</span> <span class="nav-text">Python f 字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-f-%E5%AD%97%E7%AC%A6%E4%B8%B2-1"><span class="nav-number">2.1.</span> <span class="nav-text">Python f 字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">Python 字符串格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-f-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">Python f 字符串表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-f-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E5%85%B8"><span class="nav-number">2.4.</span> <span class="nav-text">Python f 字符串字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E5%A4%9A%E8%A1%8C-f-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">2.5.</span> <span class="nav-text">Python 多行 f 字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-f-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-number">2.6.</span> <span class="nav-text">Python f 字符串调用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-f-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.7.</span> <span class="nav-text">Python f 字符串对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-F-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="nav-number">2.8.</span> <span class="nav-text">Python F 字符串转义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-f-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4"><span class="nav-number">2.9.</span> <span class="nav-text">Python f 字符串格式化日期时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-f-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="nav-number">2.10.</span> <span class="nav-text">Python f 字符串格式化浮点数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-f-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AE%BD%E5%BA%A6"><span class="nav-number">2.11.</span> <span class="nav-text">Python f 字符串格式化宽度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-f-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E9%BD%90%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">2.12.</span> <span class="nav-text">Python f 字符串对齐字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-f-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E5%AD%97%E7%AC%A6%E5%8F%B7"><span class="nav-number">2.13.</span> <span class="nav-text">Python f 字符串数字符号</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python%E9%94%99%E8%AF%AF%E5%92%8C%E5%BC%82%E5%B8%B8"><span class="nav-number">3.</span> <span class="nav-text">python 错误和异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#assert%EF%BC%88%E6%96%AD%E8%A8%80%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">assert（断言）</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -207,20 +207,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">62</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -320,7 +320,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-27 16:32:46" itemprop="dateModified" datetime="2021-04-27T16:32:46+08:00">2021-04-27</time>
+        <time title="修改时间：2021-05-11 15:38:20" itemprop="dateModified" datetime="2021-05-11T15:38:20+08:00">2021-05-11</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -347,14 +347,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>449</span>
+      <span>5.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>8 分钟</span>
     </span>
 </div>
 
@@ -369,6 +369,91 @@
 <h1 id="数据库函数"><a href="#数据库函数" class="headerlink" title="数据库函数"></a>数据库函数</h1><h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><h6 id="create-engine-‘dialect-driver-username-password-host-port-database’"><a href="#create-engine-‘dialect-driver-username-password-host-port-database’" class="headerlink" title="create_engine(‘dialect+driver://username:password@host:port/database’)"></a>create_engine(‘dialect+driver://username:password@host:port/database’)</h6><p>dialect – 数据库类型  driver – 数据库驱动选择  username – 数据库用户名  password – 用户密码  host 服务器地址  port 端口  database 数据库</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">engine = create_engine(<span class="string">'sqlite:///datastore.db'</span>)</span><br></pre></td></tr></tbody></table></figure>
 <p>数据库文件若存在，则连接；不存在，则新建。</p>
+<h1 id="Python-f-字符串"><a href="#Python-f-字符串" class="headerlink" title="Python f 字符串"></a>Python f 字符串</h1><h2 id="Python-f-字符串-1"><a href="#Python-f-字符串-1" class="headerlink" title="Python f 字符串"></a>Python f 字符串</h2><p>Python f-string 是执行字符串格式化的最新 Python 语法。 自 Python 3.6 起可用。 Python f 字符串提供了一种更快，更易读，更简明且不易出错的在 Python 中格式化字符串的方式。</p>
+<p>f 字符串的前缀为 <code>f</code>，并使用 <code>{}</code> 括号评估值。</p>
+<p>在冒号后指定用于类型，填充或对齐的格式说明符； 例如：<code>f'{price:.3}'</code>，其中 <code>price</code> 是变量名。</p>
+<h2 id="Python-字符串格式"><a href="#Python-字符串格式" class="headerlink" title="Python 字符串格式"></a>Python 字符串格式</h2><p>以下示例总结了 Python 中的字符串格式设置选项。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">formatting_strings.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">name = 'Peter'</span><br><span class="line">age = 23</span><br><span class="line"></span><br><span class="line">print('%s is %d years old' % (name, age))</span><br><span class="line">print('{} is {} years old'.format(name, age))</span><br><span class="line">print(f'{name} is {age} years old')</span><br></pre></td></tr></tbody></table></figure>
+<p>该示例使用两个变量设置字符串格式。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'%s is %d years old'</span> % (name, age))</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>这是最旧的选项。 它使用 <code>%</code> 运算符和经典字符串格式指定，例如 <code>%s</code> 和 <code>%d</code>。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'{} is {} years old'</span>.<span class="built_in">format</span>(name, age))</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>从 Python 3.0 开始，<code>format()</code> 函数被引入以提供高级格式化选项。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">f'<span class="subst">{name}</span> is <span class="subst">{age}</span> years old'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>从 Python 3.6 开始，Python f 字符串可用。 该字符串具有 <code>f</code> 前缀，并使用 <code>{}</code> 评估变量。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ python formatting_string.py</span><br><span class="line">Peter <span class="keyword">is</span> <span class="number">23</span> years old</span><br><span class="line">Peter <span class="keyword">is</span> <span class="number">23</span> years old</span><br><span class="line">Peter <span class="keyword">is</span> <span class="number">23</span> years old</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串表达式"><a href="#Python-f-字符串表达式" class="headerlink" title="Python f 字符串表达式"></a>Python f 字符串表达式</h2><p>我们可以将表达式放在 <code>{}</code> 括号之间。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">expressions.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">bags = 3</span><br><span class="line">apples_in_bag = 12</span><br><span class="line"></span><br><span class="line">print(f'There are total of {bags * apples_in_bag} apples')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例对 f 字符串中的表达式求值。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python expressions.py</span><br><span class="line">There are total of <span class="number">36</span> apples</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串字典"><a href="#Python-f-字符串字典" class="headerlink" title="Python f 字符串字典"></a>Python f 字符串字典</h2><p>我们可以使用 f 字符串中的字典。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dicts.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">user = {'name': 'John Doe', 'occupation': 'gardener'}</span><br><span class="line"></span><br><span class="line">print(f"{user['name']} is a {user['occupation']}")</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例以 f 字符串形式评估字典。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python dicts.py</span><br><span class="line">John Doe <span class="keyword">is</span> a gardener</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-多行-f-字符串"><a href="#Python-多行-f-字符串" class="headerlink" title="Python 多行 f 字符串"></a>Python 多行 f 字符串</h2><p>我们可以使用多行字符串。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">multiline.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">name = 'John Doe'</span><br><span class="line">age = 32</span><br><span class="line">occupation = 'gardener'</span><br><span class="line"></span><br><span class="line">msg = (</span><br><span class="line">    f'Name: {name}\n'</span><br><span class="line">    f'Age: {age}\n'</span><br><span class="line">    f'Occupation: {occupation}'</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">print(msg)</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例显示了多行 f 字符串。 F 弦放在方括号之间； 每个字符串前面都带有 <code>f</code> 字符。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ python multiline.py</span><br><span class="line">Name: John Doe</span><br><span class="line">Age: <span class="number">32</span></span><br><span class="line">Occupation: gardener</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串调用函数"><a href="#Python-f-字符串调用函数" class="headerlink" title="Python f 字符串调用函数"></a>Python f 字符串调用函数</h2><p>我们还可以在 f 字符串中调用函数。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">call_function.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">def mymax(x, y):</span><br><span class="line"></span><br><span class="line">    return x if x &gt; y else y</span><br><span class="line"></span><br><span class="line">a = 3</span><br><span class="line">b = 4</span><br><span class="line"></span><br><span class="line">print(f'Max of {a} and {b} is {mymax(a, b)}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例在 f 字符串中调用自定义函数。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python call_fun.py</span><br><span class="line">Max of <span class="number">3</span> <span class="keyword">and</span> <span class="number">4</span> <span class="keyword">is</span> <span class="number">4</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串对象"><a href="#Python-f-字符串对象" class="headerlink" title="Python f 字符串对象"></a>Python f 字符串对象</h2><p>Python f 字符串也接受对象。 对象必须定义了<code>__str__()</code> 或<code>__repr__()</code> 魔术函数。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">objects.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">class User:</span><br><span class="line">    def __init__(self, name, occupation):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.occupation = occupation</span><br><span class="line"></span><br><span class="line">    def __repr__(self):</span><br><span class="line">        return f"{self.name} is a {self.occupation}"</span><br><span class="line"></span><br><span class="line">u = User('John Doe', 'gardener')</span><br><span class="line"></span><br><span class="line">print(f'{u}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例评估 f 字符串中的对象。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python objects.py</span><br><span class="line">John Doe <span class="keyword">is</span> a gardener</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-F-字符串转义字符"><a href="#Python-F-字符串转义字符" class="headerlink" title="Python F 字符串转义字符"></a>Python F 字符串转义字符</h2><p>下面的示例显示如何对 f 字符串中的某些字符进行转义。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">escaping.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">print(f'Python uses {{}} to evaludate variables in f-strings')</span><br><span class="line">print(f'This was a \'great\' film')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>为了避免花括号，我们将字符加倍。 单引号以反斜杠字符转义。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ python escaping.py</span><br><span class="line">Python uses {} to evaludate variables <span class="keyword">in</span> f-strings</span><br><span class="line">This was a <span class="string">'great'</span> film</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串格式化日期时间"><a href="#Python-f-字符串格式化日期时间" class="headerlink" title="Python f 字符串格式化日期时间"></a>Python f 字符串格式化日期时间</h2><p>以下示例格式化日期时间。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">format_datetime.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">import datetime</span><br><span class="line"></span><br><span class="line">now = datetime.datetime.now()</span><br><span class="line"></span><br><span class="line">print(f'{now:%Y-%m-%d %H:%M}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例显示格式化的当前日期时间。 日期时间格式说明符位于<colon>：</colon>字符之后。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python format_datetime.py</span><br><span class="line"><span class="number">2019</span>-05-<span class="number">11</span> <span class="number">22</span>:<span class="number">39</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串格式化浮点数"><a href="#Python-f-字符串格式化浮点数" class="headerlink" title="Python f 字符串格式化浮点数"></a>Python f 字符串格式化浮点数</h2><p>浮点值的后缀为 <code>f</code>。 我们还可以指定精度：小数位数。 精度是一个点字符后的值。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">format_floats.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">val = 12.3</span><br><span class="line"></span><br><span class="line">print(f'{val:.2f}')</span><br><span class="line">print(f'{val:.5f}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例打印格式化的浮点值。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ python format_floats.py</span><br><span class="line"><span class="number">12.30</span></span><br><span class="line"><span class="number">12.30000</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>输出显示具有两位和五个小数位的数字。</p>
+<h2 id="Python-f-字符串格式化宽度"><a href="#Python-f-字符串格式化宽度" class="headerlink" title="Python f 字符串格式化宽度"></a>Python f 字符串格式化宽度</h2><p>宽度说明符设置值的宽度。 如果该值短于指定的宽度，则该值可以用空格或其他字符填充。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">format_width.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">for x in range(1, 11):</span><br><span class="line">    print(f'{x:02} {x*x:3} {x*x*x:4}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例打印三列，每个列都有一个预定义的宽度。 第一列使用 0 填充较短的值。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ python format_width.py</span><br><span class="line">01   <span class="number">1</span>    <span class="number">1</span></span><br><span class="line">02   <span class="number">4</span>    <span class="number">8</span></span><br><span class="line">03   <span class="number">9</span>   <span class="number">27</span></span><br><span class="line">04  <span class="number">16</span>   <span class="number">64</span></span><br><span class="line">05  <span class="number">25</span>  <span class="number">125</span></span><br><span class="line">06  <span class="number">36</span>  <span class="number">216</span></span><br><span class="line">07  <span class="number">49</span>  <span class="number">343</span></span><br><span class="line">08  <span class="number">64</span>  <span class="number">512</span></span><br><span class="line">09  <span class="number">81</span>  <span class="number">729</span></span><br><span class="line"><span class="number">10</span> <span class="number">100</span> <span class="number">1000</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串对齐字符串"><a href="#Python-f-字符串对齐字符串" class="headerlink" title="Python f 字符串对齐字符串"></a>Python f 字符串对齐字符串</h2><p>默认情况下，字符串在左边对齐。 我们可以使用 <code>&gt;</code> 字符来对齐右侧的字符串。 <code>&gt;</code> 字符在冒号后面。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">justify.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">s1 = 'a'</span><br><span class="line">s2 = 'ab'</span><br><span class="line">s3 = 'abc'</span><br><span class="line">s4 = 'abcd'</span><br><span class="line"></span><br><span class="line">print(f'{s1:&gt;10}')</span><br><span class="line">print(f'{s2:&gt;10}')</span><br><span class="line">print(f'{s3:&gt;10}')</span><br><span class="line">print(f'{s4:&gt;10}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>我们有四个不同长度的弦。 我们将输出的宽度设置为十个字符。 值在右对齐。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python justify.py</span><br><span class="line">         a</span><br><span class="line">        ab</span><br><span class="line">       abc</span><br><span class="line">      abcd</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串数字符号"><a href="#Python-f-字符串数字符号" class="headerlink" title="Python f 字符串数字符号"></a>Python f 字符串数字符号</h2><p>数字可以具有各种数字符号，例如十进制或十六进制。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">format_notations.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">a = 300</span><br><span class="line"></span><br><span class="line"># hexadecimal</span><br><span class="line">print(f"{a:x}")</span><br><span class="line"></span><br><span class="line"># octal</span><br><span class="line">print(f"{a:o}")</span><br><span class="line"></span><br><span class="line"># scientific</span><br><span class="line">print(f"{a:e}")</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例以三种不同的表示法打印值。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ python format_notations.py</span><br><span class="line">12c</span><br><span class="line"><span class="number">454</span></span><br><span class="line"><span class="number">3.000000e+02</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>在本教程中，我们使用了 Python f 字符串。</p>
 <h1 id="python错误和异常"><a href="#python错误和异常" class="headerlink" title="python错误和异常"></a>python 错误和异常</h1><h2 id="assert（断言）"><a href="#assert（断言）" class="headerlink" title="assert（断言）"></a>assert（断言）</h2><p>语法格式如下：expression 为 false 是触发异常</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> expression</span><br></pre></td></tr></tbody></table></figure>
 <p>等价于：</p>
@@ -472,13 +557,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">105k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:39</span>
+    <span title="站点阅读时长">2:54</span>
   </span>
 </div>
 <div class="busuanzi-count">

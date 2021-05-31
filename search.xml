@@ -1758,7 +1758,73 @@
 <li>ConfigParserObject.write(open(filename, ‘w’))<br> 对 configparser 对象执行的一些修改操作，必须重新写回到文件才可生效 </li>
 </ul>
 <figure class="highlight kotlin"><table><tbody><tr><td class="code"><pre><span class="line">config.write(<span class="keyword">open</span>(filename, <span class="string">'w'</span>))</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="SQLAlchemy"><a href="#SQLAlchemy" class="headerlink" title="SQLAlchemy"></a>SQLAlchemy</h1>]]></content>
+<h1 id="SQLAlchemy"><a href="#SQLAlchemy" class="headerlink" title="SQLAlchemy"></a>SQLAlchemy</h1><h1 id="PyExcelerate-0-10-0"><a href="#PyExcelerate-0-10-0" class="headerlink" title="PyExcelerate 0.10.0"></a>PyExcelerate 0.10.0</h1><p><a href="https://pypi.org/project/PyExcelerate/">PyExcelerate · PyPI</a></p>
+<p>比较快的 excel 写入包</p>
+<h1 id="Python读取excel三大常用模块到底谁最快"><a href="#Python读取excel三大常用模块到底谁最快" class="headerlink" title="Python读取excel三大常用模块到底谁最快"></a>Python 读取 excel 三大常用模块到底谁最快</h1><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left"> xlrd&amp;xlwt&amp;xlutils</th>
+<th align="left">pandas</th>
+<th align="left">OpenPyXL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"> 读取</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left">写入</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left">修改</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left"> xls</td>
+<td align="left"> 支持</td>
+<td align="left">支持</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"> xlsx</td>
+<td align="left"> 高版本支持</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left">大文件</td>
+<td align="left">不支持</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left">效率</td>
+<td align="left">快</td>
+<td align="left">快</td>
+<td align="left">快</td>
+</tr>
+<tr>
+<td align="left">功能</td>
+<td align="left">较弱</td>
+<td align="left">强大</td>
+<td align="left">一般</td>
+</tr>
+<tr>
+<td align="left">遍历耗时</td>
+<td align="left"> 0.35 s</td>
+<td align="left">2.60 s</td>
+<td align="left">0.47 s</td>
+</tr>
+</tbody></table>
+]]></content>
       <categories>
         <category>python</category>
       </categories>
@@ -1884,6 +1950,91 @@
 <h1 id="数据库函数"><a href="#数据库函数" class="headerlink" title="数据库函数"></a>数据库函数</h1><h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><h6 id="create-engine-‘dialect-driver-username-password-host-port-database’"><a href="#create-engine-‘dialect-driver-username-password-host-port-database’" class="headerlink" title="create_engine(‘dialect+driver://username:password@host:port/database’)"></a>create_engine(‘dialect+driver://username:password@host:port/database’)</h6><p>dialect – 数据库类型  driver – 数据库驱动选择  username – 数据库用户名  password – 用户密码  host 服务器地址  port 端口  database 数据库</p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">engine = create_engine(<span class="string">'sqlite:///datastore.db'</span>)</span><br></pre></td></tr></tbody></table></figure>
 <p>数据库文件若存在，则连接；不存在，则新建。</p>
+<h1 id="Python-f-字符串"><a href="#Python-f-字符串" class="headerlink" title="Python f 字符串"></a>Python f 字符串</h1><h2 id="Python-f-字符串-1"><a href="#Python-f-字符串-1" class="headerlink" title="Python f 字符串"></a>Python f 字符串</h2><p>Python f-string 是执行字符串格式化的最新 Python 语法。 自 Python 3.6 起可用。 Python f 字符串提供了一种更快，更易读，更简明且不易出错的在 Python 中格式化字符串的方式。</p>
+<p>f 字符串的前缀为 <code>f</code>，并使用 <code>{}</code> 括号评估值。</p>
+<p>在冒号后指定用于类型，填充或对齐的格式说明符； 例如：<code>f'{price:.3}'</code>，其中 <code>price</code> 是变量名。</p>
+<h2 id="Python-字符串格式"><a href="#Python-字符串格式" class="headerlink" title="Python 字符串格式"></a>Python 字符串格式</h2><p>以下示例总结了 Python 中的字符串格式设置选项。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">formatting_strings.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">name = 'Peter'</span><br><span class="line">age = 23</span><br><span class="line"></span><br><span class="line">print('%s is %d years old' % (name, age))</span><br><span class="line">print('{} is {} years old'.format(name, age))</span><br><span class="line">print(f'{name} is {age} years old')</span><br></pre></td></tr></tbody></table></figure>
+<p>该示例使用两个变量设置字符串格式。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">print(<span class="string">'%s is %d years old'</span> % (name, age))</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>这是最旧的选项。 它使用 <code>%</code> 运算符和经典字符串格式指定，例如 <code>%s</code> 和 <code>%d</code>。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">print(<span class="string">'{} is {} years old'</span>.<span class="built_in">format</span>(name, age))</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>从 Python 3.0 开始，<code>format()</code> 函数被引入以提供高级格式化选项。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">print(<span class="string">f'<span class="subst">{name}</span> is <span class="subst">{age}</span> years old'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>从 Python 3.6 开始，Python f 字符串可用。 该字符串具有 <code>f</code> 前缀，并使用 <code>{}</code> 评估变量。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python formatting_string.py</span><br><span class="line">Peter <span class="keyword">is</span> <span class="number">23</span> years old</span><br><span class="line">Peter <span class="keyword">is</span> <span class="number">23</span> years old</span><br><span class="line">Peter <span class="keyword">is</span> <span class="number">23</span> years old</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串表达式"><a href="#Python-f-字符串表达式" class="headerlink" title="Python f 字符串表达式"></a>Python f 字符串表达式</h2><p>我们可以将表达式放在 <code>{}</code> 括号之间。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">expressions.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">bags = 3</span><br><span class="line">apples_in_bag = 12</span><br><span class="line"></span><br><span class="line">print(f'There are total of {bags * apples_in_bag} apples')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例对 f 字符串中的表达式求值。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python expressions.py</span><br><span class="line">There are total of <span class="number">36</span> apples</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串字典"><a href="#Python-f-字符串字典" class="headerlink" title="Python f 字符串字典"></a>Python f 字符串字典</h2><p>我们可以使用 f 字符串中的字典。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">dicts.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">user = {'name': 'John Doe', 'occupation': 'gardener'}</span><br><span class="line"></span><br><span class="line">print(f"{user['name']} is a {user['occupation']}")</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例以 f 字符串形式评估字典。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python dicts.py</span><br><span class="line">John Doe <span class="keyword">is</span> a gardener</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-多行-f-字符串"><a href="#Python-多行-f-字符串" class="headerlink" title="Python 多行 f 字符串"></a>Python 多行 f 字符串</h2><p>我们可以使用多行字符串。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">multiline.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">name = 'John Doe'</span><br><span class="line">age = 32</span><br><span class="line">occupation = 'gardener'</span><br><span class="line"></span><br><span class="line">msg = (</span><br><span class="line">    f'Name: {name}\n'</span><br><span class="line">    f'Age: {age}\n'</span><br><span class="line">    f'Occupation: {occupation}'</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">print(msg)</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例显示了多行 f 字符串。 F 弦放在方括号之间； 每个字符串前面都带有 <code>f</code> 字符。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python multiline.py</span><br><span class="line">Name: John Doe</span><br><span class="line">Age: <span class="number">32</span></span><br><span class="line">Occupation: gardener</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串调用函数"><a href="#Python-f-字符串调用函数" class="headerlink" title="Python f 字符串调用函数"></a>Python f 字符串调用函数</h2><p>我们还可以在 f 字符串中调用函数。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">call_function.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">def mymax(x, y):</span><br><span class="line"></span><br><span class="line">    return x if x &gt; y else y</span><br><span class="line"></span><br><span class="line">a = 3</span><br><span class="line">b = 4</span><br><span class="line"></span><br><span class="line">print(f'Max of {a} and {b} is {mymax(a, b)}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例在 f 字符串中调用自定义函数。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python call_fun.py</span><br><span class="line">Max of <span class="number">3</span> <span class="keyword">and</span> <span class="number">4</span> <span class="keyword">is</span> <span class="number">4</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串对象"><a href="#Python-f-字符串对象" class="headerlink" title="Python f 字符串对象"></a>Python f 字符串对象</h2><p>Python f 字符串也接受对象。 对象必须定义了<code>__str__()</code> 或<code>__repr__()</code> 魔术函数。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">objects.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">class User:</span><br><span class="line">    def __init__(self, name, occupation):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.occupation = occupation</span><br><span class="line"></span><br><span class="line">    def __repr__(self):</span><br><span class="line">        return f"{self.name} is a {self.occupation}"</span><br><span class="line"></span><br><span class="line">u = User('John Doe', 'gardener')</span><br><span class="line"></span><br><span class="line">print(f'{u}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例评估 f 字符串中的对象。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python objects.py</span><br><span class="line">John Doe <span class="keyword">is</span> a gardener</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-F-字符串转义字符"><a href="#Python-F-字符串转义字符" class="headerlink" title="Python F 字符串转义字符"></a>Python F 字符串转义字符</h2><p>下面的示例显示如何对 f 字符串中的某些字符进行转义。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">escaping.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">print(f'Python uses {{}} to evaludate variables in f-strings')</span><br><span class="line">print(f'This was a \'great\' film')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>为了避免花括号，我们将字符加倍。 单引号以反斜杠字符转义。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python escaping.py</span><br><span class="line">Python uses {} to evaludate variables <span class="keyword">in</span> f-strings</span><br><span class="line">This was a <span class="string">'great'</span> film</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串格式化日期时间"><a href="#Python-f-字符串格式化日期时间" class="headerlink" title="Python f 字符串格式化日期时间"></a>Python f 字符串格式化日期时间</h2><p>以下示例格式化日期时间。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">format_datetime.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">import datetime</span><br><span class="line"></span><br><span class="line">now = datetime.datetime.now()</span><br><span class="line"></span><br><span class="line">print(f'{now:%Y-%m-%d %H:%M}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例显示格式化的当前日期时间。 日期时间格式说明符位于<colon>：</colon>字符之后。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python format_datetime.py</span><br><span class="line"><span class="number">2019</span>-05-<span class="number">11</span> <span class="number">22</span>:<span class="number">39</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串格式化浮点数"><a href="#Python-f-字符串格式化浮点数" class="headerlink" title="Python f 字符串格式化浮点数"></a>Python f 字符串格式化浮点数</h2><p>浮点值的后缀为 <code>f</code>。 我们还可以指定精度：小数位数。 精度是一个点字符后的值。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">format_floats.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">val = 12.3</span><br><span class="line"></span><br><span class="line">print(f'{val:.2f}')</span><br><span class="line">print(f'{val:.5f}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例打印格式化的浮点值。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python format_floats.py</span><br><span class="line"><span class="number">12.30</span></span><br><span class="line"><span class="number">12.30000</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>输出显示具有两位和五个小数位的数字。</p>
+<h2 id="Python-f-字符串格式化宽度"><a href="#Python-f-字符串格式化宽度" class="headerlink" title="Python f 字符串格式化宽度"></a>Python f 字符串格式化宽度</h2><p>宽度说明符设置值的宽度。 如果该值短于指定的宽度，则该值可以用空格或其他字符填充。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">format_width.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">for x in range(1, 11):</span><br><span class="line">    print(f'{x:02} {x*x:3} {x*x*x:4}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例打印三列，每个列都有一个预定义的宽度。 第一列使用 0 填充较短的值。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python format_width.py</span><br><span class="line">01   <span class="number">1</span>    <span class="number">1</span></span><br><span class="line">02   <span class="number">4</span>    <span class="number">8</span></span><br><span class="line">03   <span class="number">9</span>   <span class="number">27</span></span><br><span class="line">04  <span class="number">16</span>   <span class="number">64</span></span><br><span class="line">05  <span class="number">25</span>  <span class="number">125</span></span><br><span class="line">06  <span class="number">36</span>  <span class="number">216</span></span><br><span class="line">07  <span class="number">49</span>  <span class="number">343</span></span><br><span class="line">08  <span class="number">64</span>  <span class="number">512</span></span><br><span class="line">09  <span class="number">81</span>  <span class="number">729</span></span><br><span class="line"><span class="number">10</span> <span class="number">100</span> <span class="number">1000</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串对齐字符串"><a href="#Python-f-字符串对齐字符串" class="headerlink" title="Python f 字符串对齐字符串"></a>Python f 字符串对齐字符串</h2><p>默认情况下，字符串在左边对齐。 我们可以使用 <code>&gt;</code> 字符来对齐右侧的字符串。 <code>&gt;</code> 字符在冒号后面。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">justify.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">s1 = 'a'</span><br><span class="line">s2 = 'ab'</span><br><span class="line">s3 = 'abc'</span><br><span class="line">s4 = 'abcd'</span><br><span class="line"></span><br><span class="line">print(f'{s1:&gt;10}')</span><br><span class="line">print(f'{s2:&gt;10}')</span><br><span class="line">print(f'{s3:&gt;10}')</span><br><span class="line">print(f'{s4:&gt;10}')</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>我们有四个不同长度的弦。 我们将输出的宽度设置为十个字符。 值在右对齐。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python justify.py</span><br><span class="line">         a</span><br><span class="line">        ab</span><br><span class="line">       abc</span><br><span class="line">      abcd</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<h2 id="Python-f-字符串数字符号"><a href="#Python-f-字符串数字符号" class="headerlink" title="Python f 字符串数字符号"></a>Python f 字符串数字符号</h2><p>数字可以具有各种数字符号，例如十进制或十六进制。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">format_notations.py</span><br><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line">a = 300</span><br><span class="line"></span><br><span class="line"># hexadecimal</span><br><span class="line">print(f"{a:x}")</span><br><span class="line"></span><br><span class="line"># octal</span><br><span class="line">print(f"{a:o}")</span><br><span class="line"></span><br><span class="line"># scientific</span><br><span class="line">print(f"{a:e}")</span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>该示例以三种不同的表示法打印值。</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">$ python format_notations.py</span><br><span class="line">12c</span><br><span class="line"><span class="number">454</span></span><br><span class="line"><span class="number">3.000000e+02</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Py</p>
+<p>在本教程中，我们使用了 Python f 字符串。</p>
 <h1 id="python错误和异常"><a href="#python错误和异常" class="headerlink" title="python错误和异常"></a>python 错误和异常</h1><h2 id="assert（断言）"><a href="#assert（断言）" class="headerlink" title="assert（断言）"></a>assert（断言）</h2><p>语法格式如下：expression 为 false 是触发异常</p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">assert</span> expression</span><br></pre></td></tr></tbody></table></figure>
 <p>等价于：</p>
@@ -1934,6 +2085,186 @@
         <tag>python</tag>
         <tag>selinium</tag>
         <tag>等待</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PySimpleGui 学习</title>
+    <url>/2021/05/11/PySimpleGui%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="PySimpleGUI安装"><a href="#PySimpleGUI安装" class="headerlink" title="PySimpleGUI安装"></a>PySimpleGUI 安装</h1><p>两种方式：</p>
+<p>1. 环境：命令行 pip 或 pycharm 内安装</p>
+<p>2. 下载文件 PySimpleGUI.py 并放置在应用程序的文件夹中（PySimpleGUI 是作为单个.py 文件创建的，在当前目录可直接 import）</p>
+<p><a href="https://cdn.jsdelivr.net/gh/PySimpleGUI/PySimpleGUI/PySimpleGUI.py">https://cdn.jsdelivr.net/gh/PySimpleGUI/PySimpleGUI/PySimpleGUI.py</a></p>
+<h1 id="元素简短写法"><a href="#元素简短写法" class="headerlink" title="元素简短写法"></a>元素简短写法</h1><p>所有元素都有一个或多个可以使用的较短名称。 例如，Text 元素可以简单地写为 T。Input 元素可以写为 I，Button 可以写为 B。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">event, values = sg.Window(<span class="string">'Window Title'</span>, [[sg.T(<span class="string">"What's your name?"</span>)],[sg.I()],[sg.B(<span class="string">'Ok'</span>)]]).read(close=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="运行的GUI框架"><a href="#运行的GUI框架" class="headerlink" title="运行的GUI框架"></a>运行的 GUI 框架</h1><p>PySimpleGUI 当前能够在 4 个 Python GUI 框架上运行。 通过 import 语句指定要使用的框架。 更改导入，您将更改基础的 GUI 框架。 对于某些程序，除了 import 语句以外，无需在其他 GUI 框架上运行即可进行其他更改。 在上面的示例中，将导入从 PySimpleGUI 更改为 PySimpleGUIQt，PySimpleGUIWx，PySimpleGUIWeb 将更改框架。(需要另外安装这些包)</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>PySimpleGui</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pySide2/pyqt5 学习记录</title>
+    <url>/2021/05/24/pySide2-pyqt5%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="pyqt5-QTableWidgetItem-setFlags-设置实现"><a href="#pyqt5-QTableWidgetItem-setFlags-设置实现" class="headerlink" title="pyqt5 QTableWidgetItem setFlags()设置实现"></a>pyqt5 QTableWidgetItem setFlags () 设置实现</h1><h3 id="enum-Qt-ItemFlag-flags-Qt-ItemFlags"><a href="#enum-Qt-ItemFlag-flags-Qt-ItemFlags" class="headerlink" title="enum Qt::ItemFlag flags Qt::ItemFlags"></a>enum Qt::ItemFlag flags Qt::ItemFlags</h3><p>This enum describes the properties of an item:</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Qt::NoItemFlags</code></td>
+<td><code>0</code></td>
+<td>It does not have any properties set.</td>
+</tr>
+<tr>
+<td><code>Qt::ItemIsSelectable</code></td>
+<td><code>1</code></td>
+<td>It can be selected.</td>
+</tr>
+<tr>
+<td><code>Qt::ItemIsEditable</code></td>
+<td><code>2</code></td>
+<td>It can be edited.</td>
+</tr>
+<tr>
+<td><code>Qt::ItemIsDragEnabled</code></td>
+<td><code>4</code></td>
+<td>It can be dragged.</td>
+</tr>
+<tr>
+<td><code>Qt::ItemIsDropEnabled</code></td>
+<td><code>8</code></td>
+<td>It can be used as a drop target.</td>
+</tr>
+<tr>
+<td><code>Qt::ItemIsUserCheckable</code></td>
+<td><code>16</code></td>
+<td>It can be checked or unchecked by the user.</td>
+</tr>
+<tr>
+<td><code>Qt::ItemIsEnabled</code></td>
+<td><code>32</code></td>
+<td>The user can interact with the item.</td>
+</tr>
+<tr>
+<td><code>Qt::ItemIsAutoTristate</code></td>
+<td><code>64</code></td>
+<td>The item’s state depends on the state of its children. This enables automatic management of the state of parent items in <a href="https://doc.qt.io/qt-5/qtreewidget.html">QTreeWidget</a> (checked if all children are checked, unchecked if all children are unchecked, or partially checked if only some children are checked).</td>
+</tr>
+<tr>
+<td><code>Qt::ItemIsTristate</code></td>
+<td><code>ItemIsAutoTristate</code></td>
+<td><em>This enum value is deprecated.</em> Use Qt::ItemIsAutoTristate instead.</td>
+</tr>
+<tr>
+<td><code>Qt::ItemNeverHasChildren</code></td>
+<td><code>128</code></td>
+<td>The item never has child items. This is used for optimization purposes only.</td>
+</tr>
+<tr>
+<td><code>Qt::ItemIsUserTristate</code></td>
+<td><code>256</code></td>
+<td>The user can cycle through three separate states. This value was added in Qt 5.5.</td>
+</tr>
+</tbody></table>
+<p>Note that checkable items need to be given both a suitable set of flags and an initial state, indicating whether the item is checked or not. This is handled automatically for model/view components, but needs to be explicitly set for instances of <a href="https://doc.qt.io/qt-5/qlistwidgetitem.html">QListWidgetItem</a>, <a href="https://doc.qt.io/qt-5/qtablewidgetitem.html">QTableWidgetItem</a>, and <a href="https://doc.qt.io/qt-5/qtreewidgetitem.html">QTreeWidgetItem</a>.</p>
+<p>Note that it is undefined behavior to reimplement <a href="https://doc.qt.io/qt-5/qabstractitemmodel.html#hasChildren">QAbstractItemModel::hasChildren</a> to return true for an index if that index has the Qt::ItemNeverHasChildren flag set.</p>
+<p>The ItemFlags type is a typedef for <a href="https://doc.qt.io/qt-5/qflags.html">QFlags</a><itemflag>. It stores an OR combination of ItemFlag values.</itemflag></p>
+<p><strong>See also</strong> <a href="https://doc.qt.io/qt-5/qabstractitemmodel.html">QAbstractItemModel</a>.</p>
+<p>所有的 flags 都是 Qt.ItemFlags () 对象，值为整数值。刚开始使用 setFlags () 这个命令时，单独使用 setFlags (Qt.ItemIsEditable) 会发现和内容描述的功能是相反的，如果要开启该功能，需要加上 Qt.ItemIsEnabled，即使用 setFlags (Qt.ItemIsEditable | Qt.ItemIsEnabled) 才能达到描述的功能。默认所有功能开启时 int (table.item (9, 0).flags ()) 值为 63，即包含了 Qt.ItemIsEnabled 在内的向上的所有功能，可转换为二进制编码理解。</p>
+]]></content>
+      <categories>
+        <category>pyside2/pyqt5</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>pyside</tag>
+        <tag>pyqt5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>win10 文件夹添加管理员权限</title>
+    <url>/2021/05/31/win10%E6%96%87%E4%BB%B6%E5%A4%B9%E6%B7%BB%E5%8A%A0%E7%AE%A1%E7%90%86%E5%91%98%E6%9D%83%E9%99%90/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Win10</category>
+      </categories>
+      <tags>
+        <tag>win10</tag>
+        <tag>管理员权限</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>win10 自带 Ubentu 安装与配置</title>
+    <url>/2021/05/31/win10%E8%87%AA%E5%B8%A6Ubentu%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="设置windows"><a href="#设置windows" class="headerlink" title="设置windows"></a>设置 windows</h1><p>WSL (Ubuntu) 将 Ubuntu 和 Win10 无缝连接起来，让开发人员可以不使用虚拟机，就轻松地在同一个系统中使用 win10 和 Ubuntu，你可以用它代替 Cywin32 和 babun.</p>
+<ol>
+<li>在 win10 的设置中打开更新和安全，打开针对开发人员选项</li>
+<li>然后在程序和功能中打开 Linux 子系统。</li>
+<li>重启计算机，</li>
+</ol>
+<h1 id="安装WSL"><a href="#安装WSL" class="headerlink" title="安装WSL"></a>安装 WSL</h1><p>Ubuntu 默认 python3.8.5，只能执行 python3 命令，不能 python。</p>
+<p>打开应用商店搜索下载 ubuntu 或 wxl</p>
+<p>直接在应用商店搜索 ubuntu，推荐选择 20.04 的 ubuntu。</p>
+<ul>
+<li><p>安装过程设置用户名、密码，用户名不能有大写，输入密码时一定记得切换成英文输入，密码输入时看不见是正常的</p>
+</li>
+<li><p>添加 ubuntu 到快速访问<br> 如果你需要经常在 win10 资源管理器对 ubuntu 的文件进行操作，那么在 C 盘搜索 rootfs 这个文件夹，这就是 ubuntu 在 win10 上的储存位置。<br> 将 rootfs 文件夹拖放到资源管理器的快速访问。（你也可以添加其下的 /home/ 你的用户文件夹）</p>
+</li>
+<li><p>获取权限<br> 直接在 win10 资源管理器操作 ubuntu 的文件可能是无效的，这是因为 win10 的默认用户并不是超级管理员，对 ubuntu 的权限是只读的。<br> 你需要取得 rootfs 文件夹的所有权限。（文件夹右键属性→安全；还可以使用 “鼠标管家” 这个软件，添加菜单，管理员取得所有权限）</p>
+</li>
+</ul>
+<h1 id="三种启动方式"><a href="#三种启动方式" class="headerlink" title="三种启动方式"></a>三种启动方式</h1><h2 id="微软商店界面启动"><a href="#微软商店界面启动" class="headerlink" title="微软商店界面启动"></a>微软商店界面启动</h2><p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210531164017.png" alt="image-20210531164017648"></p>
+<h2 id="程序组启动"><a href="#程序组启动" class="headerlink" title="程序组启动"></a>程序组启动</h2><p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210531163954.png" alt="image-20210531163954088"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210531170520.png" alt="image-20210531170520106"></p>
+<h2 id="cmd的bash命令启动"><a href="#cmd的bash命令启动" class="headerlink" title="cmd的bash命令启动"></a>cmd 的 bash 命令启动</h2><p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210531170423.png" alt="image-20210531170423359"></p>
+<p>前两种方式进入用户当前目录：/home/ 用户名</p>
+<p>后一种直接进入当前目录，cd 命令后，回到用户目录</p>
+<h1 id="更换国内源（apt源和pip源）"><a href="#更换国内源（apt源和pip源）" class="headerlink" title="更换国内源（apt源和pip源）"></a>更换国内源（apt 源和 pip 源）</h1><h3 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h3><p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210531173427.png" alt="image-20210531173427007"></p>
+<h3 id="找到国内APT源（要与Ubuntu版本号一致）"><a href="#找到国内APT源（要与Ubuntu版本号一致）" class="headerlink" title="找到国内APT源（要与Ubuntu版本号一致）"></a>找到国内 APT 源（要与 Ubuntu 版本号一致）</h3><p>清华：<a href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/">https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/</a></p>
+<p>中科大：<a href="https://mirrors.ustc.edu.cn/repogen/">https://mirrors.ustc.edu.cn/repogen/</a></p>
+<h3 id="备份原APT源"><a href="#备份原APT源" class="headerlink" title="备份原APT源"></a>备份原 APT 源</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="编辑APT源："><a href="#编辑APT源：" class="headerlink" title="编辑APT源："></a>编辑 APT 源：</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></tbody></table></figure>
+<p>注释或删除原内容，以国内源替换</p>
+<h3 id="更新APT源"><a href="#更新APT源" class="headerlink" title="更新APT源"></a>更新 APT 源</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade -y</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="汉化中文"><a href="#汉化中文" class="headerlink" title="汉化中文"></a>汉化中文</h1><h1 id="安装ubuntu的桌面环境"><a href="#安装ubuntu的桌面环境" class="headerlink" title="安装ubuntu的桌面环境"></a>安装 ubuntu 的桌面环境</h1><p>总共需要安装三个软件，分别是 xorg、xfce 和 xrdp<br> 1、安装 xorg 这个基础软件环境：</p>
+<figure class="highlight csharp"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install xorg</span><br></pre></td></tr></tbody></table></figure>
+<p>2、安装 xfce 这个桌面环境:</p>
+<figure class="highlight csharp"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install  xfce4</span><br></pre></td></tr></tbody></table></figure>
+<p>3、安装 xrdp 这个软件，xrdp 这个软件的作用是提供一个 windows 远程桌面的服务端，让 windows 主机可以通过常用的远程桌面工具连接到 linux 服务器上：</p>
+<figure class="highlight csharp"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install xrdp</span><br></pre></td></tr></tbody></table></figure>
+<p>4、配置一下环境，首先需要修改一下 xrdp 监听的端口，xrdp 默认是监听在 3389 端口上，而因为 windows 主机和 linux 子系统是在同一台机器上，因此 windows 自己的远程桌面程序监听的 3389 端口就会和 linux 子系统上的 xrdp 监听的 3389 端口冲突。我们先打开 xrdp 程序的配置文件，命令是：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//备份</span></span><br><span class="line">sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak</span><br><span class="line"><span class="comment">//修改</span></span><br><span class="line">sudo vim /etc/xrdp/xrdp.ini</span><br></pre></td></tr></tbody></table></figure>
+<p>Ubuntu 自己修改 Ip 身子也可以？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210531180450.png"></p>
+<p>5、将 xfce4 的会话环境写入到默认的会话环境配置文件中去（当前用户目录下 /home/netxulei)：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sudo <span class="built_in">echo</span> xfce4-session &gt; ~/.xsession</span><br></pre></td></tr></tbody></table></figure>
+<p>写入完成后重新启动 xrdp 服务：</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="code"><pre><span class="line">sudo /etc/<span class="keyword">init</span>.d/xrdp restart </span><br></pre></td></tr></tbody></table></figure>
+<p>启动完成后，ubuntu 的桌面环境就配置好了。<br> 6、查看 IP 地址</p>
+<p>使用传统 ifconfig 需要安装 net-tools 工具包： sudo apt install net-tools。</p>
+<p>但已经逐渐被 ip addr 取代了。<strong>与 win10 一致，通过端口号远程桌面登录</strong></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210531181931.png" alt="image-20210531181931383"></p>
+<p>七、登录 Ubuntu 系统</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210531182313.png" alt="image-20210531182313207"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210531182430.png" alt="image-20210531182430382"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/netxulei/typora_img/typora-pic/20210531182524.png" alt="image-20210531182524631"></p>
+<h1 id="安装windows-terminal"><a href="#安装windows-terminal" class="headerlink" title="安装windows terminal"></a>安装 windows terminal</h1><p>wsl-terminal 是一个很好用的 WSL 终端。</p>
+<p>直接在应用商店搜索就可以了。</p>
+]]></content>
+      <categories>
+        <category>Ubentu</category>
+      </categories>
+      <tags>
+        <tag>Ubentu</tag>
+        <tag>Win10</tag>
       </tags>
   </entry>
 </search>
